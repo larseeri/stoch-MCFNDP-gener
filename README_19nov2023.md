@@ -254,9 +254,7 @@ default: U
 any use of -A without -G will be rejected; 
 default: 0.25
 
--B <double>; parameter beta used in generating target moments (see below);<br/>
-any use of -B without -G will be rejected; 
-default: 0.25
+-B <double>; parameter beta used in generating target moments (see below); any use of -B without -G will be rejected; default: 0.25
 
 When MOMENTS_DIST_CHARACT == UNIFORM, then the stochastic elements
 of the network that are changed according to scenarios are each assumed
@@ -264,9 +262,7 @@ to follow a uniform(a, b) distribution where,<br/>
 a = D - (alpha * D),<br/>
 b = D + (beta * D),<br/>
 D is the base value of the stochastic element taken from the base
-deterministic network,<br/>
-alpha in [0, 1),<br/>
-beta >= 0.<br/>
+deterministic network, alpha in [0, 1), beta >= 0.
 The distribution is symmetric around D when alpha = beta.
 
 When MOMENTS_DIST_CHARACT == TRIANGULAR, then the stochastic elements
@@ -276,9 +272,7 @@ a = D - (alpha * D),<br/>
 b = D + (beta * D),<br/>
 c = D,<br/>
 D is the base value of the stochastic element taken from the base
-deterministic network,<br/>
-alpha in [0, 1),<br/>
-beta >= 0.<br/>
+deterministic network, alpha in [0, 1), beta >= 0.
 The distribution is symmetric around D when alpha = beta.
 
 ##### 5.2 Options supplied to HKW algorithm
