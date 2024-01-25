@@ -24,7 +24,7 @@ IN THE SOFTWARE.
 
 This application randomly generates scenarios by matching target moments and
 correlations for specified subsets of parameters of a given instance of the linear
-deterministic multi-commodity, fixed charge, capacitated network design (MCFND) <br/>problem. Details of this process are governed by user-specified configuration settings. <br/>The program published by Kaut that implements the algorithm of Hoyland, Kaut and<br/>Wallace (HKW) is used to compute the scenarios.
+deterministic multi-commodity, fixed charge, capacitated network design (MCFND) problem. Details of this process are governed by user-specified configuration settings. The program published by Kaut that implements the algorithm of Hoyland, Kaut and Wallace (HKW) is used to compute the scenarios.
 
 For detailed background, see
 Larsen, E., Bisaillon, S., Cordeau, J.F. and Frejinger, E. 
@@ -239,12 +239,8 @@ A -> total capacities of arcs<br/>
 C -> commodity-specific capacities of arcs<br/>
 F -> fixed costs<br/>
 V -> variable costs<br/>
-example: -XDD 0.9 -XFD 0.1 -XFF 0.01 specifies target correlations within
-demand parameters of 0.9, between fixed cost parameters and demand parameters
-of 0.1 and within fixed cost parameters of 0.01; 
-any use of -X without -G will be rejected; 
-N.B.: -XFD and -XDF are equivalent;
-default: zero correlation
+example: -XDD 0.9 -XFD 0.1 -XFF 0.01 specifies target correlations within demand parameters of 0.9, between fixed cost parameters and demand parameters
+of 0.1 and within fixed cost parameters of 0.01; any use of -X without -G will be rejected; N.B.: -XFD and -XDF are equivalent; default: zero correlation
 
 -M <string>; name of file where target moments are read if -G is absent or
 where generated target moments are written if -G is present;
