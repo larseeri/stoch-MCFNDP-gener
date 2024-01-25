@@ -20,7 +20,7 @@ IN THE SOFTWARE.
 ****************************************************************************
 ****************************************************************************
 
-### Scenarios generator for the linear, two-stage, multi-<br/>commodity, fixed charge, capacitated network design<br/>problem with stochastic recourse: User's guide (19Nov2023)
+### Scenarios generator for the linear, two-stage, multi-commodity, fixed charge, capacitated network design problem with stochastic recourse: User's guide (19Nov2023)
 
 This application randomly generates scenarios by matching target moments and
 correlations for specified subsets of parameters of a given instance of the linear
