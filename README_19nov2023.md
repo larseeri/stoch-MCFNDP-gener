@@ -49,13 +49,13 @@ each one from new random initializations.
 
 Under Linux, follow these steps to build the program:
 
-a- Install CPLEX (if not already done) and note the installation directory.
-b- Uncompress the archive file containing the program files.
-c- Go to the directory just created.
+a- Install CPLEX (if not already done) and note the installation directory.<br/>
+b- Uncompress the archive file containing the program files.<br/>
+c- Go to the directory just created.<br/>
 d- Edit file 'makefile' to set the variable CPLEX_HOME to the one noted in
-	step a- and save modified makefile to disk.
+	step a- and save modified makefile to disk.<br/>
 e- In the terminal, run this command:  make
-	to compile the program.
+	to compile the program.<br/>
 f- An executable file named 'exe' will be created.
 
 #### 2 Running the program
@@ -71,11 +71,11 @@ managing code (identified with capital letters) and for the HKW program
 Option '-S <number>' must be invoked to determine which subsets of parameters
 are meant to vary between scenarios (we call them the stochastic
 elements). This option (-S) expects a number (from 1 to 31) that is a
-sum of the following bits:
-1 -> demands
-2 -> total capacities of arcs
-4 -> commodity-specific capacities of arcs
-8 -> fixed costs
+sum of the following bits:<br/>
+1 -> demands<br/>
+2 -> total capacities of arcs<br/>
+4 -> commodity-specific capacities of arcs<br/>
+8 -> fixed costs<br/>
 16 -> variable costs
 
 Other options have default values that are hard-coded in the file
@@ -112,12 +112,12 @@ on the command line. If they are to be generated, use option '-G'.
 A single target correlation coefficient within subset of parameters U or
 between subsets of parameters U and V can be specified with '-X<UU> <value>'
 and '-X<UV> <corr>' respectively, where corr is the target correlation
-coefficient and U and V can take these values:
-D -> demands
-A -> total capacities of arcs
-C -> commodity-specific capacities of arcs
-F -> fixed costs
-V -> variable costs
+coefficient and U and V can take these values:<br/>
+D -> demands<br/>
+A -> total capacities of arcs<br/>
+C -> commodity-specific capacities of arcs<br/>
+F -> fixed costs<br/>
+V -> variable costs<br/>
 Target correlations that are unspecified are assumed by default to be zero.
 Target moments are generated based (i) on a distributional assumption that
 can be specified using option '-T <dist>' where dist stands for either U
@@ -160,25 +160,25 @@ When option -G is absent from command line and unless overridden by parameter
 -C, target correlations are read from file named 'tg_corrs.txt'.
 
 These text files include a matrix of numbers in the following format
-(hence the target moment file has 6 rows):
-number of rows
-number of columns
-data (by rows)
+(hence the target moment file has 6 rows):<br/>
+number of rows<br/>
+number of columns<br/>
+data (by rows)<br/>
 (rest of the file is ignored)
 
-IMPORTANT: Expected definitions of the 4 target moments are as follows:
-(i) population estimators are used (as in spreadsheets)
-(ii) 2nd moment is variance and NOT standard deviation
-(iii) 4th moment is kurtosis - 3
+IMPORTANT: Expected definitions of the 4 target moments are as follows:<br/>
+(i) population estimators are used (as in spreadsheets)<br/>
+(ii) 2nd moment is variance and NOT standard deviation<br/>
+(iii) 4th moment is kurtosis - 3<br/>
 (iv) 3rd and 4th moments are normalized with standard deviation
 
 ##### 4.2 Probabilities of scenarios
 
 If the probabilities ARE NOT supplied in a file, then scenarios are assumed
 to be equiprobable. If the probabilities ARE supplied in a file, the file has
-to be in a vector format:
-number of elements
-data
+to be in a vector format:<br/>
+number of elements<br/>
+data<br/>
 (rest of the file is ignored)
 
 ##### 4.3 Scenarios in HKW format
@@ -187,7 +187,7 @@ Scenarios saved in HKW format in a previous run (using option -o) can be
 used as starting values in a next run (using option -s). These will only
 be used in the first trial. If this does not converge and the maximum
 number of trials specified by option -t is larger than 1, the next trials
-start from a random starting point.
+start from a random starting point.<br/>
 IMPORTANT: Scenarios in HKW format written in file identified with option -o
 are distinct from desired output of the program written in file identified
 with option -O and described in Section 3 above.
@@ -216,11 +216,11 @@ generations are to be written; default: output.txt
 
 -S <int>; identifies which subsets of parameters are meant to vary between
 scenarios; expects a number (from 1 to 31) that is a sum of the following
-bits:
-1 -> demands
-2 -> total capacities of arcs
-4 -> commodity-specific capacities of arcs
-8 -> fixed costs
+bits:<br/>
+1 -> demands<br/>
+2 -> total capacities of arcs<br/>
+4 -> commodity-specific capacities of arcs<br/>
+8 -> fixed costs<br/>
 16 -> variable costs
 
 -G <> (no value supplied); if present, target moments and target
@@ -233,16 +233,16 @@ and where generated target correlations are written if -G is present;
 default: tg_corrs.txt
 
 -X<char><char> <double>; identifies target correlations within sets of
-parameters or between sets of parameters (state once for each pair of sets):
-D -> demands
-A -> total capacities of arcs
-C -> commodity-specific capacities of arcs
-F -> fixed costs
-V -> variable costs
+parameters or between sets of parameters (state once for each pair of sets):<br/>
+D -> demands<br/>
+A -> total capacities of arcs<br/>
+C -> commodity-specific capacities of arcs<br/>
+F -> fixed costs<br/>
+V -> variable costs<br/>
 example: -XDD 0.9 -XFD 0.1 -XFF 0.01 specifies target correlations within
 demand parameters of 0.9, between fixed cost parameters and demand parameters
-of 0.1 and within fixed cost parameters of 0.01;
-any use of -X without -G will be rejected;
+of 0.1 and within fixed cost parameters of 0.01; 
+any use of -X without -G will be rejected; 
 N.B.: -XFD and -XDF are equivalent;
 default: zero correlation
 
@@ -251,39 +251,38 @@ where generated target moments are written if -G is present;
 default: tg_moms.txt
 
 -T <char>; distributional characteristics of generated target moments
-( U : UNIFORM , T : TRIANGULAR ); any use of -T without -G will be rejected;
+( U : UNIFORM , T : TRIANGULAR ); any use of -T without -G will be rejected; 
 default: U
 
--A <double>; parameter alpha used in generating target moments (see below);
-any use of -A without -G will be rejected;
+-A <double>; parameter alpha used in generating target moments (see below); 
+any use of -A without -G will be rejected; 
 default: 0.25
 
--B <double>; parameter beta used in generating target moments (see below);
-any use of -B without -G will be rejected;
+-B <double>; parameter beta used in generating target moments (see below);<br/>
+any use of -B without -G will be rejected; 
 default: 0.25
 
 When MOMENTS_DIST_CHARACT == UNIFORM, then the stochastic elements
 of the network that are changed according to scenarios are each assumed
-to follow a uniform(a, b) distribution where,
-a = D - (alpha * D),
-b = D + (beta * D),
+to follow a uniform(a, b) distribution where,<br/>
+a = D - (alpha * D),<br/>
+b = D + (beta * D),<br/>
 D is the base value of the stochastic element taken from the base
-deterministic network,
-alpha in [0, 1),
-beta >= 0.
+deterministic network,<br/>
+alpha in [0, 1),<br/>
+beta >= 0.<br/>
 The distribution is symmetric around D when alpha = beta.
 
 When MOMENTS_DIST_CHARACT == TRIANGULAR, then the stochastic elements
 of the network that are changed according to scenarios are each assumed
-to follow a triangular(a, b, c) distribution where,
-where,
-a = D - (alpha * D),
-b = D + (beta * D),
-c = D,
+to follow a triangular(a, b, c) distribution where,<br/>
+a = D - (alpha * D),<br/>
+b = D + (beta * D),<br/>
+c = D,<br/>
 D is the base value of the stochastic element taken from the base
-deterministic network,
-alpha in [0, 1),
-beta >= 0.
+deterministic network,<br/>
+alpha in [0, 1),<br/>
+beta >= 0.<br/>
 The distribution is symmetric around D when alpha = beta.
 
 ##### 5.2 Options supplied to HKW algorithm
