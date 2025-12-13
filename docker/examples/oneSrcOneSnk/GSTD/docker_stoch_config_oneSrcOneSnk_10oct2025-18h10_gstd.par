@@ -1,0 +1,86 @@
+
+
+// called with this command line:
+//docker run --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v \
+//+F /inout/docker_stoch_config_oneSrcOneSnk_10oct2025-18h10_gstd.par
+
+
+// 1 Main options
+//***************
+
+// input file has GSTD format
+F G
+
+// input file name
+I /inout/determ_oneSrcOneSnk_10oct2025-18h10.std
+
+//output file name
+O /inout/stoch_oneSrcOneSnk_10oct2025-18h10_gstd.txt
+
+// all elements of D, A, C, V will be randomized
+S 23
+
+// correlations are hereafter specified for each block
+K
+
+// name of file where correlations will be saved
+C /inout/stoch_corrs_oneSrcOneSnk_10oct2025-18h10_gstd.dat
+
+// correlations for each block concerned by S 23
+XDD 0.5
+XDA -0.2
+XDC 0.2
+XDV -0.2 
+XAA 0.5
+XAC -0.2
+XAV 0.2
+XCC 0.5
+XCV -0.2
+XVV 0.5
+
+// moments will be generated
+G
+
+// moments will be generated according to uniform distributions
+T U
+
+// alpha
+A 0.35
+
+// beta
+B 0.35
+
+// name of file where moments will be saved
+M /inout/stoch_moms_oneSrcOneSnk_10oct2025-18h10_gstd.dat
+
+// 2 HKW options
+//**************
+
+// number of scenarios
+n 500
+
+// maximum number of trials in HKW algo. (default 20)
+t 20
+
+// maximum number of iter. in HKW algo. (default 30)
+i 30
+
+// maximum error in matching moments (default 0.001)
+m 0.001 
+
+// maximum error in matching correlations (default 0.001)
+c 0.001
+
+// level of on-screen reporting (default 3)
+l 3
+
+// name of file where raw scenarios will be saved
+o /inout/stoch_rawscen_oneSrcOneSnk_10oct2025-18h10_gstd.dat
+
+// random seed
+R 12345
+
+// random stream
+r 200
+
+
