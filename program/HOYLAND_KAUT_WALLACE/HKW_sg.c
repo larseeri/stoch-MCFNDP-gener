@@ -81,12 +81,13 @@ int HKW_ScenGen(int const FormatOfMoms, TMatrix const * const p_TarMoms,
 		printf("MATRIX HAS FAILED.\n");
 		printf("If the alleged target correlation matrix is square, symmetric,\n"); 
 		printf("with entries in [-1, 1] and diagonal entries equal to 1,\n");
-		printf("This is LIKELY CAUSED BY LACK OF POSITIVE DEFINITESS.\n");
+		printf("this is LIKELY CAUSED BY LACK OF POSITIVE DEFINITESS.\n");
 		//
 		printf("\nIf option K was included, verify that the block correlations specified\n");
 		printf("with option(s) X?? result in a positive definite matrix.\n");
 		printf("\nIf option K was omitted, verify that the alleged correlation matrix\n");
 		printf("read from file is positive definite.\n");
+		printf("See USER_GUIDE for details.\n");
 		exit(1);
 	}
 	if (TestLevel > 3) {
@@ -117,9 +118,10 @@ int HKW_ScenGen(int const FormatOfMoms, TMatrix const * const p_TarMoms,
 	do {
 
 		trial++;
-		if (TestLevel > 1)
+		//if (TestLevel > 1)
 			//printf("\ntrial %d\n", trial);
-			printf("\nSetting starting values and launching main trial %d\n", trial); 
+		printf("\nSetting starting values and launching main trial %d\n", trial); 
+		printf("****************************************************\n");
 
 		if (UseStartValues) {
 			// Using starting values
@@ -284,9 +286,14 @@ int HKW_ScenGen(int const FormatOfMoms, TMatrix const * const p_TarMoms,
 			// Cholesky decomp. of correlation matrix of outcomes
 			err_code = Mat_Cholesky(&OutCorrs, &Chol_OutCorrs, Chol_TestLevel);
 			if (err_code > 0) {
-				printf("\nError in Cholesky decomposition of current correlation matrix\n");
+				printf("\nError in Cholesky decomposition of current correlation matrix.\n");
 				printf("A new trial with new starting scenarios values will be launched.\n");
 				printf(" - exit code was %d\n\n", err_code);
+				printf("If this error persists until the maximum number of trials\n");
+				printf("has been reached (value set with option t), a message\n");
+				printf("describing causes and remedies will be displayed automatically,\n");
+				printf("immediately after the last trial.\n");
+				printf("For additional details, see the section on convergence in USER_GUIDE.\n");				
 				goto next_trial;
 			}
 			Mat_LowTriangInverse(&Chol_OutCorrs, &InvChol_OutCorrs);  // inverse

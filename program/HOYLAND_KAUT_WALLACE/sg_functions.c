@@ -41,7 +41,7 @@ void CheckInput(TMatrix const * const p_TarMoms,
 		printf("MATRIX HAS FAILED.\n");
 		printf("If the alleged target correlation matrix is square, symmetric,\n"); 
 		printf("with entries in [-1, 1] and diagonal entries equal to 1,\n");
-		printf("This is LIKELY CAUSED BY LACK OF POSITIVE DEFINITESS.\n");
+		printf("this is LIKELY CAUSED BY LACK OF POSITIVE DEFINITESS.\n");
 		//
 		printf("\nIf option K was included, verify that the block correlations specified\n");
 		printf("with options X?? result in a positive definite matrix.\n");
