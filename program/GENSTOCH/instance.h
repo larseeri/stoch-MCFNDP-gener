@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Eric Larsen
+// Copyright (c) 2026 Eric Larsen
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the “Software”), to
@@ -39,7 +39,9 @@ typedef vector<int> VectInt;
 
 const int numb_moments = 4;
 
-// Describes the characteristics of commodities as related to an arc.
+void displayTimeStamp();
+
+// Describes commodity-specific characteristics of arcs.
 struct CommodOnArc
 {
     // pointer to static array holding variable costs for all arcs and
@@ -106,7 +108,7 @@ struct Node
 // will hold all nodes
 typedef vector<Node> VectNode;
 
-// Defining and handling the characteristics of the arcs.
+// Defining and handling arcs characteristics.
 struct Arc
 {
     // pointer to static array holding fixed costs for all arcs
@@ -170,7 +172,7 @@ struct Arc
 // will hold all arcs
 typedef vector<Arc> VectArc;
 
-// Defining and handling the characteristics of a commodity.
+// Defining and handling characteristics of a commodity.
 struct Commodity
 {
     // pointer to static array holding volumes for all commodities
@@ -223,7 +225,7 @@ struct Commodity
 // will hold all commodities
 typedef vector<Commodity> VectCommod;
 
-// Defining and handling the characteristics of a computing instance.
+// Defining and handling characteristics of a computing instance.
 struct Instance
 {
     // 1 Variables specifying characteristics of base deterministic instance.

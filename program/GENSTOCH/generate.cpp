@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Eric Larsen
+// Copyright (c) 2026 Eric Larsen
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the “Software”), to
@@ -131,9 +131,9 @@ void HoylandKautWallace::generMomentsUnifDist(int numbElems)
         moments.val[0][i] = stochElems[ALL_TYPES][i] * cst;
 
     // order 2 moment
-    // m2 = (b - a)^2 / 12  ==>  m2 = D^2 * (alpha + beta) / 12
+    // m2 = (b - a)^2 / 12  ==>  m2 = D^2 * (alpha + beta)^2 / 12
 
-    cst = (params->alpha + params->beta) / 12.0;
+    cst = (params->alpha + params->beta) * (params->alpha + params->beta) / 12.0;
 
     for (int i = 0; i < numbElems; i++)
         moments.val[1][i] = stochElems[ALL_TYPES][i] * stochElems[ALL_TYPES][i] * cst;
@@ -282,7 +282,7 @@ TMatrix2 HoylandKautWallace::generScenarios()
         printf("WITHIN THE SPECIFIED MAXIMUM NUMBERS OF TRIALS AND ITERATION.\n");
         printf("\nThe FOLLOWING COURSE OF ACTION IS RECOMMENDED:\n");
         //
-        printf("\n1- Verify that target moments and correlations are proper.\n");
+        printf("\n1- Ascertain that target moments and correlations are proper.\n");
         //
         printf("\nIF OPTION G HAS NOT BEEN SELECTED, TARGET MOMENTS ARE READ FROM A FILE.\n");
         printf("IT SHOULD BE ASCERTAINED THEY ARE COMPATIBLE WITH A PROBABILITY DISTRIBUTION.\n");
@@ -305,10 +305,10 @@ TMatrix2 HoylandKautWallace::generScenarios()
         printf("HKW algorithm initially (i.e. before any iteration) reports a failure of its\n");
         printf("Cholesky decomposition and displays an explanation.\n");
         printf("b- Failure of the Cholesky decomposition during the iterations of the HKW\n");
-        printf("algorithm might be due to an insufficient requested number of scenarios (see\n");
-        printf("Paragraph 3 below).\n");
+        printf("algorithm is frequently due to an insufficient requested number of scenarios\n");
+        printf("(see Paragraph 3 below).\n");
         //
-        printf("\n2- Verify that slow convergence is not responsible.\n");
+        printf("\n2- Ascertain that slow convergence is not responsible.\n");
         //
         printf("\nIF BOTH TARGET MOMENTS AND TARGET CORRELATIONS ARE KNOWN TO BE PROPERLY\n");
         printf("SPECIFIED, CONSIDER LAUNCHING A NEW RUN AFTER INCREASING THE MAXIMUM NUMBERS OF\n");
@@ -319,7 +319,7 @@ TMatrix2 HoylandKautWallace::generScenarios()
         printf("Default values for the numbers of trials and iterations are usually\n");
         printf("sufficient to reach convergence under the default error tolerances. Failure\n");
         printf("of convergence is most frequently due to the causes examined in Paragraphs 1\n");
-        printf("and 3 above and below.\n");
+        printf("above and 3 below.\n");
         //
         printf("\n3- Adjust the number of scenarios.\n");
         //

@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Eric Larsen
+// Copyright (c) 2026 Eric Larsen
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the “Software”), to
@@ -27,8 +27,8 @@
 Configuration::Configuration(int argc, char **argv, string _configFileName)
     : nbArg(argc), vectArg(argv), verbose(false), configFileName(_configFileName), instanceFormat(DOW),
       specCorrBlocks(false), momentsCharacts(UNIFORM), generMoments(false), alpha(0.25), beta(0.25),
-      inputInstFileName("./base_network.dow"), outputInstFileName("./generated_networks.txt"),
-      momentsFileName("./target_moms.dat"), correlsFileName("./target_corrs.dat"), numbScenarios(1000),
+      inputInstFileName("./base-determ-network.dow"), skipFeasibChecks(false), outputInstFileName("./generated-stoch-network.txt"),
+      momentsFileName("./moments.dat"), correlsFileName("./correlations.dat"), numbScenarios(1000),
       //
       // distCharactMoments = 7 (7=1+2+4), ensures that the target moments supplied
       // to HKW_ScenGen() in HKW_sg.c are properly interpreted.
@@ -46,7 +46,7 @@ Configuration::Configuration(int argc, char **argv, string _configFileName)
       // This should be set to 3.
       displayLevel(3),
       //
-      maxTrial(20), maxIter(50), randomSeed(7654321), randomStream(1000), outScenariosFileName("raw_scens.dat"),
+      maxTrial(10), maxIter(50), randomSeed(7654321), randomStream(1000), outScenariosFileName("raw_scens.dat"),
       readProbs(false), probsFileName(""), readStartScenarios(false), startScenariosFileName(""), paramX(false),
       paramT(false)
 {
@@ -63,7 +63,9 @@ Configuration::Configuration(int argc, char **argv, string _configFileName)
 
 // Parses command line.
 void Configuration::parseCmdLine()
-{
+{	
+	cout << "\n****** Begin parsing configuration parameters from command line.\n" << endl;
+
     int elemStoch = DEMAND;
 
     bool reinitCorrMatrix = true;
@@ -71,8 +73,6 @@ void Configuration::parseCmdLine()
     int a = 1;
     const char *key;
     const char *value;
-
-    cout << "****** Parsing configuration parameters from the command line.\n\n";
 
     while (a < nbArg)
     {
@@ -95,7 +95,7 @@ void Configuration::parseCmdLine()
                 value = "";
 
             if (verbose)
-                cout << "****** command line -- parameter [" << key << "] = [" << value << "]\n" << endl;
+                cout << "****** command line -- parameter [" << key << "] = [" << value << "]" << endl;
 
             switch (*key)
             {
@@ -114,8 +114,8 @@ void Configuration::parseCmdLine()
                 {
                     instanceFormat = RSTD;
                     break;
-                }
-                printUsageAndExit(vectArg[0], false);
+                }				
+				displayError("option F can only be specified along with a value in {D, G, R}");
                 break;
             case 'T':
                 if (*value == 'U')
@@ -130,7 +130,7 @@ void Configuration::parseCmdLine()
                     paramT = true;
                     break;
                 }
-                printUsageAndExit(vectArg[0], false);
+                displayError("option T can only be specified along with a value in {U, T}");
                 break;
             case 'S':
                 elemStoch = atoi(value);
@@ -187,7 +187,7 @@ void Configuration::parseCmdLine()
                             elem[j] = VAR_COST;
                             break;
                         default:
-                            printUsageAndExit(vectArg[0], false);
+                            displayError("Option X must be specified along with a pair of characters in {D, A, C, F, V}.");
                             break;
                         }
                     paramX = true;
@@ -197,7 +197,7 @@ void Configuration::parseCmdLine()
                 }
                 else
                 {
-                    printUsageAndExit(vectArg[0], false);
+                    displayError("Option X must be specified along with a pair of characters in {D, A, C, F, V}.");
                     break;
                 }
             case 'G':
@@ -223,6 +223,9 @@ void Configuration::parseCmdLine()
             case 'I':
                 inputInstFileName = value;
                 break;
+			case 'J':
+			    skipFeasibChecks = true;
+			    break;				
             case 'O':
                 outputInstFileName = value;
                 break;
@@ -273,7 +276,6 @@ void Configuration::parseCmdLine()
                 printHelpAndExit();
                 break;
             default:
-                ////printUsageAndExit(vectArg[0], false);
                 break;
             }
         }
@@ -281,9 +283,7 @@ void Configuration::parseCmdLine()
         a++;
     }
 
-    if (verbose)
-
-        cout << endl;
+    cout << "\n****** End parsing configuration parameters from command line." << endl;
 }
 
 // Parses key or (key, value) pair found on a line of the configuration file.
@@ -309,7 +309,7 @@ inline void Configuration::parseKeyValue(string key, string value)
             instanceFormat = RSTD;
             break;
         }
-        printUsageAndExit(0, true);
+        displayError("option F can only be specified along with a value in {D, G, R}");
         break;
     case 'T':
         if (value == "U")
@@ -324,7 +324,7 @@ inline void Configuration::parseKeyValue(string key, string value)
             paramT = true;
             break;
         }
-        printUsageAndExit(0, true);
+        displayError("option T can only be specified along with a value in {U, T}");
         break;
     case 'S':
         elemStoch = stoi(value);
@@ -373,7 +373,7 @@ inline void Configuration::parseKeyValue(string key, string value)
                     elem[j] = VAR_COST;
                     break;
                 default:
-                    printUsageAndExit(0, true);
+                    displayError("Option X must be specified along with a pair of characters in {D, A, C, F, V}.");
                     break;
                 }
             paramX = true;
@@ -383,7 +383,7 @@ inline void Configuration::parseKeyValue(string key, string value)
         }
         else
         {
-            printUsageAndExit(0, true);
+            displayError("Option X must be specified along with a pair of characters in {D, A, C, F, V}.");
             break;
         }
     case 'G':
@@ -407,6 +407,9 @@ inline void Configuration::parseKeyValue(string key, string value)
     case 'I':
         inputInstFileName = value;
         break;
+	case 'J':
+		skipFeasibChecks = true;
+		break;
     case 'O':
         outputInstFileName = value;
         break;
@@ -457,7 +460,6 @@ inline void Configuration::parseKeyValue(string key, string value)
         printHelpAndExit();
         break;
     default:
-        ////printUsageAndExit(0, true);
         break;
     }
 }
@@ -479,6 +481,7 @@ void Configuration::verify()
     else if (!filesystem::exists(inputInstFileName))
     {
         cerr << "\nERROR:\n";
+		cerr << "inputInstFileName: " << inputInstFileName << "\n";
         cerr << "The specified deterministic base instance file could not be found.\n";
         cerr << "Use option -I" << endl;
         exit(1);
@@ -540,8 +543,7 @@ void Configuration::verify()
                 exit(1);
             }
         }
-    }
-	
+    }	
 }
 
 void Configuration::verifyOutputPath(string fullPath)
@@ -597,16 +599,14 @@ void Configuration::parseConfigFileNameFromCmdLine()
         cout << "\n********* VERBOSE MODE *********\n\n";
 
         if (foundFile)
-            cout << "****** configuration file name [" << CONFIG_FILE_KEY << "] = [" << configFileName << "]\n";
-
-        cout << endl;
+            cout << "****** configuration file name [" << CONFIG_FILE_KEY << "] = [" << configFileName << "]" << endl;
     }
 }
 
 // Processes keys or (key, value) pairs specified on a non-comment lines of
 // configuration file.
 bool Configuration::processConfigFile()
-{
+{	
     char line[lineLength];
     ifstream inStr;
 
@@ -618,7 +618,7 @@ bool Configuration::processConfigFile()
         cerr << "EXECUTION ABORTED\n" << endl;
         exit(1);
     }
-
+	
     inStr.open(configFileName);
 
     if (!inStr.is_open())
@@ -628,11 +628,11 @@ bool Configuration::processConfigFile()
         cerr << "EXECUTION ABORTED\n" << endl;
         exit(1);
     }
-
+	
     bool found = 0;
 
     if (verbose)
-        cout << "\n****** Parsing this configuration file: " << configFileName << "]\n\n";
+        cout << "\n****** Begin parsing this configuration file: " << configFileName << "\n" << endl;
 
     inStr.getline(line, lineLength);
     while (inStr)
@@ -650,13 +650,14 @@ bool Configuration::processConfigFile()
         {
             found = 1;
             if (verbose)
-                cout << "****** configuration file -- parameter [" << key.substr(pos) << "] = [" << value << "]\n";
+                cout << "****** configuration file -- parameter [" << key.substr(pos) << "] = [" << value << "]" << endl;
             parseKeyValue(key.substr(pos), value);
         }
         inStr.getline(line, lineLength);
     }
     if (verbose)
-        cout << endl;
+        cout << "\n****** End parsing this configuration file: " << configFileName <<  endl;
+	
     return found;
 }
 
@@ -687,6 +688,17 @@ inline string Configuration::removeQuotes(istringstream &configLine)
     }
 
     return outString;
+}
+
+void Configuration::displayError(string error)
+{
+    cerr << "\nERROR: " + error << endl;	
+	cerr << "EXECUTION ABORTED\n" << endl;
+	
+	cerr << "For details about the sources of this error and its remedies\n"
+			<< "either launch the program with the \"help\" option to display the user guide\n"
+			<< "or examine the document USER_GUIDE.md in the online repository." << endl;		
+	exit(1);
 }
 
 void Configuration::printHelpAndExit()
@@ -1052,8 +1064,8 @@ void Configuration::printHelpAndExit()
     printf("(2 + 1 = 3).\n");
     //
     printf("\nBy default, the name of the file describing the base deterministic MCFND\n");
-    printf("network is './base_network.dow' (Linux instructions),\n");
-    printf("'./inout/base_network.dow' (Docker instructions) and the default input\n");
+    printf("network is './base-determ-network.dow' (Linux instructions),\n");
+    printf("'./inout/base-determ-network.dow' (Docker instructions) and the default input\n");
     printf("format is DOW. This name may be changed with option I <string> and the input\n");
     printf("format can be indicated accordingly with option F <char>. For example,\n");
     printf("specifying -S 3 -I instB.std -F G in the instruction line indicates that\n");
@@ -1080,16 +1092,16 @@ void Configuration::printHelpAndExit()
     printf("\nTarget moments can be set and saved as follows.\n");
     printf("a- If option key G is included, target moments will be generated according\n");
     printf("to a distributional assumption and will be written individually in a file\n");
-    printf("whose default name is './target_moms.dat' (Linux instructions) or\n");
-    printf("'./inout/target_moms.dat' (Docker instructions). This name can be specified\n");
+    printf("whose default name is './moments.dat' (Linux instructions) or\n");
+    printf("'./inout/moments.dat' (Docker instructions). This name can be specified\n");
     printf("otherwise with option key M. The distributional assumption can be specified\n");
     printf("with option key T <char> where <char> stands for either U (uniform) or D\n");
     printf("(triangular) and two parameters, alpha and beta, that can be specified using\n");
     printf("options A <double> and B <double>.\n");
     //
     printf("\nb- If option key G is not included, individual target moments will be read\n");
-    printf("from the file whose default name is is './target_moms.dat' (Linux\n");
-    printf("instructions) or './inout/target_moms.dat' (Docker instructions). The latter\n");
+    printf("from the file whose default name is is './moments.dat' (Linux\n");
+    printf("instructions) or './inout/moments.dat' (Docker instructions). The latter\n");
     printf("can be specified otherwise with option key M. Format of the target moments\n");
     printf("file is specified in Section 5.2.1 below. Without option G, option T will be\n");
     printf("rejected and options A and B will be ignored.\n");
@@ -1121,8 +1133,8 @@ void Configuration::printHelpAndExit()
     printf("V -> variable costs\n");
     printf("Target correlations that are left unspecified are assumed by default to be\n");
     printf("zero. The resulting individual correlations will be written to a file whose\n");
-    printf("default name is './target_corrs.dat' (Linux instructions) or\n");
-    printf("'./inout/target_corrs.dat' (Docker instructions). This name can be\n");
+    printf("default name is './correlations.dat' (Linux instructions) or\n");
+    printf("'./inout/correlations.dat' (Docker instructions). This name can be\n");
     printf("specified otherwise with option key C.\n");
     //
     printf("\nImportant:\n");
@@ -1131,8 +1143,8 @@ void Configuration::printHelpAndExit()
     printf("the configuration file is ignored.\n");
     //
     printf("\nb- If option key K is not included, individual correlations will be read\n");
-    printf("from a file whose default name is './target_corrs.dat' (Linux instructions)\n");
-    printf("or './inout/target_corrs.dat' (Docker instructions). The latter can be\n");
+    printf("from a file whose default name is './correlations.dat' (Linux instructions)\n");
+    printf("or './inout/correlations.dat' (Docker instructions). The latter can be\n");
     printf("specified otherwise with option key C. Format of the target correlations\n");
     printf("file is specified in Section 5.2.2 below. Without option K, options X?? will\n");
     printf("be rejected.\n");
@@ -1177,8 +1189,8 @@ void Configuration::printHelpAndExit()
     printf("*************\n");
     //
     printf("\nBy default, the name of the file containing the MCFND instances generated\n");
-    printf("by the application is './generated_networks.txt' (Linux instructions) or\n");
-    printf("'./inout/generated_networks.txt' (Docker instructions). This can be\n");
+    printf("by the application is './generated-stoch-network.txt' (Linux instructions) or\n");
+    printf("'./inout/generated-stoch-network.txt' (Docker instructions). This can be\n");
     printf("changed with option O. This text file superposes representations of complete\n");
     printf("deterministic MCFND instances, one for each scenario realization. Each\n");
     printf("representation is preceded by a separator as follows:\n");
@@ -1242,8 +1254,8 @@ void Configuration::printHelpAndExit()
     printf("The MCFND instances generated by the application (one for each scenario) are\n");
     printf("expressed in the same format as that used for supplying the base\n");
     printf("deterministic MCFND instance. Their descriptions are stacked and returned in\n");
-    printf("the output file whose default name './generated_networks.txt' (Linux\n");
-    printf("instructions), './inout/generated_networks.txt' (Docker instructions) can be\n");
+    printf("the output file whose default name './generated-stoch-network.txt' (Linux\n");
+    printf("instructions), './inout/generated-stoch-network.txt' (Docker instructions) can be\n");
     printf("modified with option O. (Cf. Section 4 above.)\n");
     //
     printf("\n5.2 Input files supplied to HKW algorithm\n");
@@ -1254,8 +1266,8 @@ void Configuration::printHelpAndExit()
     printf("********************\n");
     //
     printf("\nWhen option G is omitted from instruction line and from configuration file,\n");
-    printf("target moments are read from a file named './target_moms.dat' (Linux\n");
-    printf("instructions) or './inout/target_moms.dat' (Docker instructions) unless this\n");
+    printf("target moments are read from a file named './moments.dat' (Linux\n");
+    printf("instructions) or './inout/moments.dat' (Docker instructions) unless this\n");
     printf("is overridden with option M. The file containing the target moments matrix\n");
     printf("is formatted as follows (see Section 8 for examples):\n");
     printf("a- 1st line shows integer 4 (as there are 4 target moments per randomized\n");
@@ -1288,8 +1300,8 @@ void Configuration::printHelpAndExit()
     printf("*************************\n");
     //
     printf("\nWhen option K is omitted from instruction line and from configuration file,\n");
-    printf("target correlations are read from a file named './target_corrs.dat' (Linux\n");
-    printf("instructions) or './inout/target_corrs.dat' (Docker instructions), unless\n");
+    printf("target correlations are read from a file named './correlations.dat' (Linux\n");
+    printf("instructions) or './inout/correlations.dat' (Docker instructions), unless\n");
     printf("this is overridden with option C. The file containing the target\n");
     printf("correlations matrix is formatted as follows (see Section 8 for examples):\n");
     printf("a- 1st and 2nd lines are identical and show the total number of individual\n");
@@ -1475,13 +1487,13 @@ void Configuration::printUsageAndExit(char ExecName[], bool anonymous)
     printf("read; D: DOW, G: generic STD, R: restricted STD; default: D\n");
     //
     printf("\nI <string>; name of file where deterministic MCFND base network is to be\n");
-    printf("read; default value is './base_network.dow' (Linux instructions) or\n");
-    printf("'./inout/base_network.dow' (Docker instructions)\n");
+    printf("read; default value is './base-determ-network.dow' (Linux instructions) or\n");
+    printf("'./inout/base-determ-network.dow' (Docker instructions)\n");
     //
     printf("\nO <string>; name of file where MCFND instances resulting from\n");
     printf("scenario generation are to be written; default value is\n");
-    printf("'./generated_networks.txt' (Linux instructions) or\n");
-    printf("'./inout/generated_networks.txt' (Docker instructions)\n");
+    printf("'./generated-stoch-network.txt' (Linux instructions) or\n");
+    printf("'./inout/generated-stoch-network.txt' (Docker instructions)\n");
     //
     printf("\nS <int>; identifies which subsets of parameters should vary between\n");
     printf("scenarios; expects a number (from 1 to 31) which is a sum of the following:\n");
@@ -1493,16 +1505,16 @@ void Configuration::printUsageAndExit(char ExecName[], bool anonymous)
     //
     printf("\nK <> (no value supplied); if included, target correlations are directly\n");
     printf("specified in blocks using options X and written to file\n");
-    printf("'./target_corrs.dat' (Linux instructions) or './inout/target_corrs.dat'\n");
+    printf("'./correlations.dat' (Linux instructions) or './inout/correlations.dat'\n");
     printf("(Docker instructions), unless this default name is changed with option C;\n");
-    printf("if omitted, target correlations are read from file './target_corrs.dat'\n");
-    printf("(Linux instructions) or './inout/target_corrs.dat' (Docker instructions),\n");
+    printf("if omitted, target correlations are read from file './correlations.dat'\n");
+    printf("(Linux instructions) or './inout/correlations.dat' (Docker instructions),\n");
     printf("unless this default name is changed with option C\n");
     //
     printf("\nC <string>; name of file where target correlations are read if K is omitted\n");
     printf("and where generated target correlations are written if K is included;\n");
-    printf("default: './target_corrs.dat' (Linux instructions) or\n");
-    printf("'./inout/target_corrs.dat' (Docker instructions)\n");
+    printf("default: './correlations.dat' (Linux instructions) or\n");
+    printf("'./inout/correlations.dat' (Docker instructions)\n");
     //
     printf("\nX<char><char> <double>; identifies target correlations within or between\n");
     printf("subsets of parameters that are randomized (i.e, that vary between\n");
@@ -1521,16 +1533,16 @@ void Configuration::printUsageAndExit(char ExecName[], bool anonymous)
     printf("(self-correlations being equal to 1.0); Remark: -XFD and -XDF are equivalent\n");
     //
     printf("\nG <> (no value supplied); if included, target moments are generated based on\n");
-    printf("option T and written to file './target_moms.dat' (Linux instructions) or\n");
-    printf("'./inout/target_moms.dat' (Docker instructions), unless this default name is\n");
+    printf("option T and written to file './moments.dat' (Linux instructions) or\n");
+    printf("'./inout/moments.dat' (Docker instructions), unless this default name is\n");
     printf("changed with option M; if omitted, target moments are read from file\n");
-    printf("'./target_moms.dat' (Linux instructions) or './inout/target_moms.dat'\n");
+    printf("'./moments.dat' (Linux instructions) or './inout/moments.dat'\n");
     printf("(Docker instructions) unless this default name is changed with option M\n");
     //
     printf("\nM <string>; name of file where target moments are read if option G is\n");
     printf("omitted or where generated target moments are written if option G is\n");
-    printf("included; default: './target_moms.dat' (Linux\n");
-    printf("instructions) or './inout/target_moms.dat' (Docker instructions)\n");
+    printf("included; default: './moments.dat' (Linux\n");
+    printf("instructions) or './inout/moments.dat' (Docker instructions)\n");
     //
     printf("\nT <char>; distributional characteristics of generated target moments\n");
     printf("(U : UNIFORM , T : TRIANGULAR); any use of option T without option G\n");
@@ -1579,7 +1591,7 @@ void Configuration::printUsageAndExit(char ExecName[], bool anonymous)
     printf("\nn <int>; number of scenarios to generate; default: 1000\n");
     //
     printf("\nt <int>; maximum number of trials (attempts to generate scenarios using\n");
-    printf("alternative random starting values); default: 20\n");
+    printf("alternative random starting values); default: 10\n");
     //
     printf("\ni <int>; maximum number of iterations in a trial; default: 50\n");
     //

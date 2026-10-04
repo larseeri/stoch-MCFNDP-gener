@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Eric Larsen
+// Copyright (c) 2026 Eric Larsen
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the “Software”), to
@@ -51,7 +51,7 @@ using namespace std;
 #define CONFIG_VERBOSE_MODE "+v"
 
 // maximum length of lines in configuration file
-const int lineLength = 256;
+const int lineLength = 1024;
 
 // input and output formats available
 enum IO_FORMAT
@@ -228,6 +228,9 @@ struct Configuration
     // name of file containing base determistic MCFND network (default or
     // modified with option key I)
     string inputInstFileName;
+	
+	// skip verification and report about feasibility of each generated scenario
+	bool skipFeasibChecks;
 
     // name of file containing generated MCFND networks (default or modified
     // with option key O)
@@ -346,8 +349,9 @@ struct Configuration
     void verify();
 	
 	// Verifies that output path is valid.
-	void verifyOutputPath(string);
+	void verifyOutputPath(string);	
 	
+	void displayError(string);	
 };
 
 #endif

@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Eric Larsen
+// Copyright (c) 2026 Eric Larsen
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the “Software”), to
@@ -33,17 +33,33 @@ void Instance::assignSizes()
     stochElems[VAR_COST].size = numbArcs * numbCommods;
 }
 
+void displayTimeStamp()
+{
+	// Google AI
+	auto now = std::chrono::system_clock::now();
+    std::time_t time_now = std::chrono::system_clock::to_time_t(now);
+
+    // convert to local time structure safely
+    std::tm* local_time = std::localtime(&time_now);
+
+    // output using stream manipulators
+    std::cout << std::put_time(local_time, "%Y-%m-%d %H:%M:%S") << std::endl;
+}
+
 // Generates scenarios with HKW algorithm.
 int Instance::getScenarios()
 {
-
     printf("\nBegin generation of raw scenarios with HKW algorithm.\n");
+
+	displayTimeStamp();	
 
     HoylandKautWallace hkw(numb_moments, stochElems[ALL_TYPES].size, params, stochElems);
 
     // matrix of HKW scenarios, one scenario per column, individual stochastic
     // elements on rows
     scenarios = hkw.generScenarios();
+	
+	displayTimeStamp();
 
     printf("End generation of raw scenarios with HKW algorithm.\n");
 
@@ -62,7 +78,6 @@ void Instance::copyScenario(int idx)
 // Allocates arrays.
 void Instance::allocate()
 {
-
     int numbStochElem = 0;
     VectInt begin(MAX_TYPE, -1);
 
@@ -133,7 +148,6 @@ void Instance::allocate()
 // Reads a base deterministic MCFND network stored in DOW format.
 void InstanceDow::read(istream &is)
 {
-
     string line, dummy;
     double capac, volume, varCost, fixedCost;
     int countArc = 0, countDemand = 0, countComm = 0;
@@ -222,7 +236,8 @@ void InstanceDow::write(ostream &os) const
 void InstanceRStd::read(istream &is)
 {
     string line, dummy;
-    int numbComm, idxComm, idxNode, capac, volume, varCost, fixedCost;
+    int numbComm, idxComm, idxNode;
+	double capac, volume, varCost, fixedCost;
     int countArc = 0, countDemand = 0, countComm = 0;
 
     is >> numbNodes >> numbArcs >> numbCommods;
@@ -325,7 +340,8 @@ void InstanceRStd::write(ostream &os) const
 void InstanceGStd::read(istream &is)
 {
     string line, dummy;
-    int numbComm, idxComm, idxNode, capac, volume, varCost, fixedCost;
+    int numbComm, idxComm, idxNode;
+	double capac, volume, varCost, fixedCost;
     int countArc = 0, countComm = 0;
 
     is >> numbNodes >> numbArcs >> numbCommods;

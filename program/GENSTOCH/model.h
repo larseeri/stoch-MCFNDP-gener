@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Eric Larsen
+// Copyright (c) 2026 Eric Larsen
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the “Software”), to
@@ -31,7 +31,6 @@ using namespace std;
 
 struct Model
 {
-
     const Instance *inst;
 
     Model(const Instance *inst);

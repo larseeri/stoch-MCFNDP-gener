@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Eric Larsen
+// Copyright (c) 2026 Eric Larsen
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the “Software”), to
@@ -55,6 +55,16 @@
 // required, each one starting from new random initializations automatically.
 // (Cf. Section 6 below.)
 //
+// This user guide comprises the following sections:
+// 1 Building and running the program directly from the Linux command line
+// 2 Running the program through Docker instructions
+// 3 Randomized elements, target moments and target correlations
+// 4 Output file
+// 5 Formats of data files
+// 6 Convergence, target moments, target correlations and number of scenarios 
+// 7 Usage of options
+// 8 Detailed examples
+//
 // 1 Building and running the program directly from the Linux command line
 // ***********************************************************************
 //
@@ -75,11 +85,16 @@
 // the remote repository file tree.
 // c- Edit the file named "makefile" to set the variables indicating the
 // locations relevant to the CPLEX solver and/or the HIGHS solver, as noted in
-// step a-. These locations are chiefly CPLEX_HOME and HIGHS_HOME. Save the
-// modifications.
+// step a-. These locations are chiefly the absolute paths of CPLEX_HOME and
+// HIGHS_HOME. Save the modifications.
 // d- In a Linux terminal, go to the /program folder just created.
 // e- Make sure that the gcc C++ compiler and the make C++ build tool are
 // available.
+//
+// Remark:
+// If the gcc compiler and/or the make build tool are unavailable, consider
+// running the program through Docker instructions (see Section 2 below).
+ //
 // f- In the terminal, run ONLY ONE of these commands to build the program
 // equipped either with the CPLEX solver or with the HIGHS solver:
 //
@@ -193,9 +208,10 @@
 //
 // An advantage of running the executable stoch_gen inside a Docker container
 // is the possibility to avoid selection and installation of suitable C++
-// compiler, C++ make build tool and required C++ libraries. It suffices that
-// the Docker engine be installed on the host where the computation will be
-// run. For this, see https://docs.docker.com/engine/install/.
+// compiler, C++ make build tool and required C++ libraries (e.g., on Apple
+// computers). It suffices that the Docker engine be installed on the host
+// where the computation will be run. For this, see
+// https://docs.docker.com/engine/install/.
 //
 // Once the Docker engine is installed, follow these steps:
 //
@@ -377,8 +393,8 @@
 // (2 + 1 = 3).
 //
 // By default, the name of the file describing the base deterministic MCFND
-// network is './base_network.dow' (Linux instructions),
-// './inout/base_network.dow' (Docker instructions) and the default input
+// network is './base-determ-network.dow' (Linux instructions),
+// './inout/base-determ-network.dow' (Docker instructions) and the default input
 // format is DOW. This name may be changed with option I <string> and the input
 // format can be indicated accordingly with option F <char>. For example,
 // specifying -S 3 -I instB.std -F G in the instruction line indicates that
@@ -393,9 +409,9 @@
 //
 // Remark:
 // While the generator is sufficiently general to randomize fixed costs, the
-// latter are viewed as being non-stochastic in the context of two-stage
-// stochastic programming. Hence, in standard applications, randomization of
-// the MCFND will be limited to a subset of the following: demand volumes,
+// latter are usually viewed as being non-stochastic in the context of two-
+// stage stochastic programming. Hence, in standard applications, randomization
+// of the MCFND will be limited to a subset of the following: demand volumes,
 // total capacities of arcs, commodity-specific capacities of arcs and variable
 // costs (either commodity-specific or not).
 //
@@ -405,16 +421,16 @@
 // Target moments can be set and saved as follows.
 // a- If option key G is included, target moments will be generated according
 // to a distributional assumption and will be written individually in a file
-// whose default name is './target_moms.dat' (Linux instructions) or
-// './inout/target_moms.dat' (Docker instructions). This name can be specified
+// whose default name is './moments.dat' (Linux instructions) or
+// './inout/moments.dat' (Docker instructions). This name can be specified
 // otherwise with option key M. The distributional assumption can be specified
 // with option key T <char> where <char> stands for either U (uniform) or D
 // (triangular) and two parameters, alpha and beta, that can be specified using
 // options A <double> and B <double>.
 //
 // b- If option key G is not included, individual target moments will be read
-// from the file whose default name is is './target_moms.dat' (Linux
-// instructions) or './inout/target_moms.dat' (Docker instructions). The latter
+// from the file whose default name is is './moments.dat' (Linux
+// instructions) or './inout/moments.dat' (Docker instructions). The latter
 // can be specified otherwise with option key M. Format of the target moments
 // file is specified in Section 5.2.1 below. Without option G, option T will be
 // rejected and options A and B will be ignored.
@@ -446,8 +462,8 @@
 // V -> variable costs
 // Target correlations that are left unspecified are assumed by default to be
 // zero. The resulting individual correlations will be written to a file whose
-// default name is './target_corrs.dat' (Linux instructions) or
-// './inout/target_corrs.dat' (Docker instructions). This name can be
+// default name is './correlations.dat' (Linux instructions) or
+// './inout/correlations.dat' (Docker instructions). This name can be
 // specified otherwise with option key C.
 //
 // Important:
@@ -456,8 +472,8 @@
 // the configuration file is ignored.
 //
 // b- If option key K is not included, individual correlations will be read
-// from a file whose default name is './target_corrs.dat' (Linux instructions)
-// or './inout/target_corrs.dat' (Docker instructions). The latter can be
+// from a file whose default name is './correlations.dat' (Linux instructions)
+// or './inout/correlations.dat' (Docker instructions). The latter can be
 // specified otherwise with option key C. Format of the target correlations
 // file is specified in Section 5.2.2 below. Without option K, options X?? will
 // be rejected.
@@ -502,8 +518,8 @@
 // *************
 //
 // By default, the name of the file containing the MCFND instances generated
-// by the application is './generated_networks.txt' (Linux instructions) or
-// './inout/generated_networks.txt' (Docker instructions). This can be
+// by the application is './generated-stoch-network.txt' (Linux instructions) or
+// './inout/generated-stoch-network.txt' (Docker instructions). This can be
 // changed with option O. This text file superposes representations of complete
 // deterministic MCFND instances, one for each scenario realization. Each
 // representation is preceded by a separator as follows:
@@ -567,8 +583,8 @@
 // The MCFND instances generated by the application (one for each scenario) are
 // expressed in the same format as that used for supplying the base
 // deterministic MCFND instance. Their descriptions are stacked and returned in
-// the output file whose default name './generated_networks.txt' (Linux
-// instructions), './inout/generated_networks.txt' (Docker instructions) can be
+// the output file whose default name './generated-stoch-network.txt' (Linux
+// instructions), './inout/generated-stoch-network.txt' (Docker instructions) can be
 // modified with option O. (Cf. Section 4 above.)
 //
 // 5.2 Input files supplied to HKW algorithm
@@ -579,8 +595,8 @@
 // ********************
 //
 // When option G is omitted from instruction line and from configuration file,
-// target moments are read from a file named './target_moms.dat' (Linux
-// instructions) or './inout/target_moms.dat' (Docker instructions) unless this
+// target moments are read from a file named './moments.dat' (Linux
+// instructions) or './inout/moments.dat' (Docker instructions) unless this
 // is overridden with option M. The file containing the target moments matrix
 // is formatted as follows (see Section 8 for examples):
 // a- 1st line shows integer 4 (as there are 4 target moments per randomized
@@ -613,8 +629,8 @@
 // *************************
 //
 // When option K is omitted from instruction line and from configuration file,
-// target correlations are read from a file named './target_corrs.dat' (Linux
-// instructions) or './inout/target_corrs.dat' (Docker instructions), unless
+// target correlations are read from a file named './correlations.dat' (Linux
+// instructions) or './inout/correlations.dat' (Docker instructions), unless
 // this is overridden with option C. The file containing the target
 // correlations matrix is formatted as follows (see Section 8 for examples):
 // a- 1st and 2nd lines are identical and show the total number of individual
@@ -656,8 +672,8 @@
 // distinct from the MCFND instance scenarios produced by the application and
 // described in Section 4 above.
 //
-// 6 Convergence
-// *************
+// 6 Convergence, target moments, target correlations and number of scenarios 
+// **************************************************************************
 //
 // Remark:
 // The level of on-screen reporting by the HKW algorithm should be set at
@@ -788,13 +804,17 @@
 // read; D: DOW, G: generic STD, R: restricted STD; default: D
 //
 // I <string>; name of file where deterministic MCFND base network is to be
-// read; default value is './base_network.dow' (Linux instructions) or
-// './inout/base_network.dow' (Docker instructions)
+// read; default value is './base-determ-network.dow' (Linux instructions) or
+// './inout/base-determ-network.dow' (Docker instructions)
 //
-// O <string>; name of file where MCFND instances resulting from
-// scenario generation are to be written; default value is
-// './generated_networks.txt' (Linux instructions) or
-// './inout/generated_networks.txt' (Docker instructions)
+// O <string>; name of file where MCFND instance resulting from
+// scenario generation is to be written; default value is
+// './generated-stoch-network.txt' (Linux instructions) or
+// './inout/generated-stoch-network.txt' (Docker instructions)
+//
+// J <> (no value supplied); write the MCFND instance resulting from
+// scenario generation without first checking for feasibility of each 
+// scenario and reporting on results.
 //
 // S <int>; identifies which subsets of parameters should vary between
 // scenarios; expects a number (from 1 to 31) which is a sum of the following:
@@ -806,16 +826,16 @@
 //
 // K <> (no value supplied); if included, target correlations are directly
 // specified in blocks using options X and written to file
-// './target_corrs.dat' (Linux instructions) or './inout/target_corrs.dat'
+// './correlations.dat' (Linux instructions) or './inout/correlations.dat'
 // (Docker instructions), unless this default name is changed with option C;
-// if omitted, target correlations are read from file './target_corrs.dat'
-// (Linux instructions) or './inout/target_corrs.dat' (Docker instructions),
+// if omitted, target correlations are read from file './correlations.dat'
+// (Linux instructions) or './inout/correlations.dat' (Docker instructions),
 // unless this default name is changed with option C
 //
 // C <string>; name of file where target correlations are read if K is omitted
 // and where generated target correlations are written if K is included;
-// default: './target_corrs.dat' (Linux instructions) or
-// './inout/target_corrs.dat' (Docker instructions)
+// default: './correlations.dat' (Linux instructions) or
+// './inout/correlations.dat' (Docker instructions)
 //
 // X<char><char> <double>; identifies target correlations within or between
 // subsets of parameters that are randomized (i.e, that vary between
@@ -834,16 +854,16 @@
 // (self-correlations being equal to 1.0); Remark: -XFD and -XDF are equivalent
 //
 // G <> (no value supplied); if included, target moments are generated based on
-// option T and written to file './target_moms.dat' (Linux instructions) or
-// './inout/target_moms.dat' (Docker instructions), unless this default name is
+// option T and written to file './moments.dat' (Linux instructions) or
+// './inout/moments.dat' (Docker instructions), unless this default name is
 // changed with option M; if omitted, target moments are read from file
-// './target_moms.dat' (Linux instructions) or './inout/target_moms.dat'
+// './moments.dat' (Linux instructions) or './inout/moments.dat'
 // (Docker instructions) unless this default name is changed with option M
 //
 // M <string>; name of file where target moments are read if option G is
 // omitted or where generated target moments are written if option G is
-// included; default: './target_moms.dat' (Linux
-// instructions) or './inout/target_moms.dat' (Docker instructions)
+// included; default: './moments.dat' (Linux
+// instructions) or './inout/moments.dat' (Docker instructions)
 //
 // T <char>; distributional characteristics of generated target moments
 // (U : UNIFORM , T : TRIANGULAR); any use of option T without option G
@@ -893,14 +913,14 @@
 // n <int>; number of scenarios to generate; default: 1000
 //
 // t <int>; maximum number of trials (attempts to generate scenarios using
-// alternative random starting values); default: 20
+// alternative random starting values); default: 10
 //
 // i <int>; maximum number of iterations in a trial; default: 50
 //
-// m <double>; maximum error in matching moments (scaled to var=1);
+// m <double>; maximum RMS error in matching moments (scaled to var=1);
 // default: 0.001
 //
-// c <double>; maximum error in matching correlations (scaled to var=1);
+// c <double>; maximum RMS error in matching correlations (scaled to var=1);
 // default: 0.001
 //
 // l <int>; level of on-screen reporting by HKW algorithm (between 0 and 11);
@@ -921,8 +941,8 @@
 //
 // R <int>; random stream; default: 1000
 //
-// 8 Examples
-// **********
+// 8 Detailed examples
+// *******************
 //
 // The program/examples subfolder holds examples of configuration files and 
 // instruction lines occurring when the executable of the program is run
@@ -961,7 +981,7 @@
 // Docker instruction:
 //
 // docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image \
-// /stoch_gen +v +F docker_stoch_config_oneSrcOneSnk_10oct2025-18h10_dow.par
+// /stoch_gen +v +F /inout/docker_stoch_config_oneSrcOneSnk_10oct2025-18h10_dow.par
 //
 // Configuration file (input) used with Docker instruction:
 // docker_stoch_config_oneSrcOneSnk_10oct2025-18h10_dow.par
@@ -1023,7 +1043,7 @@
 // Docker instruction:
 //
 // docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image \
-// /stoch_gen +v +F docker_stoch_config_oneSrcOneSnk_10oct2025-18h10_rstd.par
+// /stoch_gen +v +F /inout/docker_stoch_config_oneSrcOneSnk_10oct2025-18h10_rstd.par
 //
 // Configuration file (input) used with Docker instruction:
 // docker_stoch_config_oneSrcOneSnk_10oct2025-18h10_rstd.par
@@ -1068,7 +1088,7 @@
 // Docker instruction:
 //
 // docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image \
-// /stoch_gen +v +F docker_stoch_config_oneSrcOneSnk_10oct2025-18h10_gstd.par
+// /stoch_gen +v +F /inout/docker_stoch_config_oneSrcOneSnk_10oct2025-18h10_gstd.par
 //
 // Configuration file (input) used with Docker instruction:
 // docker_stoch_config_oneSrcOneSnk_10oct2025-18h10_gstd.par
@@ -1119,7 +1139,7 @@
 // Docker instruction:
 //
 // docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image \
-// /stoch_gen +v +F docker_stoch_config_eqSrcsEqSnks_10oct2025-18h10_gstd.par
+// /stoch_gen +v +F /inout/docker_stoch_config_eqSrcsEqSnks_10oct2025-18h10_gstd.par
 //
 // Configuration file (input) used with Docker instruction:
 // docker_stoch_config_eqSrcsEqSnks_10oct2025-18h10_gstd.par
@@ -1264,30 +1284,59 @@ int main(int argc, char **argv)
     int numbFeasible = 0;
 
     cout << "\nVerifying feasibility of every generated scenario.\n" << endl;
+	
+	displayTimeStamp();
 
-    // iterate over generated raw scenarios
-    for (int j = 0; j < numbScenarios; j++)
-    {
+	// check feasibility of each generated scenario, save only feasible scenarios and report
+	if (!params.skipFeasibChecks)
+	{
+		// iterate over generated raw scenarios
+		for (int j = 0; j < numbScenarios; j++)
+		{
 
-        if (j % 200 == 0)
-            cout << "Currently verifying feasibility of " << j + 1 << "th scenario out of " << numbScenarios << "."
-                 << endl;
+			if (j % 200 == 0)
+				cout << "Currently verifying feasibility of scenario " << j + 1 << " out of " << numbScenarios << " generated. " << endl;
 
-        // update instance with jth raw scenario
-        inst->copyScenario(j);
+			// update instance with jth raw scenario
+			inst->copyScenario(j);
 
-        // check if instance updated with scenario is feasible when all arcs
-        // are opened; write instance to output stream if so
-        if (model->testScenario())
-        {
-            // output operator is defined in instance.h;
-            // InstanceDow::write() or InstanceStd::write() is called
-            os << *inst << endl;
-            numbFeasible++;
-        }
-    }
+			// check if instance updated with scenario is feasible when all arcs
+			// are opened; write instance to output stream if so
+			if (model->testScenario())
+			{
+				// output operator is defined in instance.h;
+				// InstanceDow::write() or InstanceStd::write() is called
+				os << *inst << endl;
+				numbFeasible++;
+			}
+		}
 
-    cout << "\nSaved " << numbFeasible << " feasible scenarios out of " << numbScenarios << " generated. " << endl;
+		cout << "\nSaved " << numbFeasible << " feasible scenarios out of " << numbScenarios << " generated. " << endl;
+		
+		if (numbScenarios-numbFeasible != 0)
+		{
+			cout << "Warning: There were " << (numbScenarios - numbFeasible) << " infeasible scenarios out of " << numbScenarios << " generated.\n" << endl;
+		}
+	
+	}
+	// save all generated scenarios without checking each for feasibility
+	else
+	{
+		// iterate over generated raw scenarios
+		for (int j = 0; j < numbScenarios; j++)
+		{
+			// update instance with jth raw scenario
+			inst->copyScenario(j);
+
+			// InstanceDow::write() or InstanceStd::write() is called
+			os << *inst << endl;
+		}
+
+		cout << "\nSaved " << numbScenarios << " generated scenarios without checking for their feasibility. " << endl;		
+		cout << "\n(See option J.)\n" << endl;
+	}	
+	
+	displayTimeStamp();
     os.close();
     delete model;
     delete inst;
