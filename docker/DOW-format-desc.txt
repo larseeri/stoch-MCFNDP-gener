@@ -1,0 +1,47 @@
+2 May 2025
+
+Pseudocode describing the DOW file format
+for Fixed Charge Multicommodity Min Cost Flow Problems
+
+In the following, n, m, k are equal to the numbers of nodes, arcs, and
+commodities, respectively. X[ i ] denotes an element indexed over the arcs 
+(i = 1 .. m). X[ h ] denotes an element indexed over the commodities 
+(h = 1 .. k). X[ j ][ h ] denotes an element indexed over the nodes (j = 1.. n)
+and the commodities (h = 1 .. k). Names of the elements in X are
+self-explanatory.
+
+A negative mutual capacity is considered to be infinite. However, the current
+generator does not produce such uncapacitated arcs.
+
+The underlying graph can in principle be understood either as directed or as
+undirected. However, the current generator produces directed graphs.
+
+The fixed charge (FC) cost might in principle be omitted (i.e. taken as 0).
+Hence, its place is signalled with angled brackets. However, the current
+generator always produces FC costs.
+
+BEGINNING OF FORMAT - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+n
+m
+k
+
+for( i = 1 .. m ) // iterate over all arcs
+{ 
+	Start_Node[ i ]
+	End_Node[ i ]
+	Arc_Cost[ i ]                 // not commodity dependent
+	Mutual_Capacity[ i ]
+	< Fixed_Charge_Cost[ i ] >
+	1
+	i
+}
+
+for( h = 1 .. k ) // iterate over all commodities
+{
+	Origin[ h ]
+	Destination[ h ]
+	Supply[ Origin[ h ] ][ h ]          // Supply > 0
+}
+
+END OF FORMAT - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
