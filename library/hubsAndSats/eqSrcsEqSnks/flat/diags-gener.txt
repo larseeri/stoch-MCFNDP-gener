@@ -1,0 +1,1801 @@
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 6 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 20 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 42 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+
+****** Begin parsing configuration parameters from command line.
+
+****** End parsing configuration parameters from command line.
+
+numbNodes has automatically been set to 72 = lengthX * lengthY since grid secondary topology has been selected.
+counter: 300

@@ -1,0 +1,3192 @@
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11411_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11411_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-2-3-12-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-6313.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [1]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [11411]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11411_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11411_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11411_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11411_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11411_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:58:59
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4963:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3353:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0327:
+Overall error in moments and correlations after iteration  1:  0.032721
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0129:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0019:
+Overall error in moments and correlations after iteration  2:  0.001944
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0009:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000133
+
+Overall error in moments and correlations after trial  1:  0.000133
+
+2026-10-08 03:58:59
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:58:59
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 03:59:07
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11511_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11511_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-2-3-12-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-6313.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [1]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [11511]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11511_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11511_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11511_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11511_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11511_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:59:07
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5019:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3295:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0319:
+Overall error in moments and correlations after iteration  1:  0.031896
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0120:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0017:
+Overall error in moments and correlations after iteration  2:  0.001735
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0007:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000108
+
+Overall error in moments and correlations after trial  1:  0.000108
+
+2026-10-08 03:59:07
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:59:07
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 03:59:22
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11611_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11611_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-2-3-12-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-6313.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [2]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [11611]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11611_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11611_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11611_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11611_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11611_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:59:22
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4999:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3495:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0317:
+Overall error in moments and correlations after iteration  1:  0.031675
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0129:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0017:
+Overall error in moments and correlations after iteration  2:  0.001728
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0008:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000113
+
+Overall error in moments and correlations after trial  1:  0.000113
+
+2026-10-08 03:59:23
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:59:23
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 03:59:30
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11711_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11711_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-2-3-12-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-6313.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [2]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [11711]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11711_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11711_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11711_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11711_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11711_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:59:30
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5008:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3598:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0327:
+Overall error in moments and correlations after iteration  1:  0.032735
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0119:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0016:
+Overall error in moments and correlations after iteration  2:  0.001569
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0006:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000086
+
+Overall error in moments and correlations after trial  1:  0.000086
+
+2026-10-08 03:59:30
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:59:30
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 03:59:46
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11811_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11811_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-2-3-12-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-6313.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [3]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDA] = [-0.2]
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [11811]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11811_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11811_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11811_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11811_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11811_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:59:46
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.3971:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3672:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0291:
+Overall error in moments and correlations after iteration  1:  0.029098
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0157:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0018:
+Overall error in moments and correlations after iteration  2:  0.001766
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0012:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000139
+
+Overall error in moments and correlations after trial  1:  0.000139
+
+2026-10-08 03:59:46
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:59:46
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 03:59:54
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11911_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11911_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-2-3-12-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-6313.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [3]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDA] = [-0.2]
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [11911]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11911_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11911_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11911_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11911_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11911_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:59:54
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.3966:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3587:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0284:
+Overall error in moments and correlations after iteration  1:  0.028352
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0142:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0016:
+Overall error in moments and correlations after iteration  2:  0.001635
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0009:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000111
+
+Overall error in moments and correlations after trial  1:  0.000111
+
+2026-10-08 03:59:54
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:59:54
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 04:00:11
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12011_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12011_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-2-3-12-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-6313.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [5]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDC] = [-0.2]
+****** configuration file -- parameter [XCC] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [12011]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12011_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12011_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12011_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12011_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12011_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:00:11
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4856:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4524:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0401:
+Overall error in moments and correlations after iteration  1:  0.040138
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0458:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0042:
+Overall error in moments and correlations after iteration  2:  0.004189
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0105:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0010:
+Overall error in moments and correlations after iteration  3:  0.000976
+
+Overall error in moments and correlations after trial  1:  0.000976
+
+2026-10-08 04:00:18
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:00:18
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 04:00:26
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12111_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12111_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-2-3-12-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-6313.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [5]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDC] = [-0.2]
+****** configuration file -- parameter [XCC] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [12111]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12111_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12111_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12111_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12111_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12111_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:00:26
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4850:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4191:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0360:
+Overall error in moments and correlations after iteration  1:  0.035960
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0269:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0028:
+Overall error in moments and correlations after iteration  2:  0.002780
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0037:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0004:
+Overall error in moments and correlations after iteration  3:  0.000386
+
+Overall error in moments and correlations after trial  1:  0.000386
+
+2026-10-08 04:00:38
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:00:38
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 04:00:56
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12211_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12211_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-2-3-12-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-6313.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [1]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [12211]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12211_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12211_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12211_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12211_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12211_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:00:56
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4925:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3257:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0316:
+Overall error in moments and correlations after iteration  1:  0.031572
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0114:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0015:
+Overall error in moments and correlations after iteration  2:  0.001534
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0006:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000082
+
+Overall error in moments and correlations after trial  1:  0.000082
+
+2026-10-08 04:00:56
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:00:56
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 04:01:05
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12311_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12311_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-2-3-12-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-6313.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [1]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [12311]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12311_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12311_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12311_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12311_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12311_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:01:05
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5043:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3378:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0333:
+Overall error in moments and correlations after iteration  1:  0.033336
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0118:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0017:
+Overall error in moments and correlations after iteration  2:  0.001654
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0006:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000090
+
+Overall error in moments and correlations after trial  1:  0.000090
+
+2026-10-08 04:01:05
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:01:05
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 04:01:21
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12411_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12411_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-2-3-12-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-6313.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [2]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [12411]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12411_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12411_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12411_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12411_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12411_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:01:21
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5012:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3608:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0319:
+Overall error in moments and correlations after iteration  1:  0.031877
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0126:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0016:
+Overall error in moments and correlations after iteration  2:  0.001620
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0008:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000101
+
+Overall error in moments and correlations after trial  1:  0.000101
+
+2026-10-08 04:01:22
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:01:22
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 04:01:30
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12511_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12511_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-2-3-12-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-6313.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [2]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [12511]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12511_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12511_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12511_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12511_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12511_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:01:30
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4997:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3624:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0342:
+Overall error in moments and correlations after iteration  1:  0.034161
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0127:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0017:
+Overall error in moments and correlations after iteration  2:  0.001715
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0007:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000100
+
+Overall error in moments and correlations after trial  1:  0.000100
+
+2026-10-08 04:01:30
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:01:30
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 04:01:48
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12611_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12611_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-2-3-12-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-6313.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [3]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDA] = [-0.2]
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [12611]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12611_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12611_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12611_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12611_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12611_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:01:48
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.3976:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3696:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0304:
+Overall error in moments and correlations after iteration  1:  0.030378
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0156:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0018:
+Overall error in moments and correlations after iteration  2:  0.001820
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0012:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000143
+
+Overall error in moments and correlations after trial  1:  0.000143
+
+2026-10-08 04:01:48
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:01:48
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 04:01:57
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12711_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12711_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-2-3-12-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-6313.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [3]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDA] = [-0.2]
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [12711]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12711_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12711_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12711_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12711_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12711_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:01:57
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.3962:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3724:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0307:
+Overall error in moments and correlations after iteration  1:  0.030740
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0143:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0016:
+Overall error in moments and correlations after iteration  2:  0.001614
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0009:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000103
+
+Overall error in moments and correlations after trial  1:  0.000103
+
+2026-10-08 04:01:57
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:01:57
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 04:02:15
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12811_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12811_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-2-3-12-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-6313.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [5]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDC] = [-0.2]
+****** configuration file -- parameter [XCC] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [12811]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12811_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12811_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12811_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12811_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12811_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:02:15
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4856:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4468:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0390:
+Overall error in moments and correlations after iteration  1:  0.039006
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0471:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0045:
+Overall error in moments and correlations after iteration  2:  0.004525
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0110:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0011:
+Overall error in moments and correlations after iteration  3:  0.001077
+
+Iteration 4
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0029:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0003:
+Overall error in moments and correlations after iteration  4:  0.000276
+
+Overall error in moments and correlations after trial  1:  0.000276
+
+2026-10-08 04:02:24
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:02:24
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 04:02:33
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12911_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12911_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-2-3-12-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-6313.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [5]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDC] = [-0.2]
+****** configuration file -- parameter [XCC] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [12911]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12911_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12911_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12911_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12911_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12911_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:02:33
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4850:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4210:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0367:
+Overall error in moments and correlations after iteration  1:  0.036727
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0276:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0029:
+Overall error in moments and correlations after iteration  2:  0.002930
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0039:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0004:
+Overall error in moments and correlations after iteration  3:  0.000414
+
+Overall error in moments and correlations after trial  1:  0.000414
+
+2026-10-08 04:02:45
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:02:45
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 04:03:02
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13011_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13011_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-4-5-10-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-8813.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [1]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [13011]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13011_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13011_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13011_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13011_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13011_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:03:02
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4967:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3335:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0362:
+Overall error in moments and correlations after iteration  1:  0.036193
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0144:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0022:
+Overall error in moments and correlations after iteration  2:  0.002207
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0009:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000149
+
+Overall error in moments and correlations after trial  1:  0.000149
+
+2026-10-08 04:03:02
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:03:02
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 04:03:15
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13111_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13111_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-4-5-10-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-8813.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [1]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [13111]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13111_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13111_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13111_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13111_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13111_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:03:15
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4993:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3205:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0313:
+Overall error in moments and correlations after iteration  1:  0.031280
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0123:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0018:
+Overall error in moments and correlations after iteration  2:  0.001838
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0008:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000125
+
+Overall error in moments and correlations after trial  1:  0.000125
+
+2026-10-08 04:03:15
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:03:15
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 04:03:42
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13211_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13211_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-4-5-10-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-8813.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [2]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [13211]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13211_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13211_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13211_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13211_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13211_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:03:42
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5009:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4145:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0391:
+Overall error in moments and correlations after iteration  1:  0.039111
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0216:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0026:
+Overall error in moments and correlations after iteration  2:  0.002628
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0023:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0003:
+Overall error in moments and correlations after iteration  3:  0.000278
+
+Overall error in moments and correlations after trial  1:  0.000278
+
+2026-10-08 04:03:43
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:03:43
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 04:03:57
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13311_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13311_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-4-5-10-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-8813.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [2]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [13311]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13311_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13311_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13311_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13311_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13311_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:03:57
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5002:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3837:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0330:
+Overall error in moments and correlations after iteration  1:  0.032987
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0146:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0017:
+Overall error in moments and correlations after iteration  2:  0.001713
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0010:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000121
+
+Overall error in moments and correlations after trial  1:  0.000121
+
+2026-10-08 04:03:58
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:03:58
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 04:04:26
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13411_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13411_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-4-5-10-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-8813.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [3]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDA] = [-0.2]
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [13411]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13411_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13411_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13411_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13411_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13411_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:04:26
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4656:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4071:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0356:
+Overall error in moments and correlations after iteration  1:  0.035634
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0216:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0022:
+Overall error in moments and correlations after iteration  2:  0.002238
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0023:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0002:
+Overall error in moments and correlations after iteration  3:  0.000244
+
+Overall error in moments and correlations after trial  1:  0.000244
+
+2026-10-08 04:04:27
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:04:27
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 04:04:43
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13511_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13511_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-4-5-10-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-8813.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [3]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDA] = [-0.2]
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [13511]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13511_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13511_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13511_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13511_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13511_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:04:43
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4647:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4024:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0362:
+Overall error in moments and correlations after iteration  1:  0.036248
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0176:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0021:
+Overall error in moments and correlations after iteration  2:  0.002150
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0014:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0002:
+Overall error in moments and correlations after iteration  3:  0.000173
+
+Overall error in moments and correlations after trial  1:  0.000173
+
+2026-10-08 04:04:45
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:04:45
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 04:05:14
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13611_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13611_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-4-5-10-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-8813.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [5]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDC] = [-0.2]
+****** configuration file -- parameter [XCC] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [13611]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13611_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13611_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13611_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13611_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13611_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:05:14
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4966:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.5007:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0363:
+Overall error in moments and correlations after iteration  1:  0.036252
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.1589:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0069:
+Overall error in moments and correlations after iteration  2:  0.006858
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0900:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0043:
+Overall error in moments and correlations after iteration  3:  0.004323
+
+Iteration 4
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0594:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0030:
+Overall error in moments and correlations after iteration  4:  0.003006
+
+Iteration 5
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0421:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0022:
+Overall error in moments and correlations after iteration  5:  0.002215
+
+Iteration 6
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0313:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0017:
+Overall error in moments and correlations after iteration  6:  0.001695
+
+Iteration 7
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0240:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0013:
+Overall error in moments and correlations after iteration  7:  0.001330
+
+Iteration 8
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0188:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0011:
+Overall error in moments and correlations after iteration  8:  0.001064
+
+Iteration 9
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0150:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0009:
+Overall error in moments and correlations after iteration  9:  0.000863
+
+Overall error in moments and correlations after trial  1:  0.000863
+
+2026-10-08 04:09:12
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:09:12
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 04:09:26
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13711_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13711_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-4-5-10-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-8813.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [5]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDC] = [-0.2]
+****** configuration file -- parameter [XCC] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [13711]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13711_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13711_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13711_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13711_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13711_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:09:26
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4963:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4571:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0356:
+Overall error in moments and correlations after iteration  1:  0.035609
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0683:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0047:
+Overall error in moments and correlations after iteration  2:  0.004683
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0225:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0016:
+Overall error in moments and correlations after iteration  3:  0.001608
+
+Iteration 4
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0085:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0006:
+Overall error in moments and correlations after iteration  4:  0.000601
+
+Overall error in moments and correlations after trial  1:  0.000601
+
+2026-10-08 04:12:27
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:12:27
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 04:12:54
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13811_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13811_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-4-5-10-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-8813.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [1]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [13811]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13811_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13811_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13811_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13811_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13811_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:12:54
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4926:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.2842:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0273:
+Overall error in moments and correlations after iteration  1:  0.027302
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0109:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0016:
+Overall error in moments and correlations after iteration  2:  0.001637
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0007:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000108
+
+Overall error in moments and correlations after trial  1:  0.000108
+
+2026-10-08 04:12:54
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:12:54
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 04:13:07
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13911_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13911_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-4-5-10-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-8813.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [1]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [13911]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13911_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13911_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13911_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13911_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-13911_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:13:07
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4989:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3010:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0274:
+Overall error in moments and correlations after iteration  1:  0.027446
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0103:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0015:
+Overall error in moments and correlations after iteration  2:  0.001469
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0006:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000092
+
+Overall error in moments and correlations after trial  1:  0.000092
+
+2026-10-08 04:13:07
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:13:07
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 04:13:34
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14011_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14011_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-4-5-10-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-8813.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [2]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [14011]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14011_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14011_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14011_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14011_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14011_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:13:34
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5008:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3695:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0287:
+Overall error in moments and correlations after iteration  1:  0.028651
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0180:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0019:
+Overall error in moments and correlations after iteration  2:  0.001939
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0018:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0002:
+Overall error in moments and correlations after iteration  3:  0.000195
+
+Overall error in moments and correlations after trial  1:  0.000195
+
+2026-10-08 04:13:35
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:13:35
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 04:13:49
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14111_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14111_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-4-5-10-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-8813.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [2]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [14111]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14111_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14111_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14111_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14111_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14111_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:13:49
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5008:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4034:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0372:
+Overall error in moments and correlations after iteration  1:  0.037163
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0170:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0022:
+Overall error in moments and correlations after iteration  2:  0.002178
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0013:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0002:
+Overall error in moments and correlations after iteration  3:  0.000167
+
+Overall error in moments and correlations after trial  1:  0.000167
+
+2026-10-08 04:13:50
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:13:50
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 04:14:17
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14211_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14211_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-4-5-10-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-8813.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [3]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDA] = [-0.2]
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [14211]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14211_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14211_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14211_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14211_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14211_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:14:17
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4648:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4053:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0350:
+Overall error in moments and correlations after iteration  1:  0.035023
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0223:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0025:
+Overall error in moments and correlations after iteration  2:  0.002518
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0025:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0003:
+Overall error in moments and correlations after iteration  3:  0.000286
+
+Overall error in moments and correlations after trial  1:  0.000286
+
+2026-10-08 04:14:18
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:14:18
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 04:14:33
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14311_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14311_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-4-5-10-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-8813.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [3]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDA] = [-0.2]
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [14311]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14311_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14311_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14311_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14311_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14311_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:14:33
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4645:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4016:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0360:
+Overall error in moments and correlations after iteration  1:  0.036039
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0174:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0021:
+Overall error in moments and correlations after iteration  2:  0.002062
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0013:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0002:
+Overall error in moments and correlations after iteration  3:  0.000164
+
+Overall error in moments and correlations after trial  1:  0.000164
+
+2026-10-08 04:14:35
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:14:35
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 04:15:01
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14411_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14411_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-4-5-10-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-8813.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [5]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDC] = [-0.2]
+****** configuration file -- parameter [XCC] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [14411]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14411_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14411_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14411_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14411_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14411_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:15:01
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4966:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4864:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0323:
+Overall error in moments and correlations after iteration  1:  0.032308
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.1590:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0068:
+Overall error in moments and correlations after iteration  2:  0.006779
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0896:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0043:
+Overall error in moments and correlations after iteration  3:  0.004308
+
+Iteration 4
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0587:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0030:
+Overall error in moments and correlations after iteration  4:  0.002987
+
+Iteration 5
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0414:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0022:
+Overall error in moments and correlations after iteration  5:  0.002187
+
+Iteration 6
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0306:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0017:
+Overall error in moments and correlations after iteration  6:  0.001660
+
+Iteration 7
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0233:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0013:
+Overall error in moments and correlations after iteration  7:  0.001293
+
+Iteration 8
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0182:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0010:
+Overall error in moments and correlations after iteration  8:  0.001026
+
+Iteration 9
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0144:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0008:
+Overall error in moments and correlations after iteration  9:  0.000827
+
+Overall error in moments and correlations after trial  1:  0.000827
+
+2026-10-08 04:19:04
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:19:04
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 04:19:16
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14511_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14511_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-4-5-10-15-45-10-15-2_noPar-20_adjSpe-1~00-1~00_seed-50163844_strm-8813.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.25]
+****** configuration file -- parameter [B] = [0.25]
+****** configuration file -- parameter [S] = [5]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDC] = [-0.2]
+****** configuration file -- parameter [XCC] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [14511]
+****** configuration file -- parameter [C] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/corrs_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14511_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/moms_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14511_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/raw-scens_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14511_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/stoch-inst_pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14511_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh/pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-8813_smlInstTigh_F-G_G_T-U_A-0~25_B-0~25_S-5_K_XDD-0~5_XDC--0~2_XCC-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-14511_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 04:19:17
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4962:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4655:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0375:
+Overall error in moments and correlations after iteration  1:  0.037457
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0685:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0047:
+Overall error in moments and correlations after iteration  2:  0.004734
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0225:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0016:
+Overall error in moments and correlations after iteration  3:  0.001619
+
+Iteration 4
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0085:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0006:
+Overall error in moments and correlations after iteration  4:  0.000605
+
+Overall error in moments and correlations after trial  1:  0.000605
+
+2026-10-08 04:22:07
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 04:22:07
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 04:22:36
+counter: 32

@@ -1,0 +1,2321 @@
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22412_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22412_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [1]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [22412]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22412_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22412_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22412_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22412_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22412_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:00:44
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5038:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3347:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0318:
+Overall error in moments and correlations after iteration  1:  0.031792
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0111:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0016:
+Overall error in moments and correlations after iteration  2:  0.001558
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0006:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000091
+
+Overall error in moments and correlations after trial  1:  0.000091
+
+2026-10-08 03:00:44
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:00:44
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 03:01:05
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22512_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22512_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [1]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [22512]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22512_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22512_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22512_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22512_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22512_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:01:05
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4968:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3314:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0322:
+Overall error in moments and correlations after iteration  1:  0.032166
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0118:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0017:
+Overall error in moments and correlations after iteration  2:  0.001657
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0007:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000096
+
+Overall error in moments and correlations after trial  1:  0.000096
+
+2026-10-08 03:01:05
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:01:05
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 03:01:44
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22612_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22612_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [2]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [22612]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22612_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22612_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22612_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22612_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22612_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:01:44
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5006:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4378:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0439:
+Overall error in moments and correlations after iteration  1:  0.043877
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0286:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0035:
+Overall error in moments and correlations after iteration  2:  0.003477
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0038:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0005:
+Overall error in moments and correlations after iteration  3:  0.000469
+
+Overall error in moments and correlations after trial  1:  0.000469
+
+2026-10-08 03:01:46
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:01:46
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 03:02:06
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22712_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22712_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [2]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [22712]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22712_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22712_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22712_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22712_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22712_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:02:06
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5000:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4081:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0376:
+Overall error in moments and correlations after iteration  1:  0.037583
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0180:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0022:
+Overall error in moments and correlations after iteration  2:  0.002188
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0015:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0002:
+Overall error in moments and correlations after iteration  3:  0.000183
+
+Overall error in moments and correlations after trial  1:  0.000183
+
+2026-10-08 03:02:09
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:02:09
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 03:02:49
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22812_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22812_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [3]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDA] = [-0.2]
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [22812]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22812_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22812_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22812_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22812_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22812_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:02:49
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4694:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4171:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0367:
+Overall error in moments and correlations after iteration  1:  0.036693
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0274:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0031:
+Overall error in moments and correlations after iteration  2:  0.003077
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0038:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0004:
+Overall error in moments and correlations after iteration  3:  0.000434
+
+Overall error in moments and correlations after trial  1:  0.000434
+
+2026-10-08 03:02:51
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:02:51
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 03:03:11
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [3]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDA] = [-0.2]
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [22912]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:03:11
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4693:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4181:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0390:
+Overall error in moments and correlations after iteration  1:  0.038956
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0207:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0025:
+Overall error in moments and correlations after iteration  2:  0.002517
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0019:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0002:
+Overall error in moments and correlations after iteration  3:  0.000237
+
+Overall error in moments and correlations after trial  1:  0.000237
+
+2026-10-08 03:03:14
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:03:14
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 03:03:55
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23012_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23012_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [1]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [23012]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23012_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23012_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23012_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23012_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23012_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:03:55
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4965:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3415:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0361:
+Overall error in moments and correlations after iteration  1:  0.036062
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0143:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0022:
+Overall error in moments and correlations after iteration  2:  0.002188
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0010:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0002:
+Overall error in moments and correlations after iteration  3:  0.000153
+
+Overall error in moments and correlations after trial  1:  0.000153
+
+2026-10-08 03:03:55
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:03:55
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 03:04:15
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23112_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23112_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [1]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [23112]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23112_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23112_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23112_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23112_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23112_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:04:15
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5006:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3347:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0338:
+Overall error in moments and correlations after iteration  1:  0.033783
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0122:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0018:
+Overall error in moments and correlations after iteration  2:  0.001757
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0007:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000100
+
+Overall error in moments and correlations after trial  1:  0.000100
+
+2026-10-08 03:04:15
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:04:15
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 03:04:54
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23212_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23212_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [2]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [23212]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23212_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23212_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23212_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23212_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23212_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:04:54
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5004:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4280:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0407:
+Overall error in moments and correlations after iteration  1:  0.040743
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0268:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0031:
+Overall error in moments and correlations after iteration  2:  0.003092
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0035:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0004:
+Overall error in moments and correlations after iteration  3:  0.000406
+
+Overall error in moments and correlations after trial  1:  0.000406
+
+2026-10-08 03:04:56
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:04:56
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 03:05:15
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23312_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23312_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [2]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [23312]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23312_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23312_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23312_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23312_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23312_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:05:15
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5003:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4065:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0371:
+Overall error in moments and correlations after iteration  1:  0.037064
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0182:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0022:
+Overall error in moments and correlations after iteration  2:  0.002165
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0015:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0002:
+Overall error in moments and correlations after iteration  3:  0.000182
+
+Overall error in moments and correlations after trial  1:  0.000182
+
+2026-10-08 03:05:18
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:05:18
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 03:05:54
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23412_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23412_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [3]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDA] = [-0.2]
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [23412]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23412_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23412_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23412_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23412_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23412_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:05:54
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4698:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4264:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0387:
+Overall error in moments and correlations after iteration  1:  0.038749
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0279:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0031:
+Overall error in moments and correlations after iteration  2:  0.003052
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0038:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0004:
+Overall error in moments and correlations after iteration  3:  0.000423
+
+Overall error in moments and correlations after trial  1:  0.000423
+
+2026-10-08 03:05:56
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:05:56
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 03:06:16
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23512_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23512_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [3]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDA] = [-0.2]
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [23512]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23512_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23512_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23512_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23512_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23512_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:06:16
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4697:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4116:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0369:
+Overall error in moments and correlations after iteration  1:  0.036870
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0198:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0023:
+Overall error in moments and correlations after iteration  2:  0.002317
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0018:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0002:
+Overall error in moments and correlations after iteration  3:  0.000214
+
+Overall error in moments and correlations after trial  1:  0.000214
+
+2026-10-08 03:06:19
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:06:19
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 03:06:58
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23612_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23612_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-4-5-3-5-3-5-2-8-2-8-10-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-7843.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [1]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [23612]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23612_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23612_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23612_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23612_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23612_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:06:58
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5004:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3276:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0343:
+Overall error in moments and correlations after iteration  1:  0.034266
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0129:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0019:
+Overall error in moments and correlations after iteration  2:  0.001908
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0008:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000118
+
+Overall error in moments and correlations after trial  1:  0.000118
+
+2026-10-08 03:06:58
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:06:58
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 03:07:40
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23712_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23712_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-4-5-3-5-3-5-2-8-2-8-10-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-7843.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [1]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [23712]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23712_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23712_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23712_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23712_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23712_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:07:40
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5000:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3152:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0307:
+Overall error in moments and correlations after iteration  1:  0.030710
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0119:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0018:
+Overall error in moments and correlations after iteration  2:  0.001779
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0008:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000117
+
+Overall error in moments and correlations after trial  1:  0.000117
+
+2026-10-08 03:07:40
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:07:40
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 03:09:01
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23812_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23812_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-4-5-3-5-3-5-2-8-2-8-10-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-7843.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [2]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [23812]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23812_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23812_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23812_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23812_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23812_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:09:01
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5006:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4564:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0367:
+Overall error in moments and correlations after iteration  1:  0.036708
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0657:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0046:
+Overall error in moments and correlations after iteration  2:  0.004603
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0212:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0015:
+Overall error in moments and correlations after iteration  3:  0.001547
+
+Iteration 4
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0079:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0006:
+Overall error in moments and correlations after iteration  4:  0.000568
+
+Overall error in moments and correlations after trial  1:  0.000568
+
+2026-10-08 03:09:23
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:09:23
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 03:10:03
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23912_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23912_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-4-5-3-5-3-5-2-8-2-8-10-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-7843.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [2]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [23912]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23912_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23912_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23912_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23912_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-23912_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:10:03
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5004:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4190:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0335:
+Overall error in moments and correlations after iteration  1:  0.033548
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0355:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0033:
+Overall error in moments and correlations after iteration  2:  0.003288
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0068:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0006:
+Overall error in moments and correlations after iteration  3:  0.000627
+
+Overall error in moments and correlations after trial  1:  0.000627
+
+2026-10-08 03:10:32
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:10:32
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 03:11:59
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24012_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24012_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-4-5-3-5-3-5-2-8-2-8-10-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-7843.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [3]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDA] = [-0.2]
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [24012]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24012_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24012_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24012_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24012_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24012_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:11:59
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4925:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4463:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0330:
+Overall error in moments and correlations after iteration  1:  0.032967
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0658:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0043:
+Overall error in moments and correlations after iteration  2:  0.004264
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0214:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0015:
+Overall error in moments and correlations after iteration  3:  0.001461
+
+Iteration 4
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0080:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0005:
+Overall error in moments and correlations after iteration  4:  0.000542
+
+Overall error in moments and correlations after trial  1:  0.000542
+
+2026-10-08 03:12:21
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:12:21
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 03:13:02
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24112_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24112_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-4-5-3-5-3-5-2-8-2-8-10-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-7843.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [T]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [3]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDA] = [-0.2]
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [24112]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24112_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24112_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24112_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24112_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24112_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:13:02
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4921:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4408:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0388:
+Overall error in moments and correlations after iteration  1:  0.038755
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0376:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0037:
+Overall error in moments and correlations after iteration  2:  0.003708
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0072:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0007:
+Overall error in moments and correlations after iteration  3:  0.000713
+
+Overall error in moments and correlations after trial  1:  0.000713
+
+2026-10-08 03:13:32
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:13:32
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 03:14:54
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24212_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24212_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-4-5-3-5-3-5-2-8-2-8-10-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-7843.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [1]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [24212]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24212_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24212_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24212_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24212_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24212_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:14:54
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4983:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3091:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0295:
+Overall error in moments and correlations after iteration  1:  0.029454
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0109:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0015:
+Overall error in moments and correlations after iteration  2:  0.001525
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0006:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000089
+
+Overall error in moments and correlations after trial  1:  0.000089
+
+2026-10-08 03:14:54
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:14:54
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 03:15:36
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24312_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24312_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-4-5-3-5-3-5-2-8-2-8-10-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-7843.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [1]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [24312]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24312_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24312_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24312_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24312_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24312_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:15:36
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4961:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.3076:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0293:
+Overall error in moments and correlations after iteration  1:  0.029304
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0112:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0016:
+Overall error in moments and correlations after iteration  2:  0.001636
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0007:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0001:
+Overall error in moments and correlations after iteration  3:  0.000098
+
+Overall error in moments and correlations after trial  1:  0.000098
+
+2026-10-08 03:15:36
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:15:36
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 03:17:00
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24412_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24412_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-4-5-3-5-3-5-2-8-2-8-10-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-7843.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [2]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [24412]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24412_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24412_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24412_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24412_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24412_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:17:00
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5007:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4475:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0342:
+Overall error in moments and correlations after iteration  1:  0.034176
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0652:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0045:
+Overall error in moments and correlations after iteration  2:  0.004453
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0208:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0015:
+Overall error in moments and correlations after iteration  3:  0.001495
+
+Iteration 4
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0077:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0005:
+Overall error in moments and correlations after iteration  4:  0.000547
+
+Overall error in moments and correlations after trial  1:  0.000547
+
+2026-10-08 03:17:22
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:17:22
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 03:18:04
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24512_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24512_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-4-5-3-5-3-5-2-8-2-8-10-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-7843.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [2]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [24512]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24512_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24512_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24512_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24512_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-2_K_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24512_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:18:04
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.5004:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4359:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0379:
+Overall error in moments and correlations after iteration  1:  0.037943
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0372:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0037:
+Overall error in moments and correlations after iteration  2:  0.003658
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0072:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0007:
+Overall error in moments and correlations after iteration  3:  0.000705
+
+Overall error in moments and correlations after trial  1:  0.000705
+
+2026-10-08 03:18:33
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:18:33
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 03:19:55
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24612_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24612_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-4-5-3-5-3-5-2-8-2-8-10-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-7843.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [3]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDA] = [-0.2]
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [1500]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [24612]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24612_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24612_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24612_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24612_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24612_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:19:55
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4923:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4528:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0352:
+Overall error in moments and correlations after iteration  1:  0.035228
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0672:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0046:
+Overall error in moments and correlations after iteration  2:  0.004616
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0220:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0016:
+Overall error in moments and correlations after iteration  3:  0.001563
+
+Iteration 4
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0083:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0006:
+Overall error in moments and correlations after iteration  4:  0.000578
+
+Overall error in moments and correlations after trial  1:  0.000578
+
+2026-10-08 03:20:17
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:20:17
+Currently verifying feasibility of scenario 1 out of 1500 generated. 
+Currently verifying feasibility of scenario 201 out of 1500 generated. 
+Currently verifying feasibility of scenario 401 out of 1500 generated. 
+Currently verifying feasibility of scenario 601 out of 1500 generated. 
+Currently verifying feasibility of scenario 801 out of 1500 generated. 
+Currently verifying feasibility of scenario 1001 out of 1500 generated. 
+Currently verifying feasibility of scenario 1201 out of 1500 generated. 
+Currently verifying feasibility of scenario 1401 out of 1500 generated. 
+
+Saved 1500 feasible scenarios out of 1500 generated. 
+2026-10-08 03:20:59
+
+********* VERBOSE MODE *********
+
+****** configuration file name [+F] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24712_gstd.par]
+
+****** Begin parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24712_gstd.par
+
+****** configuration file -- parameter [F] = [G]
+****** configuration file -- parameter [I] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-4-5-3-5-3-5-2-8-2-8-10-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-7843.std]
+****** configuration file -- parameter [G] = []
+****** configuration file -- parameter [T] = [U]
+****** configuration file -- parameter [A] = [0.5]
+****** configuration file -- parameter [B] = [0.5]
+****** configuration file -- parameter [S] = [3]
+****** configuration file -- parameter [K] = []
+****** configuration file -- parameter [XDD] = [0.5]
+****** configuration file -- parameter [XDA] = [-0.2]
+****** configuration file -- parameter [XAA] = [0.5]
+****** configuration file -- parameter [n] = [3000]
+****** configuration file -- parameter [t] = [20]
+****** configuration file -- parameter [i] = [50]
+****** configuration file -- parameter [l] = [3]
+****** configuration file -- parameter [m] = [0.001]
+****** configuration file -- parameter [c] = [0.001]
+****** configuration file -- parameter [r] = [50163844]
+****** configuration file -- parameter [R] = [24712]
+****** configuration file -- parameter [C] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24712_gstd.dat]
+****** configuration file -- parameter [M] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24712_gstd.dat]
+****** configuration file -- parameter [o] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24712_gstd.dat]
+****** configuration file -- parameter [O] = [/local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24712_gstd.txt]
+
+****** End parsing this configuration file: /local2/lareri/library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-7843_smlInstLoo_F-G_G_T-U_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-24712_gstd.par
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-08 03:20:59
+
+Setting starting values and launching main trial 1
+****************************************************
+Starting properties:
+  Error in moments is 0.0000:
+  Error in correlations is 0.4921:
+
+Iteration 1
+After the linear (matrix) transformation:
+  Overall error in moments: 0.4440:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0397:
+Overall error in moments and correlations after iteration  1:  0.039743
+
+Iteration 2
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0383:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0039:
+Overall error in moments and correlations after iteration  2:  0.003856
+
+Iteration 3
+After the linear (matrix) transformation:
+  Overall error in moments: 0.0074:
+  Overall error in correlations: 0.0000:
+After the cubic transformation:
+  Overall error in moments: 0.0000:
+  Overall error in correlations: 0.0007:
+Overall error in moments and correlations after iteration  3:  0.000745
+
+Overall error in moments and correlations after trial  1:  0.000745
+
+2026-10-08 03:21:30
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-08 03:21:30
+Currently verifying feasibility of scenario 1 out of 3000 generated. 
+Currently verifying feasibility of scenario 201 out of 3000 generated. 
+Currently verifying feasibility of scenario 401 out of 3000 generated. 
+Currently verifying feasibility of scenario 601 out of 3000 generated. 
+Currently verifying feasibility of scenario 801 out of 3000 generated. 
+Currently verifying feasibility of scenario 1001 out of 3000 generated. 
+Currently verifying feasibility of scenario 1201 out of 3000 generated. 
+Currently verifying feasibility of scenario 1401 out of 3000 generated. 
+Currently verifying feasibility of scenario 1601 out of 3000 generated. 
+Currently verifying feasibility of scenario 1801 out of 3000 generated. 
+Currently verifying feasibility of scenario 2001 out of 3000 generated. 
+Currently verifying feasibility of scenario 2201 out of 3000 generated. 
+Currently verifying feasibility of scenario 2401 out of 3000 generated. 
+Currently verifying feasibility of scenario 2601 out of 3000 generated. 
+Currently verifying feasibility of scenario 2801 out of 3000 generated. 
+
+Saved 3000 feasible scenarios out of 3000 generated. 
+2026-10-08 03:22:55
+counter: 24
