@@ -35,9 +35,9 @@ The repository contains the following:
 
 To become proficient with the use of the GenStoch stochastic generator, we suggest to start with steps 1-2 and to iterate on steps 3-5:
 
-1 Read Sections 1 and 3 of Larsen et al. (2023) attentively.
-2 Skim the user guide USERGUIDE_STOCH.md entirely to build a cognitive structure (know where to seek information, start locating the information related to the task at hand). The user guide details installation, operation, functionalities and available options of the generator.
-3 Study the tutorial example TUTOREXAMPLE_STOCH.md in detail.
+1 Read Sections 1 and 3 of Larsen et al. (2023) attentively.\
+2 Skim the user guide USERGUIDE_STOCH.md entirely to build a cognitive structure (know where to seek information, start locating the information related to the task at hand). The user guide details installation, operation, functionalities and available options of the generator.\
+3 Study the tutorial example TUTOREXAMPLE_STOCH.md in detail.\
 4 Study USERGUIDE_STOCH.md in detail. 
 5 Launch generation experiments.
 

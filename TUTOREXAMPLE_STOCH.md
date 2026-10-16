@@ -120,10 +120,10 @@ d- The selected option values must conform to the restrictions stated in Section
 
 e- In this section, the suffixes appearing in the names of the option values indicate the expected type. For instance, option F expects a character. Hence the value is named F_char. 
 
-**2.1** It is advisable to make sure that the name of the configuration file is a unique identifier of its content and to state the command line calling the current configuration file as a comment within the configuration file itself. Here, name_string==./stoch_gen +v +F ../library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.par.
+**2.1** It is advisable to make sure that the name of the configuration file is a unique identifier of its content and to state the command line calling the current configuration file as a comment within the configuration file itself. Here, command_string==./stoch_gen +v +F ../library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.par.
 
 ```
-// file name: name_string
+// command string: command_string
 ```
 
 **2.2** Specifies the format of the base deterministic instance file. Here, F_char=='G' whence it has GSTD format.

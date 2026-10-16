@@ -56,7 +56,7 @@ make HIGHS_SOLVER=1
 
 An executable file named "stoch_gen" will be created inside the /program folder. Building with versions 11.5.0, 12.2.0, 13.2.0, 14.2.0 and 15.1.0 of the gcc compiler has been verified.
 
-Remarks:\
+Remarks:
 - To build once again with HIGHS if the program has already been built with CPLEX, run the following:
 
 ```
@@ -329,16 +329,16 @@ Consider this hypothetical Linux command line instruction:
 ```
 
 It is interpreted as follows:\
-\-S 3: demands and total capacities of arcs will be randomized
-\-I instB.std: base deterministic network is to be read from file instB.std
-\-F G: format of the latter is generic STD
-\-K: target correlations are specified in blocks (based on explicit and default values)
-\-XDD 0.5: individual target cross-correlations among demands are all equal to 0.5 and individual target self-correlations are all equal 1.0
-\-XDA -0.3: individual target cross-correlations between demands and total capacities of arcs are all equal -0.3
-\-XAA 0.7: individual target cross-correlations among total capacities of arcs are all equal to 0.7 and individual target self-correlations are all equal to 1.0
-\-G: target moments are generated (based on explicit and default specifications)
-\-T U: target moments are generated under the assumption that randomizations each obey a uniform distribution
-\-A 0.25: parameter alpha defining the latter distribution is 0.25
+\-S 3: demands and total capacities of arcs will be randomized\
+\-I instB.std: base deterministic network is to be read from file instB.std\
+\-F G: format of the latter is generic STD\
+\-K: target correlations are specified in blocks (based on explicit and default values)\
+\-XDD 0.5: individual target cross-correlations among demands are all equal to 0.5 and individual target self-correlations are all equal 1.0\
+\-XDA -0.3: individual target cross-correlations between demands and total capacities of arcs are all equal -0.3\
+\-XAA 0.7: individual target cross-correlations among total capacities of arcs are all equal to 0.7 and individual target self-correlations are all equal to 1.0\
+\-G: target moments are generated (based on explicit and default specifications)\
+\-T U: target moments are generated under the assumption that randomizations each obey a uniform distribution\
+\-A 0.25: parameter alpha defining the latter distribution is 0.25\
 \-B 0.25: parameter beta defining the latter distribution is 0.25
 
 See Section 7 for additional details about each option.
