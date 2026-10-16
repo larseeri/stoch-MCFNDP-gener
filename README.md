@@ -1,6 +1,4 @@
-(Oct 13th 2026)
-https://github.com/larseeri/stoch-MCFNDP-gener
-
+(October 16th 2026)
 
 ## Generator of instances of the linear, two-stage, stochastic, multi-commodity, capacitated, fixed charge network design problem with recourse
 

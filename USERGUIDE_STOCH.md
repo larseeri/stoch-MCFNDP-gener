@@ -1,5 +1,4 @@
-October 12th 2026
-https://github.com/larseeri/stoch-MCFNDP-gener
+(October 16th 2026)
 
 
 ## Generator of instances of the linear, two-stage, stochastic, multi-commodity, capacitated, fixed charge network design problem with recourse
@@ -17,15 +16,15 @@ Scenario generation code is based on 'A Heuristic for Moment-matching Scenario G
 The HKW code generates scenarios for multivariate random variables by matching specified first four moments and correlations. The algorithm is iterative and gradually closes the gap from target values. Although convergence has not been demonstrated theoretically, extensive empirical testing and application have shown that convergence occurs provided the
 requested number of scenarios is sufficiently large. Several trials may be required, each one starting from new random initializations automatically. (See Section 6 below.)
 
-This user guide comprises the following sections: 
-1 Building and running the program directly from the Linux command line
-2 Running the program through Docker instructions
-3 Randomized elements, target moments and target correlations
-4 Output file
-5 Formats of data files
-6 Convergence, target moments, target correlations and number of scenarios 
-7 Usage of options
-8 Detailed examples
+This user guide comprises the following sections:\
+1 Building and running the program directly from the Linux command line.\
+2 Running the program through Docker instructions.\
+3 Randomized elements, target moments and target correlations.\
+4 Output file.\
+5 Formats of data files.\
+6 Convergence, target moments, target correlations and number of scenarios.\
+7 Usage of options.\
+8 Detailed examples.
 
 ### 1 Building and running the program directly from the Linux command line
 
@@ -43,7 +42,7 @@ d- In a Linux terminal, go to the /program folder just created.
 
 e- Make sure that the gcc C++ compiler and the make C++ build tool are available.
 
-Remark:
+Remark:\
 If the gcc compiler and/or the make build tool are unavailable, consider running the program through Docker instructions (see Section 2 below).
 
 f- In the terminal, run ONLY ONE of these commands to build the program equipped either with the CPLEX solver or with the HIGHS solver:
@@ -57,7 +56,7 @@ make HIGHS_SOLVER=1
 
 An executable file named "stoch_gen" will be created inside the /program folder. Building with versions 11.5.0, 12.2.0, 13.2.0, 14.2.0 and 15.1.0 of the gcc compiler has been verified.
 
-Remarks:
+Remarks:\
 - To build once again with HIGHS if the program has already been built with CPLEX, run the following:
 
 ```
@@ -98,11 +97,11 @@ Verbosity option +v should be used to obtain more information about all options 
 
 The configuration file should have this format:
 
-optionKey1   value1
-optionKey2   value2
-.
-.
-optionKeyN   valueN
+optionKey1   value1\
+optionKey2   value2\
+.\
+.\
+optionKeyN   valueN\
 
 It may specify at most one option per line. Option keys may be prefixed or not with '-'. Comments may appear either at the beginning of a line, in which case they must start with a non-alphabetic character (but not with '-'), or at the end of a line.
 
@@ -128,14 +127,13 @@ or
 ./stoch_gen -h
 ```
 
-Summing up, option values are successively updated from these locations in
-this order:
-(i) hard-coded initialization values in lines 27-51 of configuration.cpp
-(ii) values appearing in configuration file whose name is specified in command line with +F (if it is specified and if it exists); if no valid configuration file is specified with +F in command line, values will be taken from default configuration file whose name is specified in line 1238 of main.cpp; at this point, the latter should exist
-(iii) values specified in the command line
+Summing up, option values are successively updated from these locations in this order:\
+(i) Hard-coded initialization values in lines 27-51 of configuration.cpp.\
+(ii) Values appearing in configuration file whose name is specified in command line with +F (if it is specified and if it exists); if no valid configuration file is specified with +F in command line, values will be taken from default configuration file whose name is specified in line 1238 of main.cpp; at this point, the latter should exist.\
+(iii) Values specified in the command line.\
 Notice that location (i) is insufficiently transparent to the user and should not be relied upon. Parameter values should be set through (ii) and (iii).
 
-Remark:
+Remark:\
 See Section 8 below for examples of configuration files and instructions when the program is run with command line instructions.
 
 ### 2 Running the program through Docker instructions
@@ -159,7 +157,7 @@ b- For simplicity, define the alias 'stoch_gen_image' through
 docker tag ghcr.io/larseeri/stoch_gen_image:latest stoch_gen_image
 ```
 
-Remark:
+Remark:\
 If the Docker image stoch_gen_image were instead available as the tar ball stoch_gen_image.tar, then it could be loaded through
 
 ```
@@ -216,19 +214,18 @@ docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inou
 /stoch_gen +v +F /inout/newParamFile.par -r 1234 -R 4567
 ```
 
-Important: 
+Important:\
 When running the program through Docker instructions, all input and output files must be located inside the docker/inout subfolder. Within the Docker instructions and the configuration files, this subfolder must be denoted /inout since it is located at the root of the Docker container. Hence, a replacement configuration file located at docker/inout/newParamFile.par will be specified in the Docker instruction with +F /inout/newParamFile.par. Similarly, a base network file at docker/inout/baseNetworkFile.std will be specified in the Docker instruction or inside the configuration file with -I /inout/baseNetworkFile.std.
 
 The default configuration file is located at docker/inout/stoch_config.par. It has initially been filled with illustrative values and should be edited appropriately if no replacement configuration file is indicated on the Docker instruction line with option key +F.
 
-Option parameter values are successively updated from these locations in
-this order:
-(i) initialization values hard-coded in lines 27-51 of configuration.cpp,
-(ii) either replacement configuration file specified in the Docker instruction line with option key +F, or default configuration file ./inout/stoch_config.par if no replacement configuration file is specified in the Docker instruction line with option key +F,
-(iii) values specified in the Docker instruction
+Option parameter values are successively updated from these locations in this order:\
+(i) Initialization values hard-coded in lines 27-51 of configuration.cpp.\
+(ii) Either replacement configuration file specified in the Docker instruction line with option key +F, or default configuration file ./inout/stoch_config.par if no replacement configuration file is specified in the Docker instruction line with option key +F.\
+(iii) Values specified in the Docker instruction.\
 Notice that location (i) is insufficiently transparent to the user and should not be relied upon. Parameter values should be set through (ii) and (iii).
 
-Important:
+Important:\
 The supplied Docker image conforms to the amd64 CPU instructions standard and will run natively on AMD and Intel CPUs. On CPUs conforming instead to the arm64 standard, e.g., on recent Apple computers, the supplied Docker image can be run through emulation. Essentially, this may be achieved as follows:
 
 a- Running the following preliminary instruction once. (For details, see https://hub.docker.com/r/tonistiigi/binfmt.)
@@ -275,22 +272,20 @@ Remarks:
 
 #### 3.1 Base deterministic MCFNDP instance and randomized elements
 
-Option S <int> must always be specified, either in the instruction line or in the configuration file. It indicates which subset of parameters of a given base deterministic MCFNDP instance will be assigned a joint probability distribution and will thus vary between scenarios. We call these parameters randomized elements. Option S expects an integer from 1 to 31 that is the sum of the following, where symbol -> is a shorthand notation for "calls for randomization of":
-1 -> demand volumes
-2 -> total capacities of arcs
-4 -> commodity-specific capacities of arcs
-8 -> fixed costs
-16 -> variable costs (either commodity-specific or not)
-Hence, specifying -S 3 in the instruction line indicates that total
-capacities of arcs (2) and demand volumes (1) must be randomized
-(2 + 1 = 3).
+Option S <int> must always be specified, either in the instruction line or in the configuration file. It indicates which subset of parameters of a given base deterministic MCFNDP instance will be assigned a joint probability distribution and will thus vary between scenarios. We call these parameters randomized elements. Option S expects an integer from 1 to 31 that is the sum of the following, where symbol -> is a shorthand notation for "calls for randomization of":\
+1 -> demand volumes\
+2 -> total capacities of arcs\
+4 -> commodity-specific capacities of arcs\
+8 -> fixed costs\
+16 -> variable costs (either commodity-specific or not)\
+Hence, specifying -S 3 in the instruction line indicates that total capacities of arcs (2) and demand volumes (1) must be randomized (2 + 1 = 3).
 
 By default, the name of the file describing the base deterministic MCFNDP instance is './base-determ-network.dow' (Linux instructions), './inout/base-determ-network.dow' (Docker instructions) and the default input format is DOW. This name may be changed with option I <string> and the input format can be indicated accordingly with option F <char>. For example, specifying -S 3 -I instB.std -F G in the instruction line indicates that demands and total capacities of arcs will be randomized based on the deterministic instance stored in file instB.std using the generic STD format. (See Section 5.1 below for details.)
 
-Important:
+Important:\
 It is critical that the content of the file describing the base deterministic MCFNDP instance and the indicated format of its content match together.
 
-Remark:
+Remark:\
 While the generator is sufficiently general to randomize fixed costs, the latter are usually viewed as being non-stochastic in the context of two-stage stochastic programming. Hence, in standard applications, randomization of the MCFNDP will be limited to a subset of the following: demand volumes, total capacities of arcs, commodity-specific capacities of arcs and variable costs (either commodity-specific or not).
 
 #### 3.2 Target moments
@@ -301,7 +296,7 @@ a- If option key G is included, target moments will be generated according to a 
 
 b- If option key G is not included, individual target moments will be read from the file whose default name is is './moments.dat' (Linux instructions) or './inout/moments.dat' (Docker instructions). The latter can be specified otherwise with option key M. Format of the target moments file is specified in Section 5.2.1 below. Without option G, option T will be rejected and options A and B will be ignored.
 
-Important:
+Important:\
 In case b-, that is when option G is omitted and target moments are read from a file, it is crucial that they are compatible with a proper probability distribution. If this condition fails, an attempt at randomization is meaningless and convergence of the HKW algorithm is expected to fail. In case a-, that is when option G is included, the target
 moments that are generated are by construction compatible with a proper probability distribution.
 
@@ -309,20 +304,20 @@ moments that are generated are by construction compatible with a proper probabil
 
 Target correlations can be set and saved as follows.
 
-a- If option key K is included, target correlations can be directly specified in blocks either (i) in the instruction line, or (ii) in the configuration file. A common target correlation coefficient within subset of parameters U or between subsets of parameters U and V is specified with X<UU> <double> and X<UV> <double> respectively, where <double> is the target correlation coefficient and U and V, can take these values, where symbol -> is a shorthand notation for "stands for":
-D -> demands
-A -> total capacities of arcs
-C -> commodity-specific capacities of arcs
-F -> fixed costs
-V -> variable costs
+a- If option key K is included, target correlations can be directly specified in blocks either (i) in the instruction line, or (ii) in the configuration file. A common target correlation coefficient within subset of parameters U or between subsets of parameters U and V is specified with X<UU> <double> and X<UV> <double> respectively, where <double> is the target correlation coefficient and U and V, can take these values, where symbol -> is a shorthand notation for "stands for":\
+D -> demands\
+A -> total capacities of arcs\
+C -> commodity-specific capacities of arcs\
+F -> fixed costs\
+V -> variable costs\
 Target correlations that are left unspecified are assumed by default to be zero. The resulting individual correlations will be written to a file whose default name is './correlations.dat' (Linux instructions) or './inout/correlations.dat' (Docker instructions). This name can be specified otherwise with option key C.
 
-Important:
+Important:\
 Cases (i) and (ii) are not coexistent: if any correlation information is supplied in the instruction line, any correlation information supplied in the configuration file is ignored.
 
 b- If option key K is not included, individual correlations will be read from a file whose default name is './correlations.dat' (Linux instructions) or './inout/correlations.dat' (Docker instructions). The latter can be specified otherwise with option key C. Format of the target correlations file is specified in Section 5.2.2 below. Without option K, options X?? will be rejected.
 
-Important:
+Important:\
 In case a-, when option key K is included, it is crucial that the block correlations that are specified result in a positive definite correlation matrix. Similarly, in case b-, when option key K is omitted, the supplied matrix must define a positive definite correlation matrix. Whenever the alleged correlation matrix, either constructed (case a-) or read from file (case b-), fails positive definitess, its Cholesky decomposition will fail in the HKW algorithm. A suggestion to verify and correct the alleged correlation matrix will be displayed and the program will be interrupted.
 
 #### 3.4 Example
@@ -333,18 +328,18 @@ Consider this hypothetical Linux command line instruction:
 ./stoch_gen -S 3 -I instB.std -F G -K -XDD 0.5 -XDA -0.3 -XAA 0.7 -G -T U -A 0.25 -B 0.25
 ```
 
-It is interpreted as follows:
--S 3: demands and total capacities of arcs will be randomized
--I instB.std: base deterministic network is to be read from file instB.std
--F G: format of the latter is generic STD
--K: target correlations are specified in blocks (based on explicit and default values)
--XDD 0.5: individual target cross-correlations among demands are all equal to 0.5 and individual target self-correlations are all equal 1.0
--XDA -0.3: individual target cross-correlations between demands and total capacities of arcs are all equal -0.3
--XAA 0.7: individual target cross-correlations among total capacities of arcs are all equal to 0.7 and individual target self-correlations are all equal to 1.0
--G: target moments are generated (based on explicit and default specifications)
--T U: target moments are generated under the assumption that randomizations each obey a uniform distribution
--A 0.25: parameter alpha defining the latter distribution is 0.25
--B 0.25: parameter beta defining the latter distribution is 0.25
+It is interpreted as follows:\
+\-S 3: demands and total capacities of arcs will be randomized
+\-I instB.std: base deterministic network is to be read from file instB.std
+\-F G: format of the latter is generic STD
+\-K: target correlations are specified in blocks (based on explicit and default values)
+\-XDD 0.5: individual target cross-correlations among demands are all equal to 0.5 and individual target self-correlations are all equal 1.0
+\-XDA -0.3: individual target cross-correlations between demands and total capacities of arcs are all equal -0.3
+\-XAA 0.7: individual target cross-correlations among total capacities of arcs are all equal to 0.7 and individual target self-correlations are all equal to 1.0
+\-G: target moments are generated (based on explicit and default specifications)
+\-T U: target moments are generated under the assumption that randomizations each obey a uniform distribution
+\-A 0.25: parameter alpha defining the latter distribution is 0.25
+\-B 0.25: parameter beta defining the latter distribution is 0.25
 
 See Section 7 for additional details about each option.
 
@@ -356,7 +351,7 @@ SCENARIO   <int>
 
 Immediately after the separator, the generated MCFNDP instance corresponding to the current scenario is described in its entirety with a format (DOW, restricted STD or generic STD; see Section 5.1 below), matching that used to supply the base deterministic MCFNDP instance. Stacking and separating full descriptions of the MCFNDP realizations in this fashion makes it easy to pinpoint and read the first and second stage information relevant to every individual scenario.
 
-Remark:
+Remark:\
 If specified, feasibility of the second stage of each generated MCFNDP instance is verified with the selected solver (CPLEX or HIGHS) after opening all arcs. Only the generated networks that are demonstrated feasible are added to the output file. A report indicating how many scenarios were generated and how many among the latter are feasible is produced. A warning is issued if one or more scenarios are infeasible.
 
 ### 5 Formats of data files
@@ -364,18 +359,18 @@ If specified, feasibility of the second stage of each generated MCFNDP instance 
 #### 5.1 Base deterministic MCFNDP instance and generated stochastic MCFNDP instance
 
 DOW and STD formats are commonly used to store deterministic MCFNDP instances in text files. These formats are described in files DOW-format-desc.txt and STD-format-desc.txt. The application can read from these two formats and, in addition, from a restricted version of STD. Thus, three formats are available for supplying the base deterministic MCFNDP 
-instance: DOW, STD (calling it generic STD, or GSTD) and a restricted version of STD (calling it restricted STD, or RSTD). One of these three formats may be selected with option F <char>. 
-a- DOW presupposes that (i) for each arc, capacities and variable costs are identical for all commodities and (ii) each commodity has a single source node (at which volume > 0) and a single sink node (at which volume < 0).
-b- Generic STD imposes neither (i), nor (ii).
+instance: DOW, STD (calling it generic STD, or GSTD) and a restricted version of STD (calling it restricted STD, or RSTD). One of these three formats may be selected with option F <char>.\
+a- DOW presupposes that (i) for each arc, capacities and variable costs are identical for all commodities and (ii) each commodity has a single source node (at which volume > 0) and a single sink node (at which volume < 0).\
+b- Generic STD imposes neither (i), nor (ii).\
 c- Restricted STD imposes only (ii).
 
-Important:
-When the base deterministic MCFNDP instance is received in the generic STD format, there are potentially multiple source and/or sink nodes for some or all commodities. In this case, whenever randomization of commodity volumes is requested through option S, it is handled through these steps:
-a- For each commodity, the total volume, the flows out of each source node and the flows into each sink node occurring in the base deterministic MCFNDP instance are saved for ulterior computations while reading (see InstanceGStd::read() in generate.cpp).
-b- Total commodity volumes are randomized (along with other stochastic elements if there are any) as they are when there are single source and sink nodes for each commodity.
+Important:\
+When the base deterministic MCFNDP instance is received in the generic STD format, there are potentially multiple source and/or sink nodes for some or all commodities. In this case, whenever randomization of commodity volumes is requested through option S, it is handled through these steps:\
+a- For each commodity, the total volume, the flows out of each source node and the flows into each sink node occurring in the base deterministic MCFNDP instance are saved for ulterior computations while reading (see InstanceGStd::read() in generate.cpp).\
+b- Total commodity volumes are randomized (along with other stochastic elements if there are any) as they are when there are single source and sink nodes for each commodity.\
 c- For each commodity, the randomized flows out of each source node and randomized flows into each sink node are calculated by distributing the randomized total commodity volume using the original ratios of inflows and outflows over total volume obtained in step a-.
 
-Remark:
+Remark:\
 The MCFNDP instances generated by the application (one for each scenario) are expressed in the same format as that used for supplying the base deterministic MCFNDP instance. Their descriptions are stacked and returned in the output file whose default name './generated-stoch-network.txt' (Linux instructions), './inout/generated-stoch-network.txt' (Docker instructions) can be modified with option O. (See Section 4 above.)
 
 #### 5.2 Input files supplied to HKW algorithm
@@ -383,47 +378,46 @@ The MCFNDP instances generated by the application (one for each scenario) are ex
 
 ##### 5.2.1 Target moments
 
-When option G is omitted from instruction line and from configuration file, target moments are read from a file named './moments.dat' (Linux instructions) or './inout/moments.dat' (Docker instructions) unless this is overridden with option M. The file containing the target moments matrix is formatted as follows (see Section 8 for examples):
-a- 1st line shows integer 4 (as there are 4 target moments per randomized stochastic element and therefore 4 rows in the matrix of target moments),
-b- 2nd line states the total number of individual randomized stochastic elements,
-c- 3rd line states the first target moment of each randomized stochastic element, separated by spaces and listed in this order: demands (if randomized), total capacities of arcs (if randomized), commodity-specific capacities of arcs(if randomized), fixed costs (if randomized), variable costs (if randomized). The number of figures in this line is equal to the number specified in 2nd line.
-d- 4th to 6th lines respectively state second, third and fourth target moments, exactly as 3rd row does for first target moment.
+When option G is omitted from instruction line and from configuration file, target moments are read from a file named './moments.dat' (Linux instructions) or './inout/moments.dat' (Docker instructions) unless this is overridden with option M. The file containing the target moments matrix is formatted as follows (see Section 8 for examples):\
+a- 1st line shows integer 4 (as there are 4 target moments per randomized stochastic element and therefore 4 rows in the matrix of target moments).\
+b- 2nd line states the total number of individual randomized stochastic elements.\
+c- 3rd line states the first target moment of each randomized stochastic element, separated by spaces and listed in this order: demands (if randomized), total capacities of arcs (if randomized), commodity-specific capacities of arcs(if randomized), fixed costs (if randomized), variable costs (if randomized). The number of figures in this line is equal to the number specified in 2nd line.\
+d- 4th to 6th lines respectively state second, third and fourth target moments, exactly as 3rd row does for first target moment.\
 e- Remaining lines of the file are ignored.
 
-Important:
-Exact definitions of the four target moments must satisfy these conditions:
-a- Population estimators are used (as in spreadsheets).
-b- 2nd moment is defined as variance, that is second central statistical moment, and not standard deviation.
-c- 3rd moment is defined as third central statistical moment divided by third power of standard deviation (i.e., standardized skewness).
-d- 4th moment is defined as fourth central statistical moment divided by fourth power of standard deviation minus 3 (i.e., excess standardized kurtosis).
+Important:\
+Exact definitions of the four target moments must satisfy these conditions:\
+a- Population estimators are used (as in spreadsheets).\
+b- 2nd moment is defined as variance, that is second central statistical moment, and not standard deviation.\
+c- 3rd moment is defined as third central statistical moment divided by third power of standard deviation (i.e., standardized skewness).\
+d- 4th moment is defined as fourth central statistical moment divided by fourth power of standard deviation minus 3 (i.e., excess standardized kurtosis).\
 
 ##### 5.2.2 Target correlations
 
-When option K is omitted from instruction line and from configuration file, target correlations are read from a file named './correlations.dat' (Linux instructions) or './inout/correlations.dat' (Docker instructions), unless this is overridden with option C. The file containing the target correlations matrix is formatted as follows (see Section 8 for examples):
-a- 1st and 2nd lines are identical and show the total number of individual randomized elements.
-b- Remaining lines of the file contain the target correlations matrix, one row of the matrix per line of the file. Individual correlations are separated by spaces.
-c- The correlation pairs appearing in the matrix are ordered by row and by column. Order in a row and order in a column is similar to that in a row of the matrix of target moments (see Section 4.1.1).
+When option K is omitted from instruction line and from configuration file, target correlations are read from a file named './correlations.dat' (Linux instructions) or './inout/correlations.dat' (Docker instructions), unless this is overridden with option C. The file containing the target correlations matrix is formatted as follows (see Section 8 for examples):\
+a- 1st and 2nd lines are identical and show the total number of individual randomized elements.\
+b- Remaining lines of the file contain the target correlations matrix, one row of the matrix per line of the file. Individual correlations are separated by spaces.\
+c- The correlation pairs appearing in the matrix are ordered by row and by column. Order in a row and order in a column is similar to that in a row of the matrix of target moments (see Section 4.1.1).\
 d- Any additional line in the file is ignored.
 
 ##### 5.2.3 Probabilities of scenarios
 
-If option p is omitted, then scenarios are assumed to be equiprobable. Option p can be used to supply the name of a file containing probabilities of all scenarios. The following format must be satisfied (see supplied example probs_100_eq_example.dat):
-a- 1st line states the number of scenarios
-b- 2nd line states all probabilities, separated by spaces
-c- Remaining lines of the file are ignored
-This file would be supplied as './probs_100_eq_example.dat' (Linux
-instructions) or './inout/probs_100_eq_example.dat' (Docker instructions).
+If option p is omitted, then scenarios are assumed to be equiprobable. Option p can be used to supply the name of a file containing probabilities of all scenarios. The following format must be satisfied (see supplied example probs_100_eq_example.dat):\
+a- 1st line states the number of scenarios.\
+b- 2nd line states all probabilities, separated by spaces.\
+c- Remaining lines of the file are ignored.\
+This file would be supplied as './probs_100_eq_example.dat' (Linux instructions) or './inout/probs_100_eq_example.dat' (Docker instructions).
 
 ##### 5.2.4 Raw scenarios in HKW format
 
 Raw scenarios are saved in HKW format to './raw_scens.dat' (Linux instructions) or './inout/raw_scens.dat' (Docker instructions), unless this is overriden with option o. Raw scenarios saved in previous run can be used as starting values in a following run (using option s). These will only be used in the first trial of the current run of the HKW algorithm. If this trial does not converge and the maximum number of trials specified by option t is larger than 1, the next trial starts from random guesses.
 
-Important:
+Important:\
 Raw scenarios pertain to the individual stochastic elements. They are distinct from the MCFNDP instance scenarios produced by the application and described in Section 4 above.
 
 ### 6 Convergence, target moments, target correlations and number of scenarios
 
-Remark:
+Remark:\
 The level of on-screen reporting by the HKW algorithm should be set at no less than the default value of 3 (option l) to adequately follow the convergence process.
 
 The HKW algorithm might fail to satisfy the specified target moments and correlations within the default tolerances with the requested number of scenarios within the default number of trials and iterations. If convergence fails, the following course of action is recommended:
@@ -444,7 +438,7 @@ Remarks:
 
 If both target moments and target correlations are known to be properly specified, consider launching a new run after increasing the maximum numbers of trials and iterations, respectively options t and i. Doubling their values from default is suggested.
 
-Remark:
+Remark:\
 Default values for the numbers of trials and iterations are usually sufficient to reach convergence under the default error tolerances. Failure of convergence is most frequently due to the causes examined in Paragraphs 1 and 3 above and below.
 
 3- Adjust the number of scenarios.
@@ -461,7 +455,7 @@ Remarks:
 
 Except for option key S (and leaving aside option key F when it is prefixed by '+' in the instruction line), non-boolean user-selected options that are specified neither in the instruction line nor the configuration file are set to the values that are hard-coded in the constructor in lines 27-51 of configuration.cpp. Boolean user-selected options that are specified neither in the instruction line nor in the configuration file are set to false by default.
 
-Notation:
+Notation:\
 For the purposes of this presentation, <...> indicates that some value or values of the type specified inside the brackets is expected. For instance, <string> means that a string is expected whereas <> means that no value is expected.
 
 #### 7.1 Options available in instruction line only (Linux or Docker)
@@ -470,14 +464,14 @@ For the purposes of this presentation, <...> indicates that some value or values
 +F <string>; name of configuration file supplying option parameter values; this replaces the default file whose name is hard-coded in line 1238 of main.cpp; any option value supplied in instruction line replaces value of same option supplied in configuration file +v <> (no value supplied); requests verbosity while parsing options in instruction line or configuration file
 ```
 
-Remark:
+Remark:\
 Unknown option keys prefixed with '+' in the instruction line are disregarded.
 
 #### 7.2 Options available in instruction line (Linux or Docker) and in configuration file
 
 The following options must be prefixed by '-' when they are called from the instruction line. This prefix can be omitted when the options are called from a configuration file. To supply an option, a line of a configuration file must begin with a dash '-' or a letter. A line beginning with any other character will be considered a comment. The remainder of a line beyond the option key and its value (if any is expected) is disregarded and may therefore be used for adding comments.
 
-Remark:
+Remark:\
 Unknown option keys following '-' in the instruction line, stray characters or strings appearing without the prefix '-' in the instruction line and unknown option keys (following '-' or not) at beginning of line in a configuration file are disregarded.
 
 ##### 7.2.1 Main generator options
@@ -527,7 +521,7 @@ V -> variable costs
 
 Example: in the instruction line, -XDD 0.9 -XFD 0.1 -XFF 0.01 specifies target individual cross-correlations between distinct demand parameters all equal to 0.9 (all individual self-correlations being equal to 1.0), between individual fixed cost parameters and demand parameters all equal to 0.1, between distinct fixed cost parameters all equal to 0.01 (all individual self-correlations being equal to 1.0)
 
-Remark:
+Remark:\
 Options -XST and -XTS are equivalent.
 
 ```
@@ -546,21 +540,21 @@ A <double>; parameter alpha used in generating target moments (see discussion im
 B <double>; parameter beta used in generating target moments (see discussion immediately below); without option G, any use of option B will be ignored; default: 0.25
 ```
 
-When option T is set to U, then the stochastic elements of the network that are changed according to scenarios are each assumed to follow a uniform(a, b) distribution, where
-a = D - (alpha * D),
-b = D + (beta * D),
-D is the base value of the stochastic element taken from the base deterministic network,
-alpha must be in [0, 0.99],
-beta >= 0.
+When option T is set to U, then the stochastic elements of the network that are changed according to scenarios are each assumed to follow a uniform(a, b) distribution, where\
+a = D - (alpha * D),\
+b = D + (beta * D),\
+D is the base value of the stochastic element taken from the base deterministic network,\
+alpha must be in [0, 0.99],\
+beta >= 0.\
 The distribution is symmetric around D when alpha = beta.
 
-When option T is set to T, then the stochastic elements of the network that are changed according to scenarios are each assumed to follow a triangular(a, b, c) distribution, where
-a = D - (alpha * D),
-b = D + (beta * D),
-c = D,
-D is the base value of the stochastic element taken from the base deterministic network,
-alpha must be in [0, 0.99],
-beta >= 0.
+When option T is set to T, then the stochastic elements of the network that are changed according to scenarios are each assumed to follow a triangular(a, b, c) distribution, where\
+a = D - (alpha * D),\
+b = D + (beta * D),\
+c = D,\
+D is the base value of the stochastic element taken from the base deterministic network,\
+alpha must be in [0, 0.99],\
+beta >= 0.\
 The distribution is symmetric around D when alpha = beta.
 
 ##### 7.2.2 Options supplied to HKW algorithm
@@ -619,7 +613,7 @@ Linux command line instruction:
 ./stoch_gen +v +F stoch_config_oneSrcOneSnk_12oct2026-17h09_dow.par
 ```
 
-Configuration file (input) used with Linux command line:
+Configuration file (input) used with Linux command line:\
 stoch_config_oneSrcOneSnk_12oct2026-17h09_dow.par
 
 Docker instruction:
@@ -628,22 +622,22 @@ Docker instruction:
 docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F /inout/docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_dow.par
 ```
 
-Configuration file (input) used with Docker instruction:
+Configuration file (input) used with Docker instruction:\
 docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_dow.par
 
-Base network file (input):
+Base network file (input):\
 determ_oneSrcOneSnk_12oct2026-17h09.dow
 
-Generated moments (output):
+Generated moments (output):\
 stoch_moms_oneSrcOneSnk_12oct2026-17h09_dow.dat
 
-Generated correlations (output):
+Generated correlations (output):\
 stoch_corrs_oneSrcOneSnk_12oct2026-17h09_dow.dat
 
-Raw HKW scenarios (output):
+Raw HKW scenarios (output):\
 stoch_rawscen_oneSrcOneSnk_12oct2026-17h09_dow.dat
 
-Stacked scenarios of the MCFNDP instance in DOW fomat (output):
+Stacked scenarios of the MCFNDP instance in DOW fomat (output):\
 stoch_oneSrcOneSnk_12oct2026-17h09_dow.txt
 
 ###### 8.1.1.2 Origin of the base deterministic network
@@ -656,17 +650,16 @@ Linux command line instruction:
 ./determ_gen +v +F determ_config_oneSrcOneSnk_12oct2026-17h09.par
 ```
 
-Configuration file:
+Configuration file:\
 determ_config_oneSrcOneSnk_12oct2026-17h09.par
 
-Outputs in DOW, STD, LP, MPS, GRA (basic graph), TEX (code of graphical
-representation), pdf (compiled image) formats:
-determ_oneSrcOneSnk_12oct2026-17h09.dow
-determ_oneSrcOneSnk_12oct2026-17h09.std
-determ_oneSrcOneSnk_12oct2026-17h09.mps
-determ_oneSrcOneSnk_12oct2026-17h09.lp
-determ_oneSrcOneSnk_12oct2026-17h09.gra
-determ_oneSrcOneSnk_12oct2026-17h09.tex
+Outputs in DOW, STD, LP, MPS, GRA (basic graph), TEX (code of graphical representation), pdf (compiled image) formats:\
+determ_oneSrcOneSnk_12oct2026-17h09.dow\
+determ_oneSrcOneSnk_12oct2026-17h09.std\
+determ_oneSrcOneSnk_12oct2026-17h09.mps\
+determ_oneSrcOneSnk_12oct2026-17h09.lp\
+determ_oneSrcOneSnk_12oct2026-17h09.gra\
+determ_oneSrcOneSnk_12oct2026-17h09.tex\
 determ_oneSrcOneSnk_12oct2026-17h09.pdf
 
 ##### 8.1.2 Folder /examples/oneSrcOneSnk/RSTD/
@@ -681,7 +674,7 @@ Linux command line instruction:
 ./stoch_gen +v +F stoch_config_oneSrcOneSnk_12oct2026-17h09_rstd.par
 ```
 
-Configuration file (input) used with Linux command line:
+Configuration file (input) used with Linux command line:\
 stoch_config_oneSrcOneSnk_12oct2026-17h09_rstd.par
 
 Docker instruction:
@@ -690,22 +683,22 @@ Docker instruction:
 docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F /inout/docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_rstd.par
 ```
 
-Configuration file (input) used with Docker instruction:
+Configuration file (input) used with Docker instruction:\
 docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_rstd.par
 
-Base network file (input):
+Base network file (input):\
 determ_oneSrcOneSnk_12oct2026-17h09.std
 
-Generated moments (output):
+Generated moments (output):\
 stoch_moms_oneSrcOneSnk_12oct2026-17h09_rstd.dat
 
-Generated correlations (output):
+Generated correlations (output):\
 stoch_corrs_oneSrcOneSnk_12oct2026-17h09_rstd.dat
 
-Raw HKW scenarios (output):
+Raw HKW scenarios (output):\
 stoch_rawscen_oneSrcOneSnk_12oct2026-17h09_rstd.dat
 
-Stacked scenarios of the MCFNDP instance in RSTD fomat (output):
+Stacked scenarios of the MCFNDP instance in RSTD fomat (output):\
 stoch_oneSrcOneSnk_12oct2026-17h09_rstd.txt
 
 ###### 8.1.2.2 Origin the base deterministic network
@@ -724,7 +717,7 @@ Linux command line instruction:
 ./stoch_gen +v +F stoch_config_oneSrcOneSnk_12oct2026-17h09_gstd.par
 ```
 
-Configuration file (input):
+Configuration file (input):\
 stoch_config_oneSrcOneSnk_12oct2026-17h09_gstd.par
 
 Docker instruction:
@@ -733,22 +726,22 @@ Docker instruction:
 docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F /inout/docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_gstd.par
 ```
 
-Configuration file (input) used with Docker instruction:
+Configuration file (input) used with Docker instruction:\
 docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_gstd.par
 
-Configuration file (input) used with Linux command line:
+Configuration file (input) used with Linux command line:\
 determ_oneSrcOneSnk_12oct2026-17h09.std
 
-Generated moments (output):
+Generated moments (output):\
 stoch_moms_oneSrcOneSnk_12oct2026-17h09_gstd.dat
 
-Generated correlations (output):
+Generated correlations (output):\
 stoch_corrs_oneSrcOneSnk_12oct2026-17h09_gstd.dat
 
-Raw HKW scenarios (output):
+Raw HKW scenarios (output):\
 stoch_rawscen_oneSrcOneSnk_12oct2026-17h09_gstd.dat
 
-Stacked scenarios of the MCFNDP instance in GSTD fomat (output):
+Stacked scenarios of the MCFNDP instance in GSTD fomat (output):\
 stoch_oneSrcOneSnk_12oct2026-17h09_gstd.txt
 
 ###### 8.1.3.2 Origin the base deterministic network
@@ -769,7 +762,7 @@ Linux command line instruction:
 ./stoch_gen +v +F stoch_config_eqSrcsEqSnks_12oct2026-17h09_gstd.par
 ```
 
-Configuration file (input) used with Linux command line:
+Configuration file (input) used with Linux command line:\
 stoch_config_eqSrcsEqSnks_12oct2026-17h09_gstd.par
 
 Docker instruction:
@@ -778,22 +771,22 @@ Docker instruction:
 docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F /inout/docker_stoch_config_eqSrcsEqSnks_12oct2026-17h09_gstd.par
 ```
 
-Configuration file (input) used with Docker instruction:
+Configuration file (input) used with Docker instruction:\
 docker_stoch_config_eqSrcsEqSnks_12oct2026-17h09_gstd.par
 
-Base network file (input):
+Base network file (input):\
 determ_eqSrcsEqSnks_12oct2026-17h09.std
 
-Generated moments (output):
+Generated moments (output):\
 stoch_moms_eqSrcsEqSnks_12oct2026-17h09_gstd.dat
 
-Generated correlations (output):
+Generated correlations (output):\
 stoch_corrs_eqSrcsEqSnks_12oct2026-17h09_gstd.dat
 
-Raw HKW scenarios (output):
+Raw HKW scenarios (output):\
 stoch_rawscen_eqSrcsEqSnks_12oct2026-17h09_gstd.dat
 
-Stacked scenarios of the MCFNDP instance in GSTD fomat (output):
+Stacked scenarios of the MCFNDP instance in GSTD fomat (output):\
 stoch_eqSrcsEqSnks_12oct2026-17h09_gstd.txt
 
 ###### 8.2.1.2 Origin of the base deterministic network
@@ -806,14 +799,13 @@ Linux command line instruction:
 ./determ_gen +v +F determ_config_eqSrcsEqSnks_12oct2026-17h09.par
 ```
 
-Configuration file:
+Configuration file:\
 determ_config_eqSrcsEqSnks_12oct2026-17h09.par
 
-Outputs in STD, LP, MPS, GRA (basic graph), TEX (code of graphical
-representation), pdf (compiled image) formats:
-determ_eqSrcsEqSnks_12oct2026-17h09.std
-determ_eqSrcsEqSnks_12oct2026-17h09.mps
-determ_eqSrcsEqSnks_12oct2026-17h09.lp
-determ_eqSrcsEqSnks_12oct2026-17h09.gra
-determ_eqSrcsEqSnks_12oct2026-17h09.tex
+Outputs in STD, LP, MPS, GRA (basic graph), TEX (code of graphical representation), pdf (compiled image) formats:\
+determ_eqSrcsEqSnks_12oct2026-17h09.std\
+determ_eqSrcsEqSnks_12oct2026-17h09.mps\
+determ_eqSrcsEqSnks_12oct2026-17h09.lp\
+determ_eqSrcsEqSnks_12oct2026-17h09.gra\
+determ_eqSrcsEqSnks_12oct2026-17h09.tex\
 determ_eqSrcsEqSnks_12oct2026-17h09.pdf
