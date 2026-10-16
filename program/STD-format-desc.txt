@@ -1,0 +1,62 @@
+2 May 2025
+
+Pseudocode describing the STD (a.k.a. Canad) file format
+for Fixed Charge Multicommodity Min Cost Flow Problems
+
+In the following, n, m, k are equal to the numbers of nodes, arcs and
+commodities, respectively. X[ i ] denotes an element indexed over the arcs
+(i = 1 .. m). X[ h ][ i ] denotes an element indexed over the commodities
+(h = 1 .. k) and the arcs (i = 1.. n). X[ h ][ j ] denotes an element indexed
+over the commodities (h = 1 .. k) and the nodes (j = 1.. n). Names of the
+elements in X are self-explanatory.
+
+A negative individual or mutual capacity is considered to be infinite. However,
+the current generator does not produce such uncapacitated arcs.
+
+The underlying graph can in principle be understood either as directed or as
+undirected. However, the current generator produces directed graphs.
+
+The fixed charge (FC) cost might in principle be omitted (i.e. taken as 0).
+Hence, its place is signalled with angled brackets. However, the current
+generator always produces FC costs.
+
+BEGINNING OF FORMAT - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+n
+m
+k
+
+for( i = 1 .. m ) // iterate over all arcs
+{
+    Start_Node[ i ]
+    End_Node[ i ]
+    < Fixed_Charge_Cost[ i ] >
+    Mutual_Capacity[ i ]
+    k
+
+    for( h = 1 .. k ) // iterate over all commodities
+    { 
+         if (Single_Commodity_Capacity[ h ][ i ] != 0)
+         {
+              h
+              Arc_Cost[ h ][ i ]
+              Single_Commodity_Capacity[ h ][ i ]
+          }
+     }    
+}    
+
+for( h = 1 .. k ) // iterate over all commodities
+{
+	for( j = 1 .. n ) // iterate over all nodes
+    {
+		if( Volume[ h ][ j ] != 0) 
+		{
+			h
+			j
+			Volume[ h ][ j ] // Volume supplied > 0 at origin
+                           // Volume demanded < 0 at destination
+		}	 
+	}
+}
+
+END OF FORMAT - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
