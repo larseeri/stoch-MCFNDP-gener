@@ -1,0 +1,21 @@
+F D
+I ../../base/B14_D50_A20_R50_I3_K100.dow
+O ./B14_D50_A20_R50_I3_K100_V10_C00.txt
+S 1
+K
+XDD 0.0
+C ./B14_D50_A20_R50_I3_K100_V10_C00_corrs.dat
+G
+T U
+A 0.10
+B 0.10
+M ./B14_D50_A20_R50_I3_K100_V10_C00_moms.dat
+n 200
+t 20
+i 50
+m 0.001
+c 0.001
+l 1
+o ./B14_D50_A20_R50_I3_K100_V10_C00_raw.dat
+r 50163844
+R 1347

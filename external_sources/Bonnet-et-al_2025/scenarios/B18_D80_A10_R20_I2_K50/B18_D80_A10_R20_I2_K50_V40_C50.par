@@ -1,0 +1,21 @@
+F D
+I ../../base/B18_D80_A10_R20_I2_K50.dow
+O ./B18_D80_A10_R20_I2_K50_V40_C50.txt
+S 1
+K
+XDD 0.5
+C ./B18_D80_A10_R20_I2_K50_V40_C50_corrs.dat
+G
+T U
+A 0.40
+B 0.40
+M ./B18_D80_A10_R20_I2_K50_V40_C50_moms.dat
+n 100
+t 20
+i 50
+m 0.001
+c 0.001
+l 1
+o ./B18_D80_A10_R20_I2_K50_V40_C50_raw.dat
+r 50163844
+R 1747

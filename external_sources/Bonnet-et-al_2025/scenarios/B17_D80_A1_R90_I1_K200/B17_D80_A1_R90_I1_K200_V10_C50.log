@@ -1,0 +1,24 @@
+
+****** Begin parsing configuration parameters from command line.
+
+
+****** End parsing configuration parameters from command line.
+
+Begin generation of raw scenarios with HKW algorithm.
+2026-10-04 09:53:53
+
+Setting starting values and launching main trial 1
+****************************************************
+
+Overall error in moments and correlations after trial  1:  0.000924
+2026-10-04 09:53:54
+End generation of raw scenarios with HKW algorithm.
+
+Verifying feasibility of every generated scenario.
+
+2026-10-04 09:54:39
+Currently verifying feasibility of scenario 1 out of 400 generated. 
+Currently verifying feasibility of scenario 201 out of 400 generated. 
+
+Saved 400 feasible scenarios out of 400 generated. 
+2026-10-04 10:39:31

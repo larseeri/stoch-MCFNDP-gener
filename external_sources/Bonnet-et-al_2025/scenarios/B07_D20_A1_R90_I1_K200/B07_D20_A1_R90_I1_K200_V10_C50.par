@@ -1,0 +1,21 @@
+F D
+I ../../base/B07_D20_A1_R90_I1_K200.dow
+O ./B07_D20_A1_R90_I1_K200_V10_C50.txt
+S 1
+K
+XDD 0.5
+C ./B07_D20_A1_R90_I1_K200_V10_C50_corrs.dat
+G
+T U
+A 0.10
+B 0.10
+M ./B07_D20_A1_R90_I1_K200_V10_C50_moms.dat
+n 400
+t 20
+i 50
+m 0.001
+c 0.001
+l 1
+o ./B07_D20_A1_R90_I1_K200_V10_C50_raw.dat
+r 50163844
+R 647

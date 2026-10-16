@@ -1,0 +1,21 @@
+F D
+I ../../base/B19_D80_A10_R90_I3_K100.dow
+O ./B19_D80_A10_R90_I3_K100_V30_C00.txt
+S 1
+K
+XDD 0.0
+C ./B19_D80_A10_R90_I3_K100_V30_C00_corrs.dat
+G
+T U
+A 0.30
+B 0.30
+M ./B19_D80_A10_R90_I3_K100_V30_C00_moms.dat
+n 200
+t 20
+i 50
+m 0.001
+c 0.001
+l 1
+o ./B19_D80_A10_R90_I3_K100_V30_C00_raw.dat
+r 50163844
+R 1847
