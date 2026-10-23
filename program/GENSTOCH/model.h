@@ -165,14 +165,24 @@ struct HIGHSModel : Model
     virtual bool testScenario();
 };
 
-// Subclass handling DOW and RSTD formats
-struct HIGHSModel_DowRStd : public HIGHSModel
+// Subclass handling DOW format
+struct HIGHSModel_Dow : public HIGHSModel
 {
-    HIGHSModel_DowRStd(const Instance *inst) : HIGHSModel(inst)
+    HIGHSModel_Dow(const Instance *inst) : HIGHSModel(inst)
     {
     }
     virtual void modify();
 };
+
+// Subclass handling RSTD format
+struct HIGHSModel_RStd : public HIGHSModel
+{
+    HIGHSModel_RStd(const Instance *inst) : HIGHSModel(inst)
+    {
+    }
+    virtual void modify();
+};
+
 
 // Subclass handling GSTD format
 struct HIGHSModel_GStd : public HIGHSModel

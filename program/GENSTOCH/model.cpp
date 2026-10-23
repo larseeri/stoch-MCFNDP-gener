@@ -76,19 +76,48 @@ bool CPXModel::testScenario()
 
     cplex.solve();
 
-    return (cplex.getStatus() == IloAlgorithm::Optimal);
+    return (cplex.getStatus() == IloAlgorithm::Optimal || cplex.getStatus() == IloAlgorithm::Feasible);
 }
 
 // Modifies model to reflect scenario currently under test.
-// Cases DOW or RSTD: one source node and one sink node per commodity.
-void CPXModel_DowRStd::modify()
+// Case DOW: one source node and one sink node per commodity,
+// There are no commodity-specific capacities and 
+// and no commodity-specific variable costs.
+// Basic determistic instances are accepted in DOW format
+// provided randomization of commodity-specific capacities and/or 
+// commpdity-specific variable costs are excluded.
+void CPXModel_Dow::modify()
 {
     int countComm = 0;
     // update source and sink volumes of each commodity
     for (int n = 0; n < inst->numbNodes; n++)
         for (int k = 0; k < inst->numbCommods; k++)
         {
-            int bound = (int)inst->stochElems[DEMAND][k];
+            double bound = inst->stochElems[DEMAND][k];
+
+            if (inst->commods[k].dest == n)
+                bound = -bound;
+            else if (inst->commods[k].orig != n)
+                bound = 0;
+
+            constr_flowCons[n][k].setBounds(bound, bound);
+        }
+
+    // update overall capacity of each arc
+    for (int a = 0; a < inst->numbArcs; a++)
+        constr_capArcs[a].setUB(inst->stochElems[CAP_ARC][a]); 
+}
+
+// Modifies model to reflect scenario currently under test.
+// Case RSTD: one source node and one sink node per commodity.
+void CPXModel_RStd::modify()
+{
+    int countComm = 0;
+    // update source and sink volumes of each commodity
+    for (int n = 0; n < inst->numbNodes; n++)
+        for (int k = 0; k < inst->numbCommods; k++)
+        {
+            double bound = inst->stochElems[DEMAND][k];
 
             if (inst->commods[k].dest == n)
                 bound = -bound;
@@ -111,7 +140,7 @@ void CPXModel_DowRStd::modify()
 }
 
 // Modifies model to reflect scenario currently under test.
-// Case GSTD: not one source node and one sink node per commodity.
+// General case: GSTD.
 void CPXModel_GStd::modify()
 {
     int countComm = 0;
@@ -247,7 +276,6 @@ HIGHSModel::HIGHSModel(const Instance *_inst) : Model(_inst)
 // Verifies if scenario is feasible.
 bool HIGHSModel::testScenario()
 {
-
     modify();
 
     highs.passModel(highsModel);
@@ -256,7 +284,7 @@ bool HIGHSModel::testScenario()
 
     const HighsModelStatus &model_status = highs.getModelStatus();
 
-    return (model_status == HighsModelStatus::kOptimal);
+     return (model_status == HighsModelStatus::kOptimal || model_status == HighsModelStatus::kModelEmpty);
 }
 
 void HIGHSModel::setUpperRows()
@@ -312,9 +340,8 @@ void HIGHSModel::setHIGHSAMatrix()
     highsModel.lp_.a_matrix_.start_.push_back(countAll);
 }
 
-void HIGHSModel_DowRStd::modify()
+void HIGHSModel_Dow::modify()
 {
-
     double max_double_value = numeric_limits<double>::max();
 
     highsModel.lp_.row_lower_.assign(numbRows, 0);
@@ -325,7 +352,39 @@ void HIGHSModel_DowRStd::modify()
     {
         for (int k = 0; k < inst->numbCommods; k++)
         {
-            int bound = (int)inst->stochElems[DEMAND][k];
+            double bound = inst->stochElems[DEMAND][k];
+
+            if (inst->commods[k].dest == n)
+                bound = -bound;
+            else if (inst->commods[k].orig != n)
+                bound = 0;
+
+            highsModel.lp_.row_upper_[n * inst->numbCommods + k] = bound;
+            highsModel.lp_.row_lower_[n * inst->numbCommods + k] = bound;
+        }
+    }
+
+    // update overall capacity of each arc
+    for (int a = 0; a < inst->numbArcs; a++)
+        highsModel.lp_.row_upper_[numbRows1 + a] = inst->stochElems[CAP_ARC][a];
+
+    highsModel.lp_.col_lower_.assign(numbCols, 0);
+    highsModel.lp_.col_upper_.assign(numbCols, max_double_value);   
+}
+
+void HIGHSModel_RStd::modify()
+{
+    double max_double_value = numeric_limits<double>::max();
+
+    highsModel.lp_.row_lower_.assign(numbRows, 0);
+    highsModel.lp_.row_upper_.assign(numbRows, 0);
+
+    // update source and sink volumes of each commodity
+    for (int n = 0; n < inst->numbNodes; n++)
+    {
+        for (int k = 0; k < inst->numbCommods; k++)
+        {
+            double bound = inst->stochElems[DEMAND][k];
 
             if (inst->commods[k].dest == n)
                 bound = -bound;
@@ -354,6 +413,7 @@ void HIGHSModel_DowRStd::modify()
         }
     }
 }
+
 
 void HIGHSModel_GStd::modify()
 {

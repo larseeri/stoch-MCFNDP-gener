@@ -142,17 +142,22 @@
 //
 // This assumes that stoch_config.par and newParamfile.par are located at the
 // root of the /program folder. Otherwise, their absolute paths or their paths
-// relative to the /program folder must be explicited.
+// relative to the /program folder must be specified.
 //
 // The default configuration file stoch_config.par has initially been filled
 // with illustrative values and should be edited appropriately if no
 // replacement configuration file is indicated on the command line with option
 // key +F.
 //
-// Verbosity option +v should be used to obtain more information about all
-// options that have been set in the parameter file or in the command line:
+// Verbosity option +v should be used to obtain detailed information about the
+// option parsing process:
 //
 // ./stoch_gen +v +F newParamfile.par
+//
+// To display the complete documentation about the application and the
+// available options, run
+//
+// ./determ_feasib +H
 //
 // The configuration file should have this format:
 //
@@ -294,7 +299,7 @@
 // /inout since it is located at the root of the Docker container. Hence, a
 // replacement configuration file located at docker/inout/newParamFile.par
 // will be specified in the Docker instruction with +F /inout/newParamFile.par.
-// Similarly, a base network file at docker/inout/baseNetworkFile.std will be
+// Similarly, a base instance file at docker/inout/baseNetworkFile.std will be
 // specified in the Docker instruction or inside the configuration file with
 // -I /inout/baseNetworkFile.std.
 //
@@ -398,8 +403,8 @@
 // (2 + 1 = 3).
 //
 // By default, the name of the file describing the base deterministic MCFNDP
-// instance is './base-determ-network.dow' (Linux instructions),
-// './inout/base-determ-network.dow' (Docker instructions) and the default input
+// instance is './base-determ-inst.dow' (Linux instructions),
+// './inout/base-determ-inst.dow' (Docker instructions) and the default input
 // format is DOW. This name may be changed with option I <string> and the input
 // format can be indicated accordingly with option F <char>. For example,
 // specifying -S 3 -I instB.std -F G in the instruction line indicates that
@@ -408,9 +413,12 @@
 // (See Section 5.1 below for details.)
 //
 // Important:
-// It is critical that the content of the file describing the base
-// deterministic MCFNDP instance and the indicated format of its content match
-// together.
+// - Randomization of commodity-specific capacities (4) and/or commodity-specific
+// variable costs (16) is precluded when the base derministic instance is
+// received in the DOW format.
+// - It is critical that the content of the file describing the base
+// deterministic instance and the indicated format of its content match
+// exactly.
 //
 // Remark:
 // While the generator is sufficiently general to randomize fixed costs, the
@@ -435,7 +443,7 @@
 // using options A <double> and B <double>.
 //
 // b- If option key G is not included, individual target moments will be read
-// from the file whose default name is is './moments.dat' (Linux
+// from the file whose default name is './moments.dat' (Linux
 // instructions) or './inout/moments.dat' (Docker instructions). The latter
 // can be specified otherwise with option key M. Format of the target moments
 // file is specified in Section 5.2.1 below. Without option G, option T will be
@@ -491,7 +499,7 @@
 // matrix. Similarly, in case b-, when option key K is omitted, the supplied
 // matrix must define a positive definite correlation matrix. Whenever the
 // alleged correlation matrix, either constructed (case a-) or read from file
-// (case b-), fails positive definitess, its Cholesky decomposition will fail
+// (case b-), fails positive definiteness, its Cholesky decomposition will fail
 // in the HKW algorithm. A suggestion to verify and correct the alleged
 // correlation matrix will be displayed and the program will be interrupted.
 //
@@ -504,7 +512,7 @@
 //
 // It is interpreted as follows:
 // -S 3: demands and total capacities of arcs will be randomized
-// -I instB.std: base deterministic network is to be read from file instB.std
+// -I instB.std: base deterministic instance is to be read from file instB.std
 // -F G: format of the latter is generic STD
 // -K: target correlations are specified in blocks (based on explicit and
 // default values)
@@ -524,12 +532,48 @@
 //
 // See Section 7 for additional details about each option key.
 //
-// 4 Output file
-// *************
+// 4 Verifying the scenarios and storing the output
+// ************************************************
 //
-// By default, the name of the file containing the MCFNDP instances generated
-// by the application is './generated-stoch-network.txt' (Linux instructions) or
-// './inout/generated-stoch-network.txt' (Docker instructions). This can be
+// 4.1 Verifying feasibility
+// *************************
+//
+// Unless option J is specified, the feasibility of each second stage
+// scenario of the generated MCFNDP instance is verified with the selected 
+// solver (CPLEX or HIGHS) after opening all arcs. Infeasibility of a number
+// of scenarios usually occurs when demands and/or capacities are randomized
+// whereas the base deterministic instance presents a tight relation between
+// capacities and commodity volumes. Whenever there is at least one infeasible 
+// scenario, the generated instance is invalid. There are are two recourses in
+// these circumstances: (i) Select a base instance whose capacities a less 
+// tight (e.g., by a direct adjustment with options adjCapacsDown, 
+// adjSatCapacsDown if the base instance is produced with the GenDeterm 
+// generator). (ii) Reduce the values of options A and B.
+//
+// 4.2 Verifying validity
+// **********************
+//
+// Unless option J is specified, each generated element of each scenario is
+// is verified to be non-negative. whenever this occurs the scenario and the
+// instance as a whole are invalid. This can usually be circumvented by 
+// selecting a smaller value for option A.
+//
+// A report indicating the numbers of generated scenarios, infeasible scenarios,
+// invalid scenarios including at least one negative generated value and valid scenarios
+// is produced and a warning is issued if one or more scenarios are infeasible
+// and/or invalid if the generated instance is improper.
+
+// Important:
+// The generated instance would remain improper even if scenarios were removed
+// since moments and correlations based on the truncated instance would fail to
+// satisfy their targets.
+//
+// 4.3 Storing the output
+//
+// The generated instance is stored to file only if it is devoid of infeasible
+// and invalid scenarios. By default, the name of the file containing the MCFNDP instances generated
+// by the application is './generated-stoch-inst.txt' (Linux instructions) or
+// './inout/generated-stoch-inst.txt' (Docker instructions). This can be
 // changed with option O. This text file superposes representations of complete
 // deterministic MCFNDP instances, one for each scenario realization. Each
 // representation is preceded by a separator as follows:
@@ -543,14 +587,6 @@
 // descriptions of the MCFNDP realizations in this fashion makes it easy to
 // pinpoint and read the first and second stage information relevant to every
 // individual scenario.
-//
-// Remark:
-// If specified, feasibility of the second stage of each generated MCFNDP 
-// instance is verified with the selected solver (CPLEX or HIGHS) after opening
-// all arcs. Only the generated networks that are demonstrated feasible are
-// added to the output file. A report indicating how many scenarios were
-// generated and how many among the latter are feasible is produced. A warning 
-// is issued if one or more scenarios are infeasible.
 //
 // 5 Formats of data files
 // ***********************
@@ -594,8 +630,8 @@
 // The MCFNDP instances generated by the application (one for each scenario) are
 // expressed in the same format as that used for supplying the base
 // deterministic MCFNDP instance. Their descriptions are stacked and returned in
-// the output file whose default name './generated-stoch-network.txt' (Linux
-// instructions), './inout/generated-stoch-network.txt' (Docker instructions) can be
+// the output file whose default name './generated-stoch-inst.txt' (Linux
+// instructions), './inout/generated-stoch-inst.txt' (Docker instructions) can be
 // modified with option O. (See Section 4 above.)
 //
 // 5.2 Input files supplied to HKW algorithm
@@ -672,7 +708,7 @@
 //
 // Raw scenarios are saved in HKW format to './raw_scens.dat' (Linux
 // instructions) or './inout/raw_scens.dat' (Docker instructions), unless this
-// is overriden with option o. Raw scenarios saved in previous run can be used
+// is overridden with option o. Raw scenarios saved in previous run can be used
 // as starting values in a following run (using option s). These will only be
 // used in the first trial of the current run of the HKW algorithm. If this
 // trial does not converge and the maximum number of trials specified by option
@@ -818,13 +854,13 @@
 // read; D: DOW, G: generic STD, R: restricted STD; default: D
 //
 // I <string>; name of file where base deterministic MCFNDP instance is to be
-// read; default value is './base-determ-network.dow' (Linux instructions) or
-// './inout/base-determ-network.dow' (Docker instructions)
+// read; default value is './base-determ-inst.dow' (Linux instructions) or
+// './inout/base-determ-inst.dow' (Docker instructions)
 //
 // O <string>; name of file where MCFNDP instance resulting from
 // scenario generation is to be written; default value is
-// './generated-stoch-network.txt' (Linux instructions) or
-// './inout/generated-stoch-network.txt' (Docker instructions)
+// './generated-stoch-inst.txt' (Linux instructions) or
+// './inout/generated-stoch-inst.txt' (Docker instructions)
 //
 // J <> (no value supplied); write the MCFNDP instance resulting from
 // scenario generation without first checking for feasibility of each 
@@ -895,26 +931,26 @@
 // discussion immediately below); without option G, any use of option B will be
 // ignored; default: 0.25
 //
-// When option T is set to U, then the stochastic elements of the network that
+// When option T is set to U, then the stochastic elements of the instance that
 // are changed according to scenarios are each assumed to follow a
 // uniform(a, b) distribution, where
 // a = D - (alpha * D),
 // b = D + (beta * D),
 // D is the base value of the stochastic element taken from the base
-// deterministic network,
-// alpha must be in [0, 0.99],
+// deterministic instance,
+// alpha must be in [0, 0.90],
 // beta >= 0.
 // The distribution is symmetric around D when alpha = beta.
 //
-// When option T is set to T, then the stochastic elements of the network that
+// When option T is set to T, then the stochastic elements of the instance that
 // are changed according to scenarios are each assumed to follow a
 // triangular(a, b, c) distribution, where
 // a = D - (alpha * D),
 // b = D + (beta * D),
 // c = D,
 // D is the base value of the stochastic element taken from the base
-// deterministic network,
-// alpha must be in [0, 0.99],
+// deterministic instance,
+// alpha must be in [0, 0.90],
 // beta >= 0.
 // The distribution is symmetric around D when alpha = beta.
 //
@@ -979,12 +1015,12 @@
 // **********************************************
 //
 // 8.1.1 Folder /examples/oneSrcOneSnk/DOW/
-// *****************************************
+// ****************************************
 //
-// In the base network, there is one source and one sink for each commodity and
+// In the base instance, there is one source and one sink for each commodity and
 // no differentiation of variable costs and capacities according to
-// commodities. The base network is received in the DOW format and the
-// generated networks are saved in the DOW format.
+// commodities. The base instance is received in the DOW format and the
+// generated instance is saved in the DOW format.
 //
 // 8.1.1.1 Operation of the stochastic generator
 // *********************************************
@@ -1003,7 +1039,7 @@
 // Configuration file (input) used with Docker instruction:
 // docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_dow.par
 //
-// Base network file (input):
+// Base instance file (input):
 // determ_oneSrcOneSnk_12oct2026-17h09.dow
 //
 // Generated moments (output):
@@ -1015,13 +1051,13 @@
 // Raw HKW scenarios (output):
 // stoch_rawscen_oneSrcOneSnk_12oct2026-17h09_dow.dat
 //
-// Stacked scenarios of the MCFNDP instance in DOW fomat (output):
+// Stacked scenarios of the MCFNDP instance in DOW format (output):
 // stoch_oneSrcOneSnk_12oct2026-17h09_dow.txt
 //
-// 8.1.1.2 Origin of the base deterministic network
-// ************************************************
+// 8.1.1.2 Origin of the base deterministic instance
+// *************************************************
 //
-// The base deterministic network was originally produced by the determistic
+// The base deterministic instance was originally produced by the determistic
 // generator as follows.
 //
 // Linux command line instruction:
@@ -1042,10 +1078,10 @@
 // determ_oneSrcOneSnk_12oct2026-17h09.pdf
 //
 // 8.1.2 Folder /examples/oneSrcOneSnk/RSTD/
-// ******************************************
+// *****************************************
 //
-// Similar to 8.1.1, except that the base network is received in the STD format
-// and the generated networks are saved in the RSTD format.
+// Similar to 8.1.1, except that the base instance is received in the STD format
+// and the generated instance is saved in the RSTD format.
 //
 // 8.1.2.1 Operation of the stochastic generator
 // *********************************************
@@ -1064,7 +1100,7 @@
 // Configuration file (input) used with Docker instruction:
 // docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_rstd.par
 //
-// Base network file (input):
+// Base instance file (input):
 // determ_oneSrcOneSnk_12oct2026-17h09.std
 //
 // Generated moments (output):
@@ -1076,19 +1112,19 @@
 // Raw HKW scenarios (output):
 // stoch_rawscen_oneSrcOneSnk_12oct2026-17h09_rstd.dat
 //
-// Stacked scenarios of the MCFNDP instance in RSTD fomat (output):
+// Stacked scenarios of the MCFNDP instance in RSTD format (output):
 // stoch_oneSrcOneSnk_12oct2026-17h09_rstd.txt
 //
-// 8.1.2.2 Origin the base deterministic network
-// *********************************************
+// 8.1.2.2 Origin of the base deterministic instance
+// *************************************************
 //
 // Similar to 8.1.1.2.
 //
 // 8.1.3 Folder /examples/oneSrcOneSnk/GSTD/
-// ******************************************
+// *****************************************
 //
-// Similar to 8.1.1, except that the base network is received in the STD format
-// and the generated networks are saved in the GSTD format (which is identical
+// Similar to 8.1.1, except that the base instance is received in the STD format
+// and the generated instance is saved in the GSTD format (which is identical
 // to RSTD when there are one source and one sink for each commodity).
 //
 // 8.1.3.1 Operation of the stochastic generator
@@ -1120,11 +1156,11 @@
 // Raw HKW scenarios (output):
 // stoch_rawscen_oneSrcOneSnk_12oct2026-17h09_gstd.dat
 //
-// Stacked scenarios of the MCFNDP instance in GSTD fomat (output):
+// Stacked scenarios of the MCFNDP instance in GSTD format (output):
 // stoch_oneSrcOneSnk_12oct2026-17h09_gstd.txt
 //
-// 8.1.3.2 Origin the base deterministic network
-// *********************************************
+// 8.1.3.2 Origin the base deterministic instance
+// **********************************************
 //
 // Similar to 8.1.1.2.
 //
@@ -1132,13 +1168,13 @@
 // ***********************************************************
 //
 // 8.2.1 Folder /examples/eqSrcsEqSnks/GSTD/
-// ******************************************
+// *****************************************
 //
-// In the base network, there are multiple sources and multiple sinks for each
+// In the base instance, there are multiple sources and multiple sinks for each
 // commodity. However, sources and sinks are identical across commodities.
 // There is differentiation of variable costs and capacities according to
-// commodities. The base network must be received in the STD format (as the DOW
-// format is unsuitable in this situation) and the generated networks must be
+// commodities. The base instance must be received in the STD format (as the DOW
+// format is unsuitable in this situation) and the generated instance must be
 // saved in the GSTD format.
 //
 // 8.2.1.1 Operation of the stochastic generator
@@ -1158,7 +1194,7 @@
 // Configuration file (input) used with Docker instruction:
 // docker_stoch_config_eqSrcsEqSnks_12oct2026-17h09_gstd.par
 //
-// Base network file (input):
+// Base instance file (input):
 // determ_eqSrcsEqSnks_12oct2026-17h09.std
 //
 // Generated moments (output):
@@ -1170,13 +1206,13 @@
 // Raw HKW scenarios (output):
 // stoch_rawscen_eqSrcsEqSnks_12oct2026-17h09_gstd.dat
 //
-// Stacked scenarios of the MCFNDP instance in GSTD fomat (output):
+// Stacked scenarios of the MCFNDP instance in GSTD format (output):
 // stoch_eqSrcsEqSnks_12oct2026-17h09_gstd.txt
 //
-// 8.2.1.2 Origin of the base deterministic network
-// ************************************************
+// 8.2.1.2 Origin of the base deterministic instance
+// *************************************************
 //
-// The base deterministic network was originally produced by the determistic
+// The base deterministic instance was originally produced by the determistic
 // generator as follows.
 //
 // Linux command line instruction:
@@ -1243,29 +1279,43 @@ int main(int argc, char **argv)
 
     if (!is.is_open())
     {
-        cerr << "\nERROR: " << endl;
-        cerr << "The file " << params.inputInstFileName
-             << " containing the base deterministic network could not be opened." << endl;
-        cerr << "EXECUTION ABORTED\n" << endl;
+        cerr << "\nERROR:\n"
+			<< "The file " << params.inputInstFileName << "\n"
+            << "containing the base deterministic instance\n"
+			<< "could not be opened.\n"
+			<< "EXECUTION ABORTED" << endl;
         exit(1);
-    }
+    } 
+   
+	try
+	{
+		// read base deterministic MCFNDP instance from source;
+		// input operator is defined in instance.h;
+		// InstanceDow::read() or InstanceStd::read() is called
+		is >> *inst;
+	}	
+	catch (...)
+	{
+		cerr << "ERROR:\n"
+			<< "An exception occurred while attempting to read file " << params.inputInstFileName << "\n"
+			<< "The expected format of this file according to value of option key F in instruction line is "
+			<< to_string(params.instanceFormat) << ".\n"
+			<< "Ascertain that file and specified format are consistent.\n"
+			<< "EXECUTION ABORTED" << endl;
+        exit(1);		
+	}
 
-    ofstream os(params.outputInstFileName);
+   ofstream os(params.outputInstFileName, ios::app);
 	
 	if (!os.is_open())
     {
-        cerr << "\nERROR: " << endl;
-        cerr << "The file " << params.outputInstFileName
-             << " where network instances resulting from scenario generation\n"
-			 << "should be written could not be opened." << endl;
-        cerr << "EXECUTION ABORTED\n" << endl;
+        cerr << "\nERROR:\n"
+			<< "The file " << params.outputInstFileName
+            << " where the generated instances should be written\n"
+			<< "could not be opened.\n"
+			<< "EXECUTION ABORTED" << endl;
         exit(1);
     }
-
-    // read base deterministic network from source;
-    // input operator is defined in instance.h;
-    // InstanceDow::read() or InstanceStd::read() is called
-    is >> *inst;
 
     // generate all raw scenarios and store in computational instance
     int numbScenarios = inst->getScenarios();
@@ -1274,63 +1324,100 @@ int main(int argc, char **argv)
     Model *model;
 
 #if CPLEX
-
-    // case GSTD: not one source node and one sink node per commodity
-    if (params.instanceFormat == GSTD)
-        model = new CPXModel_GStd(inst);
-    // cases DOW or RSTD: one source node and one sink node per commodity
+	
+	//Case DOW: one source node and one sink node per commodity,
+	// There are no commodity-specific capacities and 
+	// no commodity-specific variable costs.
+    if (params.instanceFormat == DOW)
+        model = new CPXModel_Dow(inst);
+	
+	// Case RSTD: same as GSTD except one source node and one sink node per commodity.
+	else if (params.instanceFormat == RSTD)
+        model = new CPXModel_RStd(inst);
+	
+	// Case GSTD: generic
     else
-        model = new CPXModel_DowRStd(inst);
+        model = new CPXModel_GStd(inst);	
 
 #elif HIGHS
 
-    // case GSTD: not one source node and one sink node per commodity
-    if (params.instanceFormat == GSTD)
-        model = new HIGHSModel_GStd(inst);
-    // cases DOW or RSTD: one source node and one sink node per commodity
+	//Case DOW: one source node and one sink node per commodity,
+	// There are no commodity-specific capacities and 
+	// no commodity-specific variable costs.
+    if (params.instanceFormat == DOW)
+        model = new HIGHSModel_Dow(inst);
+	
+	// Case RSTD: same as GSTD except one source node and one sink node per commodity.
+	else if (params.instanceFormat == RSTD)
+        model = new HIGHSModel_RStd(inst);
+	
+	// Case GSTD: generic
     else
-        model = new HIGHSModel_DowRStd(inst);
+        model = new HIGHSModel_GStd(inst);
 
 #endif
 
-    // serves to count feasible scenarios
-    int numbFeasible = 0;
+    // serves to count infeasible and invalid scenarios
+    int numbInfeasible = 0, numbInvalid = 0;
 
     cout << "\nVerifying feasibility of every generated scenario.\n" << endl;
 	
 	displayTimeStamp();
 
-	// check feasibility of each generated scenario, save only feasible scenarios and report
+	// check validity and feasibility of each generated scenario, save only feasible scenarios and report
 	if (!params.skipFeasibChecks)
 	{
 		// iterate over generated raw scenarios
 		for (int j = 0; j < numbScenarios; j++)
 		{
-
 			if (j % 200 == 0)
-				cout << "Currently verifying feasibility of scenario " << j + 1 << " out of " << numbScenarios << " generated. " << endl;
+				cout << "Currently verifying feasibility and validity of scenario " << j + 1 << " out of " << numbScenarios << " generated. " << endl;
 
 			// update instance with jth raw scenario
-			inst->copyScenario(j);
+			inst->copyScenario(j);			
+			
+			// Adjusts final commodity flows to restore balance between total
+			// supplied and demanded volumes when there are several sources
+			// and/or sinks.			
+			inst->adjCommodFlows();
 
+			string feasibility = "feas";
+			string validity = "val";
+
+			// check if instance updated with scenario has at least one
+			//	negative-valued randomized element
+			if (inst->hasNegativeValue())
+			{				
+				numbInvalid++;
+				validity = "inval";
+			}
+				
 			// check if instance updated with scenario is feasible when all arcs
 			// are opened; write instance to output stream if so
-			if (model->testScenario())
+			if (!model->testScenario())
 			{
-				// output operator is defined in instance.h;
-				// InstanceDow::write() or InstanceStd::write() is called
-				os << *inst << endl;
-				numbFeasible++;
+				numbInfeasible++;
+				feasibility = "infeas";
 			}
-		}
+						
+			// InstanceDow::write(), InstanceRStd::write() or InstanceGStd::write() is called
+			inst->write(os, feasibility, validity);
 
-		cout << "\nSaved " << numbFeasible << " feasible scenarios out of " << numbScenarios << " generated. " << endl;
-		
-		if (numbScenarios-numbFeasible != 0)
-		{
-			cout << "Warning: There were " << (numbScenarios - numbFeasible) << " infeasible scenarios out of " << numbScenarios << " generated.\n" << endl;
 		}
-	
+		
+		cout << "\nNumber of scenarios: " << numbScenarios << "\n"
+			<< "Number infeasible: " <<  numbInfeasible << "\n"
+			<< "Number invalid: " << numbInvalid << endl;
+			
+		if (numbInfeasible != 0 || numbInvalid != 0)
+		{
+			cout << "\nWARNING:\n"
+				<< "There were " << numbInfeasible << " infeasible scenarios out of " << numbScenarios << " generated.\n"
+				<< "There were " << numbInvalid << " invalid scenarios out of " << numbScenarios << " generated.\n"
+				<< "The generated instance has been saved but is UNUSABLE as a result.\n"
+				<< "Defeective scenarios have been marked.\n"
+				<< "See Section 4 of USERGUIDE_STOCH.md for a discussion of causes and recourses." << endl;
+		}		
 	}
 	// save all generated scenarios without checking each for feasibility
 	else
@@ -1341,12 +1428,13 @@ int main(int argc, char **argv)
 			// update instance with jth raw scenario
 			inst->copyScenario(j);
 
-			// InstanceDow::write() or InstanceStd::write() is called
+			// output operator is defined in instance.h;
+			// InstanceDow::write(), InstanceRStd::write() or InstanceGStd::write() is called
 			os << *inst << endl;
 		}
 
-		cout << "\nSaved " << numbScenarios << " generated scenarios without checking for their feasibility. " << endl;		
-		cout << "\n(See option J.)\n" << endl;
+		cout << "\nSaved instance comprising " << numbScenarios << " scenarios without verifying\n"
+			<< "feasibility or validity. See Section 4 of USERGUIDE_STOCH.md for details." << endl;
 	}	
 	
 	displayTimeStamp();

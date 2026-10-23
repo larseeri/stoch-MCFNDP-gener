@@ -129,7 +129,20 @@ void Instance::allocate()
         // locate beginning of subarrays for elements of stochastic types
         // within master array
         stochElems[elem].ptr = &stochElems[ALL_TYPES][begin[elem]];
-    }
+    }	
+	
+	// initializing commodity-specific capacities to zero since
+	// zero-valued figures are excluded from STD format and therefore
+	// not read by InstanceRStd::read() and InstanceGStd::read(). 
+	int countComm = 0;
+	for (int a = 0; a < numbArcs; a++)
+	{
+		for (int k = 0; k < numbCommods; k++)
+        {
+			stochElems[CAP_COMMOD][countComm] = 0;
+            countComm++;
+		}		
+	}
 
     // setting correspondences between pointer defined in class and
     // beginning of corresponding subarray (stochastic type)
@@ -145,30 +158,142 @@ void Instance::allocate()
     nodes.resize(numbNodes);
 }
 
-// Reads a base deterministic MCFND network stored in DOW format.
+// Adjusts final commodity flows to restore balance between total
+// supplied and demanded volumes when there are several sources
+// and/or sinks.
+void InstanceGStd::adjCommodFlows()
+{	
+	const double margin = 1;
+	
+	for (int k = 0; k < numbCommods; k++)
+    {		
+		double totalOutflow = 0;
+		double totalInflow = 0;				
+        for (int n = 0; n < numbNodes; n++)
+        {			
+			// all non-negative
+			commods[k].adjOutflows[n] = commods[k].outflows[n] * (*(commods[k].volume) / commods[k].origVolume);			
+				
+			totalOutflow += commods[k].adjOutflows[n];
+					   
+			// all non-positive
+            commods[k].adjInflows[n] = commods[k].inflows[n] * (*(commods[k].volume) / commods[k].origVolume);			
+			
+			totalInflow += commods[k].adjInflows[n];
+		}
+		
+		double netFlow = totalOutflow + totalInflow;		
+		
+		if (netFlow > 0)
+		{
+			int nOut = 0;
+			while (commods[k].adjOutflows[nOut] < netFlow + margin)
+			{
+				nOut++;			
+			}			
+			commods[k].adjOutflows[nOut] -= netFlow;			
+		}
+		else if (netFlow < 0)
+		{
+			int nIn = 0;
+			while (commods[k].adjInflows[nIn] < netFlow - margin)
+			{
+				nIn++;			
+			}			
+			commods[k].adjInflows[nIn] += netFlow;			
+		}		
+    }		
+}
+
+// Verifies if at least one of the randomized values in a scenario is negative.
+bool Instance::hasNegativeValue()
+{		
+	if (find(params->stochTypes.begin(), params->stochTypes.end(), DEMAND) != params->stochTypes.end())
+	{
+		for (int k = 0; k < numbCommods; k++)					
+			if (stochElems[DEMAND][k] < 0)					
+				return true;
+	}
+	if (find(params->stochTypes.begin(), params->stochTypes.end(), CAP_ARC) != params->stochTypes.end())
+	{
+		for (int a = 0; a < numbArcs; a++)		
+			if (stochElems[CAP_ARC][a] < 0)
+				return true;
+	}
+	if (find(params->stochTypes.begin(), params->stochTypes.end(), CAP_COMMOD) != params->stochTypes.end())
+	{		
+		int countComm = 0;
+		for (int a = 0; a < numbArcs; a++)		
+			for (int k = 0; k < numbCommods; k++)			
+				if(stochElems[CAP_COMMOD][countComm++] < 0)
+					return true;			
+	}		
+	if (find(params->stochTypes.begin(), params->stochTypes.end(), FIXED_COST) != params->stochTypes.end())
+	{
+			for (int a = 0; a < numbArcs; a++)		
+			if (stochElems[FIXED_COST][a] < 0)
+				return true;			
+	}		
+	if (find(params->stochTypes.begin(), params->stochTypes.end(), VAR_COST) != params->stochTypes.end())
+	{
+		int countComm = 0;
+		for (int a = 0; a < numbArcs; a++)		
+			for (int k = 0; k < numbCommods; k++)			
+				if(stochElems[VAR_COST][countComm++] < 0)
+					return true;			
+	}		
+	
+	return false;
+}
+
+// Reads a base deterministic MCFND instance stored in DOW format.
 void InstanceDow::read(istream &is)
 {
+	if (params->verbose)
+		cout << "\n****** Begin reading DOW instance " << params->inputInstFileName << "." << endl;	
+	
     string line, dummy;
     double capac, volume, varCost, fixedCost;
     int countArc = 0, countDemand = 0, countComm = 0;
 
     getline(is, line);
+	
+	if (line != " MULTIGEN.DAT:")
+	{	
+		cerr << "\nERROR:\n"
+			<< "The file " << params->inputInstFileName << " specified with option key I\n"
+			<< "does not conform to the expected DOW format specified with option key F.\n"
+			<< "EXECUTION ABORTED" << endl;
+			exit(1);	
+	}
 
     is >> numbNodes >> numbArcs >> numbCommods;
 
     allocate();
-
+	
     for (int a = 0; a < numbArcs; a++)
     {
         Arc arc(numbCommods);
         int idxArc;
 
-        is >> arc.orig >> arc.dest >> varCost // arc.comms[0].cost
-            >> capac >> fixedCost             // arc.cost
-            >> dummy >> idxArc;
-
+        is >> arc.orig >> arc.dest >> varCost >> capac >> fixedCost >> dummy >> idxArc;			
+			
+		if (arc.orig > numbNodes || arc.dest > numbNodes || arc.orig < 1 || arc.dest < 1)
+		{
+			cerr << "\nERROR:\n"
+				<< "At least one of the two node indexes (" << arc.orig << ", " << arc.dest << ") stated\n"
+				<< "in connection with an arc listed in instance file " << params->inputInstFileName << "\n"
+				<< "is non-positive or exceeds the total number of nodes stated at beginning of file.\n"
+				<< "EXECUTION ABORTED" << endl;
+				exit(1);		
+		}	
+				
+		if (capac < 0)
+			capac = ASSIGNED_CAPAC_IF_READ_NEG;
+		
         arc.orig--;
-        arc.dest--;
+        arc.dest--;		
+		
         stochElems[CAP_ARC][countArc] = capac;
         stochElems[FIXED_COST][countArc] = fixedCost;
         nodes[arc.orig].arcOut.push_back(countArc);
@@ -185,6 +310,15 @@ void InstanceDow::read(istream &is)
 
         arcs[idxArc] = arc;
     }
+	
+	if (countArc != numbArcs)
+	{
+		cerr << "\nERROR:\n"
+			<< "The number of arcs " << countArc << " detected in instance file " << params->inputInstFileName << "\n"
+			<< "does not agree with the number of arcs " << numbArcs << " stated at beginning of file.\n"
+			<< "EXECUTION ABORTED" << endl;
+			exit(1);		
+	}
 
     for (int k = 0; k < numbCommods; k++)
     {
@@ -193,19 +327,18 @@ void InstanceDow::read(istream &is)
         commods[k].orig--;
         commods[k].dest--;
         stochElems[DEMAND][countDemand++] = volume;
-
-        // TODO: EL: 29sept2025 doit probablement etre supprime; voir si applique dans SMS++
-        // desactive le 7nov2025
-        // for (int a = 0; a < numbArcs; a++)
-        //    *(arcs[a].comms[k].capac) = min(*(arcs[a].comms[k].capac), volume);
     }
+	
+	if (params->verbose)
+		cout << "\n****** End reading DOW instance " << params->inputInstFileName << ".\n" << endl;
 }
 
-// Writes a generated MCFND network to file in DOW format.
-void InstanceDow::write(ostream &os) const
+// Writes a generated MCFND instance to file in DOW format.
+void InstanceDow::write(ostream &os, string feasibility, string validity) const
 {
     static int scen = 0;
-    os << " SCENARIO        " << scen++ << endl;
+	os << endl;
+    os << "SCENARIO: " << scen++ << " feasibility: " << feasibility << " validity: " << validity << endl;
     os << " MULTIGEN.DAT:" << endl;
     os << setw(12) << right << numbNodes << "   " << setw(12) << right << numbArcs << "   " << setw(12) << right
        << numbCommods << endl;
@@ -215,7 +348,7 @@ void InstanceDow::write(ostream &os) const
         {
             if (arcs[a].orig == n)
             {
-                os << fixed << setprecision(3) << setw(12) << right << arcs[a].orig + 1 << "   " << setw(12) << right
+                os << fixed << setprecision(6) << setw(12) << right << arcs[a].orig + 1 << "   " << setw(12) << right
                    << arcs[a].dest + 1 << "   " << setw(12) << right << *(arcs[a].comms[0].cost) << "   " << setw(12)
                    << right << *(arcs[a].capac) << "   " << setw(12) << right << *(arcs[a].cost) << "   " << setw(12)
                    << right << 1 << "   " << setw(12) << right << a + 1 << endl;
@@ -224,17 +357,19 @@ void InstanceDow::write(ostream &os) const
 
     for (int k = 0; k < numbCommods; k++)
     {
-        os << fixed << setprecision(3) << setw(12) << right << commods[k].orig + 1 << "   " << setw(12) << right
+        os << fixed << setprecision(6) << setw(12) << right << commods[k].orig + 1 << "   " << setw(12) << right
            << commods[k].dest + 1 << "   " << setw(12) << right << *(commods[k].volume) << endl;
     }
 }
 
-// Reads a base deterministic MCFND network stored in restricted STD format.
-//
-// This is specialized to handle cases where there is a single source node
+// Reads a deterministic MCFNDP instance stored in restricted STD format.
+// Specialized to handle cases where there is a single source node
 // and a single sink node for each commodity.
 void InstanceRStd::read(istream &is)
 {
+	if (params->verbose)
+		cout << "\n****** Begin reading RSTD instance " << params->inputInstFileName << "." << endl;	
+		
     string line, dummy;
     int numbComm, idxComm, idxNode;
 	double capac, volume, varCost, fixedCost;
@@ -248,31 +383,76 @@ void InstanceRStd::read(istream &is)
     {
         Arc arc(numbCommods);
 
-        is >> arc.orig >> arc.dest >> fixedCost // arc.cost
-            >> capac >> numbComm;
+        is >> arc.orig >> arc.dest >> fixedCost >> capac >> numbComm;
+			
+		if (arc.orig > numbNodes || arc.dest > numbNodes || arc.orig < 1 || arc.dest < 1)
+		{
+			cerr << "\nERROR:\n"
+				<< "At least one of the two node indexes (" << arc.orig << ", " << arc.dest << ") stated\n"
+				<< "in connection with an arc listed in instance file " << params->inputInstFileName << "\n"
+				<< "is non-positive or exceeds the total number of nodes stated at beginning of file.\n"
+				<< "EXECUTION ABORTED" << endl;
+				exit(1);		
+		}	
+
+		if (numbCommods < numbComm)
+		{
+			cerr << "\nERROR:\n"
+				<< "In instance file " << params->inputInstFileName << " the number of commodities " << numbComm << "\n"
+				<< "stated in connection with arc (" << arc.orig << ", " << arc.dest << ") for which the\n"
+				<< "capacities are zero exceeds the number of commodities stated at beginning of file.\n"
+				<< "EXECUTION ABORTED" << endl;
+				exit(1);		
+		}	
 
         arc.orig--;
         arc.dest--;
+		
+		if (capac < 0)
+			capac = ASSIGNED_CAPAC_IF_READ_NEG;
+		
         stochElems[CAP_ARC][countArc] = capac;
         stochElems[FIXED_COST][countArc] = fixedCost;
         nodes[arc.orig].arcOut.push_back(countArc);
         nodes[arc.dest].arcIn.push_back(countArc);
-        countArc++;
-
+        countArc++;		
+		
         for (int k = 0; k < numbComm; k++)
         {
             is >> idxComm;
+			
+			if (idxComm > numbCommods)
+			{
+				cerr << "\nERROR:\n"
+					<< "The commodity index " << idxComm << " stated while listing the costs and capacities\n"
+					<< "in connection with arc ("<< (arc.orig + 1) << ", " << (arc.dest + 1) << ") in instance file\n"
+					<< params->inputInstFileName << " exceeds the total number of commodities at beginning of file.\n"
+					<< "EXECUTION ABORTED" << endl;
+					exit(1);
+			}
+			
             idxComm--;
-            is >> varCost // arc.comms[idxComm].cost
-                >> capac;
-
-            stochElems[CAP_COMMOD][countComm] = capac;
-            stochElems[VAR_COST][countComm] = varCost;
+            is >> varCost >> capac;
+				
+			if (capac < 0)
+				capac = ASSIGNED_CAPAC_IF_READ_NEG;
+		
+            stochElems[CAP_COMMOD][a * numbCommods + (idxComm)] = capac;
+            stochElems[VAR_COST][a * numbCommods + (idxComm)] = varCost;
             countComm++;
         }
-
+		
         arcs[a] = arc;
     }
+	
+	if (countArc != numbArcs)
+	{
+		cerr << "\nERROR:\n"
+			<< "The number of arcs detected in instance file " << params->inputInstFileName << "\n"
+			<< "does not agree with the number of arcs stated at beginning of file.\n"
+			<< "EXECUTION ABORTED" << endl;
+			exit(1);		
+	}	
 
     for (int k = 0; k < numbCommods * 2; k++)
     {
@@ -289,16 +469,20 @@ void InstanceRStd::read(istream &is)
             stochElems[DEMAND][countDemand++] = volume;
         }
     }
+	
+	if (params->verbose)
+		cout << "\n****** End reading RSTD instance " << params->inputInstFileName << ".\n" << endl;
 }
 
-// Writes a generated MCFND networks to file in restricted STD format.
+// Writes a generated MCFND instance to file in restricted STD format.
 //
 // This is specialized to handle cases where there is a single source
 // node and a single sink node for each commodity.
-void InstanceRStd::write(ostream &os) const
+void InstanceRStd::write(ostream &os, string feasibility, string validity) const
 {
     static int scen = 0;
-    os << " SCENARIO        " << scen++ << endl;
+	os << endl;
+    os << "SCENARIO: " << scen++ << " feasibility: " << feasibility << " validity: " << validity << endl;
     os << setw(12) << right << numbNodes << "   " << setw(12) << right << numbArcs << "   " << setw(12) << right
        << numbCommods << endl;
 
@@ -314,13 +498,13 @@ void InstanceRStd::write(ostream &os) const
                     if (*(arcs[a].comms[k].capac) != 0)
                         count++;
 
-                os << fixed << setprecision(3) << setw(12) << right << arcs[a].orig + 1 << "   " << setw(12) << right
+                os << fixed << setprecision(6) << setw(12) << right << arcs[a].orig + 1 << "   " << setw(12) << right
                    << arcs[a].dest + 1 << "   " << setw(12) << right << *(arcs[a].cost) << "   " << setw(12) << right
                    << *(arcs[a].capac) << "   " << setw(12) << right << count << endl;
 
                 for (int k = 0; k < numbCommods; k++)
-                    if (arcs[a].comms[k].capac != 0)
-                        os << fixed << setprecision(3) << setw(12) << right << k + 1 << "   " << setw(12) << right
+                    if (*(arcs[a].comms[k].capac) != 0)
+                        os << fixed << setprecision(6) << setw(12) << right << k + 1 << "   " << setw(12) << right
                            << *(arcs[a].comms[k].cost) << "   " << setw(12) << right << *(arcs[a].comms[k].capac)
                            << endl;
             }
@@ -329,34 +513,60 @@ void InstanceRStd::write(ostream &os) const
 
     for (int k = 0; k < numbCommods; k++)
     {
-        os << fixed << setprecision(3) << setw(12) << right << k + 1 << "   " << setw(12) << right
+        os << fixed << setprecision(6) << setw(12) << right << k + 1 << "   " << setw(12) << right
            << commods[k].orig + 1 << "   " << setw(12) << right << *(commods[k].volume) << endl;
-        os << fixed << setprecision(3) << setw(12) << right << k + 1 << "   " << setw(12) << right
+        os << fixed << setprecision(6) << setw(12) << right << k + 1 << "   " << setw(12) << right
            << commods[k].dest + 1 << "   " << setw(12) << right << -*(commods[k].volume) << endl;
     }
 }
 
-// Reads a base deterministic MCFND network stored in generic STD format.
+// Reads a deterministic MCFNDP instance stored in generic STD format.
 void InstanceGStd::read(istream &is)
 {
+	if (params->verbose)
+		cout << "\n****** Begin reading GSTD instance " << params->inputInstFileName << "." << endl;
+	
     string line, dummy;
     int numbComm, idxComm, idxNode;
-	int capac, volume, varCost, fixedCost;
+	double capac, volume, varCost, fixedCost;
     int countArc = 0, countComm = 0;
 
-    is >> numbNodes >> numbArcs >> numbCommods;
+	is >> numbNodes >> numbArcs >> numbCommods;	
 
     allocate();
 
     for (int a = 0; a < numbArcs; a++)
     {
         Arc arc(numbCommods);
+		
+		is >> arc.orig >> arc.dest >> fixedCost >> capac >> numbComm;
+	
+		if (arc.orig > numbNodes || arc.dest > numbNodes || arc.orig < 1 || arc.dest < 1)
+		{	
+			cerr << "\nERROR:\n"
+				<< "At least one of the two node indexes (" << arc.orig << ", " << arc.dest << ") stated\n"
+				<< "in connection with an arc listed in instance file " << params->inputInstFileName << "\n"
+				<< "is non-positive or exceeds the total number of nodes stated at beginning of file.\n"
+				<< "EXECUTION ABORTED" << endl;
+				exit(1);		
+		}	
 
-        is >> arc.orig >> arc.dest >> fixedCost // arc.cost
-            >> capac >> numbComm;
+		if (numbCommods < numbComm)
+		{
+			cerr << "\nERROR:\n"
+				<< "In instance file " << params->inputInstFileName << " the number of commodities " << numbComm << "\n"
+				<< "stated in connection with arc (" << arc.orig << ", " << arc.dest << ") for which the\n"
+				<< "capacities are zero exceeds the number of commodities stated at beginning of file.\n"
+				<< "EXECUTION ABORTED" << endl;
+				exit(1);		
+		}	
 
         arc.orig--;
         arc.dest--;
+		
+		if (capac < 0)
+			capac = ASSIGNED_CAPAC_IF_READ_NEG;
+		
         stochElems[CAP_ARC][countArc] = capac;
         stochElems[FIXED_COST][countArc] = fixedCost;
         nodes[arc.orig].arcOut.push_back(countArc);
@@ -364,24 +574,51 @@ void InstanceGStd::read(istream &is)
         countArc++;
 
         for (int k = 0; k < numbComm; k++)
-        {
-            is >> idxComm;
-            idxComm--;
-            is >> varCost // arc.comms[idxComm].cost
-                >> capac;
-
-            stochElems[CAP_COMMOD][countComm] = capac;
-            stochElems[VAR_COST][countComm] = varCost;
+        {					
+			is >> idxComm;
+			
+			if (idxComm > numbCommods)
+			{
+				cerr << "\nERROR:\n"
+					<< "The commodity index " << idxComm << " stated while listing the costs and capacities\n"
+					<< "in connection with arc ("<< (arc.orig + 1) << ", " << (arc.dest + 1) << ") in instance file\n"
+					<< params->inputInstFileName << " exceeds the total number of commodities at beginning of file.\n"
+					<< "EXECUTION ABORTED" << endl;
+					exit(1);
+			}
+			
+            idxComm--;			
+						
+			is >> varCost // arc.comms[idxComm].cost
+					>> capac;			
+				
+			if (capac < 0)
+				capac = ASSIGNED_CAPAC_IF_READ_NEG;
+            
+			stochElems[CAP_COMMOD][a * numbCommods + (idxComm)] = capac;
+            stochElems[VAR_COST][a * numbCommods + (idxComm)] = varCost;
+			
             countComm++;
-        }
+        }		
 
         arcs[a] = arc;
     }
+	
+	if (countArc != numbArcs)
+	{
+		cerr << "\nERROR:\n"
+			<< "The number of arcs detected in instance file " << params->inputInstFileName << "\n"
+			<< "does not agree with the number of arcs stated at beginning of file.\n"
+			<< "EXECUTION ABORTED" << endl;
+			exit(1);		
+	}	
 
     for (int k = 0; k < numbCommods; k++)
     {
         commods[k].outflows.resize(numbNodes, 0);
         commods[k].inflows.resize(numbNodes, 0);
+		commods[k].adjOutflows.resize(numbNodes, 0);
+        commods[k].adjInflows.resize(numbNodes, 0);
         commods[k].origVolume = 0;
     }
 
@@ -403,13 +640,17 @@ void InstanceGStd::read(istream &is)
     {
         stochElems[DEMAND][k] = commods[k].origVolume;
     }
+	
+	if (params->verbose)
+		cout << "\n****** End reading GSTD instance " << params->inputInstFileName << ".\n" << endl;
 }
 
-// Writes a generated MCFND networks to file in generic STD format.
-void InstanceGStd::write(ostream &os) const
+// Writes a generated MCFND instance to file in generic STD format.
+void InstanceGStd::write(ostream &os, string feasibility, string validity) const
 {
     static int scen = 0;
-    os << " SCENARIO        " << scen++ << endl;
+	os << endl;
+    os << "SCENARIO: " << scen++ << " feasibility: " << feasibility << " validity: " << validity << endl;
     os << setw(12) << right << numbNodes << "   " << setw(12) << right << numbArcs << "   " << setw(12) << right
        << numbCommods << endl;
 
@@ -425,14 +666,14 @@ void InstanceGStd::write(ostream &os) const
                     if (*(arcs[a].comms[k].capac) != 0)
                         count++;
 
-                os << fixed << setprecision(3) << setw(12) << right << arcs[a].orig + 1 << "   " << setw(12) << right
+                os << fixed << setprecision(6) << setw(12) << right << arcs[a].orig + 1 << "   " << setw(12) << right
                    << arcs[a].dest + 1 << "   " << setw(12) << right << *(arcs[a].cost) << "   " << setw(12) << right
                    << *(arcs[a].capac) << "   " << setw(12) << right << count << endl;
 
                 for (int k = 0; k < numbCommods; k++)
-                    if (arcs[a].comms[k].capac != 0)
+                    if (*(arcs[a].comms[k].capac) != 0)
 
-                        os << fixed << setprecision(3) << setw(12) << right << k + 1 << "   " << setw(12) << right
+                        os << fixed << setprecision(6) << setw(12) << right << k + 1 << "   " << setw(12) << right
                            << *(arcs[a].comms[k].cost) << "   " << setw(12) << right << *(arcs[a].comms[k].capac)
                            << endl;
             }
@@ -448,13 +689,13 @@ void InstanceGStd::write(ostream &os) const
             //      << " new volume: " << *(commods[k].volume) << " orig volume: " << commods[k].origVolume << endl;
 
             if (commods[k].outflows[n] > 0)
-                os << fixed << setprecision(3) << setw(12) << right << k + 1 << "   " << setw(12) << right << n + 1
+                os << fixed << setprecision(6) << setw(12) << right << k + 1 << "   " << setw(12) << right << n + 1
                    << "   " << setw(12) << right
-                   << commods[k].outflows[n] * (*(commods[k].volume) / commods[k].origVolume) << endl;
+                   << commods[k].adjOutflows[n] << endl;
             if (commods[k].inflows[n] < 0)
-                os << fixed << setprecision(3) << setw(12) << right << k + 1 << "   " << setw(12) << right << n + 1
+                os << fixed << setprecision(6) << setw(12) << right << k + 1 << "   " << setw(12) << right << n + 1
                    << "   " << setw(12) << right
-                   << commods[k].inflows[n] * (*(commods[k].volume) / commods[k].origVolume) << endl;
+                   << commods[k].adjInflows[n] << endl;
         }
     }
 }

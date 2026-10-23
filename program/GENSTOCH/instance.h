@@ -196,6 +196,14 @@ struct Commodity
     // (non-positive) inflows of this commodity to each node
     VectDbl inflows;
 
+	// (non-negative) adjusted outflows of this commodity 
+	// from each node to restore balance
+    VectDbl adjOutflows;
+
+    // (non-positive) adjusted inflows of this commodity 
+	// to each node to restore balance
+    VectDbl adjInflows;
+
     // original volume
     double origVolume;
 
@@ -228,6 +236,9 @@ typedef vector<Commodity> VectCommod;
 // Defining and handling characteristics of a computing instance.
 struct Instance
 {
+	// negative capacities read in DOW or STD files are interpreted as infinite 
+	const double ASSIGNED_CAPAC_IF_READ_NEG = 1000000000;	
+	
     // 1 Variables specifying characteristics of base deterministic instance.
     //
     // configuration parameters extracted from configuration file and
@@ -286,11 +297,18 @@ struct Instance
 
     friend ostream &operator<<(ostream &os, const Instance &inst);
 
-    virtual void write([[maybe_unused]] ostream &os) const
+    virtual void write([[maybe_unused]] ostream &os, string feasib, string valid) const
     {
     }
 
     virtual void read([[maybe_unused]] istream &is)
+    {
+    }	
+	
+	// Adjusts final commodity flows to restore balance between total
+	// supplied and demanded volumes when there are several sources
+	// and/or sinks.
+	virtual void adjCommodFlows()
     {
     }
 
@@ -299,7 +317,11 @@ struct Instance
 
     // Assigns sizes to subarrays comprising master array of stochastic
     // elements.
-    void assignSizes();
+    void assignSizes();		
+	
+	// Verifies if at least one of the randomized values in a scenario
+	//is negative.
+	bool hasNegativeValue();	
 
     int getSize(STOCH_ELEMS_TYPE elem)
     {
@@ -324,7 +346,7 @@ inline istream &operator>>(istream &is, Instance &inst)
 // Writes instance to stream.
 inline ostream &operator<<(ostream &os, const Instance &inst)
 {
-    inst.write(os);
+    inst.write(os, "", "");
     return os;
 }
 
@@ -334,7 +356,7 @@ struct InstanceDow : public Instance
     InstanceDow(Configuration *params) : Instance(params)
     {
     }
-    virtual void write(ostream &os) const override;
+    virtual void write(ostream &os, string feasib, string valid) const override;
     virtual void read(istream &is) override;
 };
 
@@ -344,8 +366,9 @@ struct InstanceGStd : public Instance
     InstanceGStd(Configuration *params) : Instance(params)
     {
     }
-    virtual void write(ostream &os) const override;
+    virtual void write(ostream &os, string feasib, string valid) const override;
     virtual void read(istream &is) override;
+	void adjCommodFlows();
 };
 
 // Subclass handling restricted STD format
@@ -354,7 +377,7 @@ struct InstanceRStd : public Instance
     InstanceRStd(Configuration *params) : Instance(params)
     {
     }
-    virtual void write(ostream &os) const override;
+    virtual void write(ostream &os, string feasib, string valid) const override;
     virtual void read(istream &is) override;
 };
 

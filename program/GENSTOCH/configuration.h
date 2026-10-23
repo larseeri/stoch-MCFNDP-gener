@@ -32,6 +32,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 #include "../HOYLAND_KAUT_WALLACE/matrix.h"
 
@@ -46,6 +47,9 @@ using namespace std;
 
 // prefix of non-default configuration file name
 #define CONFIG_FILE_KEY "+F"
+
+// requesting help
+#define CONFIG_HELP_MODE "+H"
 
 // requesting verbose mode when looking for configuration file
 #define CONFIG_VERBOSE_MODE "+v"
@@ -202,37 +206,37 @@ struct Configuration
     double beta;
     //
     // When MOMENTS_DIST_CHARACT == UNIFORM, then the stochastic elements
-    // of the network that are changed according to scenarios are each assumed
+    // of the instance that are changed according to scenarios are each assumed
     // to follow a uniform(a, b) distribution where,
     // a = D - (alpha * D),
     // b = D + (beta * D),
     // D is the base value of the stochastic element taken from the base
-    // deterministic network,
+    // deterministic instance,
     // alpha in [0, 1),
     // beta in [0, \infty).
     // The distribution is symmetric around D when alpha = beta.
     //
     // When MOMENTS_DIST_CHARACT == TRIANGULAR, then the stochastic elements
-    // of the network that are changed according to scenarios are each assumed
+    // of the instance that are changed according to scenarios are each assumed
     // to follow a triangular(a, b, c) distribution where,
     // where,
     // a = D - (alpha * D),
     // b = D + (beta * D),
     // c = D,
     // D is the base value of the stochastic element taken from the base
-    // deterministic network,
+    // deterministic instance,
     // alpha in [0, 1),
     // beta in [0, \infty).
     // The distribution is symmetric around D when alpha = beta.
     //
-    // name of file containing base determistic MCFND network (default or
+    // name of file containing base determistic MCFND instance (default or
     // modified with option key I)
     string inputInstFileName;
 	
 	// skip verification and report about feasibility of each generated scenario
 	bool skipFeasibChecks;
 
-    // name of file containing generated MCFND networks (default or modified
+    // name of file containing generated MCFND instance (default or modified
     // with option key O)
     string outputInstFileName;
 

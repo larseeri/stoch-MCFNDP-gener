@@ -96,7 +96,7 @@ void HoylandKautWallace::generMoments(int numbMoments, int numbElems)
         generMomentsUnifDist(numbElems);
         break;
     case TRIANGULAR:
-        generMomentsUnifDist(numbElems);
+        generMomentsTriangDist(numbElems);
         break;
     default:
         break;
@@ -114,7 +114,7 @@ void HoylandKautWallace::generMoments(int numbMoments, int numbElems)
 // where,
 // a = D - (params->alpha * D),
 // b = D + (params->beta * D),
-// D is the base value of the stochastic element taken from the base deterministic network,
+// D is the base value of the stochastic element taken from the base deterministic instance,
 // params->alpha in [0, 1),
 // params->beta in [0, \infty).
 // The distribution is symmetric around D when params->alpha = params->beta.
@@ -162,7 +162,7 @@ void HoylandKautWallace::generMomentsUnifDist(int numbElems)
 // a = D - (params->alpha * D),
 // b = D + (params->beta * D),
 // c = D,
-// D is the base value of the stochastic element taken from the base deterministic network,
+// D is the base value of the stochastic element taken from the base deterministic instance,
 // params->alpha in [0, 1),
 // params->beta in [0, \infty).
 // The distribution is symmetric around D when params->alpha = params->beta.

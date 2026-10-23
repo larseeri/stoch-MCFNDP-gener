@@ -27,7 +27,7 @@
 Configuration::Configuration(int argc, char **argv, string _configFileName)
     : nbArg(argc), vectArg(argv), verbose(false), configFileName(_configFileName), instanceFormat(DOW),
       specCorrBlocks(false), momentsCharacts(UNIFORM), generMoments(false), alpha(0.25), beta(0.25),
-      inputInstFileName("./base-determ-network.dow"), skipFeasibChecks(false), outputInstFileName("./generated-stoch-network.txt"),
+      inputInstFileName("./base-determ-inst.dow"), skipFeasibChecks(false), outputInstFileName("./generated-stoch-inst.txt"),
       momentsFileName("./moments.dat"), correlsFileName("./correlations.dat"), numbScenarios(1000),
       //
       // distCharactMoments = 7 (7=1+2+4), ensures that the target moments supplied
@@ -64,14 +64,16 @@ Configuration::Configuration(int argc, char **argv, string _configFileName)
 // Parses command line.
 void Configuration::parseCmdLine()
 {	
-	cout << "\n****** Begin parsing configuration parameters from command line.\n" << endl;
+	if (verbose)
+		cout << "****** Begin parsing configuration options from command line.\n" << endl;
 
     int elemStoch = DEMAND;
 
     bool reinitCorrMatrix = true;
 
     int a = 1;
-    const char *key;
+    const char *shortKey;
+	const char *longKey;
     const char *value;
 
     while (a < nbArg)
@@ -79,7 +81,8 @@ void Configuration::parseCmdLine()
         if ((vectArg[a][0] == PARAM_PREFIX))
         {
 
-            key = &vectArg[a][1];
+            shortKey = &vectArg[a][1];
+			longKey = vectArg[a];
 
             if (a < nbArg - 1)
             {
@@ -95,9 +98,9 @@ void Configuration::parseCmdLine()
                 value = "";
 
             if (verbose)
-                cout << "****** command line -- parameter [" << key << "] = [" << value << "]" << endl;
+                cout << "[" << shortKey << "] [" << value << "]" << endl;
 
-            switch (*key)
+            switch (*shortKey)
             {
             case 'F':
                 if (*value == 'D')
@@ -114,9 +117,17 @@ void Configuration::parseCmdLine()
                 {
                     instanceFormat = RSTD;
                     break;
-                }				
-				displayError("option F can only be specified along with a value in {D, G, R}");
-                break;
+                }	
+				else
+				{				
+					cerr << "\nERROR:\n"
+						<< "Option key F in instruction line can only be followed\n"
+						<< "by one of the three following values: D, G, R.\n"
+						<< "However, value [" << *value <<  "] was received.\n"
+						<< "EXECUTION ABORTED" << endl;
+					exit(1);                
+					break;    
+				}	
             case 'T':
                 if (*value == 'U')
                 {
@@ -130,9 +141,22 @@ void Configuration::parseCmdLine()
                     paramT = true;
                     break;
                 }
-                displayError("option T can only be specified along with a value in {U, T}");
-                break;
+				else
+				{				
+					cerr << "\nERROR:\n"
+						<< "Option key T in instruction line can only be followed\n"
+						<< "by one of the two following values: U, T.\n"
+						<< "However, value [" << *value <<  "] was received.\n"
+						<< "EXECUTION ABORTED" << endl;
+					exit(1);                
+					break;    
+				}
             case 'S':
+			
+				// only the last value of option S is retained 
+				stochTypes.clear();
+				nonStochTypes.clear();
+				
                 elemStoch = atoi(value);
 
                 if (elemStoch & flagStochDemand)
@@ -166,7 +190,7 @@ void Configuration::parseCmdLine()
                     reinitCorrMatrix = false;
                 }
                 STOCH_ELEMS_TYPE elem[2];
-                if (strlen(vectArg[a]) == 4)
+                if (strlen(longKey) == 4)
                 {
                     for (int j = 0; j < 2; j++)
                         switch (vectArg[a][j + 2])
@@ -187,7 +211,11 @@ void Configuration::parseCmdLine()
                             elem[j] = VAR_COST;
                             break;
                         default:
-                            displayError("Option X must be specified along with a pair of characters in {D, A, C, F, V}.");
+							cerr << "\nERROR:\n"
+								<< "Option X must be specified along with a pair of characters in {D, A, C, F, V}.\n"
+								<< "However, value [" << *value <<  "] was received.\n"
+								<< "EXECUTION ABORTED" << endl;
+							exit(1);
                             break;
                         }
                     paramX = true;
@@ -197,7 +225,10 @@ void Configuration::parseCmdLine()
                 }
                 else
                 {
-                    displayError("Option X must be specified along with a pair of characters in {D, A, C, F, V}.");
+                    cerr << "\nERROR:\n"
+						<< "Option X must be specified along with a pair of characters in {D, A, C, F, V}.\n"
+						<< "EXECUTION ABORTED" << endl;
+					exit(1);
                     break;
                 }
             case 'G':
@@ -267,14 +298,6 @@ void Configuration::parseCmdLine()
                 readStartScenarios = true;
                 startScenariosFileName = value;
                 break;
-
-            // help
-            case 'H':
-                printHelpAndExit();
-                break;
-            case 'h':
-                printHelpAndExit();
-                break;
             default:
                 break;
             }
@@ -283,12 +306,13 @@ void Configuration::parseCmdLine()
         a++;
     }
 
-    cout << "\n****** End parsing configuration parameters from command line." << endl;
+	if (verbose)
+		cout << "\n****** End parsing configuration options from command line." << endl;
 }
 
 // Parses key or (key, value) pair found on a line of the configuration file.
 inline void Configuration::parseKeyValue(string key, string value)
-{
+{	
     int elemStoch = DEMAND;
 
     switch (key[0])
@@ -309,8 +333,16 @@ inline void Configuration::parseKeyValue(string key, string value)
             instanceFormat = RSTD;
             break;
         }
-        displayError("option F can only be specified along with a value in {D, G, R}");
-        break;
+        else
+		{				
+			cerr << "\nERROR:\n"
+				<< "Option key F in instruction line can only be followed\n"
+				<< "by one of the three following values: D, G, R.\n"
+				<< "However, value [" << value <<  "] was received.\n"
+				<< "EXECUTION ABORTED" << endl;
+			exit(1);                
+			break;    
+		}	
     case 'T':
         if (value == "U")
         {
@@ -324,9 +356,21 @@ inline void Configuration::parseKeyValue(string key, string value)
             paramT = true;
             break;
         }
-        displayError("option T can only be specified along with a value in {U, T}");
-        break;
-    case 'S':
+        else
+		{				
+			cerr << "\nERROR:\n"
+				<< "Option key T in instruction line can only be followed\n"
+				<< "by one of the two following values: U, T.\n"
+				<< "However, value [" << value <<  "] was received.\n"
+				<< "EXECUTION ABORTED" << endl;
+			exit(1);                
+			break;    
+		}
+    case 'S':	
+		// only the last value of option S is retained 
+		stochTypes.clear();
+		nonStochTypes.clear();
+	
         elemStoch = stoi(value);
 
         if (elemStoch & flagStochDemand)
@@ -373,8 +417,12 @@ inline void Configuration::parseKeyValue(string key, string value)
                     elem[j] = VAR_COST;
                     break;
                 default:
-                    displayError("Option X must be specified along with a pair of characters in {D, A, C, F, V}.");
-                    break;
+					cerr << "\nERROR:\n"
+						<< "Option X must be specified along with a pair of characters in {D, A, C, F, V}.\n"
+						<< "However, value [" << value <<  "] was received.\n"
+						<< "EXECUTION ABORTED" << endl;
+					exit(1);
+				break;
                 }
             paramX = true;
             correlCoeffsMatrix[elem[0]][elem[1]] = stof(value);
@@ -383,9 +431,12 @@ inline void Configuration::parseKeyValue(string key, string value)
         }
         else
         {
-            displayError("Option X must be specified along with a pair of characters in {D, A, C, F, V}.");
-            break;
-        }
+			cerr << "\nERROR:\n"
+				<< "Option X must be specified along with a pair of characters in {D, A, C, F, V}.\n"
+				<< "EXECUTION ABORTED" << endl;
+			exit(1);
+			break;
+		}
     case 'G':
         generMoments = true;
         break;
@@ -451,17 +502,10 @@ inline void Configuration::parseKeyValue(string key, string value)
         readStartScenarios = true;
         startScenariosFileName = value;
         break;
-
-    // help
-    case 'H':
-        printHelpAndExit();
-        break;
-    case 'h':
-        printHelpAndExit();
-        break;
     default:
         break;
     }
+	
 }
 
 // Verifies configuration values.
@@ -473,48 +517,54 @@ void Configuration::verify()
 	
     if (inputInstFileName == "")
     {
-        cerr << "\nERROR:\n";
-        cerr << "No deterministic base instance file was specified.\n";
-        cerr << "Use option -I" << endl;
-        exit(1);
+        cerr << "\nERROR:\n"
+			<< "No deterministic base instance file was specified.\n"
+			<< "Use option -I.\n"
+			<< "EXECUTION ABORTED" << endl;
+		exit(1);
     }
     else if (!filesystem::exists(inputInstFileName))
     {
-        cerr << "\nERROR:\n";
-		cerr << "inputInstFileName: " << inputInstFileName << "\n";
-        cerr << "The specified deterministic base instance file could not be found.\n";
-        cerr << "Use option -I" << endl;
-        exit(1);
+        cerr << "\nERROR:\n"
+			<< "inputInstFileName: " << inputInstFileName << ".\n"
+			<< "The specified deterministic base instance file could not be found.\n"
+			<< "Use option -I.\n"
+			<< "EXECUTION ABORTED" << endl;
+		exit(1);
     }
     if (stochTypes.size() == 0)
     {
-        cerr << "\nERROR:\n";
-        cerr << "No stochastic type was specified." << endl;
-        cerr << "Use option -S" << endl;
-        exit(1);
+        cerr << "\nERROR:\n"
+			<< "No stochastic type was specified.\n"
+			<< "Use option -S.\n"
+			<< "EXECUTION ABORTED" << endl;
+		exit(1);
     }
 
-    if (alpha < 0.0 || alpha > 0.99)
+    if (alpha < 0.0 || alpha > 0.90)
     {
-        cerr << "\nERROR:\n";
-        cerr << "alpha must fall in [0, 0.99]." << endl;
-        exit(1);
+        cerr << "\nERROR:\n"
+			<< "alpha must fall in [0, 0.90].\n"
+			<< "EXECUTION ABORTED" << endl;
+		exit(1);
     }
 
     if (beta < 0.0)
     {
-        cerr << "\nERROR:\n";
-        cerr << "beta must be non-negative." << endl;
-        exit(1);
+        cerr << "\nERROR:\n"
+			<< "beta must be non-negative.\n"
+			<< "EXECUTION ABORTED" << endl;
+		exit(1);
     }
 
     if (!specCorrBlocks)
     {		
 		if (paramX)
 		{		
-        cerr << "\nERROR:\n";
-        cerr << "Option(s) X?? cannot be used without option K." << endl;
-        exit(1);
+			cerr << "\nERROR:\n"
+				<< "Option(s) X?? cannot be used without option K.\n"
+				<< "EXECUTION ABORTED" << endl;
+			exit(1);
 		}
 	}	
 	else
@@ -524,8 +574,9 @@ void Configuration::verify()
     {		
 		if (paramT)
 		{		
-			cerr << "\nERROR:\n";
-			cerr << "Option T cannot be used without option G." << endl;
+			cerr << "\nERROR:\n"
+				<< "Option T cannot be used without option G.\n"
+				<< "EXECUTION ABORTED" << endl;
 			exit(1);
 		}
 	}
@@ -538,12 +589,26 @@ void Configuration::verify()
         {
             if (correlCoeffsMatrix[row][col] < -1.0 || correlCoeffsMatrix[row][col] > 1)
             {
-                cerr << "\nERROR:\n";
-                cerr << "Correlations must fall in [-1, 1]." << endl;
+                cerr << "\nERROR:\n"
+					<< "Correlations must fall in [-1, 1].\n"
+					<< "EXECUTION ABORTED" << endl;
                 exit(1);
             }
         }
     }	
+	
+	if (((find(stochTypes.begin(), stochTypes.end(), CAP_COMMOD) != stochTypes.end()) ||	
+		(std::find(stochTypes.begin(), stochTypes.end(), VAR_COST) != stochTypes.end())) &&
+		(instanceFormat == DOW))
+	{
+		cerr << "\nERROR:\n"
+			<< "Randomization of variable costs and/or commodity-specific\n"
+			<< "capacities is not allowed when the basic instance is received in\n"
+			<< "the DOW format.\n"
+			<< "EXECUTION ABORTED" << endl;	
+		exit(1);
+	}
+	
 }
 
 void Configuration::verifyOutputPath(string fullPath)
@@ -556,11 +621,12 @@ void Configuration::verifyOutputPath(string fullPath)
 	
 		if (!filesystem::exists(folderPath) || !filesystem::is_directory(folderPath))			
 		{			
-			cerr << "\nERROR: " << endl;    
-			cerr << "Output file path " << fullPath << " was specified.\n" 
+			cerr << "\nERROR:\n"    
+				<< "Output file path " << fullPath << " was specified.\n" 
 				<< "However, folder " << folderPath << " is unreachable.\n"
-				<< "Make sure to create individual folders on output file path and to grant sufficient access." << endl;
-			cerr << "EXECUTION ABORTED\n" << endl;
+				<< "Make sure to create individual folders on output file path\n"
+				<< "and to grant sufficient access.\n"
+				<< "EXECUTION ABORTED\n" << endl;
 			exit(1);
 		}
 	}	
@@ -589,17 +655,21 @@ void Configuration::parseConfigFileNameFromCmdLine()
             {
                 verbose = true;
             }
-            //
+			else if (strcmp(vectArg[a], CONFIG_HELP_MODE) == 0)
+            {
+                printHelpAndExit();
+            }
             else if (isalpha(vectArg[a][1]))
-                cerr << "****** configuration prefix [" << vectArg[a] << "] unknown.\n";
+ 				cout << "\nWARNING:\n"
+					<< "configuration prefix [" << vectArg[a] << "] unknown." << endl;
         }
     }
     if (verbose)
     {
-        cout << "\n********* VERBOSE MODE *********\n\n";
+        cout << "\n********* VERBOSE MODE *********\n" << endl;  
 
         if (foundFile)
-            cout << "****** configuration file name [" << CONFIG_FILE_KEY << "] = [" << configFileName << "]" << endl;
+            cout << "****** Configuration file name: " << configFileName << endl;
     }
 }
 
@@ -607,15 +677,18 @@ void Configuration::parseConfigFileNameFromCmdLine()
 // configuration file.
 bool Configuration::processConfigFile()
 {	
+	if (verbose)
+		cout << "****** Begin parsing configuration file." <<  endl;	
+
     char line[lineLength];
     ifstream inStr;
 
     // checking if configuration file exists
     if (!filesystem::is_regular_file(configFileName))
     {
-        cerr << "\nERROR:" << endl;
-        cerr << "The specified configuration file " << configFileName << " could not be found." << endl;
-        cerr << "EXECUTION ABORTED\n" << endl;
+        cerr << "\nERROR:\n"
+			<< "The specified configuration file " << configFileName << " could not be found.\n"
+			<< "EXECUTION ABORTED" << endl;
         exit(1);
     }
 	
@@ -623,16 +696,13 @@ bool Configuration::processConfigFile()
 
     if (!inStr.is_open())
     {
-        cerr << "\nERROR:" << endl;
-        cerr << "The specified configuration file " << configFileName << " could not be opened." << endl;
-        cerr << "EXECUTION ABORTED\n" << endl;
+        cerr << "\nERROR:\n"
+			<< "The specified configuration file " << configFileName << " could not be opened.\n"
+			<< "EXECUTION ABORTED" << endl;
         exit(1);
     }
 	
     bool found = 0;
-
-    if (verbose)
-        cout << "\n****** Begin parsing this configuration file: " << configFileName << "\n" << endl;
 
     inStr.getline(line, lineLength);
     while (inStr)
@@ -650,13 +720,15 @@ bool Configuration::processConfigFile()
         {
             found = 1;
             if (verbose)
-                cout << "****** configuration file -- parameter [" << key.substr(pos) << "] = [" << value << "]" << endl;
+                cout << "[" << key.substr(pos) << "] [" << value << "]" << endl;
+			
             parseKeyValue(key.substr(pos), value);
         }
         inStr.getline(line, lineLength);
     }
-    if (verbose)
-        cout << "\n****** End parsing this configuration file: " << configFileName <<  endl;
+	
+ 	if (verbose)
+		cout << "****** End parsing configuration file." <<  endl;	
 	
     return found;
 }
@@ -690,6 +762,7 @@ inline string Configuration::removeQuotes(istringstream &configLine)
     return outString;
 }
 
+// Unused.
 void Configuration::displayError(string error)
 {
     cerr << "\nERROR: " + error << endl;	
