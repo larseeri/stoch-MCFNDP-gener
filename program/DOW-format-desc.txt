@@ -22,6 +22,8 @@ generator always produces FC costs.
 
 BEGINNING OF FORMAT - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+MULTIGEN.DAT:
+
 n
 m
 k

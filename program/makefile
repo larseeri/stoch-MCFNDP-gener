@@ -22,7 +22,7 @@ HOYLAND_DIR  = ./HOYLAND_KAUT_WALLACE
 RANDOM_DIR   = ./PCG_RANDOM/include
 GENSTOCH_DIR = ./GENSTOCH
 
-ADDFLAGS = -g -Wall #-Wextra #-O3
+ADDFLAGS = -std=gnu++17 -g -Wall #-Wextra #-O3
 
 ifeq ($(CPLEX_SOLVER), 1)
     CXXFLAGS = -DIL_STD -DNDEBUG -DCPLEX
