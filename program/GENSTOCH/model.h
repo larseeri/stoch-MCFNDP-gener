@@ -101,10 +101,19 @@ struct CPXModel : public Model
     virtual bool testScenario();
 };
 
-// Subclass handling DOW and RSTD formats
-struct CPXModel_DowRStd : public CPXModel
+// Subclass handling DOW format
+struct CPXModel_Dow : public CPXModel
 {
-    CPXModel_DowRStd(const Instance *inst) : CPXModel(inst)
+    CPXModel_Dow(const Instance *inst) : CPXModel(inst)
+    {
+    }
+    virtual void modify();
+};
+
+// Subclass handling RSTD format
+struct CPXModel_RStd : public CPXModel
+{
+    CPXModel_RStd(const Instance *inst) : CPXModel(inst)
     {
     }
     virtual void modify();

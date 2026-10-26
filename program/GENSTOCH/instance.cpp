@@ -46,6 +46,162 @@ void displayTimeStamp()
     std::cout << std::put_time(local_time, "%Y-%m-%d %H:%M:%S") << std::endl;
 }
 
+// Google
+double roundToNPlaces(double value, int n)
+{
+    double multiplier = std::pow(10.0, n);
+	
+    // std::round(-3.145) becomes -3.15, correctly rounding away from zero
+    return std::round(value * multiplier) / multiplier;
+}
+
+bool is_empty_or_whitespace(const string& str) {
+    return str.empty() || all_of(str.begin(), str.end(), [](unsigned char c) {
+        return isspace(c);
+    });
+}
+
+bool isDigitsOnly(const string& str)
+{   
+    if (is_empty_or_whitespace(str))
+		return false; 
+    
+    // cast to unsigned char prevents undefined behavior with negative values
+    return all_of(str.begin(), str.end(), [](unsigned char c) { 
+        return isdigit(c); 
+    });
+}
+
+bool isRealNumber(const string& str) {
+    try
+	{
+        size_t idx;
+        // Attempt to convert string to double
+        std::stod(str, &idx);
+        
+        // Ensure the entire string was consumed (rejects "3.14abc")
+        return idx == str.length();
+    } 
+    catch (const std::invalid_argument&)
+	{
+        return false; // Not a number at all
+    } 
+    catch (const std::out_of_range&)
+	{
+        return false; // Number too large for a double
+    }
+}
+
+// UNUSED
+void Instance::readProbs(string probsFileName, vector<double> &vectProbs)
+{		
+    if (!filesystem::is_regular_file(probsFileName))
+    {
+        cerr << "\nERROR:\n"
+			<< "The probability input file " << probsFileName << " could not be found.\n"
+			<< "EXECUTION ABORTED" << endl;
+        exit(1);
+    }
+
+    ifstream inFile(probsFileName);
+
+    if (!inFile.is_open())
+    {
+        cerr << "\nERROR:\n"
+			<< "The probability input file " << probsFileName << " could not be opened.\n"
+			<< "EXECUTION ABORTED" << endl;
+        exit(1);
+    }
+	
+	string numbStr;
+	int numb;
+
+	// reading the number of probabilities 
+	inFile >> numbStr;
+
+	if (isDigitsOnly(numbStr))
+	{
+		numb = stoi(numbStr);
+			
+		if ((numb < 1) || (numb > params->numbScenarios))
+		{
+			cerr << "\nERROR:\n"
+				<< "While reading " + probsFileName + ", the token for the number of probabilities\n"
+				<< "[" << numb << "]" << " was non-positive or larger than the number of scenarios " << params->numbScenarios << ".\n"
+				<< "EXECUTION ABORTED" << endl;
+			exit(1);
+		}			
+	}
+	else
+	{			
+		cerr << "\nERROR:\n"
+			<< "While reading " + probsFileName + ", the token for the number of probabilities\n"
+			<< "[" << numbStr << "] could not be interpreted as a positive number.\n"
+			<< "EXECUTION ABORTED" << endl;
+        exit(1);
+	}
+		
+	vectProbs.resize(params->numbScenarios, 0);
+	
+	string probStr;
+	double prob;
+	
+	int countProbs = 0;
+	double sumProbs = 0;
+    while (inFile)
+    {
+       inFile >> probStr;
+	   
+		if (isRealNumber(probStr))
+		{
+			prob = stod(probStr);
+				
+			if ((prob > 1 ) || (prob <= 0))
+			{
+				cerr << "\nERROR:\n"
+					<< "While reading " + probsFileName + ", probability token\n"
+					<< "[" << probStr << "]" << " was non-positive or larger than 1.\n"
+					<< "EXECUTION ABORTED" << endl;
+				exit(1);
+			}		
+		}
+		else
+		{			
+			cerr << "\nERROR:\n"
+				<< "While reading " + probsFileName + ", the probability token\n"
+				<< "[" << probStr << "] could not be interpreted as a real number.\n"
+				<< "EXECUTION ABORTED" << endl;
+			exit(1);
+		}		
+
+		countProbs++;
+		
+		if (countProbs > params->numbScenarios)
+		{		
+			cerr << "\nERROR:\n"
+				<< "While reading " + probsFileName + ", the number of probability tokens\n"
+				<< "exceeds the number of scenarios.\n"
+				<< "EXECUTION ABORTED" << endl;
+			exit(1);				
+		}	
+	
+	sumProbs+=prob;	
+	vectProbs.push_back(prob);
+	}
+
+	inFile.close();
+  
+	if (abs(sumProbs -1)  > 0.0001)
+	{		
+		cerr << "\nERROR:\n"
+			<< "While reading " + probsFileName + ", the sum of probabilities\n"
+			<< "differs from 1 by at least 0.0001.\n"
+			<< "EXECUTION ABORTED" << endl;
+        exit(1);
+			
+	}    
+}
+
 // Generates scenarios with HKW algorithm.
 int Instance::getScenarios()
 {
@@ -58,6 +214,9 @@ int Instance::getScenarios()
     // matrix of HKW scenarios, one scenario per column, individual stochastic
     // elements on rows
     scenarios = hkw.generScenarios();
+	
+	// update vector of probabilities with that of hkw
+	vectProbsPtr = hkw.vectProbsPtr;	
 	
 	displayTimeStamp();
 
@@ -172,12 +331,16 @@ void InstanceGStd::adjCommodFlows()
         for (int n = 0; n < numbNodes; n++)
         {			
 			// all non-negative
-			commods[k].adjOutflows[n] = commods[k].outflows[n] * (*(commods[k].volume) / commods[k].origVolume);			
+			commods[k].adjOutflows[n] = commods[k].outflows[n] * (*(commods[k].volume) / commods[k].origVolume);	
+
+			commods[k].adjOutflows[n] = roundToNPlaces(commods[k].adjOutflows[n], DECIMAL_PLACES);
 				
 			totalOutflow += commods[k].adjOutflows[n];
 					   
 			// all non-positive
             commods[k].adjInflows[n] = commods[k].inflows[n] * (*(commods[k].volume) / commods[k].origVolume);			
+			
+			commods[k].adjInflows[n] = roundToNPlaces(commods[k].adjInflows[n], DECIMAL_PLACES);
 			
 			totalInflow += commods[k].adjInflows[n];
 		}
@@ -250,7 +413,7 @@ bool Instance::hasNegativeValue()
 void InstanceDow::read(istream &is)
 {
 	if (params->verbose)
-		cout << "\n****** Begin reading DOW instance " << params->inputInstFileName << "." << endl;	
+		cout << "\n****** Begin reading DOW instance from " << params->inputInstFileName << "." << endl;	
 	
     string line, dummy;
     double capac, volume, varCost, fixedCost;
@@ -258,16 +421,27 @@ void InstanceDow::read(istream &is)
 
     getline(is, line);
 	
-	if (line != " MULTIGEN.DAT:")
+	if (line != "MULTIGEN.DAT:")
 	{	
 		cerr << "\nERROR:\n"
 			<< "The file " << params->inputInstFileName << " specified with option key I\n"
 			<< "does not conform to the expected DOW format specified with option key F.\n"
+			<< "Header is missing.\n"
 			<< "EXECUTION ABORTED" << endl;
 			exit(1);	
 	}
 
     is >> numbNodes >> numbArcs >> numbCommods;
+	
+	if (numbNodes < 1 || numbArcs < 1 || numbCommods < 1)
+	{
+		cerr << "\nERROR:\n"
+			<< "At least one among the number of nodes, number of arcs and number of commodities\n"
+			<< "stated at beginning of instance file " << params->inputInstFileName << "\n"
+			<< "is non-positive.\n"
+			<< "EXECUTION ABORTED" << endl;
+			exit(1);		
+	}
 
     allocate();
 	
@@ -281,12 +455,31 @@ void InstanceDow::read(istream &is)
 		if (arc.orig > numbNodes || arc.dest > numbNodes || arc.orig < 1 || arc.dest < 1)
 		{
 			cerr << "\nERROR:\n"
-				<< "At least one of the two node indexes (" << arc.orig << ", " << arc.dest << ") stated\n"
-				<< "in connection with an arc listed in instance file " << params->inputInstFileName << "\n"
-				<< "is non-positive or exceeds the total number of nodes stated at beginning of file.\n"
+				<< "At least one of the two node indices (" << arc.orig << ", " << arc.dest << ") stated\n"
+				<< "in connection with the " << a+1 << "th arc listed (starting from 1) in instance file\n"
+				<< params->inputInstFileName << " is non-positive or exceeds the total number of nodes stated\n"
+				<< "at beginning of file.\n"
 				<< "EXECUTION ABORTED" << endl;
 				exit(1);		
-		}	
+		}
+		if (varCost < 0 || capac < 0 || fixedCost < 0)
+		{
+			cerr << "\nERROR:\n"
+				<< "At least one of the variable cost " << varCost << ", capacity " << capac << " and fixed cost\n"
+				<< fixedCost << " stated in connection with the " << a+1 << "th arc listed (starting from 1)\n"
+				<< "in instance file " << params->inputInstFileName << " is negative.\n"
+				<< "EXECUTION ABORTED" << endl;
+				exit(1);		
+		}
+		if (idxArc != (a + 1))
+		{
+			cerr << "\nERROR:\n"
+				<< "The arc index (starting from 1) " << idxArc << " stated in connection with the\n"
+				<< a+1 << "th arc listed (starting from 1) in instance file " << params->inputInstFileName << "\n"
+				<< "does not agree with expected value " << a+1 << ".\n"
+				<< "EXECUTION ABORTED" << endl;
+				exit(1);		
+		}
 				
 		if (capac < 0)
 			capac = ASSIGNED_CAPAC_IF_READ_NEG;
@@ -323,6 +516,17 @@ void InstanceDow::read(istream &is)
     for (int k = 0; k < numbCommods; k++)
     {
         is >> commods[k].orig >> commods[k].dest >> volume;
+		
+		if (commods[k].orig > numbNodes || commods[k].orig < 1 || commods[k].dest > numbNodes || commods[k].dest < 1)
+		{	
+			cerr << "\nERROR:\n"
+				<< "At least one of the origin and destination node indices " << commods[k].orig << " and\n"
+				<< commods[k].orig << " stated in connection with a commodity volume in instance file\n"
+				<< params->inputInstFileName << " is either non-positive or exceeds the total\n"
+				<< "number of nodes stated at beginning of file.\n"
+				<< "EXECUTION ABORTED" << endl;
+				exit(1);
+		}
 
         commods[k].orig--;
         commods[k].dest--;
@@ -330,36 +534,40 @@ void InstanceDow::read(istream &is)
     }
 	
 	if (params->verbose)
-		cout << "\n****** End reading DOW instance " << params->inputInstFileName << ".\n" << endl;
+		cout << "\n****** End reading DOW instance from " << params->inputInstFileName << ".\n" << endl;
 }
 
 // Writes a generated MCFND instance to file in DOW format.
 void InstanceDow::write(ostream &os, string feasibility, string validity) const
 {
+	//if (params->verbose)
+	//	cout << "\n****** Begin writing DOW instance in " << params->inputInstFileName << ".\n" << endl;	
+	
     static int scen = 0;
-	os << endl;
-    os << "SCENARIO: " << scen++ << " feasibility: " << feasibility << " validity: " << validity << endl;
-    os << " MULTIGEN.DAT:" << endl;
-    os << setw(12) << right << numbNodes << "   " << setw(12) << right << numbArcs << "   " << setw(12) << right
+	os << endl;	
+    os << "SCENARIO: " << scen << " Feasibility: " << feasibility << " Validity: " << validity << " Prob: " << (*vectProbsPtr)[scen] << endl;
+	scen++;
+	
+    os << "MULTIGEN.DAT:" << endl;
+    os << setw(15) << right << numbNodes << "   " << setw(15) << right << numbArcs << "   " << setw(15) << right
        << numbCommods << endl;
-
-    for (int n = 0; n < numbNodes; n++)
-        for (int a = 0; a < numbArcs; a++)
-        {
-            if (arcs[a].orig == n)
-            {
-                os << fixed << setprecision(6) << setw(12) << right << arcs[a].orig + 1 << "   " << setw(12) << right
-                   << arcs[a].dest + 1 << "   " << setw(12) << right << *(arcs[a].comms[0].cost) << "   " << setw(12)
-                   << right << *(arcs[a].capac) << "   " << setw(12) << right << *(arcs[a].cost) << "   " << setw(12)
-                   << right << 1 << "   " << setw(12) << right << a + 1 << endl;
-            }
-        }
+    
+	for (int a = 0; a < numbArcs; a++)
+	{
+		os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << arcs[a].orig + 1 << "   " << setw(15) << right
+			<< arcs[a].dest + 1 << "   " << setw(15) << right << *(arcs[a].comms[0].cost) << "   " << setw(15)
+			<< right << *(arcs[a].capac) << "   " << setw(15) << right << *(arcs[a].cost) << "   " << setw(15)
+			<< right << 1 << "   " << setw(15) << right << a + 1 << endl;           
+	}
 
     for (int k = 0; k < numbCommods; k++)
     {
-        os << fixed << setprecision(6) << setw(12) << right << commods[k].orig + 1 << "   " << setw(12) << right
-           << commods[k].dest + 1 << "   " << setw(12) << right << *(commods[k].volume) << endl;
+        os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << commods[k].orig + 1 << "   " << setw(15) << right
+           << commods[k].dest + 1 << "   " << setw(15) << right << *(commods[k].volume) << endl;
     }
+	
+	//if (params->verbose)
+	//	cout << "\n****** End writing DOW instance in " << params->inputInstFileName << ".\n" << endl;	
 }
 
 // Reads a deterministic MCFNDP instance stored in restricted STD format.
@@ -373,9 +581,19 @@ void InstanceRStd::read(istream &is)
     string line, dummy;
     int numbComm, idxComm, idxNode;
 	double capac, volume, varCost, fixedCost;
-    int countArc = 0, countDemand = 0, countComm = 0;
+    int countArc = 0, countComm = 0;
 
     is >> numbNodes >> numbArcs >> numbCommods;
+	
+	if (numbNodes < 1 || numbArcs < 1 || numbCommods < 1)
+	{
+		cerr << "\nERROR:\n"
+			<< "At least one among the number of nodes, number of arcs and number of commodities\n"
+			<< "stated at beginning of instance file " << params->inputInstFileName << "\n"
+			<< "is non-positive.\n"
+			<< "EXECUTION ABORTED" << endl;
+			exit(1);		
+	}	
 
     allocate();
 
@@ -388,19 +606,26 @@ void InstanceRStd::read(istream &is)
 		if (arc.orig > numbNodes || arc.dest > numbNodes || arc.orig < 1 || arc.dest < 1)
 		{
 			cerr << "\nERROR:\n"
-				<< "At least one of the two node indexes (" << arc.orig << ", " << arc.dest << ") stated\n"
+				<< "At least one of the two node indices (" << arc.orig << ", " << arc.dest << ") stated\n"
 				<< "in connection with an arc listed in instance file " << params->inputInstFileName << "\n"
 				<< "is non-positive or exceeds the total number of nodes stated at beginning of file.\n"
 				<< "EXECUTION ABORTED" << endl;
 				exit(1);		
-		}	
-
+		}
+		if (fixedCost < 0)
+		{
+			cerr << "\nERROR:\n"
+				<< "Fixed cost " << fixedCost << " stated in connection with the " << a+1 << "th arc row listed\n"
+				<< "(starting from 1) in instance file " << params->inputInstFileName << " is negative.\n"
+				<< "EXECUTION ABORTED" << endl;
+				exit(1);		
+		}
 		if (numbCommods < numbComm)
 		{
 			cerr << "\nERROR:\n"
 				<< "In instance file " << params->inputInstFileName << " the number of commodities " << numbComm << "\n"
 				<< "stated in connection with arc (" << arc.orig << ", " << arc.dest << ") for which the\n"
-				<< "capacities are zero exceeds the number of commodities stated at beginning of file.\n"
+				<< "capacities are non-zero exceeds the number of commodities stated at beginning of file.\n"
 				<< "EXECUTION ABORTED" << endl;
 				exit(1);		
 		}	
@@ -433,6 +658,15 @@ void InstanceRStd::read(istream &is)
 			
             idxComm--;
             is >> varCost >> capac;
+			
+			if (varCost < 0)
+			{
+				cerr << "\nERROR:\n"
+					<< "The variable cost " << varCost << " stated in connection with the " << k+1 << "th commodity row\n"
+					<< "listed (starting from 1) in instance file " << params->inputInstFileName << " is negative.\n"
+					<< "EXECUTION ABORTED" << endl;
+					exit(1);		
+			}			
 				
 			if (capac < 0)
 				capac = ASSIGNED_CAPAC_IF_READ_NEG;
@@ -448,7 +682,7 @@ void InstanceRStd::read(istream &is)
 	if (countArc != numbArcs)
 	{
 		cerr << "\nERROR:\n"
-			<< "The number of arcs detected in instance file " << params->inputInstFileName << "\n"
+			<< "The number of arc rows detected in instance file " << params->inputInstFileName << "\n"
 			<< "does not agree with the number of arcs stated at beginning of file.\n"
 			<< "EXECUTION ABORTED" << endl;
 			exit(1);		
@@ -457,6 +691,17 @@ void InstanceRStd::read(istream &is)
     for (int k = 0; k < numbCommods * 2; k++)
     {
         is >> idxComm >> idxNode >> volume;
+		
+		if (idxComm > numbCommods || idxComm < 1 || idxNode > numbNodes || idxNode < 1)
+		{	
+			cerr << "\nERROR:\n"
+				<< "At least one of the commodity index " << idxComm << " and the node index\n"
+				<< idxNode << " stated in connection with a commodity volume in instance file\n"
+				<< params->inputInstFileName << " is either non-positive or exceeds the total\n"
+				<< "number of commodities or nodes stated at beginning of file.\n"
+				<< "EXECUTION ABORTED" << endl;
+				exit(1);
+		}
 
         idxComm--;
         idxNode--;
@@ -466,7 +711,7 @@ void InstanceRStd::read(istream &is)
         else
         {
             commods[idxComm].orig = idxNode;
-            stochElems[DEMAND][countDemand++] = volume;
+            stochElems[DEMAND][idxComm] = volume;
         }
     }
 	
@@ -479,11 +724,15 @@ void InstanceRStd::read(istream &is)
 // This is specialized to handle cases where there is a single source
 // node and a single sink node for each commodity.
 void InstanceRStd::write(ostream &os, string feasibility, string validity) const
-{
+{	
+	//if (params->verbose)
+	//	cout << "\n****** Begin writing RSTD instance in " << params->inputInstFileName << ".\n" << endl;	
+	
     static int scen = 0;
 	os << endl;
-    os << "SCENARIO: " << scen++ << " feasibility: " << feasibility << " validity: " << validity << endl;
-    os << setw(12) << right << numbNodes << "   " << setw(12) << right << numbArcs << "   " << setw(12) << right
+    os << "SCENARIO: " << scen << " Feasibility: " << feasibility << " Validity: " << validity << " Prob: " << (*vectProbsPtr)[scen] << endl;
+    scen++;
+	os << setw(15) << right << numbNodes << "   " << setw(15) << right << numbArcs << "   " << setw(15) << right
        << numbCommods << endl;
 
     for (int n = 0; n < numbNodes; n++)
@@ -498,14 +747,14 @@ void InstanceRStd::write(ostream &os, string feasibility, string validity) const
                     if (*(arcs[a].comms[k].capac) != 0)
                         count++;
 
-                os << fixed << setprecision(6) << setw(12) << right << arcs[a].orig + 1 << "   " << setw(12) << right
-                   << arcs[a].dest + 1 << "   " << setw(12) << right << *(arcs[a].cost) << "   " << setw(12) << right
-                   << *(arcs[a].capac) << "   " << setw(12) << right << count << endl;
+                os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << arcs[a].orig + 1 << "   " << setw(15) << right
+                   << arcs[a].dest + 1 << "   " << setw(15) << right << *(arcs[a].cost) << "   " << setw(15) << right
+                   << *(arcs[a].capac) << "   " << setw(15) << right << count << endl;
 
                 for (int k = 0; k < numbCommods; k++)
                     if (*(arcs[a].comms[k].capac) != 0)
-                        os << fixed << setprecision(6) << setw(12) << right << k + 1 << "   " << setw(12) << right
-                           << *(arcs[a].comms[k].cost) << "   " << setw(12) << right << *(arcs[a].comms[k].capac)
+                        os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << k + 1 << "   " << setw(15) << right
+                           << *(arcs[a].comms[k].cost) << "   " << setw(15) << right << *(arcs[a].comms[k].capac)
                            << endl;
             }
         }
@@ -513,11 +762,14 @@ void InstanceRStd::write(ostream &os, string feasibility, string validity) const
 
     for (int k = 0; k < numbCommods; k++)
     {
-        os << fixed << setprecision(6) << setw(12) << right << k + 1 << "   " << setw(12) << right
-           << commods[k].orig + 1 << "   " << setw(12) << right << *(commods[k].volume) << endl;
-        os << fixed << setprecision(6) << setw(12) << right << k + 1 << "   " << setw(12) << right
-           << commods[k].dest + 1 << "   " << setw(12) << right << -*(commods[k].volume) << endl;
+        os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << k + 1 << "   " << setw(15) << right
+           << commods[k].orig + 1 << "   " << setw(15) << right << *(commods[k].volume) << endl;
+        os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << k + 1 << "   " << setw(15) << right
+           << commods[k].dest + 1 << "   " << setw(15) << right << -*(commods[k].volume) << endl;
     }
+	
+	//if (params->verbose)
+	//	cout << "\n****** End writing RSTD instance in " << params->inputInstFileName << ".\n" << endl;	
 }
 
 // Reads a deterministic MCFNDP instance stored in generic STD format.
@@ -531,7 +783,17 @@ void InstanceGStd::read(istream &is)
 	double capac, volume, varCost, fixedCost;
     int countArc = 0, countComm = 0;
 
-	is >> numbNodes >> numbArcs >> numbCommods;	
+	is >> numbNodes >> numbArcs >> numbCommods;
+
+	if (numbNodes < 1 || numbArcs < 1 || numbCommods < 1)
+	{
+		cerr << "\nERROR:\n"
+			<< "At least one among the number of nodes, number of arcs and number of commodities\n"
+			<< "stated at beginning of instance file " << params->inputInstFileName << "\n"
+			<< "is non-positive.\n"
+			<< "EXECUTION ABORTED" << endl;
+			exit(1);		
+	}
 
     allocate();
 
@@ -544,19 +806,26 @@ void InstanceGStd::read(istream &is)
 		if (arc.orig > numbNodes || arc.dest > numbNodes || arc.orig < 1 || arc.dest < 1)
 		{	
 			cerr << "\nERROR:\n"
-				<< "At least one of the two node indexes (" << arc.orig << ", " << arc.dest << ") stated\n"
+				<< "At least one of the two node indices (" << arc.orig << ", " << arc.dest << ") stated\n"
 				<< "in connection with an arc listed in instance file " << params->inputInstFileName << "\n"
 				<< "is non-positive or exceeds the total number of nodes stated at beginning of file.\n"
 				<< "EXECUTION ABORTED" << endl;
 				exit(1);		
 		}	
-
+		if (fixedCost < 0)
+		{
+			cerr << "\nERROR:\n"
+				<< "Fixed cost " << fixedCost << " stated in connection with the " << a+1 << "th arc row listed\n"
+				<< "(starting from 1) in instance file " << params->inputInstFileName << " is negative.\n"
+				<< "EXECUTION ABORTED" << endl;
+				exit(1);		
+		}
 		if (numbCommods < numbComm)
 		{
 			cerr << "\nERROR:\n"
 				<< "In instance file " << params->inputInstFileName << " the number of commodities " << numbComm << "\n"
 				<< "stated in connection with arc (" << arc.orig << ", " << arc.dest << ") for which the\n"
-				<< "capacities are zero exceeds the number of commodities stated at beginning of file.\n"
+				<< "capacities are non-zero exceeds the number of commodities stated at beginning of file.\n"
 				<< "EXECUTION ABORTED" << endl;
 				exit(1);		
 		}	
@@ -589,8 +858,16 @@ void InstanceGStd::read(istream &is)
 			
             idxComm--;			
 						
-			is >> varCost // arc.comms[idxComm].cost
-					>> capac;			
+			is >> varCost >> capac;			
+				
+			if (varCost < 0)
+			{
+				cerr << "\nERROR:\n"
+					<< "The variable cost " << varCost << " stated in connection with the " << k+1 << "th commodity row\n"
+					<< "listed (starting from 1) in instance file " << params->inputInstFileName << " is negative.\n"
+					<< "EXECUTION ABORTED" << endl;
+					exit(1);		
+			}				
 				
 			if (capac < 0)
 				capac = ASSIGNED_CAPAC_IF_READ_NEG;
@@ -607,7 +884,7 @@ void InstanceGStd::read(istream &is)
 	if (countArc != numbArcs)
 	{
 		cerr << "\nERROR:\n"
-			<< "The number of arcs detected in instance file " << params->inputInstFileName << "\n"
+			<< "The number of arc rows detected in instance file " << params->inputInstFileName << "\n"
 			<< "does not agree with the number of arcs stated at beginning of file.\n"
 			<< "EXECUTION ABORTED" << endl;
 			exit(1);		
@@ -623,7 +900,18 @@ void InstanceGStd::read(istream &is)
     }
 
     while (is >> idxComm >> idxNode >> volume)
-    {
+    {		
+		if (idxComm > numbCommods || idxComm < 1 || idxNode > numbNodes || idxNode < 1)
+		{	
+			cerr << "\nERROR:\n"
+				<< "At least one of the commodity index " << idxComm << " and the node index\n"
+				<< idxNode << " stated in connection with a commodity volume in instance file\n"
+				<< params->inputInstFileName << " is either non-positive or exceeds the total\n"
+				<< "number of commodities or nodes stated at beginning of file.\n"
+				<< "EXECUTION ABORTED" << endl;
+				exit(1);
+		}
+		
         idxComm--;
         idxNode--;
 
@@ -648,10 +936,14 @@ void InstanceGStd::read(istream &is)
 // Writes a generated MCFND instance to file in generic STD format.
 void InstanceGStd::write(ostream &os, string feasibility, string validity) const
 {
+	//if (params->verbose)
+	//	cout << "\n****** Begin writing GSTD instance in " << params->inputInstFileName << ".\n" << endl;	
+	
     static int scen = 0;
 	os << endl;
-    os << "SCENARIO: " << scen++ << " feasibility: " << feasibility << " validity: " << validity << endl;
-    os << setw(12) << right << numbNodes << "   " << setw(12) << right << numbArcs << "   " << setw(12) << right
+    os << "SCENARIO: " << scen << " Feasibility: " << feasibility << " Validity: " << validity << " Prob: " << (*vectProbsPtr)[scen-1] << endl;
+    scen++;
+	os << setw(15) << right << numbNodes << "   " << setw(15) << right << numbArcs << "   " << setw(15) << right
        << numbCommods << endl;
 
     for (int n = 0; n < numbNodes; n++)
@@ -666,15 +958,15 @@ void InstanceGStd::write(ostream &os, string feasibility, string validity) const
                     if (*(arcs[a].comms[k].capac) != 0)
                         count++;
 
-                os << fixed << setprecision(6) << setw(12) << right << arcs[a].orig + 1 << "   " << setw(12) << right
-                   << arcs[a].dest + 1 << "   " << setw(12) << right << *(arcs[a].cost) << "   " << setw(12) << right
-                   << *(arcs[a].capac) << "   " << setw(12) << right << count << endl;
+                os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << arcs[a].orig + 1 << "   " << setw(15) << right
+                   << arcs[a].dest + 1 << "   " << setw(15) << right << *(arcs[a].cost) << "   " << setw(15) << right
+                   << *(arcs[a].capac) << "   " << setw(15) << right << count << endl;
 
                 for (int k = 0; k < numbCommods; k++)
                     if (*(arcs[a].comms[k].capac) != 0)
 
-                        os << fixed << setprecision(6) << setw(12) << right << k + 1 << "   " << setw(12) << right
-                           << *(arcs[a].comms[k].cost) << "   " << setw(12) << right << *(arcs[a].comms[k].capac)
+                        os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << k + 1 << "   " << setw(15) << right
+                           << *(arcs[a].comms[k].cost) << "   " << setw(15) << right << *(arcs[a].comms[k].capac)
                            << endl;
             }
         }
@@ -685,17 +977,17 @@ void InstanceGStd::write(ostream &os, string feasibility, string validity) const
         for (int n = 0; n < numbNodes; n++)
         {
 
-            // cout << "commod: " << k + 1 << " node: " << n + 1 << " orig outflow: " << commods[k].outflows[n]
-            //      << " new volume: " << *(commods[k].volume) << " orig volume: " << commods[k].origVolume << endl;
-
             if (commods[k].outflows[n] > 0)
-                os << fixed << setprecision(6) << setw(12) << right << k + 1 << "   " << setw(12) << right << n + 1
-                   << "   " << setw(12) << right
+                os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << k + 1 << "   " << setw(15) << right << n + 1
+                   << "   " << setw(15) << right
                    << commods[k].adjOutflows[n] << endl;
             if (commods[k].inflows[n] < 0)
-                os << fixed << setprecision(6) << setw(12) << right << k + 1 << "   " << setw(12) << right << n + 1
-                   << "   " << setw(12) << right
+                os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << k + 1 << "   " << setw(15) << right << n + 1
+                   << "   " << setw(15) << right
                    << commods[k].adjInflows[n] << endl;
         }
     }
+	
+	//if (params->verbose)
+	//	cout << "\n****** End writing GSTD instance in " << params->inputInstFileName << ".\n" << endl;	
 }

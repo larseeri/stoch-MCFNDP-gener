@@ -87,8 +87,7 @@ bool CPXModel::testScenario()
 // provided randomization of commodity-specific capacities and/or 
 // commpdity-specific variable costs are excluded.
 void CPXModel_Dow::modify()
-{
-    int countComm = 0;
+{   
     // update source and sink volumes of each commodity
     for (int n = 0; n < inst->numbNodes; n++)
         for (int k = 0; k < inst->numbCommods; k++)
@@ -319,23 +318,40 @@ void HIGHSModel::setHIGHSAMatrix()
 {
     int countAll = 0;
     for (int row = 0; row < numbRows; row++)
-    {
-        bool first = true;
-        for (int col = 0; col < numbCols; col++)
-        {
-            if (prelAMatrix[row][col] != 0)
-            {
-                highsModel.lp_.a_matrix_.index_.push_back(col);
-                highsModel.lp_.a_matrix_.value_.push_back(prelAMatrix[row][col]);
+    {		
+		bool foundInRow = false;
+		// handles empty rows of flow constraints about isolated nodes
+		for (int col = 0; col < numbCols; col++)
+        {		
+			if (prelAMatrix[row][col] != 0)
+				foundInRow = true;		
+		}
+		if (!foundInRow)
+		{
+			highsModel.lp_.a_matrix_.index_.push_back(0);
+            highsModel.lp_.a_matrix_.value_.push_back(prelAMatrix[row][0]);
+			highsModel.lp_.a_matrix_.start_.push_back(countAll);
+			countAll++;		
+		}
+		else
+		{
+			bool first = true;
+			for (int col = 0; col < numbCols; col++)
+			{
+				if (prelAMatrix[row][col] != 0)
+				{
+					highsModel.lp_.a_matrix_.index_.push_back(col);
+					highsModel.lp_.a_matrix_.value_.push_back(prelAMatrix[row][col]);
 
-                if (first)
-                {
-                    highsModel.lp_.a_matrix_.start_.push_back(countAll);
-                    first = false;
-                }
-                countAll++;
-            }
-        }
+					if (first)
+					{
+						highsModel.lp_.a_matrix_.start_.push_back(countAll);
+						first = false;
+					}
+					countAll++;
+				}
+			}
+		}			
     }
     highsModel.lp_.a_matrix_.start_.push_back(countAll);
 }

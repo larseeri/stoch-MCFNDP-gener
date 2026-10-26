@@ -239,6 +239,9 @@ struct Instance
 	// negative capacities read in DOW or STD files are interpreted as infinite 
 	const double ASSIGNED_CAPAC_IF_READ_NEG = 1000000000;	
 	
+	// number of decimals when rounding and writing
+	const int DECIMAL_PLACES = 6;
+	
     // 1 Variables specifying characteristics of base deterministic instance.
     //
     // configuration parameters extracted from configuration file and
@@ -262,6 +265,10 @@ struct Instance
 
     // array of Commodity objects
     VectCommod commods;
+	
+	// vector of probabilities (originating from HKW
+	// and used only to annotate scenarios in output file)	
+	vector<double> * vectProbsPtr = nullptr;
 
     // 2 Variables characterizing scenarios deviating from base deterministic
     // instance.
@@ -334,6 +341,9 @@ struct Instance
 
     // Generates scenarios with Hoyland-Kaut-Wallace algorithm.
     int getScenarios();
+	
+	void readProbs(string probsFileName, vector<double> &vectProbs);	
+	
 };
 
 // Reads instance from stream.
@@ -346,7 +356,7 @@ inline istream &operator>>(istream &is, Instance &inst)
 // Writes instance to stream.
 inline ostream &operator<<(ostream &os, const Instance &inst)
 {
-    inst.write(os, "", "");
+    inst.write(os, "unknown", "unknown");
     return os;
 }
 

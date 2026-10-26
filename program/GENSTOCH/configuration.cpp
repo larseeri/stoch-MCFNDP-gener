@@ -29,26 +29,30 @@ Configuration::Configuration(int argc, char **argv, string _configFileName)
       specCorrBlocks(false), momentsCharacts(UNIFORM), generMoments(false), alpha(0.25), beta(0.25),
       inputInstFileName("./base-determ-inst.dow"), skipFeasibChecks(false), outputInstFileName("./generated-stoch-inst.txt"),
       momentsFileName("./moments.dat"), correlsFileName("./correlations.dat"), numbScenarios(1000),
-      //
-      // distCharactMoments = 7 (7=1+2+4), ensures that the target moments supplied
-      // to HKW_ScenGen() in HKW_sg.c are properly interpreted.
-      // 1 -> use population estimators (as in spreadsheets),
-      // 2 -> 2nd moment is Var instead of StDev,
-      // 4 -> 4th moment is Kurtosis - 3,
-      // Note: by default, 3rd and 4th moments are scaled by StDev.
-      // This MUST be set to 7.
-      distCharactMoments(7),
-      //
-      maxErrorMoment(1e-3), maxErrorCorrel(1e-3),
-      //
-      // displayLevel = 3 ensures that sufficient information is reported about
-      // the generation process by HKW_ScenGen() in HKW_sg.c.
-      // This should be set to 3.
-      displayLevel(3),
-      //
-      maxTrial(10), maxIter(50), randomSeed(7654321), randomStream(1000), outScenariosFileName("raw_scens.dat"),
-      readProbs(false), probsFileName(""), readStartScenarios(false), startScenariosFileName(""), paramX(false),
-      paramT(false)
+    //
+    // distCharactMoments = 7 (7=1+2+4), ensures that the target moments
+	// supplied to HKW_ScenGen() in HKW_sg.c are properly interpreted.
+    // 1 -> HKW says in its documentation that this calls for "population
+	// estimators (as in spreadsheets)", (In fact, this is a misnomer. 1 calls
+	// for sums of terms that are divided by N-1 where N is the sample size. 
+	// this is called in the statistical literature sample estimators.
+	// "Population estimators" would have N as their denominator.)
+    // 2 -> 2nd moment is Var instead of StDev,
+    // 4 -> 4th moment is Kurtosis - 3,
+    // Note: by default, 3rd and 4th moments are scaled by StDev.
+    // This MUST be set to 7.
+    distCharactMoments(7),
+    //
+    maxErrorMoment(1e-3), maxErrorCorrel(1e-3),
+    //
+    // displayLevel = 3 ensures that sufficient information is reported about
+    // the generation process by HKW_ScenGen() in HKW_sg.c.
+    // This should be set to 3.
+    displayLevel(3),
+    //
+    maxTrial(10), maxIter(50), randomSeed(7654321), randomStream(1000), outScenariosFileName("raw_scens.dat"),
+    readProbs(false), probsFileName(""), readStartScenarios(false), startScenariosFileName(""), paramX(false),
+    paramT(false)
 {
     correlCoeffsMatrix.resize(MAX_TYPE, VectDbl(MAX_TYPE, 0.0));
 
@@ -65,7 +69,7 @@ Configuration::Configuration(int argc, char **argv, string _configFileName)
 void Configuration::parseCmdLine()
 {	
 	if (verbose)
-		cout << "****** Begin parsing configuration options from command line.\n" << endl;
+		cout << "****** Begin parsing configuration options from instruction line.\n" << endl;
 
     int elemStoch = DEMAND;
 
@@ -182,7 +186,7 @@ void Configuration::parseCmdLine()
                 break;
             case 'X':
                 // whenever any information about correlations is supplied in
-                // command line, any other information previously supplied
+                // instruction line, any other information previously supplied
                 // in configuration file is disregarded
                 if (reinitCorrMatrix)
                 {
@@ -193,7 +197,7 @@ void Configuration::parseCmdLine()
                 if (strlen(longKey) == 4)
                 {
                     for (int j = 0; j < 2; j++)
-                        switch (vectArg[a][j + 2])
+                        switch (longKey[j + 2])
                         {
                         case 'D':
                             elem[j] = DEMAND;
@@ -298,8 +302,15 @@ void Configuration::parseCmdLine()
                 readStartScenarios = true;
                 startScenariosFileName = value;
                 break;
-            default:
-                break;
+			default:
+				cerr << "\nERROR:\n"
+					<< "Only the following option keys are admissible in\n"
+					<< "the instruction line: F, T, S, X, G, M, K, C, A,\n"
+					<< "B, I, J, O, n, t, i, m, c, l, r, R, o, p, s.\n"
+					<< "However, the key " << *shortKey <<  " was received.\n"
+					<< "EXECUTION ABORTED" << endl;
+				exit (1);                
+				break;				
             }
         }
 
@@ -307,7 +318,7 @@ void Configuration::parseCmdLine()
     }
 
 	if (verbose)
-		cout << "\n****** End parsing configuration options from command line." << endl;
+		cout << "\n****** End parsing configuration options from instruction line." << endl;
 }
 
 // Parses key or (key, value) pair found on a line of the configuration file.
@@ -336,7 +347,7 @@ inline void Configuration::parseKeyValue(string key, string value)
         else
 		{				
 			cerr << "\nERROR:\n"
-				<< "Option key F in instruction line can only be followed\n"
+				<< "Option key F in configuration file can only be followed\n"
 				<< "by one of the three following values: D, G, R.\n"
 				<< "However, value [" << value <<  "] was received.\n"
 				<< "EXECUTION ABORTED" << endl;
@@ -359,7 +370,7 @@ inline void Configuration::parseKeyValue(string key, string value)
         else
 		{				
 			cerr << "\nERROR:\n"
-				<< "Option key T in instruction line can only be followed\n"
+				<< "Option key T in configuration file can only be followed\n"
 				<< "by one of the two following values: U, T.\n"
 				<< "However, value [" << value <<  "] was received.\n"
 				<< "EXECUTION ABORTED" << endl;
@@ -503,7 +514,14 @@ inline void Configuration::parseKeyValue(string key, string value)
         startScenariosFileName = value;
         break;
     default:
-        break;
+		cerr << "\nERROR:\n"
+			<< "Only the following option keys are admissible in\n"
+			<< "the configuration file: F, T, S, X, G, M, K, C, A,\n"
+			<< "B, I, J, O, n, t, i, m, c, l, r, R, o, p, s.\n"
+			<< "However, the key " << key <<  " was received.\n"
+			<< "EXECUTION ABORTED" << endl;
+		exit (1);                
+		break;
     }
 	
 }
@@ -541,7 +559,7 @@ void Configuration::verify()
 		exit(1);
     }
 
-    if (alpha < 0.0 || alpha > 0.90)
+    if (alpha < 0.0 || alpha > 0.95)
     {
         cerr << "\nERROR:\n"
 			<< "alpha must fall in [0, 0.90].\n"
@@ -676,11 +694,8 @@ void Configuration::parseConfigFileNameFromCmdLine()
 // Processes keys or (key, value) pairs specified on a non-comment lines of
 // configuration file.
 bool Configuration::processConfigFile()
-{	
-	if (verbose)
-		cout << "****** Begin parsing configuration file." <<  endl;	
-
-    char line[lineLength];
+{
+    string line;
     ifstream inStr;
 
     // checking if configuration file exists
@@ -692,6 +707,7 @@ bool Configuration::processConfigFile()
         exit(1);
     }
 	
+	// attempting to open configuration file
     inStr.open(configFileName);
 
     if (!inStr.is_open())
@@ -704,14 +720,17 @@ bool Configuration::processConfigFile()
 	
     bool found = 0;
 
-    inStr.getline(line, lineLength);
+	if (verbose)
+		cout << "****** Begin parsing configuration file." <<  endl;	
+
+    getline(inStr, line);
     while (inStr)
     {
         istringstream configLine(line);
 
         string key;
         configLine >> key;
-        string value = removeQuotes(configLine);
+        string rawValue = removeQuotes(configLine);
 
         int pos = (key[0] == PARAM_PREFIX) ? 1 : 0;
 
@@ -719,12 +738,21 @@ bool Configuration::processConfigFile()
         if (isalpha(key[pos]))
         {
             found = 1;
-            if (verbose)
-                cout << "[" << key.substr(pos) << "] [" << value << "]" << endl;
 			
-            parseKeyValue(key.substr(pos), value);
+			// Find the first character of rawValue that is equal to '#'
+			auto it = find_if(rawValue.begin(), rawValue.end(), [](unsigned char c) {
+			return c=='#';
+			});
+    
+			// Extract everything up to that character
+			string cleanValue(rawValue.data(), distance(rawValue.begin(), it));
+					            
+            if (verbose)
+                cout << "[" << key.substr(pos) << "] = [" << cleanValue << "]" << endl;
+			
+            parseKeyValue(key.substr(pos), cleanValue);
         }
-        inStr.getline(line, lineLength);
+        getline(inStr, line);
     }
 	
  	if (verbose)
@@ -1956,7 +1984,7 @@ void Configuration::printHelpAndExit()
 	printf("determ_eqSrcsEqSnks_12oct2026-17h09.gra\n");
 	printf("determ_eqSrcsEqSnks_12oct2026-17h09.tex\n");
 	printf("determ_eqSrcsEqSnks_12oct2026-17h09.pdf\n");
-	exit(1);
+	exit(0);
 }
 
 

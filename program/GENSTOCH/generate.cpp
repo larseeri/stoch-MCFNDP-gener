@@ -265,8 +265,17 @@ TMatrix2 HoylandKautWallace::generScenarios()
         Vec_GetFromFile(&probs, params->probsFileName.c_str());
     // otherwise, scenarios are equiprobable
     else
+	{
         for (int i = 0; i < params->numbScenarios; i++)
             probs.val[i] = 1.0 / params->numbScenarios;
+	}
+	
+	// will be used to annotate each scenario while writing output
+	// with versions of Instance::write()	
+	vectProbsPtr = new vector<double>();	
+	vectProbsPtr->resize(params->numbScenarios, 0);	
+	for (int i = 0; i < params->numbScenarios; i++)		
+		(*vectProbsPtr)[i] = probs.val[i];		
 
     rnd.setSeed(params->randomSeed, params->randomStream);
 

@@ -168,9 +168,8 @@
 // optionKeyN   valueN
 //
 // It may specify at most one option per line. Option keys may be prefixed or
-// not with '-'. Comments may appear either at the beginning of a line, in
-// which case they must start with a non-alphabetic character (but not with
-// '-'), or at the end of a line.
+// not with '-'. Comments may appear either at the beginning or the end of a 
+// line, provided they start with #. 
 //
 // The general command line for running the program is as follows:
 //
@@ -393,13 +392,13 @@
 // randomized elements. Option S expects an integer from 1 to 31 that is the
 // sum of the following, where symbol -> is a shorthand notation for "calls
 // for randomization of":
-// 1 -> demand volumes
+// 1 -> commodity volumes
 // 2 -> total capacities of arcs
 // 4 -> commodity-specific capacities of arcs
 // 8 -> fixed costs
 // 16 -> variable costs (either commodity-specific or not)
 // Hence, specifying -S 3 in the instruction line indicates that total
-// capacities of arcs (2) and demand volumes (1) must be randomized
+// capacities of arcs (2) and commodity volumes (1) must be randomized
 // (2 + 1 = 3).
 //
 // By default, the name of the file describing the base deterministic MCFNDP
@@ -408,13 +407,13 @@
 // format is DOW. This name may be changed with option I <string> and the input
 // format can be indicated accordingly with option F <char>. For example,
 // specifying -S 3 -I instB.std -F G in the instruction line indicates that
-// demands and total capacities of arcs will be randomized based on the
+// volumes and total capacities of arcs will be randomized based on the
 // deterministic instance stored in file instB.std using the generic STD format.
 // (See Section 5.1 below for details.)
 //
 // Important:
 // - Randomization of commodity-specific capacities (4) and/or commodity-specific
-// variable costs (16) is precluded when the base derministic instance is
+// variable costs (16) is precluded when the base deterministic instance is
 // received in the DOW format.
 // - It is critical that the content of the file describing the base
 // deterministic instance and the indicated format of its content match
@@ -424,7 +423,7 @@
 // While the generator is sufficiently general to randomize fixed costs, the
 // latter are usually viewed as being non-stochastic in the context of two-
 // stage stochastic programming. Hence, in standard applications, randomization
-// of the MCFNDP will be limited to a subset of the following: demand volumes,
+// of the MCFNDP will be limited to a subset of the following: commodity volumes,
 // total capacities of arcs, commodity-specific capacities of arcs and variable
 // costs (either commodity-specific or not).
 //
@@ -470,7 +469,7 @@
 // X<UU> <double> and X<UV> <double> respectively, where <double> is the target
 // correlation coefficient and U and V, can take these values, where symbol ->
 // is a shorthand notation for "stands for":
-// D -> demands
+// D -> volumes
 // A -> total capacities of arcs
 // C -> commodity-specific capacities of arcs
 // F -> fixed costs
@@ -511,14 +510,14 @@
 // ./stoch_gen -S 3 -I instB.std -F G -K -XDD 0.5 -XDA -0.3 -XAA 0.7 -G -T U -A 0.25 -B 0.25
 //
 // It is interpreted as follows:
-// -S 3: demands and total capacities of arcs will be randomized
+// -S 3: volumes and total capacities of arcs will be randomized
 // -I instB.std: base deterministic instance is to be read from file instB.std
 // -F G: format of the latter is generic STD
 // -K: target correlations are specified in blocks (based on explicit and
 // default values)
-// -XDD 0.5: individual target cross-correlations among demands are all equal
+// -XDD 0.5: individual target cross-correlations among volumes are all equal
 // to 0.5 and individual target self-correlations are all equal 1.0
-// -XDA -0.3: individual target cross-correlations between demands and total
+// -XDA -0.3: individual target cross-correlations between volumes and total
 // capacities of arcs are all equal -0.3
 // -XAA 0.7: individual target cross-correlations among total capacities of 
 // arcs are all equal to 0.7 and individual target self-correlations are all
@@ -541,11 +540,11 @@
 // Unless option J is specified, the feasibility of each second stage
 // scenario of the generated MCFNDP instance is verified with the selected 
 // solver (CPLEX or HIGHS) after opening all arcs. Infeasibility of a number
-// of scenarios usually occurs when demands and/or capacities are randomized
+// of scenarios usually occurs when volumes and/or capacities are randomized
 // whereas the base deterministic instance presents a tight relation between
 // capacities and commodity volumes. Whenever there is at least one infeasible 
-// scenario, the generated instance is invalid. There are are two recourses in
-// these circumstances: (i) Select a base instance whose capacities a less 
+// scenario, the generated instance is invalid. There are two recourses in
+// these circumstances: (i) Select a base instance whose capacities are less 
 // tight (e.g., by a direct adjustment with options adjCapacsDown, 
 // adjSatCapacsDown if the base instance is produced with the GenDeterm 
 // generator). (ii) Reduce the values of options A and B.
@@ -553,9 +552,9 @@
 // 4.2 Verifying validity
 // **********************
 //
-// Unless option J is specified, each generated element of each scenario is
-// is verified to be non-negative. whenever this occurs the scenario and the
-// instance as a whole are invalid. This can usually be circumvented by 
+// Unless option J is specified, each generated element of each scenario 
+// is verified to be non-negative. Whenever this occurs, the scenario and the
+// instance as a whole are invalid. This can usually be obviated by 
 // selecting a smaller value for option A.
 //
 // A report indicating the numbers of generated scenarios, infeasible scenarios,
@@ -569,17 +568,22 @@
 // satisfy their targets.
 //
 // 4.3 Storing the output
+// **********************
 //
-// The generated instance is stored to file only if it is devoid of infeasible
-// and invalid scenarios. By default, the name of the file containing the MCFNDP instances generated
+// Generated instances are stored on output file. By default, the name of the file containing the MCFNDP instances generated
 // by the application is './generated-stoch-inst.txt' (Linux instructions) or
 // './inout/generated-stoch-inst.txt' (Docker instructions). This can be
 // changed with option O. This text file superposes representations of complete
 // deterministic MCFNDP instances, one for each scenario realization. Each
 // representation is preceded by a separator as follows:
 //
-// SCENARIO   <int>
+// SCENARIO: <int> Feasibility: <string> Validity: <string> Prob: <string>
 //
+// SCENARIO and Prob are respectively followed by the scenario number and the probability of the current scenario. If option key J has not been
+// included, Feasibility is followed either by "feas" or by "infeas", depending 
+// on the result of verification. Validity is followed either by "val" or by
+// "inval", depending on the result of verification. When option key is
+// included, Feasibility and Validity are both followed by "unknown". 
 // Immediately after the separator, the generated MCFNDP instance corresponding
 // to the current scenario is described in its entirety with a format (DOW,
 // restricted STD or generic STD; see Section 5.1 below), matching that used to
@@ -587,6 +591,8 @@
 // descriptions of the MCFNDP realizations in this fashion makes it easy to
 // pinpoint and read the first and second stage information relevant to every
 // individual scenario.
+// Whenever the saved instance comprises at least one defective scenario (infeasible and/or invalid),
+// the output file name is prefixed with DEFECT_.
 //
 // 5 Formats of data files
 // ***********************
@@ -616,7 +622,7 @@
 // is requested through option S, it is handled through these steps:
 // a- For each commodity, the total volume, the flows out of each source node
 // and the flows into each sink node occurring in the base deterministic MCFNDP
-// instance are saved for ulterior computations while reading (see
+// instance are saved for subsequent computations while reading (see
 // InstanceGStd::read() in generate.cpp).
 // b- Total commodity volumes are randomized (along with other stochastic
 // elements if there are any) as they are when there are single source and sink
@@ -651,7 +657,7 @@
 // b- 2nd line states the total number of individual randomized stochastic
 // elements,
 // c- 3rd line states the first target moment of each randomized stochastic
-// element, separated by spaces and listed in this order: demands (if
+// element, separated by spaces and listed in this order: volumes (if
 // randomized), total capacities of arcs (if randomized), commodity-specific
 // capacities of arcs(if randomized), fixed costs (if randomized), variable
 // costs (if randomized). The number of figures in this line is equal to the
@@ -663,7 +669,11 @@
 // Important:
 // Exact definitions of the four target moments must satisfy these
 // conditions:
-// a- Population estimators are used (as in spreadsheets).
+// a- Sample estimators are used, i.e. sums of terms are divided by N-1
+// where N is the sample size. (HKW calls the latter "population estimators"
+// but this is a mismomer. These are called in the statistical literature 
+// "sample estimators". Population estimators would have N as their
+// denominator.)
 // b- 2nd moment is defined as variance, that is second central
 // statistical moment, and not standard deviation.
 // c- 3rd moment is defined as third central statistical moment divided
@@ -830,10 +840,8 @@
 // The following options must be prefixed by '-' when they are called from the
 // instruction line. This prefix can be omitted when the options are called
 // from a configuration file. To supply an option, a line of a configuration
-// file must begin with a dash '-' or a letter. A line beginning with any other
-// character will be considered a comment. The remainder of a line beyond the
-// option key and its value (if any is expected) is disregarded and may
-// therefore be used for adding comments.
+// file must begin with a dash '-' or a letter. Comments may appear either at
+// the beginning or the end of a line, provided they start with #.
 //
 // Remark:
 // Unknown option keys following '-' in the instruction line, stray characters
@@ -868,7 +876,7 @@
 //
 // S <int>; identifies which subsets of parameters should vary between
 // scenarios; expects a number (from 1 to 31) which is a sum of the following:
-// 1 -> demands
+// 1 -> volumes
 // 2 -> total capacities of arcs
 // 4 -> commodity-specific capacities of arcs
 // 8 -> fixed costs
@@ -892,15 +900,15 @@
 // scenarios); state once for each pair of subsets; target self-correlations
 // are equal to 1.0; any use of X without G will be rejected;
 // default: 0.0;
-// D -> demands
+// D -> volumes
 // A -> total capacities of arcs
 // C -> commodity-specific capacities of arcs
 // F -> fixed costs
 // V -> variable costs
 // Example: in the instruction line, -XDD 0.9 -XFD 0.1 -XFF 0.01 specifies
-// target individual cross-correlations between distinct demand parameters 
+// target individual cross-correlations between distinct volume parameters 
 // all equal to 0.9 (all individual self-correlations being equal to 1.0),
-// between individual fixed cost parameters and demand parameters all equal
+// between individual fixed cost parameters and volume parameters all equal
 // to 0.1, between distinct fixed cost parameters all equal to 0.01 (all
 // individual self-correlations being equal to 1.0)
 //
@@ -923,11 +931,11 @@
 // (U : UNIFORM , T : TRIANGULAR); any use of option T without option G
 // will be rejected; default: U
 //
-// A <double>; parameter alpha used in generating target moments (see
+// A <double>; lower spread parameter alpha used in generating target moments (see
 // discussion immediately below); without option G, any use of option A will be
 // ignored; default: 0.25
 //
-// B <double>; parameter beta used in generating target moments (see
+// B <double>; upper spread parameter beta used in generating target moments (see
 // discussion immediately below); without option G, any use of option B will be
 // ignored; default: 0.25
 //
@@ -938,7 +946,7 @@
 // b = D + (beta * D),
 // D is the base value of the stochastic element taken from the base
 // deterministic instance,
-// alpha must be in [0, 0.90],
+// alpha must be in [0, 0.95],
 // beta >= 0.
 // The distribution is symmetric around D when alpha = beta.
 //
@@ -950,7 +958,7 @@
 // c = D,
 // D is the base value of the stochastic element taken from the base
 // deterministic instance,
-// alpha must be in [0, 0.90],
+// alpha must be in [0, 0.95],
 // beta >= 0.
 // The distribution is symmetric around D when alpha = beta.
 //
@@ -1057,7 +1065,7 @@
 // 8.1.1.2 Origin of the base deterministic instance
 // *************************************************
 //
-// The base deterministic instance was originally produced by the determistic
+// The base deterministic instance was originally produced by the deterministic
 // generator as follows.
 //
 // Linux command line instruction:
@@ -1159,8 +1167,8 @@
 // Stacked scenarios of the MCFNDP instance in GSTD format (output):
 // stoch_oneSrcOneSnk_12oct2026-17h09_gstd.txt
 //
-// 8.1.3.2 Origin the base deterministic instance
-// **********************************************
+// 8.1.3.2 Origin of the base deterministic instance
+// *************************************************
 //
 // Similar to 8.1.1.2.
 //
@@ -1212,7 +1220,7 @@
 // 8.2.1.2 Origin of the base deterministic instance
 // *************************************************
 //
-// The base deterministic instance was originally produced by the determistic
+// The base deterministic instance was originally produced by the deterministic
 // generator as follows.
 //
 // Linux command line instruction:
@@ -1238,11 +1246,14 @@
 #include <iomanip>
 #include <iostream>
 #include <vector>
+#include <filesystem>
 
 #include "./instance.h"
 #include "./model.h"
 
 using namespace std;
+
+namespace fs = filesystem;
 
 typedef vector<int> VectInt;
 
@@ -1305,7 +1316,7 @@ int main(int argc, char **argv)
         exit(1);		
 	}
 
-   ofstream os(params.outputInstFileName, ios::app);
+   ofstream os(params.outputInstFileName);
 	
 	if (!os.is_open())
     {
@@ -1374,22 +1385,22 @@ int main(int argc, char **argv)
 				cout << "Currently verifying feasibility and validity of scenario " << j + 1 << " out of " << numbScenarios << " generated. " << endl;
 
 			// update instance with jth raw scenario
-			inst->copyScenario(j);			
+			inst->copyScenario(j);
 			
 			// Adjusts final commodity flows to restore balance between total
 			// supplied and demanded volumes when there are several sources
 			// and/or sinks.			
 			inst->adjCommodFlows();
 
-			string feasibility = "feas";
-			string validity = "val";
+			string feasibility = "feasible";
+			string validity = "valid";
 
 			// check if instance updated with scenario has at least one
 			//	negative-valued randomized element
 			if (inst->hasNegativeValue())
 			{				
 				numbInvalid++;
-				validity = "inval";
+				validity = "invalid";
 			}
 				
 			// check if instance updated with scenario is feasible when all arcs
@@ -1397,13 +1408,14 @@ int main(int argc, char **argv)
 			if (!model->testScenario())
 			{
 				numbInfeasible++;
-				feasibility = "infeas";
+				feasibility = "infeasible";
 			}
 						
 			// InstanceDow::write(), InstanceRStd::write() or InstanceGStd::write() is called
 			inst->write(os, feasibility, validity);
-
-		}
+		}		
+		
+		os.close();
 		
 		cout << "\nNumber of scenarios: " << numbScenarios << "\n"
 			<< "Number infeasible: " <<  numbInfeasible << "\n"
@@ -1415,8 +1427,22 @@ int main(int argc, char **argv)
 				<< "There were " << numbInfeasible << " infeasible scenarios out of " << numbScenarios << " generated.\n"
 				<< "There were " << numbInvalid << " invalid scenarios out of " << numbScenarios << " generated.\n"
 				<< "The generated instance has been saved but is UNUSABLE as a result.\n"
-				<< "Defeective scenarios have been marked.\n"
+				<< "The output file name is marked with the prefix DEFECT and\n" 
+				<< "the defective scenarios have been marked individually.\n"
 				<< "See Section 4 of USERGUIDE_STOCH.md for a discussion of causes and recourses." << endl;
+				
+			fs::path old_name = params.outputInstFileName;
+			fs::path new_name = "DEFECT_" + params.outputInstFileName;
+
+			try
+			{
+				fs::rename(old_name, new_name); 
+				std::cout << "File renamed successfully.\n";
+			} 
+			catch (const fs::filesystem_error& e)
+			{
+				std::cerr << "Error while renaming output file containing defective scenarios: " << e.what() << "\n";
+			}				
 		}		
 	}
 	// save all generated scenarios without checking each for feasibility
@@ -1426,19 +1452,31 @@ int main(int argc, char **argv)
 		for (int j = 0; j < numbScenarios; j++)
 		{
 			// update instance with jth raw scenario
-			inst->copyScenario(j);
-
-			// output operator is defined in instance.h;
+			inst->copyScenario(j);			
+			
+			// Adjusts final commodity flows to restore balance between total
+			// supplied and demanded volumes when there are several sources
+			// and/or sinks.			
+			inst->adjCommodFlows();
+			
 			// InstanceDow::write(), InstanceRStd::write() or InstanceGStd::write() is called
-			os << *inst << endl;
+			inst->write(os, "unknown", "unknown");
+			
+			//// output operator is defined in instance.h;
+			////os << *inst << endl;
 		}
 
 		cout << "\nSaved instance comprising " << numbScenarios << " scenarios without verifying\n"
 			<< "feasibility or validity. See Section 4 of USERGUIDE_STOCH.md for details." << endl;
+			
+		os.close();			
 	}	
 	
+	delete inst->vectProbsPtr;
+    inst->vectProbsPtr = nullptr;
+	
 	displayTimeStamp();
-    os.close();
+    
     delete model;
     delete inst;
 }

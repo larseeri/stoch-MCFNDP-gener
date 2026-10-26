@@ -27,6 +27,7 @@
 #include <cmath>
 #include <fstream>
 #include <iostream>
+#include <vector>
 
 #include "../HOYLAND_KAUT_WALLACE/HKW_sg.h" // from Hoyland-Kaut-Wallace
 #include "../HOYLAND_KAUT_WALLACE/matrix.h" // from Hoyland-Kaut-Wallace
@@ -137,6 +138,10 @@ struct HoylandKautWallace
     // number of scenarios) possibly initialized from file and updated by
     // Hoyland-Kaut-Wallace code
     TMatrix2 outMat;
+	
+	// contains probabilities that will be used to annotate each scenario
+	// while writing output with versions of Instance::write()	
+	vector<double> * vectProbsPtr = nullptr;
 
     // Constructor
     HoylandKautWallace(int numbMoments, int numbElems, const Configuration *_params, const VectElem &_stochElems);
