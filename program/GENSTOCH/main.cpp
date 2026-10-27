@@ -191,13 +191,6 @@
 // sufficient to set the corresponding value to true. For options expecting 
 // other types, values should be specified.
 //
-// To display the complete documentation about the application and the
-// available options, run
-//
-// ./stoch_gen -H
-// or
-// ./stoch_gen -h
-//
 // Summing up, option values are successively updated from these locations in
 // this order:
 // (i) hard-coded initialization values in lines 27-51 of configuration.cpp
@@ -282,7 +275,7 @@
 //
 // ./stoch_gen +v +F newParamfile.par
 //
-// ./stoch_gen -h
+// ./stoch_gen +H
 //
 // ./stoch_gen +v +F newParamFile.par -r 1234 -R 4567
 //
@@ -290,7 +283,7 @@
 //
 // docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F /inout/newParamfile.par
 //
-// docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen -h
+// docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +H
 //
 // docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F /inout/newParamFile.par -r 1234 -R 4567
 //
@@ -716,6 +709,9 @@
 // This file would be supplied as './probs_100_eq_example.dat' (Linux
 // instructions) or './inout/probs_100_eq_example.dat' (Docker instructions).
 //
+// Probabilities read from a file must each be larger than zero and their
+// sum may differ from 1 by at most 1e-8.
+//
 // 5.2.4 Raw scenarios in HKW format
 // *********************************
 //
@@ -833,9 +829,10 @@
 // +v <> (no value supplied); requests verbosity while parsing options in
 // instruction line or configuration file
 //
+// +H <> (no value supplied); displays complete documentation
+//
 // Remark:
-// Unknown option keys prefixed with '+' in the instruction line are
-// disregarded.
+// An unknown option key following '+' in the instruction line is disregarded.
 //
 // 7.2 Options available in instruction line (Linux or Docker) and in configuration file
 // *************************************************************************************

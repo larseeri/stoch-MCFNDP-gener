@@ -34,6 +34,7 @@
 #include <vector>
 #include <algorithm>
 #include <string_view>
+#include <cmath>
 
 #include "../HOYLAND_KAUT_WALLACE/matrix.h"
 

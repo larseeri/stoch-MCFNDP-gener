@@ -41,16 +41,18 @@ inline bool isDigitsOnly(const string& str)
     });
 }
 
-inline bool isRealNumber(const string& str)
+inline bool isValidRealNumber(const string& str)
 {
     try
 	{
+		double temp;
+		
         size_t idx;
         // Attempt to convert string to double
-        stod(str, &idx);
+        temp = stod(str, &idx);
         
         // Ensure the entire string was consumed (rejects "3.14abc")
-        return (idx == str.length());
+        return (idx == str.length() && isfinite(temp));
     } 
     catch (const std::invalid_argument&)
 	{
@@ -265,7 +267,7 @@ void Configuration::parseCmdLine()
                             break;
                         }
                     paramX = true;
-					if (isRealNumber(value))
+					if (isValidRealNumber(value))
 					{
 						correlCoeffsMatrix[elem[0]][elem[1]] = atof(value);
 						correlCoeffsMatrix[elem[1]][elem[0]] = atof(value);
@@ -300,14 +302,14 @@ void Configuration::parseCmdLine()
                 break;
             case 'A':
 				checkKeyLengthFromCmd(longKey, 2);
-				if (isRealNumber(value))
+				if (isValidRealNumber(value))
 					alpha = atof(value);				
 				else
 					displayRealError('A', value);				
                 break;
             case 'B':             
 				checkKeyLengthFromCmd(longKey, 2);
-				if (isRealNumber(value))
+				if (isValidRealNumber(value))
 					beta = atof(value);				
 				else
 					displayRealError('B', value);				
@@ -350,14 +352,14 @@ void Configuration::parseCmdLine()
                 break;
             case 'm': 
 				checkKeyLengthFromCmd(longKey, 2);
-				if (isRealNumber(value))
+				if (isValidRealNumber(value))
 					maxErrorMoment = atof(value);				
 				else
 					displayRealError('m', value);				
                 break;
             case 'c':          
 				checkKeyLengthFromCmd(longKey, 2);
-				if (isRealNumber(value))
+				if (isValidRealNumber(value))
 					maxErrorCorrel = atof(value);			
 				else
 					displayRealError('c', value);
@@ -541,10 +543,10 @@ inline void Configuration::parseKeyValue(string key, string value)
                 }
             paramX = true;
 			
-			if (isRealNumber(value))
+			if (isValidRealNumber(value))
 			{
-				correlCoeffsMatrix[elem[0]][elem[1]] = stof(value);
-				correlCoeffsMatrix[elem[1]][elem[0]] = stof(value);
+				correlCoeffsMatrix[elem[0]][elem[1]] = stod(value);
+				correlCoeffsMatrix[elem[1]][elem[0]] = stod(value);
 			}
 			else
 				displayRealError('X', value);
@@ -576,15 +578,15 @@ inline void Configuration::parseKeyValue(string key, string value)
         break;
     case 'A':
 		checkKeyLengthFromFile(key, 2);
-		if (isRealNumber(value))
-			alpha = stof(value);				
+		if (isValidRealNumber(value))
+			alpha = stod(value);				
 		else
 			displayRealError('A', value);
         break;
     case 'B':
 		checkKeyLengthFromFile(key, 2);
-		if (isRealNumber(value))
-			beta = stof(value);				
+		if (isValidRealNumber(value))
+			beta = stod(value);				
 		else
 			displayRealError('B', value);	
         break;
@@ -626,15 +628,15 @@ inline void Configuration::parseKeyValue(string key, string value)
         break;
     case 'm':
 		checkKeyLengthFromFile(key, 2);
-		if (isRealNumber(value))
-			maxErrorMoment = stof(value);				
+		if (isValidRealNumber(value))
+			maxErrorMoment = stod(value);				
 		else
 			displayRealError('m', value);		
         break;
     case 'c':
 		checkKeyLengthFromFile(key, 2);
-		if (isRealNumber(value))
-			maxErrorCorrel = stof(value);			
+		if (isValidRealNumber(value))
+			maxErrorCorrel = stod(value);			
 		else
 			displayRealError('c', value);		
         break;
@@ -722,7 +724,7 @@ void Configuration::verify()
     if (alpha < 0.0 || alpha > 0.95)
     {
         cerr << "\nERROR:\n"
-			<< "alpha must fall in [0, 0.95].\n"
+			<< "Value of key [A] (alpha) must fall in [0, 0.95].\n"
 			<< "EXECUTION ABORTED" << endl;
 		exit(1);
     }
@@ -730,7 +732,7 @@ void Configuration::verify()
     if (beta < 0.0)
     {
         cerr << "\nERROR:\n"
-			<< "beta must be non-negative.\n"
+			<< "Value of key [B] (beta) must be non-negative.\n"
 			<< "EXECUTION ABORTED" << endl;
 		exit(1);
     }
@@ -797,7 +799,63 @@ void Configuration::verify()
 				<< "EXECUTION ABORTED" << endl;
 			exit(1);
 		}
-	}
+	}	
+	
+	if (numbScenarios <= 0)
+    {
+        cerr << "\nERROR:\n"
+			<< "Value of key [n] (number of scenarios) must be positive.\n"
+			<< "EXECUTION ABORTED" << endl;
+		exit(1);
+    }
+	
+	if (maxTrial <= 0)
+    {
+        cerr << "\nERROR:\n"
+			<< "Value of key [t] (max. number of trials) must be positive.\n"
+			<< "EXECUTION ABORTED" << endl;
+		exit(1);
+    }
+	
+	if (maxIter <= 0)
+    {
+        cerr << "\nERROR:\n"
+			<< "Value of key [i] (max. number of iterations in each trial) must be positive.\n"
+			<< "EXECUTION ABORTED" << endl;
+		exit(1);
+    }
+	
+	if (randomSeed <= 0)
+    {
+        cerr << "\nERROR:\n"
+			<< "Value of key [r] (random seed) must be positive.\n"
+			<< "EXECUTION ABORTED" << endl;
+		exit(1);
+    }
+	
+	if (randomStream <= 0)
+    {
+        cerr << "\nERROR:\n"
+			<< "Value of key [R] (random stream) must be positive.\n"
+			<< "EXECUTION ABORTED" << endl;
+		exit(1);
+    }
+	
+	if (maxErrorMoment <= 0)
+    {
+        cerr << "\nERROR:\n"
+			<< "Value of key [m] (max. RMS error in moments) must be positive.\n"
+			<< "EXECUTION ABORTED" << endl;
+		exit(1);
+    }	
+	
+	if (maxErrorCorrel <= 0)
+    {
+        cerr << "\nERROR:\n"
+			<< "Value of key [c] (max. RMS error in correlations) must be positive.\n"
+			<< "EXECUTION ABORTED" << endl;
+		exit(1);
+    }	
 }
 
 void Configuration::verifyOutputPath(string fullPath)
@@ -850,7 +908,7 @@ void Configuration::parseConfigFileNameFromCmdLine()
             }
             else if (isalpha(vectArg[a][1]))
  				cout << "\nWARNING:\n"
-					<< "configuration prefix [" << vectArg[a] << "] unknown." << endl;
+					<< "Configuration key [" << vectArg[a] << "] is unknown." << endl;
         }
     }
     if (verbose)

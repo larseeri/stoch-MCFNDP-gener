@@ -301,11 +301,11 @@ TMatrix2 HoylandKautWallace::generScenarios()
 			sumProbs+=probs.val[i];
 		}
 		// check sum
-		if (abs(sumProbs - 1)  > 0.0001)
+		if (abs(sumProbs - 1)  > 1e-8)
 		{		
 			cerr << "\nERROR:\n"
 				<< "While reading " + params->probsFileName + ", the sum of probabilities\n"
-				<< "differs from 1 by at least 0.0001.\n"
+				<< "differs from 1 by at least 1e-8.\n"
 				<< "EXECUTION ABORTED" << endl;
 			exit(1);			
 		}		

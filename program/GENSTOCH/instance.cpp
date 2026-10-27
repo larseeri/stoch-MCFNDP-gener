@@ -23,6 +23,8 @@
 //
 #include "instance.h"
 
+using namespace std;
+
 // Assigns sizes to arrays of stochastic and non-stochastic elements.
 void Instance::assignSizes()
 {
@@ -36,23 +38,23 @@ void Instance::assignSizes()
 void displayTimeStamp()
 {
 	// Google AI
-	auto now = std::chrono::system_clock::now();
-    std::time_t time_now = std::chrono::system_clock::to_time_t(now);
+	auto now = chrono::system_clock::now();
+    std::time_t time_now = chrono::system_clock::to_time_t(now);
 
     // convert to local time structure safely
-    std::tm* local_time = std::localtime(&time_now);
+    std::tm* local_time = localtime(&time_now);
 
     // output using stream manipulators
-    std::cout << std::put_time(local_time, "%Y-%m-%d %H:%M:%S") << std::endl;
+    std::cout << put_time(local_time, "%Y-%m-%d %H:%M:%S") << std::endl;
 }
 
 // Google
 inline double roundToNPlaces(double value, int n)
 {
-    double multiplier = std::pow(10.0, n);
+    double multiplier = pow(10.0, n);
 	
     // std::round(-3.145) becomes -3.15, correctly rounding away from zero
-    return std::round(value * multiplier) / multiplier;
+    return round(value * multiplier) / multiplier;
 }
 
 inline bool is_empty_or_whitespace(const string& str) {
@@ -78,7 +80,7 @@ inline bool isRealNumber(const string& str)
 	{
         size_t idx;
         // Attempt to convert string to double
-        std::stod(str, &idx);
+        stod(str, &idx);
         
         // Ensure the entire string was consumed (rejects "3.14abc")
         return idx == str.length();
@@ -332,9 +334,7 @@ void Instance::allocate()
 // supplied and demanded volumes when there are several sources
 // and/or sinks.
 void InstanceGStd::adjCommodFlows()
-{	
-	const double margin = 1;
-	
+{		
 	for (int k = 0; k < numbCommods; k++)
     {		
 		double totalOutflow = 0;
@@ -356,26 +356,38 @@ void InstanceGStd::adjCommodFlows()
 			totalInflow += commods[k].adjInflows[n];
 		}
 		
-		double netFlow = totalOutflow + totalInflow;		
-		
+		double netFlow = totalOutflow + totalInflow;	
+
 		if (netFlow > 0)
 		{
-			int nOut = 0;
-			while (commods[k].adjOutflows[nOut] < netFlow + margin)
-			{
-				nOut++;			
-			}			
-			commods[k].adjOutflows[nOut] -= netFlow;			
+			int nOut = max_element(commods[k].adjOutflows.begin(), commods[k].adjOutflows.end()) - commods[k].adjOutflows.begin();
+
+			commods[k].adjOutflows[nOut] -= netFlow; 
 		}
 		else if (netFlow < 0)
 		{
-			int nIn = 0;
-			while (commods[k].adjInflows[nIn] < netFlow - margin)
-			{
-				nIn++;			
-			}			
-			commods[k].adjInflows[nIn] -= netFlow;			
+			int nIn = min_element(commods[k].adjInflows.begin(), commods[k].adjInflows.end()) - commods[k].adjInflows.begin(); 
+			commods[k].adjInflows[nIn] -= netFlow;
 		}		
+		
+		// if (netFlow > 0)
+		// {
+			// int nOut = 0;
+			// while (commods[k].adjOutflows[nOut] < netFlow + margin)
+			// {
+				// nOut++;			
+			// }			
+			// commods[k].adjOutflows[nOut] -= netFlow;			
+		// }
+		// else if (netFlow < 0)
+		// {
+			// int nIn = 0;
+			// while (commods[k].adjInflows[nIn] > netFlow - margin)
+			// {
+				// nIn++;			
+			// }			
+			// commods[k].adjInflows[nIn] -= netFlow;			
+		// }		
     }		
 }
 
@@ -456,6 +468,8 @@ void InstanceDow::read(istream &is)
 
     allocate();
 	
+	bool nonSequential = false;
+	
     for (int a = 0; a < numbArcs; a++)
     {
         Arc arc(numbCommods);
@@ -483,13 +497,8 @@ void InstanceDow::read(istream &is)
 				exit(1);		
 		}
 		if (idxArc != (a + 1))
-		{
-			cerr << "\nERROR:\n"
-				<< "The arc index (starting from 1) " << idxArc << " stated in connection with the\n"
-				<< a+1 << "th arc listed (starting from 1) in instance file " << params->inputInstFileName << "\n"
-				<< "does not agree with expected value " << a+1 << ".\n"
-				<< "EXECUTION ABORTED" << endl;
-				exit(1);		
+		{			
+			nonSequential = true;			
 		}
 				
 		if (capac < 0)
@@ -543,6 +552,15 @@ void InstanceDow::read(istream &is)
         commods[k].dest--;
         stochElems[DEMAND][countDemand++] = volume;
     }
+	
+	if (nonSequential)
+	{
+		cout << "\nWARNING:\n"
+			<< "The arc indexes appearing in the last column of instance file " << params->inputInstFileName << "\n"
+			<< "are not consecutive. This does not strictly conform to the specification of the DOW format.\n"
+			<< "Ascertain that all indexes appearing in last column fall within 1 and the number of arcs\n"
+			<< "stated at the beginning of file AND that no index is missing." << endl;
+	}
 	
 	if (params->verbose)
 		cout << "\n****** End reading DOW instance from " << params->inputInstFileName << ".\n" << endl;
