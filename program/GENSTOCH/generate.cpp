@@ -26,6 +26,27 @@
 // from random.h
 Random rnd;
 
+inline bool isRealNumber(const string& str)
+{
+    try
+	{
+        size_t idx;
+        // Attempt to convert string to double
+        std::stod(str, &idx);
+        
+        // Ensure the entire string was consumed (rejects "3.14abc")
+        return idx == str.length();
+    } 
+    catch (const std::invalid_argument&)
+	{
+        return false; // Not a number at all
+    } 
+    catch (const std::out_of_range&)
+	{
+        return false; // Number too large for a double
+    }
+}
+
 // Constructor
 HoylandKautWallace::HoylandKautWallace(int numbMoments, int numbElems, const Configuration *_params,
                                        const VectElem &_stochElems)
@@ -262,7 +283,33 @@ TMatrix2 HoylandKautWallace::generScenarios()
 
     // initialize vector of probabilities from file if specified
     if (params->readProbs)
+	{	
         Vec_GetFromFile(&probs, params->probsFileName.c_str());
+		
+		// check individual values
+		double sumProbs = 0;
+		for (int i = 0; i < params->numbScenarios; i++)
+		{		
+			if ((probs.val[i] > 1 ) || (probs.val[i] <= 0))
+			{
+					cerr << "\nERROR:\n"
+						<< "While reading " + params->probsFileName + ", the value\n"
+						<< "[" << probs.val[i] << "]" << " was non-positive or larger than 1.\n"
+						<< "EXECUTION ABORTED" << endl;
+					exit(1);
+			}
+			sumProbs+=probs.val[i];
+		}
+		// check sum
+		if (abs(sumProbs - 1)  > 0.0001)
+		{		
+			cerr << "\nERROR:\n"
+				<< "While reading " + params->probsFileName + ", the sum of probabilities\n"
+				<< "differs from 1 by at least 0.0001.\n"
+				<< "EXECUTION ABORTED" << endl;
+			exit(1);			
+		}		
+	}	
     // otherwise, scenarios are equiprobable
     else
 	{

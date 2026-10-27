@@ -23,6 +23,45 @@
 //
 #include "configuration.h"
 
+
+inline bool is_empty_or_whitespace(const string& str) {
+    return str.empty() || all_of(str.begin(), str.end(), [](unsigned char c) {
+        return isspace(c);
+    });
+}
+
+inline bool isDigitsOnly(const string& str)
+{   
+    if (is_empty_or_whitespace(str))
+		return false; 
+    
+    // cast to unsigned char prevents undefined behavior with negative values
+    return all_of(str.begin(), str.end(), [](unsigned char c) { 
+        return isdigit(c); 
+    });
+}
+
+inline bool isRealNumber(const string& str)
+{
+    try
+	{
+        size_t idx;
+        // Attempt to convert string to double
+        stod(str, &idx);
+        
+        // Ensure the entire string was consumed (rejects "3.14abc")
+        return (idx == str.length());
+    } 
+    catch (const std::invalid_argument&)
+	{
+        return false; // Not a number at all
+    } 
+    catch (const std::out_of_range&)
+	{
+        return false; // Number too large for a double
+    }
+}
+
 // Constructor
 Configuration::Configuration(int argc, char **argv, string _configFileName)
     : nbArg(argc), vectArg(argv), verbose(false), configFileName(_configFileName), instanceFormat(DOW),
@@ -55,9 +94,6 @@ Configuration::Configuration(int argc, char **argv, string _configFileName)
     paramT(false)
 {
     correlCoeffsMatrix.resize(MAX_TYPE, VectDbl(MAX_TYPE, 0.0));
-
-    if (nbArg == 2 && (strcmp(vectArg[1], "-h") == 0 || strcmp(vectArg[1], "-H") == 0))
-        printHelpAndExit();
 
     parseConfigFileNameFromCmdLine();
     processConfigFile();
@@ -107,6 +143,7 @@ void Configuration::parseCmdLine()
             switch (*shortKey)
             {
             case 'F':
+				checkKeyLengthFromCmd(longKey, 2);			
                 if (*value == 'D')
                 {
                     instanceFormat = DOW;
@@ -133,6 +170,7 @@ void Configuration::parseCmdLine()
 					break;    
 				}	
             case 'T':
+				checkKeyLengthFromCmd(longKey, 2);
                 if (*value == 'U')
                 {
                     momentsCharacts = UNIFORM;
@@ -155,13 +193,16 @@ void Configuration::parseCmdLine()
 					exit(1);                
 					break;    
 				}
-            case 'S':
-			
+            case 'S':			
+				checkKeyLengthFromCmd(longKey, 2);
 				// only the last value of option S is retained 
 				stochTypes.clear();
 				nonStochTypes.clear();
 				
-                elemStoch = atoi(value);
+				if (isDigitsOnly(value))				
+					elemStoch = atoi(value);
+				else
+					displayPosIntError('S', value);
 
                 if (elemStoch & flagStochDemand)
                     stochTypes.push_back(DEMAND);
@@ -185,6 +226,7 @@ void Configuration::parseCmdLine()
                     nonStochTypes.push_back(VAR_COST);
                 break;
             case 'X':
+				checkKeyLengthFromCmd(longKey, 4);
                 // whenever any information about correlations is supplied in
                 // instruction line, any other information previously supplied
                 // in configuration file is disregarded
@@ -223,9 +265,14 @@ void Configuration::parseCmdLine()
                             break;
                         }
                     paramX = true;
-                    correlCoeffsMatrix[elem[0]][elem[1]] = atof(value);
-                    correlCoeffsMatrix[elem[1]][elem[0]] = atof(value);
-                    break;
+					if (isRealNumber(value))
+					{
+						correlCoeffsMatrix[elem[0]][elem[1]] = atof(value);
+						correlCoeffsMatrix[elem[1]][elem[0]] = atof(value);
+					}
+					else
+						displayRealError('X', value);				
+					break;					
                 }
                 else
                 {
@@ -236,69 +283,117 @@ void Configuration::parseCmdLine()
                     break;
                 }
             case 'G':
+				checkKeyLengthFromCmd(longKey, 2);
                 generMoments = true;
-                //--i;
                 break;
             case 'M':
+				checkKeyLengthFromCmd(longKey, 2);
                 momentsFileName = value;
                 break;
             case 'K':
+				checkKeyLengthFromCmd(longKey, 2);			
                 specCorrBlocks = true;
-                //--i;
                 break;
             case 'C':
+				checkKeyLengthFromCmd(longKey, 2);
                 correlsFileName = value;
                 break;
             case 'A':
-                alpha = atof(value);
+				checkKeyLengthFromCmd(longKey, 2);
+				if (isRealNumber(value))
+					alpha = atof(value);				
+				else
+					displayRealError('A', value);				
                 break;
-            case 'B':
-                beta = atof(value);
+            case 'B':             
+				checkKeyLengthFromCmd(longKey, 2);
+				if (isRealNumber(value))
+					beta = atof(value);				
+				else
+					displayRealError('B', value);				
                 break;
             case 'I':
+				checkKeyLengthFromCmd(longKey, 2);
                 inputInstFileName = value;
                 break;
 			case 'J':
+				checkKeyLengthFromCmd(longKey, 2);
 			    skipFeasibChecks = true;
 			    break;				
             case 'O':
+				checkKeyLengthFromCmd(longKey, 2);
                 outputInstFileName = value;
                 break;
 
             // the following arguments are supplied to the
             // Hoyland-Kaut-Wallace algorithm
             case 'n':
-                numbScenarios = atoi(value);
+				checkKeyLengthFromCmd(longKey, 2);
+				if (isDigitsOnly(value))			
+					numbScenarios = atoi(value);
+				else
+					displayPosIntError('n', value);
                 break;
             case 't':
-                maxTrial = atoi(value);
+				checkKeyLengthFromCmd(longKey, 2);
+				if (isDigitsOnly(value))			
+					maxTrial = atoi(value);
+				else
+					displayPosIntError('t', value);                
                 break;
             case 'i':
-                maxIter = atoi(value);
+				checkKeyLengthFromCmd(longKey, 2);
+				if (isDigitsOnly(value))			
+					 maxIter = atoi(value);
+				else
+					displayPosIntError('i', value);
                 break;
-            case 'm':
-                maxErrorMoment = atof(value);
+            case 'm': 
+				checkKeyLengthFromCmd(longKey, 2);
+				if (isRealNumber(value))
+					maxErrorMoment = atof(value);				
+				else
+					displayRealError('m', value);				
                 break;
-            case 'c':
-                maxErrorCorrel = atof(value);
+            case 'c':          
+				checkKeyLengthFromCmd(longKey, 2);
+				if (isRealNumber(value))
+					maxErrorCorrel = atof(value);			
+				else
+					displayRealError('c', value);
                 break;
-            case 'l':
-                displayLevel = atoi(value);
+            case 'l':       
+				checkKeyLengthFromCmd(longKey, 2);
+				if (isDigitsOnly(value))			
+					displayLevel = atoi(value);
+				else
+					displayPosIntError('l', value);				
                 break;
-            case 'r':
-                randomSeed = atoi(value);
+            case 'r':  
+				checkKeyLengthFromCmd(longKey, 2);
+				if (isDigitsOnly(value))			
+					randomSeed = atoi(value);
+				else
+					displayPosIntError('r', value);
                 break;
-            case 'R':
-                randomStream = atoi(value);
+            case 'R':         
+				checkKeyLengthFromCmd(longKey, 2);
+				if (isDigitsOnly(value))				
+					randomStream = atoi(value);
+				else
+					displayPosIntError('R', value);				
                 break;
             case 'o':
+				checkKeyLengthFromCmd(longKey, 2);
                 outScenariosFileName = value;
                 break;
             case 'p':
+				checkKeyLengthFromCmd(longKey, 2);
                 readProbs = true;
                 probsFileName = value;
                 break;
             case 's':
+				checkKeyLengthFromCmd(longKey, 2);
                 readStartScenarios = true;
                 startScenariosFileName = value;
                 break;
@@ -329,6 +424,7 @@ inline void Configuration::parseKeyValue(string key, string value)
     switch (key[0])
     {
     case 'F':
+		checkKeyLengthFromFile(key, 2);
         if (value == "D")
         {
             instanceFormat = DOW;
@@ -355,6 +451,7 @@ inline void Configuration::parseKeyValue(string key, string value)
 			break;    
 		}	
     case 'T':
+		checkKeyLengthFromFile(key, 2);
         if (value == "U")
         {
             momentsCharacts = UNIFORM;
@@ -378,9 +475,15 @@ inline void Configuration::parseKeyValue(string key, string value)
 			break;    
 		}
     case 'S':	
+		checkKeyLengthFromFile(key, 2);
 		// only the last value of option S is retained 
 		stochTypes.clear();
 		nonStochTypes.clear();
+		
+		if (isDigitsOnly(value))				
+			elemStoch = stoi(value);
+		else
+			displayPosIntError('S', value);	
 	
         elemStoch = stoi(value);
 
@@ -406,6 +509,7 @@ inline void Configuration::parseKeyValue(string key, string value)
             nonStochTypes.push_back(VAR_COST);
         break;
     case 'X':
+		checkKeyLengthFromFile(key, 4);
         STOCH_ELEMS_TYPE elem[2];
         if (key.length() == 3)
         {
@@ -436,8 +540,14 @@ inline void Configuration::parseKeyValue(string key, string value)
 				break;
                 }
             paramX = true;
-            correlCoeffsMatrix[elem[0]][elem[1]] = stof(value);
-            correlCoeffsMatrix[elem[1]][elem[0]] = stof(value);
+			
+			if (isRealNumber(value))
+			{
+				correlCoeffsMatrix[elem[0]][elem[1]] = stof(value);
+				correlCoeffsMatrix[elem[1]][elem[0]] = stof(value);
+			}
+			else
+				displayRealError('X', value);
             break;
         }
         else
@@ -449,67 +559,117 @@ inline void Configuration::parseKeyValue(string key, string value)
 			break;
 		}
     case 'G':
+		checkKeyLengthFromFile(key, 2);
         generMoments = true;
         break;
     case 'M':
+		checkKeyLengthFromFile(key, 2);
         momentsFileName = value;
         break;
     case 'K':
+		checkKeyLengthFromFile(key, 2);
         specCorrBlocks = true;
         break;
     case 'C':
+		checkKeyLengthFromFile(key, 2);
         correlsFileName = value;
         break;
     case 'A':
-        alpha = stof(value);
+		checkKeyLengthFromFile(key, 2);
+		if (isRealNumber(value))
+			alpha = stof(value);				
+		else
+			displayRealError('A', value);
         break;
     case 'B':
-        beta = stof(value);
+		checkKeyLengthFromFile(key, 2);
+		if (isRealNumber(value))
+			beta = stof(value);				
+		else
+			displayRealError('B', value);	
         break;
     case 'I':
+		checkKeyLengthFromFile(key, 2);
         inputInstFileName = value;
         break;
 	case 'J':
+		checkKeyLengthFromFile(key, 2);
 		skipFeasibChecks = true;
 		break;
     case 'O':
+		checkKeyLengthFromFile(key, 2);
         outputInstFileName = value;
         break;
 
     // the following arguments are supplied to the
     // Hoyland-Kaut-Wallace algorithm
     case 'n':
-        numbScenarios = stoi(value);
+		checkKeyLengthFromFile(key, 2);		
+		if (isDigitsOnly(value))			
+			numbScenarios = stoi(value);
+		else
+			displayPosIntError('n', value);		
         break;
     case 't':
-        maxTrial = stoi(value);
+		checkKeyLengthFromFile(key, 2);
+		if (isDigitsOnly(value))			
+			maxTrial = stoi(value);
+		else
+			displayPosIntError('t', value); 
         break;
     case 'i':
-        maxIter = stoi(value);
+		checkKeyLengthFromFile(key, 2);
+		if (isDigitsOnly(value))			
+			maxIter = stoi(value);
+		else
+			displayPosIntError('i', value);		
         break;
     case 'm':
-        maxErrorMoment = stof(value);
+		checkKeyLengthFromFile(key, 2);
+		if (isRealNumber(value))
+			maxErrorMoment = stof(value);				
+		else
+			displayRealError('m', value);		
         break;
     case 'c':
-        maxErrorCorrel = stof(value);
+		checkKeyLengthFromFile(key, 2);
+		if (isRealNumber(value))
+			maxErrorCorrel = stof(value);			
+		else
+			displayRealError('c', value);		
         break;
     case 'l':
-        displayLevel = stoi(value);
+		checkKeyLengthFromFile(key, 2);
+		if (isDigitsOnly(value))			
+			displayLevel = stoi(value);
+		else
+			displayPosIntError('l', value);
         break;
     case 'r':
-        randomSeed = stoi(value);
+		checkKeyLengthFromFile(key, 2);
+		if (isDigitsOnly(value))			
+			randomSeed = stoi(value);
+		else
+			displayPosIntError('r', value);		
         break;
     case 'R':
-        randomStream = stoi(value);
+		checkKeyLengthFromFile(key, 2);		
+		if (isDigitsOnly(value))				
+			randomStream = stoi(value);
+		else
+			displayPosIntError('R', value);		
         break;
     case 'o':
+		checkKeyLengthFromFile(key, 2);
         outScenariosFileName = value;
         break;
     case 'p':
+		checkKeyLengthFromFile(key, 2);
         readProbs = true;
         probsFileName = value;
         break;
     case 's':
+		checkKeyLengthFromFile(key, 2);
         readStartScenarios = true;
         startScenariosFileName = value;
         break;
@@ -562,7 +722,7 @@ void Configuration::verify()
     if (alpha < 0.0 || alpha > 0.95)
     {
         cerr << "\nERROR:\n"
-			<< "alpha must fall in [0, 0.90].\n"
+			<< "alpha must fall in [0, 0.95].\n"
 			<< "EXECUTION ABORTED" << endl;
 		exit(1);
     }
@@ -627,6 +787,17 @@ void Configuration::verify()
 		exit(1);
 	}
 	
+	if (readStartScenarios)
+	{
+		if (!filesystem::exists(startScenariosFileName))
+		{
+			cerr << "\nERROR:\n"
+				<< "The specified starting scenarios file " << startScenariosFileName << "\n"
+				<< "could not be found.\n"
+				<< "EXECUTION ABORTED" << endl;
+			exit(1);
+		}
+	}
 }
 
 void Configuration::verifyOutputPath(string fullPath)
@@ -788,6 +959,53 @@ inline string Configuration::removeQuotes(istringstream &configLine)
     }
 
     return outString;
+}
+
+void Configuration::displayPosIntError(char key, string value)
+{
+    cerr << "\nERROR:\n"
+		<< "The value [" << value << "] cannot be interpreted as a positive integer\n"
+		<< "admissible for key [" << key << "]\n"
+		<< "EXECUTION ABORTED\n" << endl;	
+	exit(1);
+}
+
+void Configuration::displayRealError(char key, string value)
+{
+    cerr << "\nERROR:\n"
+		<< "The value [" << value << "] cannot be interpreted as a real number\n"
+		<< "admissible for key [" << key << "]\n"
+		<< "EXECUTION ABORTED\n" << endl;	
+	exit(1);
+}
+
+void Configuration::checkKeyLengthFromCmd(const char* key, int expLen)
+{	
+	if (expLen != static_cast<int> (strlen(key)))
+	{
+		cerr << "\nERROR:\n"
+			<< "The key beginning with characters [" << string_view(key).substr(0, expLen)  << "] has expected total length equal to " << expLen << ".\n"
+			<< "However, its actual length is " << strlen(key) << ".\n"
+			<< "EXECUTION ABORTED\n" << endl;	
+		exit(1);		
+	}
+}
+
+void Configuration::checkKeyLengthFromFile(string key, int expSize)
+{
+	int length = expSize;
+	
+	if (key[0] != '-')
+		length-=1;
+	
+	if (length != static_cast<int> (key.size()))
+	{
+		cerr << "\nERROR:\n"
+			<< "The key beginning with characters [" << key[0] << "] has expected length equal to " << length << ".\n"
+			<< "However, its actual length is " << key.size() << ".\n"
+			<< "EXECUTION ABORTED\n" << endl;	
+		exit(1);		
+	}
 }
 
 // Unused.

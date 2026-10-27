@@ -77,9 +77,12 @@
 // a- Install the CPLEX solver and/or the HIGHS solver (if not already done)
 // and note the installation folder(s). According to our verifications, CPLEX
 // and HIGHS work equally well in our application. HIGHS is freely available
-// under the MIT license at https://highs.dev/. See Huangfu, Q., Hall, J.A.J.
-// Parallelizing the dual revised simplex method. Math. Prog. Comp. 10, 119-142
-// (2018).
+// under the MIT license at https://highs.dev/, does not require additional
+// library and can be installed in a small number of straightforweard steps
+// that are currently described at
+// https://ergo-code.github.io/HiGHS/dev/interfaces/cpp/. See Huangfu, Q.,
+// Hall, J.A.J. Parallelizing the dual revised simplex method. Math. Prog. 
+// Comp. 10, 119-142 (2018).
 //
 // b- Either (i) use Git to clone locally the remote repository
 // https://github.com/larseeri/stoch-MCFNDP-gener, or (ii) generate, download
@@ -157,7 +160,7 @@
 // To display the complete documentation about the application and the
 // available options, run
 //
-// ./determ_feasib +H
+// ./stoch_gen +H
 //
 // The configuration file should have this format:
 //
@@ -251,7 +254,7 @@
 // for exchanging files between the program running inside a Docker container
 // and the directory structure of the host, (iii) some auxiliary files, and
 // (iv) the subfolder /examples containing a number of configuration files and
-// their resulting outputs (examined in Section 5 below).
+// their resulting outputs (examined in Section 8 below).
 //
 // d- In a terminal, go to the /docker folder just created.
 //
@@ -437,7 +440,7 @@
 // whose default name is './moments.dat' (Linux instructions) or
 // './inout/moments.dat' (Docker instructions). This name can be specified
 // otherwise with option key M. The distributional assumption can be specified
-// with option key T <char> where <char> stands for either U (uniform) or D
+// with option key T <char> where <char> stands for either U (uniform) or T
 // (triangular) and with two parameters, alpha and beta, that can be specified 
 // using options A <double> and B <double>.
 //
@@ -580,9 +583,9 @@
 // SCENARIO: <int> Feasibility: <string> Validity: <string> Prob: <string>
 //
 // SCENARIO and Prob are respectively followed by the scenario number and the probability of the current scenario. If option key J has not been
-// included, Feasibility is followed either by "feas" or by "infeas", depending 
-// on the result of verification. Validity is followed either by "val" or by
-// "inval", depending on the result of verification. When option key is
+// included, Feasibility is followed either by "feasible" or by "infeasible", depending 
+// on the result of verification. Validity is followed either by "valid" or by
+// "invalid", depending on the result of verification. When option key is
 // included, Feasibility and Validity are both followed by "unknown". 
 // Immediately after the separator, the generated MCFNDP instance corresponding
 // to the current scenario is described in its entirety with a format (DOW,
@@ -697,7 +700,7 @@
 // separated by spaces.
 // c- The correlation pairs appearing in the matrix are ordered by row and by
 // column. Order in a row and order in a column is similar to that in a row
-// of the matrix of target moments (see Section 4.1.1).
+// of the matrix of target moments (see Section 5.2.1).
 // d- Any additional line in the file is ignored.
 //
 // 5.2.3 Probabilities of scenarios
@@ -843,11 +846,11 @@
 // file must begin with a dash '-' or a letter. Comments may appear either at
 // the beginning or the end of a line, provided they start with #.
 //
-// Remark:
-// Unknown option keys following '-' in the instruction line, stray characters
-// or strings appearing without the prefix '-' in the instruction line and
-// unknown option keys (following '-' or not) at beginning of line in a
-// configuration file are disregarded.
+// Remarks:
+// - Characters or strings appearing without the prefix '-' in the instruction line are disregarded.
+// - Characters or strings prefixed with '-' in the instruction line that are not option keys are rejected.
+// - Characters or strings prefixed with '-' or not that appear at beginning of line in a
+// configuration file and are not option keys are rejected.
 //
 // 7.2.1 Main generator options
 // ****************************
@@ -898,7 +901,7 @@
 // X<char><char> <double>; identifies target correlations within or between
 // subsets of parameters that are randomized (i.e, that vary between
 // scenarios); state once for each pair of subsets; target self-correlations
-// are equal to 1.0; any use of X without G will be rejected;
+// are equal to 1.0; any use of X without K will be rejected;
 // default: 0.0;
 // D -> volumes
 // A -> total capacities of arcs
@@ -1152,7 +1155,7 @@
 // Configuration file (input) used with Docker instruction:
 // docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_gstd.par
 //
-// Configuration file (input) used with Linux command line:
+// Base instance file (input):
 // determ_oneSrcOneSnk_12oct2026-17h09.std
 //
 // Generated moments (output):
@@ -1431,12 +1434,12 @@ int main(int argc, char **argv)
 				<< "the defective scenarios have been marked individually.\n"
 				<< "See Section 4 of USERGUIDE_STOCH.md for a discussion of causes and recourses." << endl;
 				
-			fs::path old_name = params.outputInstFileName;
-			fs::path new_name = "DEFECT_" + params.outputInstFileName;
+			fs::path orig = params.outputInstFileName;
+			fs::path modif = orig.parent_path() / ("DEFECT_" + orig.filename().string());
 
 			try
 			{
-				fs::rename(old_name, new_name); 
+				fs::rename(orig, modif); 
 				std::cout << "File renamed successfully.\n";
 			} 
 			catch (const fs::filesystem_error& e)

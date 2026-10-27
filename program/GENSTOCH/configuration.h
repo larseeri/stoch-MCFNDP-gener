@@ -33,6 +33,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <string_view>
 
 #include "../HOYLAND_KAUT_WALLACE/matrix.h"
 
@@ -356,6 +357,15 @@ struct Configuration
 	void verifyOutputPath(string);	
 	
 	void displayError(string);	
+	
+	void displayPosIntError(char, string);
+	
+	void displayRealError(char, string);
+	
+	void checkKeyLengthFromCmd(const char*, int);
+	
+	void checkKeyLengthFromFile(string, int);	
+	
 };
 
 #endif

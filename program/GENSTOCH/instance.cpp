@@ -47,7 +47,7 @@ void displayTimeStamp()
 }
 
 // Google
-double roundToNPlaces(double value, int n)
+inline double roundToNPlaces(double value, int n)
 {
     double multiplier = std::pow(10.0, n);
 	
@@ -55,13 +55,13 @@ double roundToNPlaces(double value, int n)
     return std::round(value * multiplier) / multiplier;
 }
 
-bool is_empty_or_whitespace(const string& str) {
+inline bool is_empty_or_whitespace(const string& str) {
     return str.empty() || all_of(str.begin(), str.end(), [](unsigned char c) {
         return isspace(c);
     });
 }
 
-bool isDigitsOnly(const string& str)
+inline bool isDigitsOnly(const string& str)
 {   
     if (is_empty_or_whitespace(str))
 		return false; 
@@ -72,7 +72,8 @@ bool isDigitsOnly(const string& str)
     });
 }
 
-bool isRealNumber(const string& str) {
+inline bool isRealNumber(const string& str)
+{
     try
 	{
         size_t idx;
@@ -90,6 +91,16 @@ bool isRealNumber(const string& str) {
 	{
         return false; // Number too large for a double
     }
+}
+
+inline string_view trim_view(string_view str)
+{
+    size_t start = str.find_first_not_of(" \t\r\n");
+    if (start == string_view::npos)
+		return "";
+    
+    size_t end = str.find_last_not_of(" \t\r\n");
+    return str.substr(start, end - start + 1);
 }
 
 // UNUSED
@@ -363,7 +374,7 @@ void InstanceGStd::adjCommodFlows()
 			{
 				nIn++;			
 			}			
-			commods[k].adjInflows[nIn] += netFlow;			
+			commods[k].adjInflows[nIn] -= netFlow;			
 		}		
     }		
 }
@@ -421,12 +432,12 @@ void InstanceDow::read(istream &is)
 
     getline(is, line);
 	
-	if (line != "MULTIGEN.DAT:")
+	if (trim_view(line) != "MULTIGEN.DAT:")
 	{	
 		cerr << "\nERROR:\n"
 			<< "The file " << params->inputInstFileName << " specified with option key I\n"
 			<< "does not conform to the expected DOW format specified with option key F.\n"
-			<< "Header is missing.\n"
+			<< "Header \"MULTIGEN.DAT\" is missing or incorrect.\n"
 			<< "EXECUTION ABORTED" << endl;
 			exit(1);	
 	}
@@ -545,7 +556,8 @@ void InstanceDow::write(ostream &os, string feasibility, string validity) const
 	
     static int scen = 0;
 	os << endl;	
-    os << "SCENARIO: " << scen << " Feasibility: " << feasibility << " Validity: " << validity << " Prob: " << (*vectProbsPtr)[scen] << endl;
+    os << "SCENARIO: " << scen << " Feasibility: " << feasibility << " Validity: " << validity
+		<< " Prob: " << defaultfloat << (*vectProbsPtr)[scen] << endl;
 	scen++;
 	
     os << "MULTIGEN.DAT:" << endl;
@@ -646,15 +658,16 @@ void InstanceRStd::read(istream &is)
         {
             is >> idxComm;
 			
-			if (idxComm > numbCommods)
+			if (idxComm > numbCommods || idxComm < 1)
 			{
 				cerr << "\nERROR:\n"
 					<< "The commodity index " << idxComm << " stated while listing the costs and capacities\n"
 					<< "in connection with arc ("<< (arc.orig + 1) << ", " << (arc.dest + 1) << ") in instance file\n"
-					<< params->inputInstFileName << " exceeds the total number of commodities at beginning of file.\n"
+					<< params->inputInstFileName << " exceeds the total number of commodities at beginning of file\n"
+					<< "or is non-positive.\n"			
 					<< "EXECUTION ABORTED" << endl;
 					exit(1);
-			}
+			}			
 			
             idxComm--;
             is >> varCost >> capac;
@@ -730,7 +743,8 @@ void InstanceRStd::write(ostream &os, string feasibility, string validity) const
 	
     static int scen = 0;
 	os << endl;
-    os << "SCENARIO: " << scen << " Feasibility: " << feasibility << " Validity: " << validity << " Prob: " << (*vectProbsPtr)[scen] << endl;
+    os << "SCENARIO: " << scen << " Feasibility: " << feasibility << " Validity: " << validity
+		<< " Prob: " << defaultfloat << (*vectProbsPtr)[scen] << endl;
     scen++;
 	os << setw(15) << right << numbNodes << "   " << setw(15) << right << numbArcs << "   " << setw(15) << right
        << numbCommods << endl;
@@ -846,12 +860,13 @@ void InstanceGStd::read(istream &is)
         {					
 			is >> idxComm;
 			
-			if (idxComm > numbCommods)
+			if (idxComm > numbCommods || idxComm < 1)
 			{
 				cerr << "\nERROR:\n"
 					<< "The commodity index " << idxComm << " stated while listing the costs and capacities\n"
-					<< "in connection with arc ("<< (arc.orig + 1) << ", " << (arc.dest + 1) << ") in instance file\n"
-					<< params->inputInstFileName << " exceeds the total number of commodities at beginning of file.\n"
+					<< "in connection with arc (" << (arc.orig + 1) << ", " << (arc.dest + 1) << ") in instance file\n"
+					<< params->inputInstFileName << " exceeds the total number of commodities at beginning of file\n"
+					<< "or is non-positive.\n"			
 					<< "EXECUTION ABORTED" << endl;
 					exit(1);
 			}
@@ -941,7 +956,8 @@ void InstanceGStd::write(ostream &os, string feasibility, string validity) const
 	
     static int scen = 0;
 	os << endl;
-    os << "SCENARIO: " << scen << " Feasibility: " << feasibility << " Validity: " << validity << " Prob: " << (*vectProbsPtr)[scen-1] << endl;
+    os << "SCENARIO: " << scen << " Feasibility: " << feasibility << " Validity: " << validity
+		<< " Prob: " << defaultfloat << (*vectProbsPtr)[scen] << endl;
     scen++;
 	os << setw(15) << right << numbNodes << "   " << setw(15) << right << numbArcs << "   " << setw(15) << right
        << numbCommods << endl;
