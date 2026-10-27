@@ -153,7 +153,7 @@ int HKW_ScenGen(int const FormatOfMoms, TMatrix const * const p_TarMoms,
 					if (TestLevel > 6) {
 						printf("CUBIC - Target:");
 						for (j=0; j<4; j++)
-							printf("  %.4f", TgMom[j]);
+							printf("  %.8f", TgMom[j]);
 						printf("\n");
 					}
 
@@ -194,7 +194,7 @@ int HKW_ScenGen(int const FormatOfMoms, TMatrix const * const p_TarMoms,
 							if (TestLevel > 6) {
 								printf("CUBIC - Start:");
 								for (j=1; j<=12; j++)
-									printf("  %.4f", InMom[j]);
+									printf("  %.8f", InMom[j]);
 								printf("\n");
 							}
 
@@ -268,9 +268,9 @@ int HKW_ScenGen(int const FormatOfMoms, TMatrix const * const p_TarMoms,
 		}
 		if (TestLevel > 2) {
 			printf("Starting properties:\n");
-			printf("  Error in moments is %.4f:\n", errMom);
+			printf("  Error in moments is %.8f:\n", errMom);
 			if (TestLevel > 3) Mat_Display(&OutMoms, "Moments");
-			printf("  Error in correlations is %.4f:\n", errCorr);
+			printf("  Error in correlations is %.8f:\n", errCorr);
 			if (TestLevel > 3) Mat_Display(&OutCorrs, "Corrs");
 		}
 
@@ -322,9 +322,9 @@ int HKW_ScenGen(int const FormatOfMoms, TMatrix const * const p_TarMoms,
 
 			if (TestLevel > 2) {
 				printf("After the linear (matrix) transformation:\n");
-				printf("  Overall error in moments: %.4f:\n", errMom);
+				printf("  Overall error in moments: %.8f:\n", errMom);
 				if (TestLevel > 3) Mat_Display(&OutMoms, "Moments");
-				printf("  Overall error in correlations: %.4f:\n", errCorr);
+				printf("  Overall error in correlations: %.8f:\n", errCorr);
 				if (TestLevel > 3) Mat_Display(&OutCorrs, "Corrs");
 			}
 
@@ -340,7 +340,7 @@ int HKW_ScenGen(int const FormatOfMoms, TMatrix const * const p_TarMoms,
 				if (TestLevel > 6) {
 					printf("CUBIC - Target:");
 					for (j=0; j<4; j++)
-						printf("  %.4f", TgMom[j]);
+						printf("  %.8f", TgMom[j]);
 					printf("\n");
 				}
 
@@ -357,7 +357,7 @@ int HKW_ScenGen(int const FormatOfMoms, TMatrix const * const p_TarMoms,
 					if (TestLevel > 6) {
 						printf("CUBIC - Start:");
 						for (j=1; j<=12; j++)
-							printf("  %.4f", InMom[j]);
+							printf("  %.8f", InMom[j]);
 						printf("\n");
 					}
 
@@ -396,22 +396,28 @@ int HKW_ScenGen(int const FormatOfMoms, TMatrix const * const p_TarMoms,
 
 			if (TestLevel > 2) {
 				printf("After the cubic transformation:\n");
-				printf("  Overall error in moments: %.4f:\n", errMom);
+				printf("  Overall error in moments: %.8f:\n", errMom);
 				if (TestLevel > 3) Mat_Display(&OutMoms, "Moments");
-				printf("  Overall error in correlations: %.4f:\n", errCorr);
+				printf("  Overall error in correlations: %.8f:\n", errCorr);
 				if (TestLevel > 3) Mat_Display(&OutCorrs, "Corrs");
 			}
 
-			if (TestLevel > 1)
-				printf("Overall error in moments and correlations after iteration %2d: %9.6f\n", iter,
-				       errMom + errCorr);	   
+			if (TestLevel > 1) {
+				printf("Overall error in moments and correlations after iteration %2d: %9.8f\n", iter,
+				       errMom + errCorr);
+				printf("Error in moments after iteration %2d: %9.8f\n", iter, errMom);
+				printf("Error in correlations after iteration %2d: %9.8f\n", iter, errCorr);
+			}					   
 					   
 		} // next iter
 
 		if (TestLevel > 0) {
-			printf("\nOverall error in moments and correlations after trial %2d: %9.6f\n", trial, errMom+errCorr);			
+			printf("\nOverall error in moments and correlations after trial %2d: %9.12f\n", trial, errMom+errCorr);
+			printf("Error in moments after trial %2d: %9.12f\n", trial, errMom);
+			printf("Error in correlations after trial %2d: %9.12f\n", trial, errCorr);			
 			if (TestLevel > 2) printf("\n");
 		}
+		
 		next_trial:;
 	} while (((errMom>MaxErrMom) || (errCorr>MaxErrCorr)) && (trial<MaxTrial));
 
