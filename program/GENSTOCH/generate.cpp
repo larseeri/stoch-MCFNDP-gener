@@ -305,7 +305,8 @@ TMatrix2 HoylandKautWallace::generScenarios()
 		{		
 			cerr << "\nERROR:\n"
 				<< "While reading " + params->probsFileName + ", the sum of probabilities\n"
-				<< "differs from 1 by at least 1e-8.\n"
+				<< "differs from 1 by at least 1e-8. Hence, probabilities must be accurate\n"
+				<< "up to the 10th significant digit.\n"
 				<< "EXECUTION ABORTED" << endl;
 			exit(1);			
 		}		

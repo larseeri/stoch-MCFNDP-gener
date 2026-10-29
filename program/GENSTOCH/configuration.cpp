@@ -66,9 +66,9 @@ inline bool isValidRealNumber(const string& str)
 
 // Constructor
 Configuration::Configuration(int argc, char **argv, string _configFileName)
-    : nbArg(argc), vectArg(argv), verbose(false), configFileName(_configFileName), instanceFormat(DOW),
+    : nbArg(argc), vectArg(argv), verbose(false), configFileName(_configFileName), instanceFormat(GSTD),
       specCorrBlocks(false), momentsCharacts(UNIFORM), generMoments(false), alpha(0.25), beta(0.25),
-      inputInstFileName("./base-determ-inst.dow"), skipFeasibChecks(false), outputInstFileName("./generated-stoch-inst.txt"),
+      inputInstFileName("./determ_oneSrcOneSnk_12oct2026-17h09.std"), skipFeasibChecks(false), outputInstFileName("./generated-stoch-inst.txt"),
       momentsFileName("./moments.dat"), correlsFileName("./correlations.dat"), numbScenarios(1000),
     //
     // distCharactMoments = 7 (7=1+2+4), ensures that the target moments
@@ -91,7 +91,7 @@ Configuration::Configuration(int argc, char **argv, string _configFileName)
     // This should be set to 3.
     displayLevel(3),
     //
-    maxTrial(10), maxIter(50), randomSeed(7654321), randomStream(1000), outScenariosFileName("raw_scens.dat"),
+    maxTrial(10), maxIter(50), randomSeed(7654321), randomStream(1000), outScenariosFileName("./raw_scens.dat"),
     readProbs(false), probsFileName(""), readStartScenarios(false), startScenariosFileName(""), paramX(false),
     paramT(false)
 {
@@ -261,7 +261,7 @@ void Configuration::parseCmdLine()
                         default:
 							cerr << "\nERROR:\n"
 								<< "Option X must be specified along with a pair of characters in {D, A, C, F, V}.\n"
-								<< "However, value [" << *value <<  "] was received.\n"
+								<< "However, key [" << *longKey <<  "] was received.\n"
 								<< "EXECUTION ABORTED" << endl;
 							exit(1);
                             break;
@@ -487,7 +487,7 @@ inline void Configuration::parseKeyValue(string key, string value)
 		else
 			displayPosIntError('S', value);	
 	
-        elemStoch = stoi(value);
+        elemStoch = stod(value);
 
         if (elemStoch & flagStochDemand)
             stochTypes.push_back(DEMAND);
@@ -536,7 +536,7 @@ inline void Configuration::parseKeyValue(string key, string value)
                 default:
 					cerr << "\nERROR:\n"
 						<< "Option X must be specified along with a pair of characters in {D, A, C, F, V}.\n"
-						<< "However, value [" << value <<  "] was received.\n"
+						<< "However, key [" << key <<  "] was received.\n"
 						<< "EXECUTION ABORTED" << endl;
 					exit(1);
 				break;
@@ -729,10 +729,10 @@ void Configuration::verify()
 		exit(1);
     }
 
-    if (beta < 0.0)
+    if (beta < 0.0 || beta > 1000.0 )
     {
         cerr << "\nERROR:\n"
-			<< "Value of key [B] (beta) must be non-negative.\n"
+			<< "Value of key [B] (beta) must fall in [0, 1000].\n"
 			<< "EXECUTION ABORTED" << endl;
 		exit(1);
     }
@@ -801,42 +801,50 @@ void Configuration::verify()
 		}
 	}	
 	
-	if (numbScenarios <= 0)
+	if (numbScenarios <= 0 || numbScenarios > 1000000)
     {
         cerr << "\nERROR:\n"
-			<< "Value of key [n] (number of scenarios) must be positive.\n"
+			<< "Value of key [n] (number of scenarios) must be in [1, 1000000].\n"
 			<< "EXECUTION ABORTED" << endl;
 		exit(1);
     }
 	
-	if (maxTrial <= 0)
+	if (maxTrial <= 0 || maxTrial > 10000)
     {
         cerr << "\nERROR:\n"
-			<< "Value of key [t] (max. number of trials) must be positive.\n"
+			<< "Value of key [t] (max. number of trials) must be in [1, 10000].\n"
 			<< "EXECUTION ABORTED" << endl;
 		exit(1);
     }
 	
-	if (maxIter <= 0)
+	if (maxIter <= 0 || maxIter > 10000)
     {
         cerr << "\nERROR:\n"
-			<< "Value of key [i] (max. number of iterations in each trial) must be positive.\n"
+			<< "Value of key [i] (max. number of iterations in each trial) must in [1, 10000].\n"
 			<< "EXECUTION ABORTED" << endl;
 		exit(1);
     }
 	
-	if (randomSeed <= 0)
+	if (displayLevel < 0 || displayLevel > 11)
     {
         cerr << "\nERROR:\n"
-			<< "Value of key [r] (random seed) must be positive.\n"
+			<< "Value of key [l] (display level of HKW algo.) must be in [0, 11].\n"
+			<< "EXECUTION ABORTED" << endl;
+		exit(1);
+    }
+		
+	if (randomSeed < 0)
+    {
+        cerr << "\nERROR:\n"
+			<< "Value of key [r] (random seed) must be in [0, INT_MAX].\n"
 			<< "EXECUTION ABORTED" << endl;
 		exit(1);
     }
 	
-	if (randomStream <= 0)
+	if (randomStream < 0)
     {
         cerr << "\nERROR:\n"
-			<< "Value of key [R] (random stream) must be positive.\n"
+			<< "Value of key [R] (random stream) must be in [0, INT_MAX].\n"
 			<< "EXECUTION ABORTED" << endl;
 		exit(1);
     }

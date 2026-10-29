@@ -466,9 +466,13 @@ void InstanceDow::read(istream &is)
 			exit(1);		
 	}
 
-    allocate();
+    allocate();	
 	
-	bool nonSequential = false;
+	// Note: In contrast with the canonical DOW format specification, values of idxArc are allowed to be
+	// non-consecutive. (The Canad R deterministic instances are stored in this manner.) Hence, arcs are
+	// indexed in the order in which they appear in the file and values of idxArc are disregarded. In 
+	// this manner the orders of the arcs in the file of the base determistic instance and for each
+	// scenario appearing in the file of the generated stochastic instance correspond exactly.
 	
     for (int a = 0; a < numbArcs; a++)
     {
@@ -495,11 +499,7 @@ void InstanceDow::read(istream &is)
 				<< "in instance file " << params->inputInstFileName << " is negative.\n"
 				<< "EXECUTION ABORTED" << endl;
 				exit(1);		
-		}
-		if (idxArc != (a + 1))
-		{			
-			nonSequential = true;			
-		}
+		}		
 				
 		if (capac < 0)
 			capac = ASSIGNED_CAPAC_IF_READ_NEG;
@@ -510,9 +510,7 @@ void InstanceDow::read(istream &is)
         stochElems[CAP_ARC][countArc] = capac;
         stochElems[FIXED_COST][countArc] = fixedCost;
         nodes[arc.orig].arcOut.push_back(countArc);
-        nodes[arc.dest].arcIn.push_back(countArc);
-        countArc++;
-        idxArc--;
+        nodes[arc.dest].arcIn.push_back(countArc);        
 
         for (int k = 0; k < numbCommods; k++)
         {
@@ -521,17 +519,9 @@ void InstanceDow::read(istream &is)
             countComm++;
         }
 
-        arcs[idxArc] = arc;
+        arcs[countArc] = arc;
+		countArc++;		
     }
-	
-	if (countArc != numbArcs)
-	{
-		cerr << "\nERROR:\n"
-			<< "The number of arcs " << countArc << " detected in instance file " << params->inputInstFileName << "\n"
-			<< "does not agree with the number of arcs " << numbArcs << " stated at beginning of file.\n"
-			<< "EXECUTION ABORTED" << endl;
-			exit(1);		
-	}
 
     for (int k = 0; k < numbCommods; k++)
     {
@@ -551,16 +541,7 @@ void InstanceDow::read(istream &is)
         commods[k].orig--;
         commods[k].dest--;
         stochElems[DEMAND][countDemand++] = volume;
-    }
-	
-	if (nonSequential)
-	{
-		cout << "\nWARNING:\n"
-			<< "The arc indexes appearing in the last column of instance file " << params->inputInstFileName << "\n"
-			<< "are not consecutive. This does not strictly conform to the specification of the DOW format.\n"
-			<< "Ascertain that all indexes appearing in last column fall within 1 and the number of arcs\n"
-			<< "stated at the beginning of file AND that no index is missing." << endl;
-	}
+    }	
 	
 	if (params->verbose)
 		cout << "\n****** End reading DOW instance from " << params->inputInstFileName << ".\n" << endl;

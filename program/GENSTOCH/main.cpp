@@ -78,7 +78,7 @@
 // and note the installation folder(s). According to our verifications, CPLEX
 // and HIGHS work equally well in our application. HIGHS is freely available
 // under the MIT license at https://highs.dev/, does not require additional
-// library and can be installed in a small number of straightforweard steps
+// libraries and can be installed in a small number of straightforward steps
 // that are currently described at
 // https://ergo-code.github.io/HiGHS/dev/interfaces/cpp/. See Huangfu, Q.,
 // Hall, J.A.J. Parallelizing the dual revised simplex method. Math. Prog. 
@@ -255,7 +255,7 @@
 // the terminal on AMD and Intel CPUs (other CPUs are addressed further below).
 // For example, the default Docker instruction
 //
-// docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen
+// docker run --init --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen
 //
 // is equivalent to the default Linux command line instruction
 //
@@ -264,7 +264,7 @@
 // In general, Docker instructions can be formulated from those appearing in
 // Section 1.2 by (i) adding the prefix 
 //
-// docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image
+// docker run --init --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image
 //
 // and by (ii) replacing the executable location ./stoch_gen with /stoch_gen
 // (i.e. removing the initial dot), since the executable stoch_gen is located
@@ -281,11 +281,11 @@
 //
 // respectively correspond to the following Docker instructions:
 //
-// docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F /inout/newParamfile.par
+// docker run --init --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F /inout/newParamfile.par
 //
-// docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +H
+// docker run --init --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +H
 //
-// docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F /inout/newParamFile.par -r 1234 -R 4567
+// docker run --init --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F /inout/newParamFile.par -r 1234 -R 4567
 //
 // Important: 
 // When running the program through Docker instructions, all input and output
@@ -298,7 +298,7 @@
 // specified in the Docker instruction or inside the configuration file with
 // -I /inout/baseNetworkFile.std.
 //
-// The default configuration file is located at docker/inout/stoch_config.par.
+// The default configuration file is located at docker/inout/docker_stoch_config.par.
 // It has initially been filled with illustrative values and should be edited
 // appropriately if no replacement configuration file is indicated on the
 // Docker instruction line with option key +F.
@@ -325,17 +325,18 @@
 // a- Running the following preliminary instruction once. (For details, see
 // https://hub.docker.com/r/tonistiigi/binfmt.)
 //
-// docker run --privileged --rm tonistiigi/binfmt --install all 
+// docker run --init --privileged --rm tonistiigi/binfmt --install all 
 //
 // b- Adding the option --platform linux/amd64 to the Docker instruction line
 // prefix as follows:
 //
-// docker run --platform linux/amd64 --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image
+// docker run --init --platform linux/amd64 --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image
 //
 // The following characteristics are specific to the operation of the program
 // through Docker instructions:
-// - An empty folder absolutePathToDockerFolder/inout must already exist on
-// the host for the Docker instructions to work correctly.
+// - A folder absolutePathToDockerFolder/inout must already exist on
+// the host for the Docker instructions to work correctly. This folder
+// already contains the default configuration file.
 // - Option --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout
 // connects subfolder docker/inout on the host to folder /inout
 // of the Docker container. Hence, the connection between
@@ -348,6 +349,9 @@
 // and that it cannot be reused afterwards, for instance through a docker exec
 // instruction. Immediate suppression with --rm avoids uselessly cluttering
 // Docker's container repository.
+// - Option --init creates a small additional Docker process. This has the
+// effect of permitting a more orderly exit of the main Docker process in case
+// of error.
 //
 // The following Docker instructions may be useful:
 //
@@ -435,7 +439,7 @@
 // otherwise with option key M. The distributional assumption can be specified
 // with option key T <char> where <char> stands for either U (uniform) or T
 // (triangular) and with two parameters, alpha and beta, that can be specified 
-// using options A <double> and B <double>.
+// using options A <double> and B <double>. (See Section 7.2.1 below.)
 //
 // b- If option key G is not included, individual target moments will be read
 // from the file whose default name is './moments.dat' (Linux
@@ -597,7 +601,7 @@
 // *******************************************************************************
 //
 // DOW and STD formats are commonly used to store deterministic MCFNDP
-// instances in text files. These formats are described in files 
+// instances in text files. Canonical descriptions of these formats are supplied in files 
 // DOW-format-desc.txt and STD-format-desc.txt. The application can read from
 // these two formats and, in addition, from a restricted version of STD. Thus,
 // three formats are available for supplying the base deterministic MCFNDP 
@@ -610,6 +614,20 @@
 // volume < 0).
 // b- Generic STD imposes neither (i), nor (ii).
 // c- Restricted STD imposes only (ii).
+//
+// Important:
+// - The canonical STD and DOW formats specification require that negative arc capacities and negative
+// commodity-specific capacities be interpreted as infinite. When reading
+// instance files in GSTD, RSTD or DOW format, negative capacities are set
+// to 1E+9.
+// - The DOW format file reader is more permissive than allowed by the canonical
+// DOW format in this way: In contrast with the canonical DOW format specification, values of idxArc are allowed to be
+// non-consecutive. (The Canad R deterministic instances are stored in this manner.) Hence, arcs are
+// indexed in the order in which they appear in the file and values of idxArc are disregarded. In 
+// this manner the orders of the arcs in the file of the base determistic instance and for each
+// scenario appearing in the file of the generated stochastic instance correspond exactly.	
+// - The DOW and STD format file readers are more restrictive than allowed by the DOW and STD formats 
+// canonical specifications in this way: The value of zero-valued fixed costs cannot be omitted.
 //
 // Important:
 // When the base deterministic MCFNDP instance is received in the generic STD
@@ -667,7 +685,7 @@
 // conditions:
 // a- Sample estimators are used, i.e. sums of terms are divided by N-1
 // where N is the sample size. (HKW calls the latter "population estimators"
-// but this is a mismomer. These are called in the statistical literature 
+// but this is a misnomer. These are called in the statistical literature 
 // "sample estimators". Population estimators would have N as their
 // denominator.)
 // b- 2nd moment is defined as variance, that is second central
@@ -710,7 +728,8 @@
 // instructions) or './inout/probs_100_eq_example.dat' (Docker instructions).
 //
 // Probabilities read from a file must each be larger than zero and their
-// sum may differ from 1 by at most 1e-8.
+// sum may differ from 1 by at most 1e-8. That is, they must be accurate
+// up to the 10th significant digit.
 //
 // 5.2.4 Raw scenarios in HKW format
 // *********************************
@@ -852,12 +871,6 @@
 // 7.2.1 Main generator options
 // ****************************
 //
-// H <> (no value supplied); display complete documentation about the
-// application and the available options
-//
-// h <> (no value supplied); display complete documentation about the
-// application and the available options
-//
 // F <char>; format of file where base deterministic MCFNDP instance is to be
 // read; D: DOW, G: generic STD, R: restricted STD; default: D
 //
@@ -947,7 +960,8 @@
 // D is the base value of the stochastic element taken from the base
 // deterministic instance,
 // alpha must be in [0, 0.95],
-// beta >= 0.
+// Theoretically, beta could be given any non-negative real value.
+// For practical considerations, beta is restricted to [0, 1000.0].
 // The distribution is symmetric around D when alpha = beta.
 //
 // When option T is set to T, then the stochastic elements of the instance that
@@ -959,7 +973,8 @@
 // D is the base value of the stochastic element taken from the base
 // deterministic instance,
 // alpha must be in [0, 0.95],
-// beta >= 0.
+// Theoretically, beta could be given any non-negative real value.
+// For practical considerations, beta is restricted to [0, 1000.0].
 // The distribution is symmetric around D when alpha = beta.
 //
 // 7.2.2 Options supplied to HKW algorithm
@@ -972,21 +987,24 @@
 // & Diego Mathieu. Additional details about HKW options available in
 // ../HOYLAND_KAUT_WALLACE/sg_HKW.c.
 //
-// n <int>; number of scenarios to generate; default: 1000
+// n <int>; number of scenarios to generate; default: 1000;
+// restricted to [1, 1000000]
 //
 // t <int>; maximum number of trials (attempts to generate scenarios using
-// alternative random starting values); default: 10
+// alternative random starting values); default: 10;
+// restricted to [1, 10000]
 //
-// i <int>; maximum number of iterations in a trial; default: 50
+// i <int>; maximum number of iterations in a trial; default: 50;
+// restricted to [1, 10000]
 //
 // m <double>; maximum RMS error in matching moments (scaled to var=1);
-// default: 0.001
+// default: 0.001; restricted to positive real numbers
 //
 // c <double>; maximum RMS error in matching correlations;
-// default: 0.001
+// default: 0.001; restricted to a positive real numbers
 //
-// l <int>; level of on-screen reporting by HKW algorithm (between 0 and 11);
-// default: 3
+// l <int>; level of on-screen reporting by HKW algorithm; default: 3;
+// restricted to [0, 11]
 //
 // o <string>; name of file where resulting matrix of raw scenarios in HKW
 // format is written; default: './raw_scens.dat' (Linux instructions) or
@@ -999,9 +1017,11 @@
 // p <string>; if specified, read probabilities from this file; otherwise,
 // scenarios are assumed equiprobable; no default
 //
-// r <int>; seed of the PCG pseudo-random generator; default: 7654321
+// r <int>; seed of the PCG pseudo-random generator; default: 7654321;
+// restricted to [0, INT_MAX]
 //
-// R <int>; stream of the PCG pseudo-random generator; default: 1000
+// R <int>; stream of the PCG pseudo-random generator; default: 1000;
+// restricted to [0, INT_MAX]
 //
 // 8 Detailed examples
 // *******************
@@ -1042,7 +1062,7 @@
 //
 // Docker instruction:
 //
-// docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F inout/docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_dow.par
+// docker run --init --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F inout/docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_dow.par
 //
 // Configuration file (input) used with Docker instruction:
 // docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_dow.par
@@ -1103,7 +1123,7 @@
 //
 // Docker instruction:
 //
-// docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F inout/docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_rstd.par
+// docker run --init --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F inout/docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_rstd.par
 //
 // Configuration file (input) used with Docker instruction:
 // docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_rstd.par
@@ -1147,7 +1167,7 @@
 //
 // Docker instruction:
 //
-// docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F /inout/docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_gstd.par
+// docker run --init --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F /inout/docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_gstd.par
 //
 // Configuration file (input) used with Docker instruction:
 // docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_gstd.par
@@ -1197,7 +1217,7 @@
 //
 // Docker instruction:
 //
-// docker run --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F /inout/docker_stoch_config_eqSrcsEqSnks_12oct2026-17h09_gstd.par
+// docker run --init --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F /inout/docker_stoch_config_eqSrcsEqSnks_12oct2026-17h09_gstd.par
 //
 // Configuration file (input) used with Docker instruction:
 // docker_stoch_config_eqSrcsEqSnks_12oct2026-17h09_gstd.par
