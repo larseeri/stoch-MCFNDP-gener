@@ -1,4 +1,4 @@
-(October 16th 2026)
+(October 28th 2026)
 
 ## Generator of instances of the linear, two-stage, stochastic, multi-commodity, capacitated, fixed charge network design problem with recourse
 
@@ -36,69 +36,69 @@ We reordered the content of the original file to make the exposition flow more p
 
 *** Content of the configuration file starts on the next line. ***
 
-// this configuration file is called with this command line:\
-// ./stoch_gen +v +F ../library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.par
+\# this configuration file is called with this command line:\
+\# ./stoch_gen +v +F ../library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.par
 
-// base deterministic instance file has GSTD format\
+\# base deterministic instance file has GSTD format\
 -F G
 
-// path of base deterministic instance\
+\# path of base deterministic instance\
 -I ../library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std
 
-// moments will be generated\
+\# moments will be generated\
 G
 
-// distribution\
+\# distribution\
 -T T
 
-// alpha\
+\# alpha\
 -A 0.5
 
-// beta\
+\# beta\
 -B 0.5
 
-// randomizing volumes and overall capacities\
+\# randomizing volumes and overall capacities\
 -S 3\
-// correlations are hereafter specified for each block\
+\# correlations are hereafter specified for each block\
 -K\
 -XDD 0.5\
 -XDA -0.2\
 -XAA 0.5
 
-// number of scenarios\
+\# number of scenarios\
 -n 3000
 
-// maximum number of trials in HKW algo.\
+\# maximum number of trials in HKW algo.\
 -t 20
 
-// maximum number of iterations per trial in HKW algo.\
+\# maximum number of iterations per trial in HKW algo.\
 -i 50
 
-// level of onscreen reporting\
+\# level of onscreen reporting\
 -l 3
 
-// tolerance about errors in moments\
+\# tolerance about errors in moments\
 -m 0.001
 
-// tolerance about errors in correlations\
+\# tolerance about errors in correlations\
 -c 0.001
 
-// seed\
+\# seed\
 -r 50163844
 
-// stream\
+\# stream\
 -R 22912
 
-// path of file where correlations will be saved\
+\# path of file where correlations will be saved\
 -C ../library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.dat
 
-// path of file where moments will be saved\
+\# path of file where moments will be saved\
 -M ../library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/moms_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.dat
 
-// path of file where raw scenarios will be saved\
+\# path of file where raw scenarios will be saved\
 -o ../library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/raw-scens_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.dat
 
-// path of file where generated stochastic instance will be saved\
+\# path of file where generated stochastic instance will be saved\
 -O ../library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/stoch-inst_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.txt
 
 *** Content of the configuration file ends at the preceding line. ***
@@ -110,7 +110,7 @@ We explain each statement and comment appearing in the example.
 
 Remarks:
 
-a- To supply an option, a line of a configuration file must begin with a dash '-' or a letter. A line beginning with any other character will be considered a comment. It is advisable to start comment lines exclusively with "//" or with "#". Blank lines are ignored. See Sections 1.2, 2 and 7.2 of the online user guide for complete details.
+a- To supply an option, a line of a configuration file must begin with a dash '-' or a letter.  Comments at beginning or end of lines must begin with "#". Blank lines are ignored. See Sections 1.2, 2 and 7.2 of the online user guide for complete details.
 
 b- The order of the statements and comments in a configuration file is immaterial to the workings of the generator.
 
@@ -120,10 +120,10 @@ d- The selected option values must conform to the restrictions stated in Section
 
 e- In this section, the suffixes appearing in the names of the option values indicate the expected type. For instance, option F expects a character. Hence the value is named F_char. 
 
-**2.1** It is advisable to make sure that the name of the configuration file is a unique identifier of its content and to state the command line calling the current configuration file as a comment within the configuration file itself. Here, command_string==./stoch_gen +v +F ../library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.par.
+**2.1** It is advisable to name the configuration file with a unique identifier of its content and to state the command line calling the current configuration file as a top comment within the configuration file itself. Here, command_string==./stoch_gen +v +F ../library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.par.
 
 ```
-// command string: command_string
+# command string: command_string
 ```
 
 **2.2** Specifies the format of the base deterministic instance file. Here, F_char=='G' whence it has GSTD format.
@@ -132,7 +132,7 @@ e- In this section, the suffixes appearing in the names of the option values ind
 -F F_char
 ```
 
-**2.3** Specifies the path of base deterministic instance. See section 5.1 of online user guide. Here,  I_string==../library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std. This is the instance described in the commented example available online about the deterministic generator.
+**2.3** Specifies the path of base deterministic instance. See section 5.1 of online user guide. Here,  I_string==../library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std. This is the instance described in the tutorial example available online about the deterministic generator.
 
 ```
 -I I_string
@@ -150,13 +150,13 @@ e- In this section, the suffixes appearing in the names of the option values ind
 -T T_char
 ```
 
-**2.6** Specifies the proportional distance from any element of the base network that will be randomized to the lower bound of its assumed distribution. See Section 3.2 of the online user guide. Here, A_double==0.5, whence the lower bound will be at a value 50% below the base value.
+**2.6** Specifies the proportional distance from any element of the base network that will be randomized to the lower bound of its assumed distribution (i.e., the lower spread alpha). See Section 3.2 of the online user guide. Here, A_double==0.5, whence the lower bound will be at a value 50% below the base value.
 
 ```
 -A A_double
 ```
 
-**2.7** Specifies the proportional distance from any element of the base network that will be randomized to the upper bound of its assumed distribution. See Section 3.2 of the online user guide. Here, B_double==0.5, whence the upper bound will be at a value 50% above the base value.
+**2.7** Specifies the proportional distance from any element of the base network that will be randomized to the upper bound of its assumed distribution (i.e., the upper spread beta). See Section 3.2 of the online user guide. Here, B_double==0.5, whence the upper bound will be at a value 50% above the base value.
 
 ```
 -B B_double
@@ -172,7 +172,7 @@ e- In this section, the suffixes appearing in the names of the option values ind
 -R r_int
 ```
 
-**2.9** Specifies which elements of the of the base deterministic network must be randomized. See Section 3.1 of the online user guide. Here, S_int==3 and since 3=1+2, demands and overall capacities are to be randomized.
+**2.9** Specifies which elements of the base deterministic network must be randomized. See Section 3.1 of the online user guide. Here, S_int==3 and since 3=1+2, demands and overall capacities are to be randomized.
 
 ```
 -S s_int
@@ -234,7 +234,7 @@ e- In this section, the suffixes appearing in the names of the option values ind
 -c c_double
 ```
 
-**2.19** Specifies path of file where target correlations will be saved or read. See Section 5.2.2 of online user guide.v Here, target correlations are written to C_string==../library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.dat.
+**2.19** Specifies path of file where target correlations will be saved or read. See Section 5.2.2 of online user guide. Here, target correlations are written to C_string==../library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/corrs_hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.dat.
 
 ```
 -C C_string 
