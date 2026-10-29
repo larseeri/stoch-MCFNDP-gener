@@ -36,7 +36,7 @@ FROM ubuntu:latest AS runtime
 COPY --from=builder /stoch_gen .
 
 ## Copy the default parameter file from the build stage
-COPY --from=builder /inout/stoch_config.par .
+COPY --from=builder /inout/docker_stoch_config.par .
 
 ## Copy the libraries that will used dynamically
 COPY --from=builder /HIGHS/HiGHS-1.11.0/install/lib /HIGHS/HiGHS-1.11.0/install/lib
@@ -47,7 +47,7 @@ COPY --from=builder /HIGHS/HiGHS-1.11.0/install/lib /HIGHS/HiGHS-1.11.0/install/
 ##RUN ls -al /HIGHS/HiGHS-1.11.0/install/lib/
 
 # Default command to run the binary when the container starts
-CMD ["/stoch_gen", "-h"]
+CMD ["/stoch_gen", "+H"]
 
 #############################################################################
 #############################################################################
