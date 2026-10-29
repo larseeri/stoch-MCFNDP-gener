@@ -16,8 +16,8 @@ I determ_oneSrcOneSnk_12oct2026-17h09.std
 #output file name
 O stoch_oneSrcOneSnk_12oct2026-17h09_rstd.txt
 
-# all elements of D, A, C, V will be randomized
-S 23
+# all elements of D, A will be randomized
+S 3
 
 # correlations are hereafter specified for each block
 K
@@ -25,17 +25,10 @@ K
 # name of file where correlations will be saved
 C stoch_corrs_oneSrcOneSnk_12oct2026-17h09_rstd.dat
 
-# correlations for each block concerned by S 23
+# correlations for each block concerned by S 3
 XDD 0.5
 XDA -0.2
-XDC 0.2
-XDV -0.2 
 XAA 0.5
-XAC -0.2
-XAV 0.2
-XCC 0.5
-XCV -0.2
-XVV 0.5
 
 # moments will be generated
 G
