@@ -1,23 +1,23 @@
-October 16th 2026
+October 28th 2026
 library/DESCLIBRARY_STOCH.txt
 
 
 Description of the library of generated stochastic MCFNDP instances
 
 
-A generic library of stochastic MCFNDP instances is created with the GenStoch generator based on the following arborescence of configurations. First, subsets of instances are generated under one of two primary topologies: either point-to-point (Section 1) or hubs-and-satellites (Section 2). Second, within each each one these subsets, two further subsets of instances are respectively generated under one of two regimes of distribution of commodity volumes: either one source node and one sink node for each commodity (Sections 1.1 and 2.1), or multiple but identical source nodes and multiple but identical sink nodes for all commodities (Sections 1.2 and 2.2). Within each one of these four subsets, instances are generated according to the flat secondary topology and four further subset result for crossing size of the base instances (smaller or larger) with tightness of capacity in relation to commodity volumes (tighter or looser).  We proceed to describe the exact sets of options and option values appearing in the configurations situated at the leaves of this arborescence.
+A generic library of stochastic MCFNDP instances is created with the GenStoch generator based on the following arborescence of configurations. First, subsets of instances are generated under one of two primary topologies: either point-to-point (Section 1) or hubs-and-satellites (Section 2). Second, within each one these subsets, two further subsets of instances are respectively generated under one of two regimes of distribution of commodity volumes: either one source node and one sink node for each commodity (Sections 1.1 and 2.1), or multiple but identical source nodes and multiple but identical sink nodes for all commodities (Sections 1.2 and 2.2). Within each one of these four subsets, instances are generated according to the flat secondary topology and four further subset result for crossing size of the base instances (smaller or larger) with tightness of capacity in relation to commodity volumes (tighter or looser). We proceed to describe the exact sets of options and option values appearing in the configurations situated at the leaves of this arborescence.
 
 Remarks:
 
-a- The objective underlying the construction of the library with GenStoch is to exemplify the creation of a moderately diversified set of stochastic MCFNDP instances arising from a limited set of base deterministic MCFNDP instances that would be geared towards the particular goals of a set of computational experiments at hand. The objective is not to perform an expansion from the set of 6000 deterministic instances available in the library of deterministic MCFNDPs by systematically diversifying along the settings available in the stochastic generator. This would be prohibitive in view of the time and storage space that would be required by the large number and large sizes of the base deterministic instances, by the large nummber of settings available in the stochastic generator, and by the heavy computational demands imposed by some of these settings (e.g., large number of scenarios, randomization of several elements of the base deterministic instances).
+a- The objective underlying the construction of the library with GenStoch is to exemplify the creation of a moderately diversified set of stochastic MCFNDP instances arising from a limited set of base deterministic MCFNDP instances that would be geared towards the particular goals of a set of computational experiments at hand. The objective is not to perform an expansion from the set of 6000 deterministic instances available in the library of deterministic MCFNDPs by systematically diversifying along the settings available in the stochastic generator. This would be prohibitive in view of the time and storage space that would be required by the large number and large sizes of the base deterministic instances, by the large number of settings available in the stochastic generator, and by the heavy computational demands imposed by some of these settings (e.g., large number of scenarios, randomization of several elements of the base deterministic instances).
 
-b- There are 16 base deterministic instances of the MCFNDP originating from the deterministic generator GenDeterm giving rise to the 416 instances of the stochastic MCFNDP included in the library. The library is stored in the /library folder of the repository located at at https://github.com/larseeri/stoch-MCFNDP-gener.
+b- There are 32 base deterministic instances of the MCFNDP originating from the deterministic generator GenDeterm giving rise to the 416 instances of the stochastic MCFNDP included in the library. The library is stored in the /library folder of the repository located at https://github.com/larseeri/stoch-MCFNDP-gener.
 
 c- The stochastic library rooted at /library has a structure similar to that of the deterministic library rooted at /library in the repository of the determistic generator located at at https://github.com/larseeri/determ-MCFNDP-gener. There is a difference, however: the stochastic library extends this structure by adding terminal subfolders that contain the generated stochastic instances. Thus, the folders of the stochastic library closer to the root can be loaded with deterministic instances and the scripts responsible for generating the stochastic library can refer to the generated stochastic instances and to their base deterministic instances within a common folder structure. It suffices to load the appropriate subfolders of /library with the base determistic instances that are required.
 
 d- Feasibility of each scenario in each instance of the stochastic MCFNDP included in the library has been verified by activating the appropriate option of GenStoch.
 
-e- In view of the very large space that would be required to store all instances of the library, only configuration files are saved. The corresponding MCFNDP instances can be generated from saved configuration files at a high speed using GenStoch while disabling the verification of feasibility of each scenario.
+e- In view of the very large space that would be required to store all instances of the library, only configuration files are saved in a .zip archive. The corresponding MCFNDP instances can be generated from saved configuration files at a high speed using GenStoch while disabling the verification of feasibility of each scenario.
 
 f- Unspecified options are set to their default values.
 
@@ -66,10 +66,10 @@ pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-4-5-10-15-4
 
 Remarks:
 
-a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_pp_oneone_flat_smlInstTigh_8oct2026-21h00.cpp as follows:
+a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_pp_oneone_flat_smlInstTigh_25oct2026-2h51.cpp as follows:
 
-g++ gen-stoch-lib_pp_oneone_flat_smlInstTigh_8oct2026-21h00.cpp -o gen-stoch-lib_pp_oneone_flat_smlInstTigh_8oct2026-21h00
-./gen-stoch-lib_pp_oneone_flat_smlInstTigh_8oct2026-21h00
+g++ gen-stoch-lib_pp_oneone_flat_smlInstTigh_25oct2026-2h51.cpp -o gen-stoch-lib_pp_oneone_flat_smlInstTigh_25oct2026-2h51
+./gen-stoch-lib_pp_oneone_flat_smlInstTigh_25oct2026-2h51
 
 b- All configuration files in this branch are saved in folder library/pointToPoint/oneSrcOneSnk/flat/smlInstTigh.
 
@@ -79,9 +79,9 @@ Example:
 
 pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6313_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11411_gstd.par
 
-d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option ""stream" are assigned in a one-to-one correspondance to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
+d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option "stream" are assigned in a one-to-one correspondence to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
 
-e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_pp_oneone_flat_smlInstTigh_8oct2026-21h00.cpp, the Bash script process-stoch-config-files_pp_oneone_26sept2026-1h26.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
+e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_pp_oneone_flat_smlInstTigh_25oct2026-2h51.cpp, the Bash script process-stoch-config-files_pp_oneone_7oct2026-6h40.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
 
 1.1.1.2 Smaller and looser instances (32 configurations)
 
@@ -95,10 +95,10 @@ pp_vols-20-100_csts-20-100-20-100_oneSrcOneSnk_secTop-flat_secTopSpe-4-5-10-15-4
 
 Remarks:
 
-a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_pp_oneone_flat_smlInstLoo_8oct2026-21h00.cpp as follows:
+a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_pp_oneone_flat_smlInstLoo_25oct2026-2h51.cpp as follows:
 
-g++ gen-stoch-lib_pp_oneone_flat_smlInstLoo_8oct2026-21h00.cpp -o gen-stoch-lib_pp_oneone_flat_smlInstLoo_8oct2026-21h00
-./gen-stoch-lib_pp_oneone_flat_smlInstLoo_8oct2026-21h00
+g++ gen-stoch-lib_pp_oneone_flat_smlInstLoo_25oct2026-2h51.cpp -o gen-stoch-lib_pp_oneone_flat_smlInstLoo_25oct2026-2h51
+./gen-stoch-lib_pp_oneone_flat_smlInstLoo_25oct2026-2h51
 
 b- All configuration files in this branch are saved in folder library/pointToPoint/oneSrcOneSnk/flat/smlInstLoo.
 
@@ -108,9 +108,9 @@ Example:
 
 pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-5313_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-11412_gstd.par
 
-d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option ""stream" are assigned in a one-to-one correspondance to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
+d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option "stream" are assigned in a one-to-one correspondence to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
 
-e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_pp_oneone_flat_smlInstLoo_8oct2026-21h00.cpp, the Bash script process-stoch-config-files_pp_oneone_26sept2026-1h26.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
+e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_pp_oneone_flat_smlInstLoo_25oct2026-2h51.cpp, the Bash script process-stoch-config-files_pp_oneone_7oct2026-6h40.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
 
 1.1.2 Larger instances (48 configurations)
 
@@ -137,10 +137,10 @@ Varying option (2 alternative base deterministic instances):
 
 Remarks:
 
-a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_pp_oneone_flat_larInstTigh_8oct2026-21h00.cpp as follows:
+a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_pp_oneone_flat_larInstTigh_25oct2026-2h51.cpp as follows:
 
-g++ gen-stoch-lib_pp_oneone_flat_larInstTigh_8oct2026-21h00.cpp -o gen-stoch-lib_pp_oneone_flat_larInstTigh_8oct2026-21h00
-./gen-stoch-lib_pp_oneone_flat_larInstTigh_8oct2026-21h00
+g++ gen-stoch-lib_pp_oneone_flat_larInstTigh_25oct2026-2h51.cpp -o gen-stoch-lib_pp_oneone_flat_larInstTigh_25oct2026-2h51
+./gen-stoch-lib_pp_oneone_flat_larInstTigh_25oct2026-2h51
 
 b- All configuration files in this branch are saved in folder library/pointToPoint/oneSrcOneSnk/flat/larInstTigh.
 
@@ -150,9 +150,9 @@ Example:
 
 pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-16313_larInstTight_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-2500_t-20_i-50_l-3_m-0~01_c-0~01_seed-50163844_strm-11421_gstd.par
 
-d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option ""stream" are assigned in a one-to-one correspondance to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
+d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option "stream" are assigned in a one-to-one correspondence to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
 
-e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_pp_oneone_flat_larInstTigh_8oct2026-21h00.cpp, the Bash script process-stoch-config-files_pp_oneone_26sept2026-1h26.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
+e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_pp_oneone_flat_larInstTigh_25oct2026-2h51.cpp, the Bash script process-stoch-config-files_pp_oneone_7oct2026-6h40.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
 
 1.1.2.2 Larger and looser instances (24 configurations)
 
@@ -165,10 +165,10 @@ Varying option (2 alternative base deterministic instances):
 
 Remarks:
 
-a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_pp_oneone_flat_larInstLoo_8oct2026-21h00.cpp as follows:
+a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_pp_oneone_flat_larInstLoo_25oct2026-2h51.cpp as follows:
 
-g++ gen-stoch-lib_pp_oneone_flat_larInstLoo_8oct2026-21h00.cpp -o gen-stoch-lib_pp_oneone_flat_larInstLoo_8oct2026-21h00
-./gen-stoch-lib_pp_oneone_flat_larInstLoo_8oct2026-21h00
+g++ gen-stoch-lib_pp_oneone_flat_larInstLoo_25oct2026-2h51.cpp -o gen-stoch-lib_pp_oneone_flat_larInstLoo_25oct2026-2h51
+./gen-stoch-lib_pp_oneone_flat_larInstLoo_25oct2026-2h51
 
 b- All configuration files in this branch are saved in folder library/pointToPoint/oneSrcOneSnk/flat/larInstLoo.
 
@@ -178,9 +178,9 @@ Example:
 
 pp_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-15313_larInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-2500_t-20_i-50_l-3_m-0~01_c-0~01_seed-50163844_strm-11422_gstd.par
 
-d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option ""stream" are assigned in a one-to-one correspondance to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
+d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option "stream" are assigned in a one-to-one correspondence to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
 
-e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_pp_oneone_flat_larInstLoo_8oct2026-21h00.cpp, the Bash script process-stoch-config-files_pp_oneone_26sept2026-1h26.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
+e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_pp_oneone_flat_larInstLoo_25oct2026-2h51.cpp, the Bash script process-stoch-config-files_pp_oneone_7oct2026-6h40.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
 
 1.2 Distribution of volumes: Identical sources and identical sinks for all commodities
 
@@ -217,10 +217,10 @@ pp_vols-20-100_csts-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-4-5-3-5-3-5
 
 Remarks:
 
-a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_pp_eqeq_flat_smlInstTigh_8oct2026-21h00.cpp as follows:
+a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_pp_eqeq_flat_smlInstTigh_25oct2026-2h51.cpp as follows:
 
-g++ gen-stoch-lib_pp_eqeq_flat_smlInstTigh_8oct2026-21h00.cpp -o gen-stoch-lib_pp_eqeq_flat_smlInstTigh_8oct2026-21h00
-./gen-stoch-lib_pp_eqeq_flat_smlInstTigh_8oct2026-21h00
+g++ gen-stoch-lib_pp_eqeq_flat_smlInstTigh_25oct2026-2h51.cpp -o gen-stoch-lib_pp_eqeq_flat_smlInstTigh_25oct2026-2h51
+./gen-stoch-lib_pp_eqeq_flat_smlInstTigh_25oct2026-2h51
 
 b- All configuration files in this branch are saved in folder library/pointToPoint/eqSrcsEqSnks/flat/smlInstTigh.
 
@@ -230,9 +230,9 @@ Example:
 
 pp_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-6323_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12411_gstd.par
 
-d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option ""stream" are assigned in a one-to-one correspondance to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
+d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option "stream" are assigned in a one-to-one correspondence to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
 
-e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_pp_eqeq_flat_smlInstTigh_8oct2026-21h00.cpp, the Bash script process-stoch-config-files_pp_eqeq_26sept2026-1h26.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
+e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_pp_eqeq_flat_smlInstTigh_25oct2026-2h51.cpp, the Bash script process-stoch-config-files_pp_eqeq_7oct2026-6h40.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
 
 1.2.1.2 Smaller and looser instances (32 configurations)
 
@@ -246,10 +246,10 @@ pp_vols-20-100_csts-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-4-5-3-5-3-5
 
 Remarks:
 
-a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_pp_eqeq_flat_smlInstLoo_8oct2026-21h00.cpp as follows:
+a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_pp_eqeq_flat_smlInstLoo_25oct2026-2h51.cpp as follows:
 
-g++ gen-stoch-lib_pp_eqeq_flat_smlInstLoo_8oct2026-21h00.cpp -o gen-stoch-lib_pp_eqeq_flat_smlInstLoo_8oct2026-21h00
-./gen-stoch-lib_pp_eqeq_flat_smlInstLoo_8oct2026-21h00
+g++ gen-stoch-lib_pp_eqeq_flat_smlInstLoo_25oct2026-2h51.cpp -o gen-stoch-lib_pp_eqeq_flat_smlInstLoo_25oct2026-2h51
+./gen-stoch-lib_pp_eqeq_flat_smlInstLoo_25oct2026-2h51
 
 b- All configuration files in this branch are saved in folder library/pointToPoint/eqSrcsEqSnks/flat/smlInstLoo.
 
@@ -259,9 +259,9 @@ Example:
 
 pp_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5323_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12412_gstd.par
 
-d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option ""stream" are assigned in a one-to-one correspondance to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
+d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option "stream" are assigned in a one-to-one correspondence to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
 
-e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_pp_eqeq_flat_smlInstLoo_8oct2026-21h00.cpp, the Bash script process-stoch-config-files_pp_eqeq_26sept2026-1h26.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
+e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_pp_eqeq_flat_smlInstLoo_25oct2026-2h51.cpp, the Bash script process-stoch-config-files_pp_eqeq_7oct2026-6h40.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
 
 1.2.2 Larger instances (48 configurations)
 
@@ -288,10 +288,10 @@ Varying option (2 alternative base deterministic instances):
 
 Remarks:
 
-a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_pp_eqeq_flat_larInstTigh_8oct2026-21h00.cpp as follows:
+a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_pp_eqeq_flat_larInstTigh_25oct2026-2h51.cpp as follows:
 
-g++ gen-stoch-lib_pp_eqeq_flat_larInstTigh_8oct2026-21h00.cpp -o gen-stoch-lib_pp_eqeq_flat_larInstTigh_8oct2026-21h00
-./gen-stoch-lib_pp_eqeq_flat_larInstTigh_8oct2026-21h00
+g++ gen-stoch-lib_pp_eqeq_flat_larInstTigh_25oct2026-2h51.cpp -o gen-stoch-lib_pp_eqeq_flat_larInstTigh_25oct2026-2h51
+./gen-stoch-lib_pp_eqeq_flat_larInstTigh_25oct2026-2h51
 
 b- All configuration files in this branch are saved in folder library/pointToPoint/eqSrcsEqSnks/flat/larInstTigh.
 
@@ -301,9 +301,9 @@ Example:
 
 pp_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-16323_larInstTight_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-2500_t-20_i-50_l-3_m-0~01_c-0~01_seed-50163844_strm-12421_gstd.par
 
-d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option ""stream" are assigned in a one-to-one correspondance to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
+d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option "stream" are assigned in a one-to-one correspondence to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
 
-e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_pp_eqeq_flat_larInstTigh_8oct2026-21h00.cpp, the Bash script process-stoch-config-files_pp_eqeq_26sept2026-1h26.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
+e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_pp_eqeq_flat_larInstTigh_25oct2026-2h51.cpp, the Bash script process-stoch-config-files_pp_eqeq_7oct2026-6h40.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
 
 1.2.2.2 Larger and looser instances (24 configurations)
 
@@ -316,10 +316,10 @@ Varying option (2 alternative base deterministic instances):
 
 Remarks:
 
-a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_pp_eqeq_flat_larInstLoo_8oct2026-21h00.cpp as follows:
+a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_pp_eqeq_flat_larInstLoo_25oct2026-2h51.cpp as follows:
 
-g++ gen-stoch-lib_pp_eqeq_flat_larInstLoo_8oct2026-21h00.cpp -o gen-stoch-lib_pp_eqeq_flat_larInstLoo_8oct2026-21h00
-./gen-stoch-lib_pp_eqeq_flat_larInstLoo_8oct2026-21h00
+g++ gen-stoch-lib_pp_eqeq_flat_larInstLoo_25oct2026-2h51.cpp -o gen-stoch-lib_pp_eqeq_flat_larInstLoo_25oct2026-2h51
+./gen-stoch-lib_pp_eqeq_flat_larInstLoo_25oct2026-2h51
 
 b- All configuration files in this branch are saved in folder library/pointToPoint/eqSrcsEqSnks/flat/larInstLoo.
 
@@ -329,9 +329,9 @@ Example:
 
 pp_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5323_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-12412_gstd.par
 
-d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option ""stream" are assigned in a one-to-one correspondance to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
+d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option "stream" are assigned in a one-to-one correspondence to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
 
-e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_pp_eqeq_flat_larInstLoo_8oct2026-21h00.cpp, the Bash script process-stoch-config-files_pp_eqeq_26sept2026-1h26.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
+e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_pp_eqeq_flat_larInstLoo_25oct2026-2h51.cpp, the Bash script process-stoch-config-files_pp_eqeq_7oct2026-6h40.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
 
 
 2 Primary topology: Hubs-and-satellites (192 configurations)
@@ -377,10 +377,10 @@ Varying option (2 alternative base deterministic instances):
 
 Remarks:
 
-a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_hs_oneone_flat_smlInstTigh_8oct2026-21h00.cpp as follows:
+a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_hs_oneone_flat_smlInstTigh_25oct2026-2h51.cpp as follows:
 
-g++ gen-stoch-lib_hs_oneone_flat_smlInstTigh_8oct2026-21h00.cpp -o gen-stoch-lib_hs_oneone_flat_smlInstTigh_8oct2026-21h00
-./gen-stoch-lib_hs_oneone_flat_smlInstTigh_8oct2026-21h00
+g++ gen-stoch-lib_hs_oneone_flat_smlInstTigh_25oct2026-2h51.cpp -o gen-stoch-lib_hs_oneone_flat_smlInstTigh_25oct2026-2h51
+./gen-stoch-lib_hs_oneone_flat_smlInstTigh_25oct2026-2h51
 
 b- All configuration files in this branch are saved in folder library/hubsAndSats/oneSrcOneSnk/flat/smlInstTigh.
 
@@ -390,9 +390,9 @@ Example:
 
 hs_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-6333_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-21411_gstd.par
 
-d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option ""stream" are assigned in a one-to-one correspondance to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
+d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option "stream" are assigned in a one-to-one correspondence to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
 
-e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_hs_oneone_flat_smlInstTigh_8oct2026-21h00.cpp, the Bash script process-stoch-config-files_hs_oneone_26sept2026-1h26.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
+e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_hs_oneone_flat_smlInstTigh_25oct2026-2h51.cpp, the Bash script process-stoch-config-files_hs_oneone_7oct2026-6h40.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
 
 2.1.1.2 Smaller and looser instances (24 configurations)
 
@@ -406,10 +406,10 @@ Varying option (2 alternative base deterministic instances):
 
 Remarks:
 
-a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_hs_oneone_flat_smlInstLoo_8oct2026-21h00.cpp as follows:
+a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_hs_oneone_flat_smlInstLoo_25oct2026-2h51.cpp as follows:
 
-g++ gen-stoch-lib_hs_oneone_flat_smlInstLoo_8oct2026-21h00.cpp -o gen-stoch-lib_hs_oneone_flat_smlInstLoo_8oct2026-21h00
-./gen-stoch-lib_hs_oneone_flat_smlInstLoo_8oct2026-21h00
+g++ gen-stoch-lib_hs_oneone_flat_smlInstLoo_25oct2026-2h51.cpp -o gen-stoch-lib_hs_oneone_flat_smlInstLoo_25oct2026-2h51
+./gen-stoch-lib_hs_oneone_flat_smlInstLoo_25oct2026-2h51
 
 b- All configuration files in this branch are saved in folder library/hubsAndSats/oneSrcOneSnk/flat/smlInstLoo.
 
@@ -419,9 +419,9 @@ Example:
 
 hs_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-5333_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-21412_gstd.par
 
-d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option ""stream" are assigned in a one-to-one correspondance to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
+d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option "stream" are assigned in a one-to-one correspondence to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
 
-e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_hs_oneone_flat_smlInstLoo_8oct2026-21h00.cpp, the Bash script process-stoch-config-files_hs_oneone_26sept2026-1h26.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
+e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_hs_oneone_flat_smlInstLoo_25oct2026-2h51.cpp, the Bash script process-stoch-config-files_hs_oneone_7oct2026-6h40.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
 
 2.1.2 Larger instances (48 configurations)
 
@@ -448,10 +448,10 @@ Varying option (2 alternative base deterministic instances):
 
 Remarks:
 
-a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_hs_oneone_flat_larInstTigh_8oct2026-21h00.cpp as follows:
+a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_hs_oneone_flat_larInstTigh_25oct2026-2h51.cpp as follows:
 
-g++ gen-stoch-lib_hs_oneone_flat_larInstTigh_8oct2026-21h00.cpp -o gen-stoch-lib_hs_oneone_flat_larInstTigh_8oct2026-21h00
-./gen-stoch-lib_hs_oneone_flat_larInstTigh_8oct2026-21h00
+g++ gen-stoch-lib_hs_oneone_flat_larInstTigh_25oct2026-2h51.cpp -o gen-stoch-lib_hs_oneone_flat_larInstTigh_25oct2026-2h51
+./gen-stoch-lib_hs_oneone_flat_larInstTigh_25oct2026-2h51
 
 b- All configuration files in this branch are saved in folder library/hubsAndSats/oneSrcOneSnk/flat/larInstTigh.
 
@@ -461,9 +461,9 @@ Example:
 
 hs_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-15833_larInstTight_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~01_c-0~01_seed-50163844_strm-21421_gstd.par
 
-d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option ""stream" are assigned in a one-to-one correspondance to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
+d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option "stream" are assigned in a one-to-one correspondence to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
 
-e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_hs_oneone_flat_larInstTigh_8oct2026-21h00.cpp, the Bash script process-stoch-config-files_hs_oneone_26sept2026-1h26.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
+e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_hs_oneone_flat_larInstTigh_25oct2026-2h51.cpp, the Bash script process-stoch-config-files_hs_oneone_7oct2026-6h40.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
 
 2.1.2.2 Larger and looser instances (24 configurations)
 
@@ -476,10 +476,10 @@ Varying option (2 alternative base deterministic instances):
 
 Remarks:
 
-a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_hs_oneone_flat_larInstLoo_8oct2026-21h00.cpp as follows:
+a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_hs_oneone_flat_larInstLoo_25oct2026-2h51.cpp as follows:
 
-g++ gen-stoch-lib_hs_oneone_flat_larInstLoo_8oct2026-21h00.cpp -o gen-stoch-lib_hs_oneone_flat_larInstLoo_8oct2026-21h00
-./gen-stoch-lib_hs_oneone_flat_larInstLoo_8oct2026-21h00
+g++ gen-stoch-lib_hs_oneone_flat_larInstLoo_25oct2026-2h51.cpp -o gen-stoch-lib_hs_oneone_flat_larInstLoo_25oct2026-2h51
+./gen-stoch-lib_hs_oneone_flat_larInstLoo_25oct2026-2h51
 
 b- All configuration files in this branch are saved in folder library/hubsAndSats/oneSrcOneSnk/flat/larInstLoo.
 
@@ -489,9 +489,9 @@ Example:
 
 hs_oneSrcOneSnk_flat_base-det-seed-50163844_base-det-strm-15333_larInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~01_c-0~01_seed-50163844_strm-21422_gstd.par
 
-d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option ""stream" are assigned in a one-to-one correspondance to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
+d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option "stream" are assigned in a one-to-one correspondence to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
 
-e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_hs_oneone_flat_larInstLoo_8oct2026-21h00.cpp, the Bash script process-stoch-config-files_hs_oneone_26sept2026-1h26.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
+e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_hs_oneone_flat_larInstLoo_25oct2026-2h51.cpp, the Bash script process-stoch-config-files_hs_oneone_7oct2026-6h40.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
 
 2.2 Distribution of volumes: Identical sources and identical sinks for all commodities
 
@@ -527,10 +527,10 @@ hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopS
 
 Remarks:
 
-a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_hs_eqeq_flat_smlInstTigh_8oct2026-21h00.cpp as follows:
+a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_hs_eqeq_flat_smlInstTigh_25oct2026-2h51.cpp as follows:
 
-g++ gen-stoch-lib_hs_eqeq_flat_smlInstTigh_8oct2026-21h00.cpp -o gen-stoch-lib_hs_eqeq_flat_smlInstTigh_8oct2026-21h00
-./gen-stoch-lib_hs_eqeq_flat_smlInstTigh_8oct2026-21h00
+g++ gen-stoch-lib_hs_eqeq_flat_smlInstTigh_25oct2026-2h51.cpp -o gen-stoch-lib_hs_eqeq_flat_smlInstTigh_25oct2026-2h51
+./gen-stoch-lib_hs_eqeq_flat_smlInstTigh_25oct2026-2h51
 
 b- All configuration files in this branch are saved in folder library/hubsAndSats/eqSrcsEqSnks/flat/smlInstTigh.
 
@@ -540,9 +540,9 @@ Example:
 
 hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-6343_smlInstTigh_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22411_gstd.par
 
-d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option ""stream" are assigned in a one-to-one correspondance to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
+d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option "stream" are assigned in a one-to-one correspondence to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
 
-e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_hs_eqeq_flat_smlInstTigh_8oct2026-21h00.cpp, the Bash script process-stoch-config-files_hs_eqeq_26sept2026-1h26.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
+e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_hs_eqeq_flat_smlInstTigh_25oct2026-2h51.cpp, the Bash script process-stoch-config-files_hs_eqeq_7oct2026-6h40.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
 
 2.2.1.2 Smaller and looser instances (24 configurations)
 
@@ -556,10 +556,10 @@ hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopS
 
 Remarks:
 
-a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_hs_eqeq_flat_smlInstLoo_8oct2026-21h00.cpp as follows:
+a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_hs_eqeq_flat_smlInstLoo_25oct2026-2h51.cpp as follows:
 
-g++ gen-stoch-lib_hs_eqeq_flat_smlInstLoo_8oct2026-21h00.cpp -o gen-stoch-lib_hs_eqeq_flat_smlInstLoo_8oct2026-21h00
-./gen-stoch-lib_hs_eqeq_flat_smlInstLoo_8oct2026-21h00
+g++ gen-stoch-lib_hs_eqeq_flat_smlInstLoo_25oct2026-2h51.cpp -o gen-stoch-lib_hs_eqeq_flat_smlInstLoo_25oct2026-2h51
+./gen-stoch-lib_hs_eqeq_flat_smlInstLoo_25oct2026-2h51
 
 b- All configuration files in this branch are saved in folder library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo.
 
@@ -569,9 +569,9 @@ Example:
 
 hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-1500_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22412_gstd.par
 
-d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option ""stream" are assigned in a one-to-one correspondance to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
+d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option "stream" are assigned in a one-to-one correspondence to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
 
-e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_hs_eqeq_flat_smlInstLoo_8oct2026-21h00.cpp, the Bash script process-stoch-config-files_hs_eqeq_26sept2026-1h26.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
+e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_hs_eqeq_flat_smlInstLoo_25oct2026-2h51.cpp, the Bash script process-stoch-config-files_hs_eqeq_7oct2026-6h40.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
 
 2.2.2 Larger instances (48 configurations)
 
@@ -598,10 +598,10 @@ Varying option (2 alternative base deterministic instances):
 
 Remarks:
 
-a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_hs_eqeq_flat_larInstTigh_8oct2026-21h00.cpp as follows:
+a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_hs_eqeq_flat_larInstTigh_25oct2026-2h51.cpp as follows:
 
-g++ gen-stoch-lib_hs_eqeq_flat_larInstTigh_8oct2026-21h00.cpp -o gen-stoch-lib_hs_eqeq_flat_larInstTigh_8oct2026-21h00
-./gen-stoch-lib_hs_eqeq_flat_larInstTigh_8oct2026-21h00
+g++ gen-stoch-lib_hs_eqeq_flat_larInstTigh_25oct2026-2h51.cpp -o gen-stoch-lib_hs_eqeq_flat_larInstTigh_25oct2026-2h51
+./gen-stoch-lib_hs_eqeq_flat_larInstTigh_25oct2026-2h51
 
 b- All configuration files in this branch are saved in folder library/hubsAndSats/eqSrcsEqSnks/flat/larInstTigh.
 
@@ -611,9 +611,9 @@ Example:
 
 hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-16343_larInstTight_F-G_G_T-T_A-0~25_B-0~25_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~01_c-0~01_seed-50163844_strm-22421_gstd.par
 
-d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option ""stream" are assigned in a one-to-one correspondance to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
+d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option "stream" are assigned in a one-to-one correspondence to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
 
-e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_hs_eqeq_flat_larInstTigh_8oct2026-21h00.cpp, the Bash script process-stoch-config-files_hs_eqeq_26sept2026-1h26.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
+e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_hs_eqeq_flat_larInstTigh_25oct2026-2h51.cpp, the Bash script process-stoch-config-files_hs_eqeq_7oct2026-6h40.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
 
 2.2.2.2 Larger and looser instances (24 configurations)
 
@@ -626,10 +626,10 @@ Varying option (2 alternative base deterministic instances):
 
 Remarks:
 
-a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_hs_eqeq_flat_larInstLoo_8oct2026-21h00.cpp as follows:
+a- Production of all configuration files belonging to this branch is performed by running the executable compiled from the c++ code file gen-stoch-lib_hs_eqeq_flat_larInstLoo_25oct2026-2h51.cpp as follows:
 
-g++ gen-stoch-lib_hs_eqeq_flat_larInstLoo_8oct2026-21h00.cpp -o gen-stoch-lib_hs_eqeq_flat_larInstLoo_8oct2026-21h00
-./gen-stoch-lib_hs_eqeq_flat_larInstLoo_8oct2026-21h00
+g++ gen-stoch-lib_hs_eqeq_flat_larInstLoo_25oct2026-2h51.cpp -o gen-stoch-lib_hs_eqeq_flat_larInstLoo_25oct2026-2h51
+./gen-stoch-lib_hs_eqeq_flat_larInstLoo_25oct2026-2h51
 
 b- All configuration files in this branch are saved in folder library/hubsAndSats/eqSrcsEqSnks/flat/larInstLoo.
 
@@ -639,7 +639,7 @@ Example:
 
 hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-15343_larInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-1_K_XDD-0~5_n-3000_t-20_i-50_l-3_m-0~01_c-0~01_seed-50163844_strm-22422_gstd.par
 
-d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option ""stream" are assigned in a one-to-one correspondance to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
+d- Each configuration includes the options "seed" and "stream". Option "seed" refers to the seed of the pseudo-random generator. Its value is invariant throughout the library. Option "stream" refers to the stream of the pseudo-random generator. Values of option "stream" are assigned in a one-to-one correspondence to the configuration files. Hence the pair of values for options "seed" and "stream" uniquely identifies the configuration file and, therefore, the resulting stochastic MCFNDP instance.
 
-e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_hs_eqeq_flat_larInstLoo_8oct2026-21h00.cpp, the Bash script process-stoch-config-files_hs_eqeq_26sept2026-1h26.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
+e- Once all configurations files have been produced with the executable compiled from gen-stoch-lib_hs_eqeq_flat_larInstLoo_25oct2026-2h51.cpp, the Bash script process-stoch-config-files_hs_eqeq_7oct2026-6h40.sh can generate the corresponding stochastic MCFNDP instances by calling the stochastic generator with each configuration file. The generated stochastic MCFNDP instances are saved in the same folder as their founding configuration file.
 
