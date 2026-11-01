@@ -1,4 +1,4 @@
-October 28th 2026
+October 31st 2026
 library/DESCLIBRARY_STOCH.txt
 
 
@@ -17,7 +17,7 @@ c- The stochastic library rooted at /library has a structure similar to that of 
 
 d- Feasibility of each scenario in each instance of the stochastic MCFNDP included in the library has been verified by activating the appropriate option of GenStoch.
 
-e- In view of the very large space that would be required to store all instances of the library, only configuration files are saved in a .zip archive. The corresponding MCFNDP instances can be generated from saved configuration files at a high speed using GenStoch while disabling the verification of feasibility of each scenario.
+e- In view of the very large space that would be required to store all instances of the library, only the configuration files are supplied within two .zip archives: hubsAndSats_determ+stoch_config-files.zip and pointToPoint_determ+stoch_config-files.zip. The corresponding MCFNDP instances can be generated from saved configuration files at a high speed with the GenStoch generator while disabling verification of feasibility of each scenario. Notice that these archives contain in a single folder structure the configuration files of all deterministic instances included in the determistic library produced with GenDeterm, as well as the configuration files of all stochastic instances included in the stochastic library produced with GenStoch using some of the latter as base deterministic instances. 
 
 f- Unspecified options are set to their default values.
 
