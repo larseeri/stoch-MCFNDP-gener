@@ -905,6 +905,13 @@ void Configuration::parseConfigFileNameFromCmdLine()
                     configFileName = vectArg[a + 1];
                     foundFile = true;
                 }
+				else
+				{
+					cerr << "\nERROR:\n"
+						<< "No configuration file was specified after key [" << CONFIG_FILE_KEY << "] on instruction line.\n"
+						<< "EXECUTION ABORTED" << endl;
+					exit(1);
+				}
             }
             else if (strcmp(vectArg[a], CONFIG_VERBOSE_MODE) == 0)
             {
@@ -914,9 +921,13 @@ void Configuration::parseConfigFileNameFromCmdLine()
             {
                 printHelpAndExit();
             }
-            else if (isalpha(vectArg[a][1]))
- 				cout << "\nWARNING:\n"
-					<< "Configuration key [" << vectArg[a] << "] is unknown." << endl;
+            else
+			{				
+				cerr << "\nERROR:\n"						
+					<< "Configuration key [" << vectArg[a] << "] on instruction line is unknown.\n"
+					<< "EXECUTION ABORTED" << endl;
+				exit(1);
+			}					
         }
     }
     if (verbose)

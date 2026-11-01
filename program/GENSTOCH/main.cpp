@@ -78,9 +78,7 @@
 // and note the installation folder(s). According to our verifications, CPLEX
 // and HIGHS work equally well in our application. HIGHS is freely available
 // under the MIT license at https://highs.dev/, does not require additional
-// libraries and can be installed in a small number of straightforward steps
-// that are currently described at
-// https://ergo-code.github.io/HiGHS/dev/interfaces/cpp/. See Huangfu, Q.,
+// libraries and can be built and installed in a small number of steps that are currently described at https://github.com/ERGO-Code/HiGHS/blob/master/cmake/README.md. See Huangfu, Q.,
 // Hall, J.A.J. Parallelizing the dual revised simplex method. Math. Prog. 
 // Comp. 10, 119-142 (2018).
 //
@@ -402,9 +400,9 @@
 // (2 + 1 = 3).
 //
 // By default, the name of the file describing the base deterministic MCFNDP
-// instance is './base-determ-inst.dow' (Linux instructions),
-// './inout/base-determ-inst.dow' (Docker instructions) and the default input
-// format is DOW. This name may be changed with option I <string> and the input
+// instance is './determ_oneSrcOneSnk_12oct2026-17h09.std' (Linux instructions),
+// '/inout/determ_oneSrcOneSnk_12oct2026-17h09.std' (Docker instructions) and the default input
+// format is GSTD. This name may be changed with option I <string> and the input
 // format can be indicated accordingly with option F <char>. For example,
 // specifying -S 3 -I instB.std -F G in the instruction line indicates that
 // volumes and total capacities of arcs will be randomized based on the
@@ -651,7 +649,7 @@
 // expressed in the same format as that used for supplying the base
 // deterministic MCFNDP instance. Their descriptions are stacked and returned in
 // the output file whose default name './generated-stoch-inst.txt' (Linux
-// instructions), './inout/generated-stoch-inst.txt' (Docker instructions) can be
+// instructions), '/inout/generated-stoch-inst.txt' (Docker instructions) can be
 // modified with option O. (See Section 4 above.)
 //
 // 5.2 Input files supplied to HKW algorithm
@@ -872,16 +870,16 @@
 // ****************************
 //
 // F <char>; format of file where base deterministic MCFNDP instance is to be
-// read; D: DOW, G: generic STD, R: restricted STD; default: D
+// read; D: DOW, G: generic STD, R: restricted STD; default: G
 //
 // I <string>; name of file where base deterministic MCFNDP instance is to be
-// read; default value is './base-determ-inst.dow' (Linux instructions) or
-// './inout/base-determ-inst.dow' (Docker instructions)
+// read; default value is './determ_oneSrcOneSnk_12oct2026-17h09.std' (Linux instructions) or
+// '/inout/determ_oneSrcOneSnk_12oct2026-17h09.std' (Docker instructions)
 //
 // O <string>; name of file where MCFNDP instance resulting from
 // scenario generation is to be written; default value is
 // './generated-stoch-inst.txt' (Linux instructions) or
-// './inout/generated-stoch-inst.txt' (Docker instructions)
+// '/inout/generated-stoch-inst.txt' (Docker instructions)
 //
 // J <> (no value supplied); write the MCFNDP instance resulting from
 // scenario generation without first checking for feasibility of each 
@@ -1062,7 +1060,7 @@
 //
 // Docker instruction:
 //
-// docker run --init --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F inout/docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_dow.par
+// docker run --init --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F /inout/docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_dow.par
 //
 // Configuration file (input) used with Docker instruction:
 // docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_dow.par
@@ -1123,7 +1121,7 @@
 //
 // Docker instruction:
 //
-// docker run --init --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F inout/docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_rstd.par
+// docker run --init --rm --mount type=bind,src=absolutePathToDockerFolder/inout,dst=/inout stoch_gen_image /stoch_gen +v +F /inout/docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_rstd.par
 //
 // Configuration file (input) used with Docker instruction:
 // docker_stoch_config_oneSrcOneSnk_12oct2026-17h09_rstd.par
