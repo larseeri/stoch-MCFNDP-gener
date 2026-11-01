@@ -1,4 +1,4 @@
-(October 28th 2026)
+(October 29th 2026)
 
 ## Generator of instances of the linear, two-stage, stochastic, multi-commodity, capacitated, fixed charge network design problem with recourse
 
@@ -25,9 +25,9 @@ See Sections 1 and 2 of the online user guide for complete details.
 
 As an example, we reproduce this configuration file taken from the stochastic library:
 
-library/hubsAndSats/eqSrcsEqSnks/flat/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.par
+library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.par
 
-By thoroughly understanding this example and experimenting with alternative and/or additional settings, the user will gain sufficient knowledge to use the full extent of the available functionalities in new experiments.
+It is suitable to the use of the program from the Linux command line. By thoroughly understanding this example and experimenting with alternative and/or additional settings, the user will gain sufficient knowledge to use the full extent of the available functionalities in new experiments.
 
 
 #### 1 Content of the configuration file
@@ -116,7 +116,7 @@ b- The order of the statements and comments in a configuration file is immateria
 
 c- Any boolean option that does not appear in the configuration file or in the command line is interpreted as having the boolean value false. To set a boolean option to true, it must appear without any value in the configuration file or in the command line. Option values cannot be set explicitly with boolean values true or false. 
 
-d- The selected option values must conform to the restrictions stated in Section 4.3 of the online user guide. The program will notify the user of any error and stop.
+d- The selected option values must conform to the restrictions stated in Section 7.2 of the online user guide. The program will notify the user of any error and stop.
 
 e- In this section, the suffixes appearing in the names of the option values indicate the expected type. For instance, option F expects a character. Hence the value is named F_char. 
 
@@ -132,7 +132,7 @@ e- In this section, the suffixes appearing in the names of the option values ind
 -F F_char
 ```
 
-**2.3** Specifies the path of base deterministic instance. See section 5.1 of online user guide. Here,  I_string==../library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std. This is the instance described in the tutorial example available online about the deterministic generator.
+**2.3** Specifies the path of base deterministic instance. See section 5.1 of online user guide. Here,  I_string==../library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std. This is the instance described in the tutorial example TUTOREXAMPLE_DETERM.md available online about the deterministic generator. 
 
 ```
 -I I_string
@@ -162,7 +162,7 @@ e- In this section, the suffixes appearing in the names of the option values ind
 -B B_double
 ```
 
-**2.8** Specifies the integral values r_int and R_int that are respectively assigned to the seed and stream of the pseudo-random generator. To ensure reproducibility, they should always be set. When several configurations are included in a set, the pairs (seed_number, stream_number) should be selected for each configuration so as to constitute a unique identifier. A practical choice is to make seed_number invariant within the set of configurations whereas stream_number varies among the configuration in an interpretable way. Here, r_int==50163844 and R_int==2291**2.
+**2.8** Specifies the integral values r_int and R_int that are respectively assigned to the seed and stream of the pseudo-random generator. To ensure reproducibility, they should always be set. When several configurations are included in a set, the pairs (seed_number, stream_number) should be selected for each configuration so as to constitute a unique identifier. A practical choice is to make seed_number invariant within the set of configurations whereas stream_number varies among the configuration in an interpretable way. Here, r_int==50163844 and R_int==22912.
 
 ```
 -r r_int
@@ -175,7 +175,7 @@ e- In this section, the suffixes appearing in the names of the option values ind
 **2.9** Specifies which elements of the base deterministic network must be randomized. See Section 3.1 of the online user guide. Here, S_int==3 and since 3=1+2, demands and overall capacities are to be randomized.
 
 ```
--S s_int
+-S S_int
 ```
 
 **2.10** Signals that blocks of the target correlation matrix of randomized elements will be assigned values. If absent, the target correlation matrix will be read from the file specified with option C. If present, target correlations will be written to specified file. See Section 3.3 of the online user guide. Here, blocks of the target correlation matrix will be assigned values.
