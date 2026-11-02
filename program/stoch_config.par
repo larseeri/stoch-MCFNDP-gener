@@ -52,10 +52,10 @@ B 0.35
 # number of scenarios
 n 500
 
-# maximum number of trials in HKW algo. (default 20)
+# maximum number of trials in HKW algo. (default 10)
 t 20
 
-# maximum number of iter. in HKW algo. (default 30)
+# maximum number of iter. in HKW algo. (default 50)
 i 30
 
 # maximum error in matching moments (default 0.001)
