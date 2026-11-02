@@ -554,28 +554,30 @@ void InstanceDow::write(ostream &os, string feasibility, string validity) const
 	//	cout << "\n****** Begin writing DOW instance in " << params->inputInstFileName << ".\n" << endl;	
 	
     static int scen = 0;
-	os << endl;	
+	os << "\n";	
     os << "SCENARIO: " << scen << " Feasibility: " << feasibility << " Validity: " << validity
-		<< " Prob: " << defaultfloat << (*vectProbsPtr)[scen] << endl;
+		<< " Prob: " << defaultfloat << (*vectProbsPtr)[scen] << "\n";
 	scen++;
 	
-    os << "MULTIGEN.DAT:" << endl;
+    os << "MULTIGEN.DAT:" << "\n";
     os << setw(15) << right << numbNodes << "   " << setw(15) << right << numbArcs << "   " << setw(15) << right
-       << numbCommods << endl;
+       << numbCommods << "\n";
     
 	for (int a = 0; a < numbArcs; a++)
 	{
 		os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << arcs[a].orig + 1 << "   " << setw(15) << right
 			<< arcs[a].dest + 1 << "   " << setw(15) << right << *(arcs[a].comms[0].cost) << "   " << setw(15)
 			<< right << *(arcs[a].capac) << "   " << setw(15) << right << *(arcs[a].cost) << "   " << setw(15)
-			<< right << 1 << "   " << setw(15) << right << a + 1 << endl;           
+			<< right << 1 << "   " << setw(15) << right << a + 1 << "\n";           
 	}
 
     for (int k = 0; k < numbCommods; k++)
     {
         os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << commods[k].orig + 1 << "   " << setw(15) << right
-           << commods[k].dest + 1 << "   " << setw(15) << right << *(commods[k].volume) << endl;
+           << commods[k].dest + 1 << "   " << setw(15) << right << *(commods[k].volume) << "\n";
     }
+	
+	os << flush;
 	
 	//if (params->verbose)
 	//	cout << "\n****** End writing DOW instance in " << params->inputInstFileName << ".\n" << endl;	
@@ -741,12 +743,12 @@ void InstanceRStd::write(ostream &os, string feasibility, string validity) const
 	//	cout << "\n****** Begin writing RSTD instance in " << params->inputInstFileName << ".\n" << endl;	
 	
     static int scen = 0;
-	os << endl;
+	os << "\n";
     os << "SCENARIO: " << scen << " Feasibility: " << feasibility << " Validity: " << validity
-		<< " Prob: " << defaultfloat << (*vectProbsPtr)[scen] << endl;
+		<< " Prob: " << defaultfloat << (*vectProbsPtr)[scen] << "\n";
     scen++;
 	os << setw(15) << right << numbNodes << "   " << setw(15) << right << numbArcs << "   " << setw(15) << right
-       << numbCommods << endl;
+       << numbCommods << "\n";
 
     for (int n = 0; n < numbNodes; n++)
     {
@@ -762,13 +764,13 @@ void InstanceRStd::write(ostream &os, string feasibility, string validity) const
 
                 os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << arcs[a].orig + 1 << "   " << setw(15) << right
                    << arcs[a].dest + 1 << "   " << setw(15) << right << *(arcs[a].cost) << "   " << setw(15) << right
-                   << *(arcs[a].capac) << "   " << setw(15) << right << count << endl;
+                   << *(arcs[a].capac) << "   " << setw(15) << right << count << "\n";
 
                 for (int k = 0; k < numbCommods; k++)
                     if (*(arcs[a].comms[k].capac) != 0)
                         os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << k + 1 << "   " << setw(15) << right
                            << *(arcs[a].comms[k].cost) << "   " << setw(15) << right << *(arcs[a].comms[k].capac)
-                           << endl;
+                           << "\n";
             }
         }
     }
@@ -776,10 +778,12 @@ void InstanceRStd::write(ostream &os, string feasibility, string validity) const
     for (int k = 0; k < numbCommods; k++)
     {
         os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << k + 1 << "   " << setw(15) << right
-           << commods[k].orig + 1 << "   " << setw(15) << right << *(commods[k].volume) << endl;
+           << commods[k].orig + 1 << "   " << setw(15) << right << *(commods[k].volume) << "\n";
         os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << k + 1 << "   " << setw(15) << right
-           << commods[k].dest + 1 << "   " << setw(15) << right << -*(commods[k].volume) << endl;
+           << commods[k].dest + 1 << "   " << setw(15) << right << -*(commods[k].volume) << "\n";
     }
+	
+	os << flush;
 	
 	//if (params->verbose)
 	//	cout << "\n****** End writing RSTD instance in " << params->inputInstFileName << ".\n" << endl;	
@@ -954,12 +958,12 @@ void InstanceGStd::write(ostream &os, string feasibility, string validity) const
 	//	cout << "\n****** Begin writing GSTD instance in " << params->inputInstFileName << ".\n" << endl;	
 	
     static int scen = 0;
-	os << endl;
+	os << "\n";
     os << "SCENARIO: " << scen << " Feasibility: " << feasibility << " Validity: " << validity
-		<< " Prob: " << defaultfloat << (*vectProbsPtr)[scen] << endl;
+		<< " Prob: " << defaultfloat << (*vectProbsPtr)[scen] << "\n";
     scen++;
 	os << setw(15) << right << numbNodes << "   " << setw(15) << right << numbArcs << "   " << setw(15) << right
-       << numbCommods << endl;
+       << numbCommods << "\n";
 
     for (int n = 0; n < numbNodes; n++)
     {
@@ -975,14 +979,14 @@ void InstanceGStd::write(ostream &os, string feasibility, string validity) const
 
                 os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << arcs[a].orig + 1 << "   " << setw(15) << right
                    << arcs[a].dest + 1 << "   " << setw(15) << right << *(arcs[a].cost) << "   " << setw(15) << right
-                   << *(arcs[a].capac) << "   " << setw(15) << right << count << endl;
+                   << *(arcs[a].capac) << "   " << setw(15) << right << count << "\n";
 
                 for (int k = 0; k < numbCommods; k++)
                     if (*(arcs[a].comms[k].capac) != 0)
 
                         os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << k + 1 << "   " << setw(15) << right
                            << *(arcs[a].comms[k].cost) << "   " << setw(15) << right << *(arcs[a].comms[k].capac)
-                           << endl;
+                           << "\n";
             }
         }
     }
@@ -991,17 +995,18 @@ void InstanceGStd::write(ostream &os, string feasibility, string validity) const
     {
         for (int n = 0; n < numbNodes; n++)
         {
-
             if (commods[k].outflows[n] > 0)
                 os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << k + 1 << "   " << setw(15) << right << n + 1
                    << "   " << setw(15) << right
-                   << commods[k].adjOutflows[n] << endl;
+                   << commods[k].adjOutflows[n] << "\n";
             if (commods[k].inflows[n] < 0)
                 os << fixed << setprecision(DECIMAL_PLACES) << setw(15) << right << k + 1 << "   " << setw(15) << right << n + 1
                    << "   " << setw(15) << right
-                   << commods[k].adjInflows[n] << endl;
+                   << commods[k].adjInflows[n] << "\n";
         }
     }
+	
+	os << flush;
 	
 	//if (params->verbose)
 	//	cout << "\n****** End writing GSTD instance in " << params->inputInstFileName << ".\n" << endl;	

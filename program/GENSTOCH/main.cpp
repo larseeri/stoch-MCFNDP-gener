@@ -78,16 +78,18 @@
 // and note the installation folder(s). According to our verifications, CPLEX
 // and HIGHS work equally well in our application. HIGHS is freely available
 // under the MIT license at https://highs.dev/, does not require additional
-// libraries and can be built and installed in a small number of steps that are currently described at https://github.com/ERGO-Code/HiGHS/blob/master/cmake/README.md. See Huangfu, Q.,
-// Hall, J.A.J. Parallelizing the dual revised simplex method. Math. Prog. 
-// Comp. 10, 119-142 (2018).
+// libraries and can be built and installed in a small number of steps that are
+// currently described at
+// https://github.com/ERGO-Code/HiGHS/blob/master/cmake/README.md. See 
+// Huangfu, Q., Hall, J.A.J. Parallelizing the dual revised simplex method.
+// Math. Prog. Comp. 10, 119-142 (2018).
 //
 // b- Either (i) use Git to clone locally the remote repository
 // https://github.com/larseeri/stoch-MCFNDP-gener, or (ii) generate, download
 // locally to an appropriate folder and uncompress a .zip archive containing
 // the remote repository file tree.
 //
-// c- Edit the file named "makefile" to set the variables indicating the
+// c- Edit the file named 'makefile' to set the variables indicating the
 // locations relevant to the CPLEX solver and/or the HIGHS solver, as noted in
 // step a-. These locations are chiefly the absolute paths of CPLEX_HOME and
 // HIGHS_HOME. Save the modifications.
@@ -108,7 +110,7 @@
 //
 // make HIGHS_SOLVER=1
 //
-// An executable file named "stoch_gen" will be created inside the /program
+// An executable file named 'stoch_gen' will be created inside the /program
 // folder. Building with versions 11.5.0, 12.2.0, 13.2.0, 14.2.0 and 15.1.0 of
 // the gcc compiler has been verified.
 //
@@ -136,7 +138,7 @@
 // Options for running the program can be specified directly in the command
 // line or in a configuration file. By default, the program will attempt to
 // read option values from file stoch_config.par. (This default setting can be
-// updated by modifying line 1238 of file main.cpp.) The default file can
+// updated by modifying line 1309 of file main.cpp.) The default file can
 // be overridden with option +F:
 //
 // ./stoch_gen +F newParamfile.par
@@ -191,11 +193,11 @@
 //
 // Summing up, option values are successively updated from these locations in
 // this order:
-// (i) hard-coded initialization values in lines 27-51 of configuration.cpp
+// (i) hard-coded initialization values in lines 68-96 of configuration.cpp
 // (ii) values appearing in configuration file whose name is specified in
 // command line with +F (if it is specified and if it exists); if no valid
 // configuration file is specified with +F in command line, values will be
-// taken from default configuration file whose name is specified in line 1238
+// taken from default configuration file whose name is specified in line 1309
 // of main.cpp; at this point, the latter should exist
 // (iii) values specified in the command line
 // Notice that location (i) is insufficiently transparent to the user and
@@ -296,17 +298,18 @@
 // specified in the Docker instruction or inside the configuration file with
 // -I /inout/baseNetworkFile.std.
 //
-// The default configuration file is located at docker/inout/docker_stoch_config.par.
-// It has initially been filled with illustrative values and should be edited
-// appropriately if no replacement configuration file is indicated on the
-// Docker instruction line with option key +F.
+// The default configuration file is located at
+// docker/inout/docker_stoch_config.par. It has initially been filled with 
+// illustrative values and should be edited appropriately if no replacement
+// configuration file is indicated on the Docker instruction line with option
+// key +F.
 // 
 // Option parameter values are successively updated from these locations in
 // this order:
-// (i) initialization values hard-coded in lines 27-51 of configuration.cpp,
+// (i) initialization values hard-coded in lines 68-96 of configuration.cpp,
 // (ii) either replacement configuration file specified in the Docker
 // instruction line with option key +F, or default configuration file 
-// ./inout/stoch_config.par if no replacement configuration file is 
+// docker/inout/docker_stoch_config.par if no replacement configuration file is 
 // specified in the Docker instruction line with option key +F,
 // (iii) values specified in the Docker instruction
 // Notice that location (i) is insufficiently transparent to the user and
@@ -385,11 +388,11 @@
 //
 // Option S <int> must always be specified, either in the instruction line or
 // in the configuration file. It indicates which subset of parameters of a
-// given base deterministic MCFNDP instance will be assigned a joint probability
-// distribution and will thus vary between scenarios. We call these parameters
-// randomized elements. Option S expects an integer from 1 to 31 that is the
-// sum of the following, where symbol -> is a shorthand notation for "calls
-// for randomization of":
+// given base deterministic MCFNDP instance will be assigned a joint
+// probability distribution and will thus vary between scenarios. We call these
+// parameters randomized elements. Option S expects an integer from 1 to 31 
+// that is the sum of the following, where symbol -> is a shorthand notation 
+// for 'calls for randomization of':
 // 1 -> commodity volumes
 // 2 -> total capacities of arcs
 // 4 -> commodity-specific capacities of arcs
@@ -400,19 +403,19 @@
 // (2 + 1 = 3).
 //
 // By default, the name of the file describing the base deterministic MCFNDP
-// instance is './determ_oneSrcOneSnk_12oct2026-17h09.std' (Linux instructions),
-// '/inout/determ_oneSrcOneSnk_12oct2026-17h09.std' (Docker instructions) and the default input
-// format is GSTD. This name may be changed with option I <string> and the input
-// format can be indicated accordingly with option F <char>. For example,
-// specifying -S 3 -I instB.std -F G in the instruction line indicates that
-// volumes and total capacities of arcs will be randomized based on the
-// deterministic instance stored in file instB.std using the generic STD format.
-// (See Section 5.1 below for details.)
+// instance is './determ_oneSrcOneSnk_12oct2026-17h09.std' (Linux 
+// instructions), '/inout/determ_oneSrcOneSnk_12oct2026-17h09.std' (Docker 
+// instructions) and the default input format is GSTD. This name may be changed
+// with option I <string> and the input format can be indicated accordingly
+// with option F <char>. For example, specifying -S 3 -I instB.std -F G in the
+// instruction line indicates that volumes and total capacities of arcs will be
+// randomized based on the deterministic instance stored in file instB.std
+// using the generic STD format. (See Section 5.1 below for details.)
 //
 // Important:
-// - Randomization of commodity-specific capacities (4) and/or commodity-specific
-// variable costs (16) is precluded when the base deterministic instance is
-// received in the DOW format.
+// - Randomization of commodity-specific capacities (4) and/or commodity-
+// specific variable costs (16) is precluded when the base deterministic 
+// instance is received in the DOW format.
 // - It is critical that the content of the file describing the base
 // deterministic instance and the indicated format of its content match
 // exactly.
@@ -421,9 +424,9 @@
 // While the generator is sufficiently general to randomize fixed costs, the
 // latter are usually viewed as being non-stochastic in the context of two-
 // stage stochastic programming. Hence, in standard applications, randomization
-// of the MCFNDP will be limited to a subset of the following: commodity volumes,
-// total capacities of arcs, commodity-specific capacities of arcs and variable
-// costs (either commodity-specific or not).
+// of the MCFNDP will be limited to a subset of the following: commodity 
+// volumes, total capacities of arcs, commodity-specific capacities of arcs and
+// variable costs (either commodity-specific or not).
 //
 // 3.2 Target moments
 // ******************
@@ -433,7 +436,7 @@
 // a- If option key G is included, target moments will be generated according
 // to a distributional assumption and will be written individually in a file
 // whose default name is './moments.dat' (Linux instructions) or
-// './inout/moments.dat' (Docker instructions). This name can be specified
+// '/inout/moments.dat' (Docker instructions). This name can be specified
 // otherwise with option key M. The distributional assumption can be specified
 // with option key T <char> where <char> stands for either U (uniform) or T
 // (triangular) and with two parameters, alpha and beta, that can be specified 
@@ -441,7 +444,7 @@
 //
 // b- If option key G is not included, individual target moments will be read
 // from the file whose default name is './moments.dat' (Linux
-// instructions) or './inout/moments.dat' (Docker instructions). The latter
+// instructions) or '/inout/moments.dat' (Docker instructions). The latter
 // can be specified otherwise with option key M. Format of the target moments
 // file is specified in Section 5.2.1 below. Without option G, option T will be
 // rejected and options A and B will be ignored.
@@ -466,7 +469,7 @@
 // parameters U or between subsets of parameters U and V is specified with
 // X<UU> <double> and X<UV> <double> respectively, where <double> is the target
 // correlation coefficient and U and V, can take these values, where symbol ->
-// is a shorthand notation for "stands for":
+// is a shorthand notation for 'stands for':
 // D -> volumes
 // A -> total capacities of arcs
 // C -> commodity-specific capacities of arcs
@@ -475,7 +478,7 @@
 // Target correlations that are left unspecified are assumed by default to be
 // zero. The resulting individual correlations will be written to a file whose
 // default name is './correlations.dat' (Linux instructions) or
-// './inout/correlations.dat' (Docker instructions). This name can be
+// '/inout/correlations.dat' (Docker instructions). This name can be
 // specified otherwise with option key C.
 //
 // Important:
@@ -485,7 +488,7 @@
 //
 // b- If option key K is not included, individual correlations will be read
 // from a file whose default name is './correlations.dat' (Linux instructions)
-// or './inout/correlations.dat' (Docker instructions). The latter can be
+// or '/inout/correlations.dat' (Docker instructions). The latter can be
 // specified otherwise with option key C. Format of the target correlations
 // file is specified in Section 5.2.2 below. Without option K, options X?? will
 // be rejected.
@@ -555,11 +558,12 @@
 // instance as a whole are invalid. This can usually be obviated by 
 // selecting a smaller value for option A.
 //
-// A report indicating the numbers of generated scenarios, infeasible scenarios,
-// invalid scenarios including at least one negative generated value and valid scenarios
-// is produced and a warning is issued if one or more scenarios are infeasible
-// and/or invalid if the generated instance is improper.
-
+// A report indicating the numbers of generated scenarios, infeasible 
+// scenarios, invalid scenarios including at least one negative generated value
+// and valid scenarios is produced and a warning is issued if one or more 
+// scenarios are infeasible and/or invalid if the generated instance is 
+// improper.
+//
 // Important:
 // The generated instance would remain improper even if scenarios were removed
 // since moments and correlations based on the truncated instance would fail to
@@ -568,29 +572,31 @@
 // 4.3 Storing the output
 // **********************
 //
-// Generated instances are stored on output file. By default, the name of the file containing the MCFNDP instances generated
-// by the application is './generated-stoch-inst.txt' (Linux instructions) or
-// './inout/generated-stoch-inst.txt' (Docker instructions). This can be
+// Generated instances are stored on output file. By default, the name of the
+// file containing the MCFNDP instances generated by the application is
+// './generated-stoch-inst.txt' (Linux instructions) or 
+// '/inout/generated-stoch-inst.txt' (Docker instructions). This can be
 // changed with option O. This text file superposes representations of complete
 // deterministic MCFNDP instances, one for each scenario realization. Each
 // representation is preceded by a separator as follows:
 //
 // SCENARIO: <int> Feasibility: <string> Validity: <string> Prob: <string>
 //
-// SCENARIO and Prob are respectively followed by the scenario number and the probability of the current scenario. If option key J has not been
-// included, Feasibility is followed either by "feasible" or by "infeasible", depending 
-// on the result of verification. Validity is followed either by "valid" or by
-// "invalid", depending on the result of verification. When option key is
-// included, Feasibility and Validity are both followed by "unknown". 
+// SCENARIO and Prob are respectively followed by the scenario number and the
+// probability of the current scenario. If option key J has not been included,
+// Feasibility is followed either by 'feasible' or by 'infeasible', depending 
+// on the result of verification. Validity is followed either by 'valid' or by
+// 'invalid', depending on the result of verification. When option key is
+// included, Feasibility and Validity are both followed by 'unknown'. 
 // Immediately after the separator, the generated MCFNDP instance corresponding
 // to the current scenario is described in its entirety with a format (DOW,
 // restricted STD or generic STD; see Section 5.1 below), matching that used to
 // supply the base deterministic MCFNDP instance. Stacking and separating full
 // descriptions of the MCFNDP realizations in this fashion makes it easy to
 // pinpoint and read the first and second stage information relevant to every
-// individual scenario.
-// Whenever the saved instance comprises at least one defective scenario (infeasible and/or invalid),
-// the output file name is prefixed with DEFECT_.
+// individual scenario. Whenever the saved instance comprises at least one 
+// defective scenario (infeasible and/or invalid), the output file name is 
+// prefixed with 'DEFECT_'.
 //
 // 5 Formats of data files
 // ***********************
@@ -599,33 +605,37 @@
 // *******************************************************************************
 //
 // DOW and STD formats are commonly used to store deterministic MCFNDP
-// instances in text files. Canonical descriptions of these formats are supplied in files 
-// DOW-format-desc.txt and STD-format-desc.txt. The application can read from
+// instances in text files. Canonical descriptions of these formats are 
+// supplied in files DOW-format-desc.txt and STD-format-desc.txt. The
+// application can read from
 // these two formats and, in addition, from a restricted version of STD. Thus,
 // three formats are available for supplying the base deterministic MCFNDP 
 // instance: DOW, STD (calling it generic STD, or GSTD) and a restricted
 // version of STD (calling it restricted STD, or RSTD). One of these three
 // formats may be selected with option F <char>.
-// a- DOW presupposes that (i) for each arc, capacities and variable
-// costs are identical for all commodities and (ii) each commodity has a
-// single source node (at which volume > 0) and a single sink node (at which
-// volume < 0).
+// a- DOW presupposes that (i) for each arc, capacities and variable costs are
+// identical for all commodities and (ii) each commodity has a single source
+// node (at which volume > 0) and a single sink node (at which volume < 0).
 // b- Generic STD imposes neither (i), nor (ii).
 // c- Restricted STD imposes only (ii).
 //
 // Important:
-// - The canonical STD and DOW formats specification require that negative arc capacities and negative
-// commodity-specific capacities be interpreted as infinite. When reading
-// instance files in GSTD, RSTD or DOW format, negative capacities are set
-// to 1E+9.
-// - The DOW format file reader is more permissive than allowed by the canonical
-// DOW format in this way: In contrast with the canonical DOW format specification, values of idxArc are allowed to be
-// non-consecutive. (The Canad R deterministic instances are stored in this manner.) Hence, arcs are
-// indexed in the order in which they appear in the file and values of idxArc are disregarded. In 
-// this manner the orders of the arcs in the file of the base determistic instance and for each
-// scenario appearing in the file of the generated stochastic instance correspond exactly.	
-// - The DOW and STD format file readers are more restrictive than allowed by the DOW and STD formats 
-// canonical specifications in this way: The value of zero-valued fixed costs cannot be omitted.
+// - The canonical STD and DOW formats specification require that negative arc
+// capacities and negative commodity-specific capacities be interpreted as 
+// infinite. When reading instance files in GSTD, RSTD or DOW format, negative
+// capacities are set to 1E+9.
+// - The DOW format file reader is more permissive than allowed by the
+// canonical
+// DOW format in this way: In contrast with the canonical DOW format
+// specification, values of idxArc are allowed to be non-consecutive. (The
+// Canad R deterministic instances are stored in this manner.) Hence, arcs are
+// indexed in the order in which they appear in the file and values of idxArc
+// are disregarded. In this manner the orders of the arcs in the file of the 
+// base deterministic instance and for each scenario appearing in the file of
+// the generated stochastic instance correspond exactly.	
+// - The DOW and STD format file readers are more restrictive than allowed by
+// the DOW and STD formats canonical specifications in this way: The value of
+// zero-valued fixed costs cannot be omitted.
 //
 // Important:
 // When the base deterministic MCFNDP instance is received in the generic STD
@@ -661,7 +671,7 @@
 //
 // When option G is omitted from instruction line and from configuration file,
 // target moments are read from a file named './moments.dat' (Linux
-// instructions) or './inout/moments.dat' (Docker instructions) unless this
+// instructions) or '/inout/moments.dat' (Docker instructions) unless this
 // is overridden with option M. The file containing the target moments matrix
 // is formatted as follows (see Section 8 for examples):
 // a- 1st line shows integer 4 (as there are 4 target moments per randomized
@@ -682,9 +692,9 @@
 // Exact definitions of the four target moments must satisfy these
 // conditions:
 // a- Sample estimators are used, i.e. sums of terms are divided by N-1
-// where N is the sample size. (HKW calls the latter "population estimators"
+// where N is the sample size. (HKW calls the latter 'population estimators'
 // but this is a misnomer. These are called in the statistical literature 
-// "sample estimators". Population estimators would have N as their
+// 'sample estimators'. Population estimators would have N as their
 // denominator.)
 // b- 2nd moment is defined as variance, that is second central
 // statistical moment, and not standard deviation.
@@ -699,7 +709,7 @@
 //
 // When option K is omitted from instruction line and from configuration file,
 // target correlations are read from a file named './correlations.dat' (Linux
-// instructions) or './inout/correlations.dat' (Docker instructions), unless
+// instructions) or '/inout/correlations.dat' (Docker instructions), unless
 // this is overridden with option C. The file containing the target
 // correlations matrix is formatted as follows (see Section 8 for examples):
 // a- 1st and 2nd lines are identical and show the total number of individual
@@ -723,7 +733,7 @@
 // b- 2nd line states all probabilities, separated by spaces
 // c- Remaining lines of the file are ignored
 // This file would be supplied as './probs_100_eq_example.dat' (Linux
-// instructions) or './inout/probs_100_eq_example.dat' (Docker instructions).
+// instructions) or '/inout/probs_100_eq_example.dat' (Docker instructions).
 //
 // Probabilities read from a file must each be larger than zero and their
 // sum may differ from 1 by at most 1e-8. That is, they must be accurate
@@ -733,7 +743,7 @@
 // *********************************
 //
 // Raw scenarios are saved in HKW format to './raw_scens.dat' (Linux
-// instructions) or './inout/raw_scens.dat' (Docker instructions), unless this
+// instructions) or '/inout/raw_scens.dat' (Docker instructions), unless this
 // is overridden with option o. Raw scenarios saved in previous run can be used
 // as starting values in a following run (using option s). These will only be
 // used in the first trial of the current run of the HKW algorithm. If this
@@ -824,7 +834,7 @@
 // Except for option key S (and leaving aside option key F when it is prefixed
 // by '+' in the instruction line), non-boolean user-selected options that are
 // specified neither in the instruction line nor the configuration file are set
-// to the values that are hard-coded in the constructor in lines 27-51 of
+// to the values that are hard-coded in the constructor in lines 68-96 of
 // configuration.cpp. Boolean user-selected options that are specified neither
 // in the instruction line nor in the configuration file are set to false by
 // default.
@@ -839,7 +849,7 @@
 // ****************************************************************
 //
 // +F <string>; name of configuration file supplying option parameter values;
-// this replaces the default file whose name is hard-coded in line 1238 of
+// this replaces the default file whose name is hard-coded in line 1309 of
 // main.cpp; any option value supplied in instruction line replaces value of
 // same option supplied in configuration file
 //
@@ -849,7 +859,7 @@
 // +H <> (no value supplied); displays complete documentation
 //
 // Remark:
-// An unknown option key following '+' in the instruction line is disregarded.
+// An unknown option key following '+' generates an error.
 //
 // 7.2 Options available in instruction line (Linux or Docker) and in configuration file
 // *************************************************************************************
@@ -861,10 +871,12 @@
 // the beginning or the end of a line, provided they start with #.
 //
 // Remarks:
-// - Characters or strings appearing without the prefix '-' in the instruction line are disregarded.
-// - Characters or strings prefixed with '-' in the instruction line that are not option keys are rejected.
-// - Characters or strings prefixed with '-' or not that appear at beginning of line in a
-// configuration file and are not option keys are rejected.
+// - Characters or strings appearing without the prefix '-' in the instruction 
+// line are disregarded.
+// - Characters or strings prefixed with '-' in the instruction line that are 
+// not option keys are rejected.
+// - Characters or strings prefixed with '-' or not that appear at beginning of 
+// line in a configuration file and are not option keys are rejected.
 //
 // 7.2.1 Main generator options
 // ****************************
@@ -873,8 +885,9 @@
 // read; D: DOW, G: generic STD, R: restricted STD; default: G
 //
 // I <string>; name of file where base deterministic MCFNDP instance is to be
-// read; default value is './determ_oneSrcOneSnk_12oct2026-17h09.std' (Linux instructions) or
-// '/inout/determ_oneSrcOneSnk_12oct2026-17h09.std' (Docker instructions)
+// read; default value is './determ_oneSrcOneSnk_12oct2026-17h09.std' (Linux 
+// instructions) or '/inout/determ_oneSrcOneSnk_12oct2026-17h09.std' (Docker
+// instructions)
 //
 // O <string>; name of file where MCFNDP instance resulting from
 // scenario generation is to be written; default value is
@@ -895,16 +908,16 @@
 //
 // K <> (no value supplied); if specified, target correlations are directly
 // specified in blocks using options X and written to file
-// './correlations.dat' (Linux instructions) or './inout/correlations.dat'
+// './correlations.dat' (Linux instructions) or '/inout/correlations.dat'
 // (Docker instructions), unless this default name is changed with option C;
 // if omitted, target correlations are read from file './correlations.dat'
-// (Linux instructions) or './inout/correlations.dat' (Docker instructions),
+// (Linux instructions) or '/inout/correlations.dat' (Docker instructions),
 // unless this default name is changed with option C
 //
 // C <string>; name of file where target correlations are read if K is omitted
 // and where generated target correlations are written if K is specified;
 // default: './correlations.dat' (Linux instructions) or
-// './inout/correlations.dat' (Docker instructions)
+// '/inout/correlations.dat' (Docker instructions)
 //
 // X<char><char> <double>; identifies target correlations within or between
 // subsets of parameters that are randomized (i.e, that vary between
@@ -926,29 +939,29 @@
 // Remark:
 // Options -XST and -XTS are equivalent.
 //
-// G <> (no value supplied); if specified, target moments are generated based on
-// option T and written to file './moments.dat' (Linux instructions) or
-// './inout/moments.dat' (Docker instructions), unless this default name is
+// G <> (no value supplied); if specified, target moments are generated based 
+// on option T and written to file './moments.dat' (Linux instructions) or
+// '/inout/moments.dat' (Docker instructions), unless this default name is
 // changed with option M; if omitted, target moments are read from file
-// './moments.dat' (Linux instructions) or './inout/moments.dat' (Docker 
+// './moments.dat' (Linux instructions) or '/inout/moments.dat' (Docker 
 // instructions) unless this default name is changed with option M
 //
 // M <string>; name of file where target moments are read if option G is
 // omitted or where generated target moments are written if option G is
 // specified; default: './moments.dat' (Linux instructions) or 
-// './inout/moments.dat' (Docker instructions)
+// '/inout/moments.dat' (Docker instructions)
 //
 // T <char>; distributional characteristics of generated target moments
 // (U : UNIFORM , T : TRIANGULAR); any use of option T without option G
 // will be rejected; default: U
 //
-// A <double>; lower spread parameter alpha used in generating target moments (see
-// discussion immediately below); without option G, any use of option A will be
-// ignored; default: 0.25
+// A <double>; lower spread parameter alpha used in generating target moments
+// (see discussion immediately below); without option G, any use of option A
+// will be ignored; default: 0.25
 //
-// B <double>; upper spread parameter beta used in generating target moments (see
-// discussion immediately below); without option G, any use of option B will be
-// ignored; default: 0.25
+// B <double>; upper spread parameter beta used in generating target moments
+// (see discussion immediately below); without option G, any use of option B 
+// will be ignored; default: 0.25
 //
 // When option T is set to U, then the stochastic elements of the instance that
 // are changed according to scenarios are each assumed to follow a
@@ -1006,7 +1019,7 @@
 //
 // o <string>; name of file where resulting matrix of raw scenarios in HKW
 // format is written; default: './raw_scens.dat' (Linux instructions) or
-// './inout/raw_scens.dat' (Docker instructions)
+// '/inout/raw_scens.dat' (Docker instructions)
 //
 // s <string>; if specified, name of file where a matrix of starting scenarios
 // saved in HKW format in a previous run (possibly using option o) is read and
@@ -1043,8 +1056,8 @@
 // 8.1.1 Folder /examples/oneSrcOneSnk/DOW/
 // ****************************************
 //
-// In the base instance, there is one source and one sink for each commodity and
-// no differentiation of variable costs and capacities according to
+// In the base instance, there is one source and one sink for each commodity
+// and no differentiation of variable costs and capacities according to
 // commodities. The base instance is received in the DOW format and the
 // generated instance is saved in the DOW format.
 //
@@ -1106,8 +1119,8 @@
 // 8.1.2 Folder /examples/oneSrcOneSnk/RSTD/
 // *****************************************
 //
-// Similar to 8.1.1, except that the base instance is received in the STD format
-// and the generated instance is saved in the RSTD format.
+// Similar to 8.1.1, except that the base instance is received in the STD
+// format and the generated instance is saved in the RSTD format.
 //
 // 8.1.2.1 Operation of the stochastic generator
 // *********************************************
@@ -1149,9 +1162,10 @@
 // 8.1.3 Folder /examples/oneSrcOneSnk/GSTD/
 // *****************************************
 //
-// Similar to 8.1.1, except that the base instance is received in the STD format
-// and the generated instance is saved in the GSTD format (which is identical
-// to RSTD when there are one source and one sink for each commodity).
+// Similar to 8.1.1, except that the base instance is received in the STD 
+// format and the generated instance is saved in the GSTD format (which is
+// identical to RSTD when there are one source and one sink for each
+// commodity).
 //
 // 8.1.3.1 Operation of the stochastic generator
 // *********************************************
@@ -1199,9 +1213,9 @@
 // In the base instance, there are multiple sources and multiple sinks for each
 // commodity. However, sources and sinks are identical across commodities.
 // There is differentiation of variable costs and capacities according to
-// commodities. The base instance must be received in the STD format (as the DOW
-// format is unsuitable in this situation) and the generated instance must be
-// saved in the GSTD format.
+// commodities. The base instance must be received in the STD format (as the
+// DOW format is unsuitable in this situation) and the generated instance must
+// be saved in the GSTD format.
 //
 // 8.2.1.1 Operation of the stochastic generator
 // *********************************************
