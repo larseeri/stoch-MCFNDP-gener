@@ -1,25 +1,31 @@
 
-****** Begin parsing configuration parameters from command line.
-
-
-****** End parsing configuration parameters from command line.
-
 Begin generation of raw scenarios with HKW algorithm.
-2026-10-04 10:44:30
+2026-11-01 15:07:57
 
 Setting starting values and launching main trial 1
 ****************************************************
 
-Overall error in moments and correlations after trial  1:  0.000692
-2026-10-04 10:44:30
+Overall error in moments and correlations after trial  1: 0.000692424195
+Error in moments after trial  1: 0.000000000000
+Error in correlations after trial  1: 0.000692424195
+2026-11-01 15:07:57
 End generation of raw scenarios with HKW algorithm.
 
 Verifying feasibility of every generated scenario.
 
-2026-10-04 10:44:30
-Currently verifying feasibility of scenario 1 out of 200 generated. 
+2026-11-01 15:07:58
+Currently verifying feasibility and validity of scenario 1 out of 200 generated. 
 
-Saved 194 feasible scenarios out of 200 generated. 
-Warning: There were 6 infeasible scenarios out of 200 generated.
+Number of scenarios: 200
+Number infeasible: 6
+Number invalid: 0
 
-2026-10-04 10:44:36
+WARNING:
+There were 6 infeasible scenarios out of 200 generated.
+There were 0 invalid scenarios out of 200 generated.
+The generated instance has been saved but is UNUSABLE as a result.
+The output file name is marked with the prefix DEFECT and
+the defective scenarios have been marked individually.
+See Section 4 of USERGUIDE_STOCH.md for a discussion of causes and recourses.
+File renamed successfully.
+2026-11-01 15:08:03
