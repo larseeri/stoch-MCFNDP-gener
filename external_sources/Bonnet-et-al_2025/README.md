@@ -10,10 +10,10 @@ instance has two parts:
 
 The set shows that the stochastic generator applies to any deterministic base instance,
 not only to those of the companion deterministic generator. **Every scenario of every
-instance is feasible.** Every generation run is recorded with its seed and stream, so
+instance is feasible and valid (no negative demand).** Every generation run is recorded with its seed and stream, so
 each instance can be reproduced exactly.
 
-**The scenario files themselves are not included** (515 MB in total). They are rebuilt
+**The scenario files themselves are not included** (620 MB in total). They are rebuilt
 from the configurations of this folder (see *Reproducing*), and `checksums.sha256` gives
 their SHA-256 checksums so that the rebuilt files can be verified. This folder (about 4 MB)
 contains everything else:
@@ -30,7 +30,7 @@ contains everything else:
 | `base/<base>.dow` | The same instance in DOW format, converted with `bonnet2std.sh -F dow` (values copied unchanged) |
 | `bonnet2std.sh` | Converter from Bonnet's SNDP format to the STD or DOW format (see *Conversion*) |
 | `scenarios/<base>/<instance>.par` | `stoch_gen` configuration of the instance, i.e. the content of its command line, including the seed (`r`) and the stream (`R`) |
-| `scenarios/<base>/<instance>.log` | `stoch_gen` output: moment-matching error, feasibility report and time stamps |
+| `scenarios/<base>/<instance>.log` | `stoch_gen` output: moment-matching error, feasibility and validity report, and time stamps |
 | `scenarios/<base>/<instance>_moms.dat`, `_corrs.dat` | Target moments and correlations of the random demands, as written by `stoch_gen` |
 | `scenarios/<base>/rejected/` | Configuration and log of each rejected attempt (B03 only) |
 | `manifest.csv` | One row per instance: base features, settings, experiment, seed, stream, times and realized statistics |
@@ -106,7 +106,7 @@ formats differ as follows:
 `bonnet2std.sh -h` describes all options. The script needs only `bash` and `awk`. It
 checks its input and stops with a message on a malformed file, or on a network file
 without commodities. The STD and DOW formats are described in `program/STD-format-desc.txt`
-and `program/DOW-format-desc.txt` of https://github.com/larseeri/determ-MCFNDP-gener.
+and `program/DOW-format-desc.txt` of https://github.com/larseeri/stoch-MCFNDP-gener.
 
 ## Stochastic instances
 
@@ -122,10 +122,11 @@ and `program/DOW-format-desc.txt` of https://github.com/larseeri/determ-MCFNDP-g
 * **Scenarios:** twice as many as commodities (100, 200 or 400), equiprobable. Moment
   matching (Høyland–Kaut–Wallace) needs more scenarios than random parameters. Its
   tolerance is 0.001 on moments and correlations, with at most 20 trials of 50 iterations.
-* **Feasibility rule:** `stoch_gen` checks every scenario with HiGHS, with all arcs open. An
-  attempt is accepted only if *all* its scenarios are feasible; otherwise s is lowered by
-  0.05 and a new attempt is made. Only B03 (λ\* = 1.40) needed retries: 194 of 200 feasible
-  scenarios at s = 0.5, 199 at s = 0.45, all 200 at s = 0.4.
+* **Feasibility rule:** `stoch_gen` checks every scenario with HiGHS, with all arcs open,
+  and checks that it has no negative value. An attempt is accepted only if *all* its
+  scenarios are feasible and valid; otherwise s is lowered by 0.05 and a new attempt is
+  made. Only B03 (λ\* = 1.40) needed retries: 194 of 200 feasible scenarios at s = 0.5, 199
+  at s = 0.45, all 200 at s = 0.4. No scenario was invalid.
 * **Seeds and streams:** each run of `stoch_gen` is a numbered *experiment*:
   - all experiments use the seed 50163844 (option `r`);
   - experiment e uses the stream 47 + 100 (e − 1) (option `R`);
@@ -145,15 +146,15 @@ and `program/DOW-format-desc.txt` of https://github.com/larseeri/determ-MCFNDP-g
 ### Generation times
 
 The set was generated on the following setup:
-- a MacBook Pro with an Apple M1 Pro processor (8 cores) and 16 GB of memory, running macOS 26.6;
-- `stoch_gen` commit `280ee8c`, compiled with Apple clang 21.0.0 and linked statically with HiGHS 1.11.0;
+- a MacBook Pro with an Apple M1 Pro processor (8 cores) and 16 GB of memory, running macOS 27.0.1;
+- `stoch_gen` commit `b035cef`, compiled with Apple clang 21.0.0 and linked statically with HiGHS 1.11.0;
 - three runs in parallel at low priority.
 
-Run times range from 2 seconds to 79 minutes (median about one minute). Most of the time
+Run times range from 1 second to 79 minutes (median about one minute). Most of the time
 goes to the feasibility checks: moment matching takes at most 1 second per instance,
-while the checks account for 89–99% of every run longer than one minute. Only four
+while the checks account for 86–99% of every run longer than one minute. Only four
 instances, all with 200 commodities and at least 1225 arcs, took more than ten minutes.
-The large runs use about 650 MB of memory each.
+The large runs need a few GB of memory: 2.5 GB was measured on B20 (1643 arcs, 200 commodities, 400 scenarios).
 
 The time records are in two files:
 - `generation/experiments.csv` gives the duration of every experiment;
@@ -163,29 +164,33 @@ The time records are in two files:
 ### Format of a stochastic instance
 
 `<instance>.txt` is the output of `stoch_gen` for a DOW base instance: the scenarios
-one after another, each starting with a line `SCENARIO <i>` (from 0) followed by a
-complete DOW instance:
+one after another, each starting with a blank line and a line giving its number (from 0),
+its status and its probability, followed by a complete DOW instance:
 
 ```
- SCENARIO        0
- MULTIGEN.DAT:
-          50            490            200       <- nodes, arcs, commodities
-           1             31         39.586       1000.000     791727.588              1             76
-          ...                                    <- origin, destination, unit cost, capacity,
-                                                    fixed cost, 1, arc index (490 lines)
-          25              6         35.727       <- origin, destination, demand (200 lines)
-          ...
- SCENARIO        1
-          ...
+
+SCENARIO: 0 Feasibility: feasible Validity: valid Prob: 0.0025
+MULTIGEN.DAT:
+             50               490               200    <- nodes, arcs, commodities
+             50                 1         60.683270       1000.000000    1213665.481730                 1                 1
+             ...                                       <- origin, destination, unit cost, capacity,
+                                                          fixed cost, 1, arc index (490 lines)
+             25                 6         35.727238    <- origin, destination, demand (200 lines)
+             ...
+
+SCENARIO: 1 Feasibility: feasible Validity: valid Prob: 0.0025
+             ...
 ```
 (excerpt of `scenarios/B07_D20_A1_R90_I1_K200/B07_D20_A1_R90_I1_K200_V10_C50.txt`)
 
 Only the demands differ from one scenario to the next. Other conventions:
 - nodes are numbered from 1 (node j of the Bonnet file is node j + 1);
-- arcs are listed by origin node, and the arc index in the last column refers to the
-  order of `base/<base>.dow`;
-- commodities keep the order of the base instance;
-- `stoch_gen` prints values with three decimals.
+- arcs and commodities keep the order of `base/<base>.dow`;
+- `stoch_gen` prints values with six decimals.
+
+If an attempt has an infeasible or invalid scenario, `stoch_gen` still writes all its
+scenarios, with their status, under the name `DEFECT_<instance>.txt`; `generate_set.py`
+deletes that file when it rejects the attempt.
 
 ## Instances
 
@@ -194,26 +199,26 @@ total and in feasibility checks, and the size of the scenario file once regenera
 
 | Instance | Arcs | Commodities | Total demand | λ\* | Spread | Correlation | Experiment | Stream | Scenarios | Time (s) | Checks (s) | Size (MB) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| `B01_D5_A1_R20_I0_K100_V40_C00` | 122 | 100 | 10,131 | 1.53 | ±40% | 0.0 | 1 | 47 | 200 | 33 | 32 | 3.4 |
-| `B02_D5_A10_R20_I1_K50_V10_C00` | 122 | 50 | 4,832 | 1.62 | ±10% | 0.0 | 2 | 147 | 100 | 5 | 5 | 1.5 |
-| `B03_D5_A20_R20_I2_K100_V40_C50` | 122 | 100 | 10,045 | 1.40 | ±40% (design ±50%) | 0.5 | 22 | 2147 | 200 | 7 | 5 | 3.4 |
-| `B04_D5_A20_R50_I3_K50_V20_C00` | 122 | 50 | 5,373 | 1.85 | ±20% | 0.0 | 4 | 347 | 100 | 2 | 1 | 1.5 |
-| `B05_D5_A20_R90_I4_K50_V30_C50` | 122 | 50 | 5,112 | 1.42 | ±30% | 0.5 | 5 | 447 | 100 | 2 | 2 | 1.5 |
-| `B06_D20_A1_R50_I0_K100_V50_C50` | 490 | 100 | 10,845 | 11.75 | ±50% | 0.5 | 6 | 547 | 200 | 54 | 51 | 11.0 |
-| `B07_D20_A1_R90_I1_K200_V10_C50` | 490 | 200 | 20,344 | 5.61 | ±10% | 0.5 | 7 | 647 | 400 | 232 | 220 | 23.7 |
-| `B08_D20_A10_R50_I2_K200_V20_C00` | 490 | 200 | 20,754 | 8.19 | ±20% | 0.0 | 8 | 747 | 400 | 406 | 394 | 23.7 |
-| `B09_D20_A10_R90_I3_K100_V30_C50` | 490 | 100 | 10,061 | 7.91 | ±30% | 0.5 | 9 | 847 | 200 | 72 | 69 | 11.0 |
-| `B10_D20_A20_R20_I4_K50_V40_C00` | 490 | 50 | 5,121 | 11.71 | ±40% | 0.0 | 10 | 947 | 100 | 14 | 13 | 5.3 |
-| `B11_D50_A1_R20_I0_K50_V50_C00` | 1225 | 50 | 4,933 | 45.48 | ±50% | 0.0 | 11 | 1047 | 100 | 25 | 23 | 12.8 |
-| `B12_D50_A10_R20_I1_K200_V30_C00` | 1225 | 200 | 21,160 | 19.98 | ±30% | 0.0 | 12 | 1147 | 400 | 461 | 420 | 53.9 |
-| `B13_D50_A10_R50_I2_K200_V20_C50` | 1225 | 200 | 19,680 | 9.67 | ±20% | 0.5 | 13 | 1247 | 400 | 1753 | 1720 | 53.9 |
-| `B14_D50_A20_R50_I3_K100_V10_C00` | 1225 | 100 | 10,214 | 24.09 | ±10% | 0.0 | 14 | 1347 | 200 | 89 | 81 | 26.1 |
-| `B15_D50_A20_R90_I4_K200_V40_C50` | 1225 | 200 | 20,072 | 9.24 | ±40% | 0.5 | 15 | 1447 | 400 | 4738 | 4706 | 53.9 |
-| `B16_D80_A1_R50_I0_K50_V20_C50` | 1636 | 50 | 4,639 | 66.81 | ±20% | 0.5 | 16 | 1547 | 100 | 34 | 31 | 17.1 |
-| `B17_D80_A1_R90_I1_K200_V10_C50` | 1960 | 200 | 21,199 | 29.42 | ±10% | 0.5 | 17 | 1647 | 400 | 2753 | 2692 | 84.2 |
-| `B18_D80_A10_R20_I2_K50_V40_C50` | 1397 | 50 | 5,127 | 49.29 | ±40% | 0.5 | 18 | 1747 | 100 | 23 | 20 | 14.6 |
-| `B19_D80_A10_R90_I3_K100_V30_C00` | 1960 | 100 | 10,524 | 47.28 | ±30% | 0.0 | 19 | 1847 | 200 | 147 | 131 | 41.2 |
-| `B20_D80_A20_R50_I4_K200_V50_C00` | 1643 | 200 | 22,111 | 30.89 | ±50% | 0.0 | 20 | 1947 | 400 | 661 | 609 | 71.2 |
+| `B01_D5_A1_R20_I0_K100_V40_C00` | 122 | 100 | 10,131 | 1.53 | ±40% | 0.0 | 1 | 47 | 200 | 6 | 5 | 4.1 |
+| `B02_D5_A10_R20_I1_K50_V10_C00` | 122 | 50 | 4,832 | 1.62 | ±10% | 0.0 | 2 | 147 | 100 | 1 | 1 | 1.8 |
+| `B03_D5_A20_R20_I2_K100_V40_C50` | 122 | 100 | 10,045 | 1.40 | ±40% (design ±50%) | 0.5 | 22 | 2147 | 200 | 6 | 5 | 4.1 |
+| `B04_D5_A20_R50_I3_K50_V20_C00` | 122 | 50 | 5,373 | 1.85 | ±20% | 0.0 | 4 | 347 | 100 | 1 | 1 | 1.8 |
+| `B05_D5_A20_R90_I4_K50_V30_C50` | 122 | 50 | 5,112 | 1.42 | ±30% | 0.5 | 5 | 447 | 100 | 1 | 1 | 1.8 |
+| `B06_D20_A1_R50_I0_K100_V50_C50` | 490 | 100 | 10,845 | 11.75 | ±50% | 0.5 | 6 | 547 | 200 | 51 | 47 | 13.2 |
+| `B07_D20_A1_R90_I1_K200_V10_C50` | 490 | 200 | 20,344 | 5.61 | ±10% | 0.5 | 7 | 647 | 400 | 222 | 207 | 28.5 |
+| `B08_D20_A10_R50_I2_K200_V20_C00` | 490 | 200 | 20,754 | 8.19 | ±20% | 0.0 | 8 | 747 | 400 | 395 | 381 | 28.5 |
+| `B09_D20_A10_R90_I3_K100_V30_C50` | 490 | 100 | 10,061 | 7.91 | ±30% | 0.5 | 9 | 847 | 200 | 67 | 63 | 13.2 |
+| `B10_D20_A20_R20_I4_K50_V40_C00` | 490 | 50 | 5,121 | 11.71 | ±40% | 0.0 | 10 | 947 | 100 | 14 | 13 | 6.3 |
+| `B11_D50_A1_R20_I0_K50_V50_C00` | 1225 | 50 | 4,933 | 45.48 | ±50% | 0.0 | 11 | 1047 | 100 | 24 | 21 | 15.5 |
+| `B12_D50_A10_R20_I1_K200_V30_C00` | 1225 | 200 | 21,160 | 19.98 | ±30% | 0.0 | 12 | 1147 | 400 | 426 | 387 | 65.0 |
+| `B13_D50_A10_R50_I2_K200_V20_C50` | 1225 | 200 | 19,680 | 9.67 | ±20% | 0.5 | 13 | 1247 | 400 | 1739 | 1702 | 65.0 |
+| `B14_D50_A20_R50_I3_K100_V10_C00` | 1225 | 100 | 10,214 | 24.09 | ±10% | 0.0 | 14 | 1347 | 200 | 80 | 70 | 31.4 |
+| `B15_D50_A20_R90_I4_K200_V40_C50` | 1225 | 200 | 20,072 | 9.24 | ±40% | 0.5 | 15 | 1447 | 400 | 4718 | 4681 | 65.0 |
+| `B16_D80_A1_R50_I0_K50_V20_C50` | 1636 | 50 | 4,639 | 66.81 | ±20% | 0.5 | 16 | 1547 | 100 | 30 | 26 | 20.6 |
+| `B17_D80_A1_R90_I1_K200_V10_C50` | 1960 | 200 | 21,199 | 29.42 | ±10% | 0.5 | 17 | 1647 | 400 | 2658 | 2592 | 101.4 |
+| `B18_D80_A10_R20_I2_K50_V40_C50` | 1397 | 50 | 5,127 | 49.29 | ±40% | 0.5 | 18 | 1747 | 100 | 21 | 18 | 17.6 |
+| `B19_D80_A10_R90_I3_K100_V30_C00` | 1960 | 100 | 10,524 | 47.28 | ±30% | 0.0 | 19 | 1847 | 200 | 133 | 115 | 49.7 |
+| `B20_D80_A20_R50_I4_K200_V50_C00` | 1643 | 200 | 22,111 | 30.89 | ±50% | 0.0 | 20 | 1947 | 400 | 619 | 564 | 85.7 |
 
 `manifest.csv` gives, for each instance:
 - the base features: density, hub ratio, reciprocity, network replicate, nodes, arcs,
@@ -227,8 +232,8 @@ total and in feasibility checks, and the size of the scenario file once regenera
   correlation between distinct demands.
 
 `generation/experiments.csv` lists every experiment, including the two rejected attempts
-for B03, with its spread, correlation, seed, stream, numbers of requested and feasible
-scenarios, status, duration and completion time.
+for B03, with its spread, correlation, seed, stream, numbers of requested, feasible and
+valid scenarios, status, duration and completion time.
 
 ## Reproducing
 
@@ -241,7 +246,7 @@ Requirements:
 
 1. **`stoch_gen`.** Build HiGHS 1.11.0 as a static library. Then build `stoch_gen` in
    the folder `program/` of https://github.com/larseeri/stoch-MCFNDP-gener, commit
-   `280ee8c` or later, with:
+   `b035cef`, with:
    ```
    make HIGHS_SOLVER=1 HIGHS_HOME=<HiGHS installation> CXXFLAGS="-DHIGHS -std=gnu++17" LDFLAGS="-L<HiGHS installation>/lib -lhighs -lz"
    ```
@@ -264,7 +269,7 @@ Requirements:
        at a time on a laptop. The original generation took about 90 minutes with three
        parallel runs on the setup above.
      - It resumes from its log if it is interrupted.
-     - At the end, `diff <(cut -d, -f1-10 generation/experiments.csv) <(cut -d, -f1-10 replay.csv)`
+     - At the end, `diff <(cut -d, -f1-11 generation/experiments.csv) <(cut -d, -f1-11 replay.csv)`
        must report no difference. (Run without `--log`, the script finds every experiment
        of `generation/experiments.csv` completed and does nothing.)
    - **Regenerate one instance:** run `generation/run_one.sh <base> <instance>`. It runs
@@ -272,7 +277,7 @@ Requirements:
      configuration.
    - **Rerun a rejected attempt:** from `scenarios/<base>/`, run
      `$STOCH_GEN +F rejected/<instance>.par`. Its outputs are written in
-     `scenarios/<base>/`.
+     `scenarios/<base>/`, with the scenario file named `DEFECT_<instance>.txt`.
 
    Then check the regenerated files with `shasum -a 256 -c checksums.sha256`
    (`sha256sum -c` on Linux). Add `--ignore-missing` if only some instances were
@@ -284,16 +289,28 @@ Requirements:
 ## Notes
 
 * **Exact reproduction.** All steps are deterministic. Rerunning an experiment
-  reproduces its scenario file byte for byte. This was checked on experiments 3, 4, 5,
-  10, 21 and 22, with the configurations and scripts of this folder for experiments 3,
-  4, 5, 21 and 22. All the base instances were also regenerated byte for byte with
+  reproduces its scenario file byte for byte. This was checked with the configurations of
+  this folder on experiments 2, 4, 5, 10, 16, 20 and 22: their scenario and raw files match
+  `checksums.sha256`. The rejected experiments 3 and 21 gave the same numbers of infeasible
+  scenarios. All the base instances were also regenerated byte for byte with
   `generation/make_bases.sh`. These checks used the build described above. Other
   compilers or platforms may round floating-point operations differently, so their
   output may differ in the last printed digits.
-* **Version of `stoch_gen`.** Use commit `280ee8c` (3 October 2026) or later. Earlier
-  versions compute the target variance of the uniform distribution as D²(α + β)/12
-  instead of D²(α + β)²/12. The configurations set the number of trials explicitly
-  (`t 20`), so the default of the version used does not matter.
+* **Version of `stoch_gen`.** The scripts read the log format of commit `b035cef`
+  (1 November 2026), and the checksums are those of its output format. The configurations
+  set the number of trials explicitly (`t 20`), so the default of the version used does
+  not matter. Versions before `280ee8c` compute the target variance of the uniform
+  distribution as D²(α + β)/12 instead of D²(α + β)²/12.
+* **Earlier version of this set.** A version of 4 October 2026, generated with commit
+  `280ee8c`, used the same base instances, seeds and streams. All 22 experiments have the
+  same outcome in both versions. The differences come from the changes in `stoch_gen`:
+  - values have six decimals instead of three, and the scenario header line is new;
+  - arcs keep the order of the base instance instead of being listed by origin node;
+  - `280ee8c` read α and β in single precision. This changes 706 of the 715,040 values of
+    the raw scenario files, by at most one unit in the sixth significant digit. The
+    instances with s = 0.5, which is exact in single precision, have the same raw files;
+  - `280ee8c` truncated DOW and restricted STD demands to integers in its feasibility
+    checks, whereas `b035cef` uses the exact demands.
 * **File paths.** `stoch_gen` cannot read file names containing spaces, so the
   configurations use paths relative to their own folder and must be run from it
   (`generation/run_one.sh` does this).
@@ -307,5 +324,5 @@ Requirements:
   reproduced in `LICENSE-SSNDP-Realistic-Instance-Generator.txt`).
 * K. Høyland, M. Kaut and S. W. Wallace. A heuristic for moment-matching scenario
   generation. *Computational Optimization and Applications* 24(2):169–185, 2003.
-* Stochastic generator: https://github.com/larseeri/stoch-MCFNDP-gener. Deterministic
-  generator and format descriptions: https://github.com/larseeri/determ-MCFNDP-gener.
+* Stochastic generator and format descriptions: https://github.com/larseeri/stoch-MCFNDP-gener.
+  Deterministic generator: https://github.com/larseeri/determ-MCFNDP-gener.
