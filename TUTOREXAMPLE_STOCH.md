@@ -1,4 +1,4 @@
-(October 29th 2026)
+(November 2nd 2026)
 
 ## Generator of instances of the linear, two-stage, stochastic, multi-commodity, capacitated, fixed charge network design problem with recourse
 
@@ -23,7 +23,7 @@ See Sections 1 and 2 of the online user guide for complete details.
 
 ### B- Build or modify a configuration file.
 
-As an example, we reproduce this configuration file taken from the stochastic library:
+As an example, this configuration file is taken from the stochastic library where it is stored in a .zip archive:
 
 library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.par
 
@@ -32,7 +32,7 @@ It is suitable to the use of the program from the Linux command line. By thoroug
 
 #### 1 Content of the configuration file
 
-We reordered the content of the original file to make the exposition flow more progressively.
+We reordered the content of the original file to make the exposition flow more progressively. We also renamed the paths stated in the original file. We now assume that the library is accessible through the relative path ../library. 
 
 *** Content of the configuration file starts on the next line. ***
 
@@ -169,7 +169,7 @@ e- In this section, the suffixes appearing in the names of the option values ind
 ```
 
 ```
--R r_int
+-R R_int
 ```
 
 **2.9** Specifies which elements of the base deterministic network must be randomized. See Section 3.1 of the online user guide. Here, S_int==3 and since 3=1+2, demands and overall capacities are to be randomized.
