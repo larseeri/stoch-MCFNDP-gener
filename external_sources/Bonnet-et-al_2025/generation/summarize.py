@@ -35,17 +35,22 @@ def base_volumes(path):
 
 
 def scenario_demands(path, k):
-    """Demands of every saved scenario, one row per scenario."""
-    rows, cur, state = [], [], None
+    """Demands of every scenario, one row per scenario, and the annotations of the scenarios.
+
+    A scenario starts with the line
+    SCENARIO: <i> Feasibility: <feasible> Validity: <valid> Prob: <probability>.
+    """
+    rows, cur, state, notes = [], [], None, []
     with open(path) as f:
         for line in f:
             parts = line.split()
             if not parts:
                 continue
-            if parts[0] == "SCENARIO":
+            if parts[0] == "SCENARIO:":
                 if cur:
                     rows.append(cur)
                 cur, state = [], "head"
+                notes.append((parts[3], parts[5], float(parts[7])))
             elif parts[0] == "MULTIGEN.DAT:":
                 continue
             elif state == "head":
@@ -56,7 +61,7 @@ def scenario_demands(path, k):
         rows.append(cur)
     d = np.array(rows)
     assert d.shape[1] == k, (path, d.shape)
-    return d
+    return d, notes
 
 
 def log_seconds(log):
@@ -73,7 +78,7 @@ def log_seconds(log):
         return [t for p, t in stamps if p < pos][-1]
 
     hkw = before("End generation of raw scenarios") - after("Begin generation of raw scenarios")
-    check = after("Saved ") - after("Verifying feasibility")
+    check = after("Number of scenarios:") - after("Verifying feasibility")
     return int(hkw.total_seconds()), int(check.total_seconds())
 
 
@@ -125,15 +130,17 @@ def main():
                    "experiment": exp.get(sid, ""), "attempts": attempts.get(base, ""),
                    "seed": opts["r"], "stream": opts["R"], "scenarios_requested": int(opts["n"])}
             log = open(f"{folder}/{sid}.log").read() if os.path.exists(f"{folder}/{sid}.log") else ""
-            saved = re.search(r"Saved (\d+) feasible scenarios out of (\d+)", log)
+            saved = re.search(r"Number of scenarios: (\d+)\s+Number infeasible: 0\s+Number invalid: 0", log)
             if not saved:
                 row["status"] = "missing"
                 out.append(row)
                 continue
             if not os.path.exists(f"{folder}/{sid}.txt"):
                 sys.exit(f"{folder}/{sid}.txt not found: regenerate the scenario files first (see the README)")
-            errs = re.findall(r"after trial\s+(\d+):\s+([0-9.eE+-]+)", log)
-            d = scenario_demands(f"{folder}/{sid}.txt", k)
+            errs = re.findall(r"Overall error in moments and correlations after trial\s+(\d+):\s+([0-9.eE+-]+)", log)
+            d, notes = scenario_demands(f"{folder}/{sid}.txt", k)
+            assert all(n[0] == "feasible" and n[1] == "valid" for n in notes), sid
+            assert abs(sum(n[2] for n in notes) - 1) < 1e-6, sid
             ratio = d / vol
             c = np.corrcoef(d, rowvar=False)
             off = c[~np.eye(k, dtype=bool)]

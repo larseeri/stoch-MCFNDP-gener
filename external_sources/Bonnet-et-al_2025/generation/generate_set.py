@@ -10,8 +10,9 @@ Policy (agreed for the set):
     47 + 100 (e - 1) (option R);
   * experiments 1 to 20 are the first attempts, in the order of design.csv,
     with the spread and correlation of assignment.csv;
-  * an attempt is accepted only if all its scenarios are feasible; otherwise
-    the spread alpha = beta is lowered by 0.05 and a new experiment is run;
+  * an attempt is accepted only if all its scenarios are feasible and valid
+    (no negative demand); otherwise the spread alpha = beta is lowered by 0.05
+    and a new experiment is run;
     the retries of a round are numbered after all experiments of the previous
     round, in the order of design.csv.
 
@@ -43,7 +44,7 @@ SEED = 50163844
 FIRST_STREAM, STREAM_STEP = 47, 100
 SPREAD_STEP = 5                       # percent
 FIELDS = ["experiment", "base_id", "instance_id", "spread", "correlation", "seed", "stream",
-          "scenarios_requested", "scenarios_feasible", "status", "seconds", "finished"]
+          "scenarios_requested", "scenarios_feasible", "scenarios_valid", "status", "seconds", "finished"]
 
 
 def stream(e):
@@ -74,12 +75,14 @@ def run(exp):
     subprocess.run([os.path.join(GEN, "run_one.sh"), base, sid], check=False)
     folder = os.path.join(ROOT, "scenarios", base)
     text = open(os.path.join(folder, sid + ".log")).read() if os.path.exists(os.path.join(folder, sid + ".log")) else ""
-    m = re.search(r"Saved (\d+) feasible scenarios out of (\d+)", text)
-    feasible = int(m.group(1)) if m else ""
+    # stoch_gen reports the three numbers once all scenarios have been verified
+    m = re.search(r"Number of scenarios: (\d+)\s+Number infeasible: (\d+)\s+Number invalid: (\d+)", text)
+    feasible = int(m.group(1)) - int(m.group(2)) if m else ""
+    valid = int(m.group(1)) - int(m.group(3)) if m else ""
     requested = 2 * k
     if not m:
         status = "failed"
-    elif feasible == requested:
+    elif feasible == requested and valid == requested:
         status = "accepted"
     else:
         status = "rejected"
@@ -87,13 +90,14 @@ def run(exp):
         os.makedirs(rej, exist_ok=True)
         for ext in (".par", ".log"):
             shutil.move(os.path.join(folder, sid + ext), os.path.join(rej, sid + ext))
-        for ext in (".txt", "_moms.dat", "_corrs.dat", "_raw.dat"):
-            p = os.path.join(folder, sid + ext)
+        # stoch_gen prefixes the scenario file of a defective attempt with DEFECT_
+        for name in ("DEFECT_" + sid + ".txt", sid + ".txt", sid + "_moms.dat", sid + "_corrs.dat", sid + "_raw.dat"):
+            p = os.path.join(folder, name)
             if os.path.exists(p):
                 os.remove(p)
     return {"experiment": e, "base_id": base, "instance_id": sid, "spread": f"{v / 100:.2f}",
             "correlation": f"{c / 100:.1f}", "seed": SEED, "stream": stream(e),
-            "scenarios_requested": requested, "scenarios_feasible": feasible, "status": status,
+            "scenarios_requested": requested, "scenarios_feasible": feasible, "scenarios_valid": valid, "status": status,
             "seconds": round(time.time() - start), "finished": time.strftime("%Y-%m-%d %H:%M:%S")}
 
 
@@ -133,7 +137,8 @@ def main():
                             csv.DictWriter(f, fieldnames=FIELDS).writerow(rec)
                     done[rec["experiment"]] = {k: str(v) for k, v in rec.items()}
                     print(f"experiment {rec['experiment']:>3} {rec['instance_id']}: {rec['status']} "
-                          f"({rec['scenarios_feasible']}/{rec['scenarios_requested']}, {rec['seconds']} s)",
+                          f"({rec['scenarios_feasible']} feasible, {rec['scenarios_valid']} valid of "
+                          f"{rec['scenarios_requested']}, {rec['seconds']} s)",
                           flush=True)
         failed = [x for x in current if done[x[0]]["status"] == "failed"]
         if failed:

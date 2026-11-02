@@ -15,9 +15,9 @@ fi
 BIN="$(cd "$(dirname "$BIN")" && pwd)/$(basename "$BIN")"
 cd "$ROOT/scenarios/$1" || exit 1
 [ -f "$2.par" ] || { echo "run_one.sh: no configuration $1/$2.par" >&2; exit 1; }
-if grep -q "Saved" "$2.log" 2>/dev/null && [ -s "$2.txt" ]; then exit 0; fi
-rm -f "$2.txt" "$2.log" "$2_moms.dat" "$2_corrs.dat" "$2_raw.dat"
+if grep -q "Number invalid" "$2.log" 2>/dev/null && [ -s "$2.txt" ]; then exit 0; fi
+rm -f "$2.txt" "DEFECT_$2.txt" "$2.log" "$2_moms.dat" "$2_corrs.dat" "$2_raw.dat"
 start=$(date +%s)
 nice -n 10 "$BIN" +F "$2.par" > "$2.log" 2>&1
 status=$?
-echo "$(date '+%F %T') $2 exit=$status seconds=$(( $(date +%s) - start )) $(grep -h 'Saved' "$2.log")" >> "$GEN/progress.log"
+echo "$(date '+%F %T') $2 exit=$status seconds=$(( $(date +%s) - start )) $(grep -h 'Number in' "$2.log" | tr '\n' ' ')" >> "$GEN/progress.log"
