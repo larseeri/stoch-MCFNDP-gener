@@ -1141,7 +1141,7 @@ void Configuration::printHelpAndExit()
 	printf("1 Building and running the program directly from the Linux command line\n");
 	printf("2 Running the program through Docker instructions\n");
 	printf("3 Randomized elements, target moments and target correlations\n");
-	printf("4 Output file\n");
+	printf("4 Verifying the scenarios and storing the output\n");
 	printf("5 Formats of data files\n");
 	printf("6 Convergence, target moments, target correlations and number of scenarios\n");
 	printf("7 Usage of options\n");
@@ -1253,7 +1253,7 @@ void Configuration::printHelpAndExit()
 	printf("\n");
 	printf("It may specify at most one option per line. Option keys may be prefixed or\n");
 	printf("not with '-'. Comments may appear either at the beginning or the end of a\n");
-	printf("line, provided they start with #.\n");
+	printf("line, provided they start with '#'.\n");
 	printf("\n");
 	printf("The general command line for running the program is as follows:\n");
 	printf("\n");
@@ -1948,7 +1948,7 @@ void Configuration::printHelpAndExit()
 	printf("instruction line. This prefix can be omitted when the options are called\n");
 	printf("from a configuration file. To supply an option, a line of a configuration\n");
 	printf("file must begin with a dash '-' or a letter. Comments may appear either at\n");
-	printf("the beginning or the end of a line, provided they start with #.\n");
+	printf("the beginning or the end of a line, provided they start with '#'.\n");
 	printf("\n");
 	printf("Remarks:\n");
 	printf("- Characters or strings appearing without the prefix '-' in the instruction\n");

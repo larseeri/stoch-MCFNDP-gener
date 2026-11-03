@@ -60,7 +60,7 @@
 // 1 Building and running the program directly from the Linux command line
 // 2 Running the program through Docker instructions
 // 3 Randomized elements, target moments and target correlations
-// 4 Output file
+// 4 Verifying the scenarios and storing the output
 // 5 Formats of data files
 // 6 Convergence, target moments, target correlations and number of scenarios 
 // 7 Usage of options
@@ -172,7 +172,7 @@
 //
 // It may specify at most one option per line. Option keys may be prefixed or
 // not with '-'. Comments may appear either at the beginning or the end of a 
-// line, provided they start with #. 
+// line, provided they start with '#'. 
 //
 // The general command line for running the program is as follows:
 //
@@ -868,7 +868,7 @@
 // instruction line. This prefix can be omitted when the options are called
 // from a configuration file. To supply an option, a line of a configuration
 // file must begin with a dash '-' or a letter. Comments may appear either at
-// the beginning or the end of a line, provided they start with #.
+// the beginning or the end of a line, provided they start with '#'.
 //
 // Remarks:
 // - Characters or strings appearing without the prefix '-' in the instruction 
