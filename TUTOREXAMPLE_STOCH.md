@@ -1,4 +1,4 @@
-(November 2nd 2026)
+(November 3rd 2026)
 
 ## Generator of instances of the linear, two-stage, stochastic, multi-commodity, capacitated, fixed charge network design problem with recourse
 
@@ -23,7 +23,7 @@ See Sections 1 and 2 of the online user guide for complete details.
 
 ### B- Build or modify a configuration file.
 
-As an example, this configuration file is taken from the stochastic library where it is stored in a .zip archive:
+As an example, this configuration file is taken from the stochastic library where it is stored in the hubsAndSats_determ+stoch_config-files.zip archive. The archive must be opened and the hubsAndSats/ folder must be installed inside library/.
 
 library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.par
 
@@ -110,7 +110,7 @@ We explain each statement and comment appearing in the example.
 
 Remarks:
 
-a- To supply an option, a line of a configuration file must begin with a dash '-' or a letter.  Comments at beginning or end of lines must begin with "#". Blank lines are ignored. See Sections 1.2, 2 and 7.2 of the online user guide for complete details.
+a- To supply an option, a line of a configuration file must begin with a dash '-' or a letter.  Comments at beginning or end of lines must begin with '#'. Blank lines are ignored. See Sections 1.2, 2 and 7.2 of the online user guide for complete details.
 
 b- The order of the statements and comments in a configuration file is immaterial to the workings of the generator.
 
@@ -132,7 +132,8 @@ e- In this section, the suffixes appearing in the names of the option values ind
 -F F_char
 ```
 
-**2.3** Specifies the path of base deterministic instance. See section 5.1 of online user guide. Here,  I_string==../library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std. This is the instance described in the tutorial example TUTOREXAMPLE_DETERM.md available online about the deterministic generator. 
+**2.3** Specifies the path of base deterministic instance. (See section 5.1 of online user guide.) Here,  I_string==../library/hubsAndSats/eqSrcsEqSnks/flat/hs_vols-20-100_csts-20-100-20-100-20-100-20-100_eqSrcsEqSnks_secTop-flat_secTopSpe-2-3-2-3-2-3-2-8-2-8-12-15-45-10-15-2-15-45-10-15-2_noPar-20_adjSpe-0~33-1~00-0~33-1~00_seed-50163844_strm-5343.std. This is the instance described in the tutorial example TUTOREXAMPLE_DETERM.md about the deterministic generator located at https://github.com/larseeri/determ-MCFNDP-gener. TUTOREXAMPLE_DETERM.md and liminary remark c- of DESCLIBRARY_DETERM.txt, held at the same location, describe how this base instance could be regenerated from its configuration file.
+
 
 ```
 -I I_string
@@ -275,4 +276,7 @@ For example, to launch the generation process from the Linux command line based 
 ./stoch_gen +v +F ../library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.par
 ```
 
-Notice that options can also be set on the command line. Furthermore, the value of an option specified on the command line supersedes that specified in the configuration file.
+Remark:\
+Options can also be set on the command line. Furthermore, the value of an option specified on the command line supersedes that specified in the configuration file.
+
+As an exemple, this feature is useful when regenerating instances in the library from the original configuration files. Paths cannot be adjusted within every configuration file. Options I, C, M, o, O should be included in the instruction line to correctly read the base deterministic instance file and to correctly write to the output files. Option J should be used to disable the feasibility verification process and gain speed. 

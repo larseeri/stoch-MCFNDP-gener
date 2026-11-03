@@ -1,4 +1,4 @@
-(November 2nd 2026)
+(November 3rd 2026)
 
 
 ## Generator of instances of the linear, two-stage, stochastic, multi-commodity, capacitated, fixed charge network design problem with recourse
@@ -21,7 +21,7 @@ This user guide comprises the following sections:\
 1 Building and running the program directly from the Linux command line\
 2 Running the program through Docker instructions\
 3 Randomized elements, target moments and target correlations\
-4 Output file\
+4 Verifying the scenarios and storing the output\
 5 Formats of data files\
 6 Convergence, target moments, target correlations and number of scenarios \
 7 Usage of options\
