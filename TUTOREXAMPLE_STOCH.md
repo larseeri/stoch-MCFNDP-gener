@@ -268,7 +268,7 @@ e- In this section, the suffixes appearing in the names of the option values ind
 
 ### C- Starting the generation process
 
-See Sections 1.2 of the online user guide for a detailed discussion.
+See Section 1.2 of the online user guide for a detailed discussion.
 
 For example, to launch the generation process from the Linux command line based on the configuration file described in Section B above, the following instruction could be issued from the folder /program.
 
@@ -278,9 +278,9 @@ For example, to launch the generation process from the Linux command line based 
 
 provided one of the two following sets of conditions would be satisfied:
 
-- Options I, C, M, o, O within the configuration file pointed with +F would be given accurate values. (For instance, Section B above assumes that the library can be accessed through the relative path ../library.) This means that the base deterministic file should actually be located where option I within the configuration file would specify it is and that the paths specified with options C, M, o , O within the configuration file would all be accessible. If appropriate, option J could be added within the configuration file to deactivate verification of feasibility and to gain computing speed, for instance if a known-feasible instance is being regenerated from its configuration file.
+- Options I, C, M, o, O within the configuration file pointed with +F would be given accurate values. (For instance, Section B above assumes that the library can be accessed through the relative path ../library.) This means that the base deterministic file should actually be located where option I within the configuration file would specify it is and that the paths specified with options C, M, o, O within the configuration file would all be accessible. If appropriate, option J could be added within the configuration file to deactivate verification of feasibility and to gain computing speed, for instance if a known-feasible instance is being regenerated from its configuration file.
 
-- If, on the other hand some or all among options I, C, M, o, O within the original configuration file were not given accurate values, then these options would need to be specified correctly directly in the instruction line. Option J could also be added there. 
+- If, on the other hand, some or all among options I, C, M, o, O within the original configuration file were not given accurate values, then these options would need to be specified correctly directly in the instruction line. Option J could also be added there. 
 
 Remark:\
-Except for options +F, +v and +H that can only be specified in the instruction line, all options can specified either in the configuration file or in the instruction line. Furthermore, the value of an option specified in the instruction line supersedes that specified in the configuration file. See Section 1.2 of the online user guide for details.
+Except for options +F, +v and +H that can only be specified in the instruction line, all options can be specified either in the configuration file or in the instruction line. Furthermore, the value of an option specified in the instruction line supersedes that specified in the configuration file. See Section 1.2 of the online user guide for details.
