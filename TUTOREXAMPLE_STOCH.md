@@ -1,4 +1,4 @@
-(November 3rd 2026)
+(November 4th 2026)
 
 ## Generator of instances of the linear, two-stage, stochastic, multi-commodity, capacitated, fixed charge network design problem with recourse
 
@@ -16,9 +16,9 @@ To become proficient with the use of the GenStoch stochastic generator, we sugge
 
 Using the generator involves the following steps A, B and C.
 
-### A- If not already done, install the program or create a Docker container from the supplied Docker image.
+### A- If not already done, install the program.
 
-See Sections 1 and 2 of the online user guide for complete details.
+See Section 1.1 of the online user guide for complete details.
 
 
 ### B- Build or modify a configuration file.
@@ -268,15 +268,19 @@ e- In this section, the suffixes appearing in the names of the option values ind
 
 ### C- Starting the generation process
 
-See Sections 1-2 of the online user guide for a detailed discussion.
+See Sections 1.2 of the online user guide for a detailed discussion.
 
-For example, to launch the generation process from the Linux command line based on the configuration file described in Section B above, the following instruction would be issued from the folder /program.
+For example, to launch the generation process from the Linux command line based on the configuration file described in Section B above, the following instruction could be issued from the folder /program.
 
 ```
 ./stoch_gen +v +F ../library/hubsAndSats/eqSrcsEqSnks/flat/smlInstLoo/hs_eqSrcsEqSnks_flat_base-det-seed-50163844_base-det-strm-5343_smlInstLoo_F-G_G_T-T_A-0~5_B-0~5_S-3_K_XDD-0~5_XDA-0~2_XAA-0~5_n-3000_t-20_i-50_l-3_m-0~001_c-0~001_seed-50163844_strm-22912_gstd.par
 ```
 
-Remark:\
-Options can also be set on the command line. Furthermore, the value of an option specified on the command line supersedes that specified in the configuration file.
+provided one of the two following sets of conditions would be satisfied:
 
-As an exemple, this feature is useful when regenerating instances in the library from the original configuration files. Paths cannot be adjusted within every configuration file. Options I, C, M, o, O should be included in the instruction line to correctly read the base deterministic instance file and to correctly write to the output files. Option J should be used to disable the feasibility verification process and gain speed. 
+- Options I, C, M, o, O within the configuration file pointed with +F would be given accurate values. (For instance, Section B above assumes that the library can be accessed through the relative path ../library.) This means that the base deterministic file should actually be located where option I within the configuration file would specify it is and that the paths specified with options C, M, o , O within the configuration file would all be accessible. If appropriate, option J could be added within the configuration file to deactivate verification of feasibility and to gain computing speed, for instance if a known-feasible instance is being regenerated from its configuration file.
+
+- If, on the other hand some or all among options I, C, M, o, O within the original configuration file were not given accurate values, then these options would need to be specified correctly directly in the instruction line. Option J could also be added there. 
+
+Remark:\
+Except for options +F, +v and +H that can only be specified in the instruction line, all options can specified either in the configuration file or in the instruction line. Furthermore, the value of an option specified in the instruction line supersedes that specified in the configuration file. See Section 1.2 of the online user guide for details.
